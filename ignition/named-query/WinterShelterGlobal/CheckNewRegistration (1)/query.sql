@@ -1,0 +1,1 @@
+SELECT * FROM shelter.LocationSeasonal where locationId = :locationId

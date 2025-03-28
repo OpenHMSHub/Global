@@ -1,0 +1,184 @@
+{
+  "custom": {},
+  "params": {
+    "area": true,
+    "astrix": true,
+    "astrixCorrection": 0,
+    "inputText": "",
+    "placeholder": "test",
+    "text": "Volunteers"
+  },
+  "propConfig": {
+    "params.area": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.astrix": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.astrixCorrection": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.inputText": {
+      "binding": {
+        "config": {
+          "expression": "if({/root/TextField.props.text} !\u003d null ,{/root/TextField.props.text}, \"\")"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.placeholder": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 150
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "((len({this.props.text}) * 6.5) -{view.params.astrixCorrection} )  + \"px\" "
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.text"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_HeaderText",
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "asterisk"
+            },
+            "position": {
+              "basis": "1px"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.astrix"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#FF0000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "placeholder"
+            },
+            "position": {
+              "basis": "10px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "#000000"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px"
+        },
+        "props": {
+          "style": {
+            "overflow": "hidden"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "TextField"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.placeholder": {
+            "binding": {
+              "config": {
+                "path": "view.params.placeholder"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.area},\u0027Text/Add_TextArea_With_Border\u0027,\u0027Text/Add_TextField\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginBottom": "0px",
+            "marginLeft": "5px"
+          }
+        },
+        "type": "ia.input.text-field"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

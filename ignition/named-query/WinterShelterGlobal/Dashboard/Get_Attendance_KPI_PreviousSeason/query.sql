@@ -1,0 +1,12 @@
+SELECT [id]
+      ,[seasonId]
+      ,[active_Congregations]
+      ,[active_Participants]
+      ,[totalBeds]
+      ,[nov_attendance]
+      ,[dec_attendance]
+      ,[jan_attendance]
+      ,[feb_attendance]
+      ,[march_attendance]
+FROM [shelter].[Attendance_KPI_PreviousSeason]
+WHERE [seasonId] = :seasonId

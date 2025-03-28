@@ -1,0 +1,1347 @@
+{
+  "custom": {
+    "amenities": "",
+    "congregationInfo": {
+      "afterHours": "",
+      "city": "",
+      "congregation": "",
+      "email": "",
+      "leader": "",
+      "line1": "",
+      "line2": "",
+      "notes": "",
+      "phone": "",
+      "state": "TN",
+      "website": "",
+      "zip": ""
+    },
+    "locationInfo": {
+      "capacity": 0,
+      "city": "",
+      "congregationId": "",
+      "line1": "",
+      "line2": "",
+      "name": "Unknown",
+      "notes": "",
+      "state": "TN",
+      "zip": ""
+    },
+    "primaryCoordinator": {
+      "city": "",
+      "email": "",
+      "first": "",
+      "last": "",
+      "phone1": "",
+      "phone2": "",
+      "preferred": "",
+      "state": "TN",
+      "street": "",
+      "zip": ""
+    },
+    "reset": false,
+    "secondaryCoordinator": {
+      "city": "",
+      "email": "",
+      "first": "",
+      "last": "",
+      "phone1": "",
+      "phone2": "",
+      "preferred": "",
+      "state": "TN",
+      "street": "",
+      "zip": ""
+    },
+    "seconondaryCoordinatorExists": false,
+    "services": {
+      "accessible": false,
+      "beds": 5,
+      "families": false,
+      "genderId": "",
+      "locationId": "",
+      "nights": 1,
+      "reminderCall": false,
+      "shortNotice": false,
+      "smoking": "",
+      "stairs": false
+    }
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.getChild(\"root\").getChild(\"RequireFields\").position.display \u003d False"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.activePane": {
+      "persistent": true
+    },
+    "custom.amenities": {
+      "persistent": true
+    },
+    "custom.congregationInfo": {
+      "persistent": true
+    },
+    "custom.locationInfo": {
+      "persistent": true
+    },
+    "custom.primaryCoordinator": {
+      "persistent": true
+    },
+    "custom.reset": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value:\n\t\tself.custom.amenities \u003d \u0027\u0027\n\t\tself.custom.congregationInfo \u003d {\n\t\t\t  \"afterHours\": \"\",\n\t\t\t  \"city\": \"\",\n\t\t\t  \"congregation\": \"\",\n\t\t\t  \"email\": \"\",\n\t\t\t  \"leader\": \"\",\n\t\t\t  \"line1\": \"\",\n\t\t\t  \"line2\": \"\",\n\t\t\t  \"notes\": \"\",\n\t\t\t  \"phone\": \"\",\n\t\t\t  \"state\": \"TN\",\n\t\t\t  \"website\": \"\",\n\t\t\t  \"zip\": \"\"\n\t\t\t}\n\t\tself.custom.locationInfo \u003d {\n\t\t\t  \"capacity\": 0,\n\t\t\t  \"city\": \"\",\n\t\t\t  \"congregationId\": \"\",\n\t\t\t  \"line1\": \"\",\n\t\t\t  \"line2\": \"\",\n\t\t\t  \"name\": \"Unknown\",\n\t\t\t  \"notes\": \"\",\n\t\t\t  \"state\": \"TN\",\n\t\t\t  \"zip\": \"\"\n\t\t\t}\n\t\tself.custom.primaryCoordinator \u003d {\n\t\t\t  \"city\": \"\",\n\t\t\t  \"email\": \"\",\n\t\t\t  \"first\": \"\",\n\t\t\t  \"last\": \"\",\n\t\t\t  \"phone1\": \"\",\n\t\t\t  \"phone2\": \"\",\n\t\t\t  \"preferred\": \"\",\n\t\t\t  \"state\": \"TN\",\n\t\t\t  \"street\": \"\",\n\t\t\t  \"zip\": \"\"\n\t\t\t}\n\t\tself.custom.secondaryCoordinator \u003d {\n\t\t\t  \"city\": \"\",\n\t\t\t  \"email\": \"\",\n\t\t\t  \"first\": \"\",\n\t\t\t  \"last\": \"\",\n\t\t\t  \"phone1\": \"\",\n\t\t\t  \"phone2\": \"\",\n\t\t\t  \"preferred\": \"\",\n\t\t\t  \"state\": \"TN\",\n\t\t\t  \"street\": \"\",\n\t\t\t  \"zip\": \"\"\n\t\t\t}\n\t\tself.custom.services \u003d {\n\t\t\t\t  \"accessible\": False,\n\t\t\t\t  \"beds\": \"\",\n\t\t\t\t  \"families\": False,\n\t\t\t\t  \"genderId\": \"\",\n\t\t\t\t  \"locationId\": \"\",\n\t\t\t\t  \"nights\": 1,\n\t\t\t\t  \"reminderCall\": False,\n\t\t\t\t  \"shortNotice\": False,\n\t\t\t\t  \"smoking\": \"\",\n\t\t\t\t  \"stairs\": False\n\t\t\t\t}\n\t\tself.custom.seconondaryCoordinatorExists \u003d False\n\t\tself.getChild(\"root\").getChild(\"RegistrationForm\").props.activePane \u003d 0\n\t\tself.custom.reset \u003d False"
+      },
+      "persistent": true
+    },
+    "custom.secondaryCoordinator": {
+      "persistent": true
+    },
+    "custom.seconondaryCoordinatorExists": {
+      "persistent": true
+    },
+    "custom.services": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1346,
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "text": "Winter Shelter New Congregation"
+          },
+          "path": "WinterShelter/Registration/Cards/RegistrationHeader",
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Spacer"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "FormPage"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{../RegistrationForm.props.activePane}\u003c5"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "../RegistrationForm.props.activePane"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn \u0027STEP \u0027 + str(value+1) + \u0027/5\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#0066FF",
+            "fontSize": "14px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "PageName"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "../RegistrationForm.props.activePane"
+              },
+              "transforms": [
+                {
+                  "expression": "switch({value}, 0, 1, 2, 3, 4, 5\r\n, \u0027Congregation Information\u0027\r\n, \u0027Coordinator Information\u0027\r\n, \u0027Services\u0027\r\n, \u0027Date Registration\u0027\r\n, \u0027Summary\u0027\r\n, \u0027Confirmation\u0027\r\n, \u0027Unknown\u0027\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#0066FF",
+            "fontSize": "22px",
+            "marginBottom": "10px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Progress"
+            },
+            "position": {
+              "height": 0.2,
+              "width": 1,
+              "y": 0.4
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "path": ".../RegistrationForm.props.activePane"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "bar": {
+                "color": "#0066FF"
+              },
+              "max": 4,
+              "style": {
+                "borderBottomLeftRadius": "10px",
+                "borderBottomRightRadius": "10px",
+                "borderTopLeftRadius": "10px",
+                "borderTopRightRadius": "10px",
+                "overflow": "hidden",
+                "paddingLeft": "53px",
+                "paddingRight": "53px"
+              },
+              "track": {
+                "color": "#D5D5D5"
+              }
+            },
+            "type": "ia.display.progress"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Page1"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 0"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 0"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page2"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page3"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 2"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 2"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page4"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 3"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 3"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page5"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 3"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 4"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "Dots"
+            },
+            "position": {
+              "height": 1,
+              "width": 1
+            },
+            "props": {
+              "justify": "space-between",
+              "style": {
+                "borderBottomLeftRadius": "10px",
+                "borderBottomRightRadius": "10px",
+                "borderTopLeftRadius": "10px",
+                "borderTopRightRadius": "10px",
+                "overflow": "visible",
+                "paddingLeft": "50px",
+                "paddingRight": "50px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "15px"
+        },
+        "props": {
+          "mode": "percent"
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "RegistrationForm"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.views[0].viewParams.addressLine1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.line1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.addressLine2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.line2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.city": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.congregation"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.email": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostAddressLine1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.line1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostAddressLine2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.line2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostZip": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.leader": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.leader"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.phone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.phone"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.state": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.zip": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.addressLine11": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.street"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.addressLine12": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.street"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.afterHoursPhone1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.afterHours"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.city1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.city2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.email1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.email2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.firstName1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.first"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.firstName2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.first"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.lastName1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.last"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.lastName2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.last"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.prefferedComms1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.preferred"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.prefferedComms2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.preferred"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.primaryPhone1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.primaryPhone2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.phone2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryPhone1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryPhone2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.phone2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.state1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.state2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.zip1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.zip2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.families": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.families"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.guestCount": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.beds"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.guestType": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.genderId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.services": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.amenities"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.smoking": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.smoking"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.stairs": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.stairs"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.weather": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.shortNotice"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.wheelchair": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.accessible"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.nights": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.nights"
+              },
+              "type": "property"
+            },
+            "persistent": true
+          },
+          "props.views[3].viewParams.reminder": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.reminderCall"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.congregation": {
+            "binding": {
+              "config": {
+                "path": "this.props.views[0].viewParams.congregationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.coordinator": {
+            "binding": {
+              "config": {
+                "expression": "{this.props.views[1].viewParams.firstName1} + \u0027 \u0027 + {this.props.views[1].viewParams.lastName1}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.guestsCount": {
+            "binding": {
+              "config": {
+                "path": "this.props.views[2].viewParams.guestCount"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.location": {
+            "binding": {
+              "config": {
+                "expression": "{this.props.views[0].viewParams.hostAddressLine1} + \u0027, \u0027 + {this.props.views[0].viewParams.hostCity}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.phone": {
+            "binding": {
+              "config": {
+                "path": "this.props.views[1].viewParams.primaryPhone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.startDate": {
+            "binding": {
+              "config": {
+                "path": "this.props.views[3].viewParams.schedule"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.types": {
+            "binding": {
+              "config": {
+                "path": "this.props.views[2].viewParams.guestType"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "activePane": 2,
+          "appearance": {
+            "arrows": {
+              "enabled": false
+            },
+            "dots": {
+              "enabled": false
+            }
+          },
+          "behavior": {
+            "desktopDraggable": false,
+            "mobileSwipeable": false
+          },
+          "style": {
+            "marginTop": "20px",
+            "overflow": "hidden"
+          },
+          "views": [
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "Zip",
+                "proceed": false
+              },
+              "viewPath": "WinterShelter/Registration/Steps/CongregationInfo"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "afterHoursPhone2": null,
+                "hasBackupCoordinator": false,
+                "neededToProceed": "Zip",
+                "proceed": false
+              },
+              "viewPath": "WinterShelter/Registration/Steps/CoordInfo"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "comments": "",
+                "lastSeasonExists": true,
+                "neededToProceed": "",
+                "partners": "",
+                "proceed": false,
+                "startGuestCount": 8
+              },
+              "viewPath": "WinterShelter/Registration/Steps/Services"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "",
+                "nights": 1,
+                "pattern": null,
+                "proceed": true,
+                "schedule": [
+                  339,
+                  330
+                ],
+                "support": "Space"
+              },
+              "viewPath": "WinterShelter/Registration/Steps/DateRegistration"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "comments": "",
+                "proceed": true
+              },
+              "viewPath": "WinterShelter/Registration/Steps/Summary"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "header": "Registration Complete",
+                "message": "We have recorded your registration. Thank you for being a part of Room in the Inn!",
+                "proceed": true
+              },
+              "viewPath": "WinterShelter/Registration/Steps/Confirmation"
+            }
+          ]
+        },
+        "type": "ia.display.carousel"
+      },
+      {
+        "meta": {
+          "name": "RequireFields"
+        },
+        "position": {
+          "basis": "32px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "../RegistrationForm.props.views"
+              },
+              "transforms": [
+                {
+                  "code": "\tneeded \u003d value[self.getSibling(\"RegistrationForm\").props.activePane][\u0027viewParams\u0027][\u0027neededToProceed\u0027]\n\tif needed \u003d\u003d \u0027\u0027 or needed is None:\n\t\tself.position.display \u003d False\n\treturn \u0027*Please provide info for the \u0027 + needed + \u0027 field.\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#D80000",
+            "fontSize": "12px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tif self.parent.parent.getChild(\"RegistrationForm\").props.activePane \u003e 0:\n\t\tself.parent.parent.getChild(\"RegistrationForm\").props.activePane -\u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "BackButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{.../RegistrationForm.props.activePane} \u003e 0 \u0026\u0026 {.../RegistrationForm.props.activePane} !\u003d 5"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#AAAAAA",
+                  "path": "material/chevron_left"
+                }
+              },
+              "primary": false,
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none",
+                "marginRight": "20px"
+              },
+              "text": "Back",
+              "textStyle": {
+                "color": "#AAAAAA"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tviews \u003d self.parent.parent.getChild(\"RegistrationForm\").props.views\n\tactivePane \u003d self.parent.parent.getChild(\"RegistrationForm\").props.activePane\n\t\n\t#Ready to proceed. Move to next page, manage submissions and closes.\n\tif views[activePane][\u0027viewParams\u0027][\u0027proceed\u0027]:\n\t\tself.parent.parent.getChild(\"RequireFields\").position.display \u003d False\n\t\t#Confirmation Page \u003d Close Button\n\t\tif activePane \u003d\u003d (len(views)-1):\n\t\t\tself.view.custom.reset \u003d True\n\t\t\tself.parent.parent.getChild(\"RegistrationForm\").props.activePane \u003d 0\n\t\t\tsystem.perspective.closeDock(\u0027NewCongregation\u0027)\n\t\t\treturn\n\t\t#Review Page \u003d Submit Button\t\n\t\tif activePane \u003d\u003d (len(views)-2):\n\t\t\t#Submit to database\n\t\t\t###Check if new and call appropriate query (creat vs update)###\n\t\t\t#Make a new congregation\n\t\t\tcongregationID \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/NewCongregation\", dict(self.view.custom.congregationInfo), getKey \u003d 1)\n\t\t\tif congregationID is None:\n\t\t\t\tself.props.text \u003d \u0027Congregation Error\u0027\n\t\t\t\treturn\n\t\t\t\n\t\t\t###Check if new and call appropriate query (creat vs update)###\n\t\t\t#Make a new location\n\t\t\tself.view.custom.locationInfo.congregationId \u003d congregationID\n\t\t\tlocationID \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/NewLocation\", dict(self.view.custom.locationInfo), getKey \u003d 1)\n\t\t\tif locationID is None:\n\t\t\t\tself.props.text \u003d \u0027Location Error\u0027\n\t\t\t\treturn\n\t\t\telse:\n\t\t\t\tself.view.custom.services.locationId \u003d locationID\n\t\t\t\t\t\t\n\t\t\t###Check if new and call appropriate query (creat vs update)###\n\t\t\t#Make a new human for new primary coordinator\n\t\t\tprimaryHumanID \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/NewCoordinatorHuman\", dict(self.view.custom.primaryCoordinator), getKey \u003d 1)\n\t\t\tif primaryHumanID is None:\n\t\t\t\tself.props.text \u003d \u0027Coordinator Error\u0027\n\t\t\t\treturn\n\t\t\telse:\t#Mark human as coordinator for shelter\n\t\t\t\tif system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/SetCoordinator\", {\"congregationId\": congregationID, \"isPrimary\": True, \"humanId\": primaryHumanID}) is None:\t\t\t\t\t\n\t\t\t\t\tself.props.text \u003d \u0027Coordinator Error\u0027\n\t\t\t\t\treturn\n\t\t\t\n\t\t\t###Check if new and call appropriate query (creat vs update)###\n\t\t\t#Make a new human for new secondary coordinator\n\t\t\tif self.view.custom.seconondaryCoordinatorExists:\n\t\t\t\tsecondaryHumanID \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/NewCoordinatorHuman\", dict(self.view.custom.secondaryCoordinator), getKey \u003d 1)\n\t\t\t\tif secondaryHumanID is None:\n\t\t\t\t\tself.props.text \u003d \u0027Coordinator Error\u0027\n\t\t\t\t\treturn\n\t\t\t\telse: #Mark Human as coordinator for shelter\n\t\t\t\t\tif system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/SetCoordinator\", {\"congregationId\": congregationID, \"isPrimary\": False, \"humanId\": primaryHumanID}) is None:\n\t\t\t\t\t\tself.props.text \u003d \u0027Coordinator Error\u0027\n\t\t\t\t\t\treturn\n\t\t\t\n\t\t\t###Check if new and call appropriate query (creat vs update)###\n\t\t\t#Create the services available for this location\n\t\t\tlocationPreferenceId \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/NewLocationPreference\", dict(self.view.custom.services), getKey \u003d 1)\n\t\t\tif locationPreferenceId is None:\n\t\t\t\tself.props.text \u003d \u0027Services Error\u0027\n\t\t\t\treturn\n\t\t\telse:\t#Add ammenities to the amenity table.\n\t\t\t\tamenities \u003d self.view.custom.amenities.split(\u0027,\u0027)\n\t\t\t\tfor amenity in amenities:\n\t\t\t\t\tif amenity is not None and amenity !\u003d \u0027\u0027:\t\n\t\t\t\t\t\tamenityId \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/GetAmenityId\", {\u0027amenity\u0027:amenity})\n\t\t\t\t\t\tsystem.perspective.print (\u0027Amenity \u003d\u0027 + str(amenityId))\n\t\t\t\t\t\tif amenityId \u003d\u003d 0:\n\t\t\t\t\t\t\tamenityId \u003d system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/NewAmenity\", {\u0027amenity\u0027:amenity}, getkey \u003d 1)\n\t\t\t\t\t\tsystem.perspective.print (\u0027Amenity \u003d\u0027 + str(amenityId))\n\t\t\t\t\t\tif system.db.runNamedQuery(\u0027RITI\u0027,\"WinterShelter/Registration/newLocationAmenity\", {\"amenityId\": amenityId, \"locationPreferenceId\": locationPreferenceId}) is None:\n\t\t\t\t\t\t\tself.props.text \u003d \u0027Location Amenity Error\u0027\n\t\t\t\t\t\t\treturn\n\t\t\t\n\t\t\t#Create the schedule\n\t\t\n\t\t\t#Refresh Table\n\t\t\tsystem.perspective.sendMessage(\u0027refreshCongregations\u0027,{},\u0027session\u0027)\n\t\t\n\t\t#Proceed to next page\n\t\tself.parent.parent.getChild(\"RegistrationForm\").props.activePane +\u003d 1\n\t\tself.parent.parent.getChild(\"RequireFields\").position.display \u003d False\n\t#Not ready to proceed. Display prompts.\n\telse:\n\t\tself.parent.parent.getChild(\"RequireFields\").position.display \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "NextButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({.../RegistrationForm.props.activePane} \u003d 4\r\n\t, \u0027Submit\u0027\r\n\t,if({.../RegistrationForm.props.activePane}\u003d5\r\n\t\t, \u0027Close\u0027\r\n\t\t, \u0027Next\u0027)\r\n\t)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#0066FF",
+                "borderBottomLeftRadius": "5px",
+                "borderBottomRightRadius": "5px",
+                "borderStyle": "none",
+                "borderTopLeftRadius": "5px",
+                "borderTopRightRadius": "5px"
+              },
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "custom": {
+          "test": 176,
+          "trigger": true,
+          "word": "test"
+        },
+        "meta": {
+          "name": "Buttons"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.test": {
+            "binding": {
+              "config": {
+                "path": "this.custom.trigger"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "code": "\tif value:\n\t\tsystem.db.runNamedQuery(\"WinterShelter/Registration/NewCongregation\", \n\t\t\t{\"line1\":self.custom.word, \"line2\":self.custom.word, \"city\":self.custom.word, \"leader\":self.custom.word, \"congregation\":self.custom.word, \"email\":self.custom.word, \"notes\":self.custom.word, \"phone\":self.custom.word, \"state\":\"AZ\", \"website\":self.custom.word, \"zip\":15675})\n\t\treturn system.db.runNamedQuery(\"WinterShelter/Registration/getNewCongregationID\",\n\t\t\t{\"line1\":self.custom.word, \"leader\":self.custom.word, \"congregation\":self.custom.word, \"phone\":self.custom.word}).getValueAt(0,0)\n\treturn 0",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "marginBottom": "50px",
+            "overflow": "visible",
+            "paddingLeft": "50px",
+            "paddingRight": "50px",
+            "paddingTop": "3px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "resetWinterRegistration",
+          "pageScope": true,
+          "script": "\tself.view.custom.reset \u003d True",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

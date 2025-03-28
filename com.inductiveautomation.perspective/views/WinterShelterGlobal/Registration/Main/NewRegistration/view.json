@@ -1,0 +1,121 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.getChild(\"root\").getChild(\"EmbeddedView\").props.params.address \u003d \u0027\u0027\n\tself.getChild(\"root\").getChild(\"EmbeddedView\").props.params.congregationName \u003d \u0027\u0027\n\tself.getChild(\"root\").getChild(\"EmbeddedView\").props.params.create \u003d False\n\tself.getChild(\"root\").getChild(\"EmbeddedView\").props.params.email \u003d \u0027\u0027\n\tself.getChild(\"root\").getChild(\"EmbeddedView\").props.params.password \u003d \u0027\u0027\n\tself.getChild(\"root\").getChild(\"EmbeddedView\").props.params.register \u003d False\n\t"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "!{this.props.params.create}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "address": "",
+            "congregationName": "",
+            "create": false,
+            "email": "",
+            "password": "",
+            "register": false
+          },
+          "path": "WinterShelterGlobal/Registration/Steps/New/RegisterCongregation"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "NewCongregation"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "../EmbeddedView.props.params.create"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.address": {
+            "binding": {
+              "config": {
+                "path": "../EmbeddedView.props.params.address"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.congregationName": {
+            "binding": {
+              "config": {
+                "path": "../EmbeddedView.props.params.congregationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.email": {
+            "binding": {
+              "config": {
+                "path": "../EmbeddedView.props.params.email"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "WinterShelter/Registration/Main/NewCongregation",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "resetWinterRegistration",
+          "pageScope": true,
+          "script": "\tself.getChild(\"EmbeddedView\").props.params.address \u003d \u0027\u0027\n\tself.getChild(\"EmbeddedView\").props.params.congregationName \u003d \u0027\u0027\n\tself.getChild(\"EmbeddedView\").props.params.create \u003d False\n\tself.getChild(\"EmbeddedView\").props.params.email \u003d \u0027\u0027\n\tself.getChild(\"EmbeddedView\").props.params.password \u003d \u0027\u0027\n\tself.getChild(\"EmbeddedView\").props.params.register \u003d False",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

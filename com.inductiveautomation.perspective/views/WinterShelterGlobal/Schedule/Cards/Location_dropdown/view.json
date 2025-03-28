@@ -1,0 +1,105 @@
+{
+  "custom": {},
+  "params": {
+    "Column": "value",
+    "rowIndex": "value",
+    "value": -1
+  },
+  "propConfig": {
+    "params.Column": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rowIndex": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 22,
+      "width": 165
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\trow \u003d self.view.params.rowIndex\n\tcol \u003d self.view.params.Column\n\tHostLocationType \u003d self.props.value\n\tpayload \u003d {\u0027row\u0027:row,\u0027col\u0027:col,\u0027HostLocationType\u0027:HostLocationType}\n\tsystem.perspective.sendMessage(\"updateLocation\", payload \u003d payload, scope \u003d \u0027page\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "165px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "{session.custom.isAdministrator}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.options": {
+                "binding": {
+                  "config": {
+                    "queryPath": "WinterShelterGlobal/Schedule/Get_HostLocationType"
+                  },
+                  "type": "query"
+                }
+              },
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "Dropdowns/DD_Options"
+              },
+              "style": {
+                "classes": "Dropdowns/DD_Default"
+              }
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "Location"
+        },
+        "position": {
+          "basis": "22px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

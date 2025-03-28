@@ -1,0 +1,1504 @@
+{
+  "custom": {
+    "filtered_data": null,
+    "filters": [],
+    "sql_data": {
+      "$": [
+        "ds",
+        192,
+        1668074579300
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dueDate",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "RITINotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "staffId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "statusId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "ticketTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "completed",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "title",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "contact",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "type",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Status",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "ticketPriority",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "priorityId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "staffName",
+          "type": "String"
+        }
+      ]
+    },
+    "table_data": null
+  },
+  "params": {
+    "filter_activeInactive": "",
+    "filter_congregationId": -1,
+    "filter_dateRangeEnd": "",
+    "filter_dateRangeStart": "",
+    "filter_priorityId": -1,
+    "filter_searchText": "",
+    "filter_staffId": -1,
+    "filter_startDate": "2021-06-20 00:00:00",
+    "filter_statusId": -1,
+    "filter_ticketTypeId": -1,
+    "locationId": 160,
+    "selectedRowData": {
+      "RITINotes": "",
+      "Status": "",
+      "completed": "None",
+      "congregationNotes": "",
+      "contact": "",
+      "dueDate": "None",
+      "id": -1,
+      "locationId": -1,
+      "locationName": "",
+      "priorityId": -1,
+      "staffId": -1,
+      "staffName": "",
+      "statusId": -1,
+      "ticketPriority": "",
+      "ticketTypeId": -1,
+      "timeCreated": "",
+      "title": "",
+      "type": ""
+    },
+    "selection_data": null,
+    "table_data": null
+  },
+  "propConfig": {
+    "custom.sql_data": {
+      "binding": {
+        "config": {
+          "designerUseLimit": false,
+          "parameters": {
+            "activeInactive": "{view.params.filter_activeInactive}",
+            "congregationId": "{view.params.locationId}",
+            "dateRangeEnd": "{view.params.filter_dateRangeEnd}",
+            "dateRangeStart": "{view.params.filter_dateRangeStart}",
+            "priorityId": "{view.params.filter_priorityId}",
+            "searchText": "CONCAT(\"%\",{view.params.filter_searchText},\"%\")",
+            "staffId": "{view.params.filter_staffId}",
+            "startDateFilter": "getDate(1970,1,1)",
+            "statusId": "{view.params.filter_statusId}",
+            "ticketTypeId": "{view.params.filter_ticketTypeId}"
+          },
+          "queryPath": "WinterShelterGlobal/Support/SupportTickets"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.filter_activeInactive": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_congregationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_dateRangeEnd": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_dateRangeStart": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_priorityId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_searchText": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_staffId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_startDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_statusId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter_ticketTypeId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectedRowData": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selection_data": {
+      "paramDirection": "output"
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 633,
+      "width": 1104
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "DockID": 163
+        },
+        "events": {
+          "component": {
+            "onRowClick": {
+              "config": {
+                "script": "\t\n\tselectedColumn \u003d self.props.selection.selectedColumn\n\tif selectedColumn \u003d\u003d \"locationId\": \n\t\tid \u003d \"PreviewCongregation\" \n\t\tlocationId \u003d self.props.selection.data[0].locationId\n\t\tparams \u003d {\"locationId\":locationId}\n\t\tif self.custom.DockID !\u003d locationId:\n\t\t\tsystem.perspective.openDock(id\u003did,params\u003dparams)\n\t\t\tpayload \u003d {\"locationId\":locationId}\n\t\t\tsystem.perspective.sendMessage(\"DockUpdate\", payload\u003dpayload, scope \u003d \u0027page\u0027 )\n\t\telse:\n\t\t\tsystem.perspective.toggleDock(id\u003did,params\u003dparams)\n\t\tself.custom.DockID \u003d locationId\n\telse:\n\t\tself.view.params.selectedRowData  \u003d self.props.data[event.row]\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "100%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.sql_data"
+              },
+              "transforms": [
+                {
+                  "code": "\ttable_data \u003d []\n\t#Iterate over the results of the query\n\tfor row in range(value.getRowCount()):\n\t\trow_data \u003d {}\n\t\tstyle \u003d {}\n\t\tstyle[\u0027classes\u0027] \u003d \"Table/Cell_Dashboard\"\n\t\t#Map query results into correct attributes\n\t\trow_data[\u0027id\u0027] \u003d value.getValueAt(row, \"id\")\n\t\trow_data[\u0027ticketHash\u0027] \u003d \"#\" + str(value.getValueAt(row, \"id\"))\n\t\trow_data[\u0027dueDate\u0027] \u003d value.getValueAt(row, \"dueDate\")\n\t\trow_data[\u0027locationId\u0027] \u003d value.getValueAt(row, \"locationId\")\n\t\trow_data[\u0027congregationNotes\u0027] \u003d value.getValueAt(row, \"congregationNotes\")\n\t\trow_data[\u0027RITINotes\u0027] \u003d value.getValueAt(row, \"RITINotes\")\n\t\trow_data[\u0027staffId\u0027] \u003d value.getValueAt(row, \"staffId\")\n\t\trow_data[\u0027statusId\u0027] \u003d value.getValueAt(row, \"statusId\")\n\t\trow_data[\u0027ticketTypeId\u0027] \u003d value.getValueAt(row, \"ticketTypeId\")\n\t\trow_data[\u0027timeCreated\u0027] \u003d system.date.format(value.getValueAt(row, \"timeCreated\"),\"MM/dd/YYYY\")\n\t\tif value.getValueAt(row, \"Completed\") is None:\n\t\t\trow_data[\u0027completed\u0027] \u003d \u0027\u0027\n\t\telse:\n\t\t\trow_data[\u0027completed\u0027] \u003d value.getValueAt(row, \"Completed\")\n\t\trow_data[\u0027title\u0027] \u003d value.getValueAt(row, \"title\")\n\t\trow_data[\u0027contact\u0027] \u003d value.getValueAt(row, \"contact\")\n\t\trow_data[\u0027locationName\u0027] \u003d value.getValueAt(row, \"locationName\")\n\t\trow_data[\u0027type\u0027] \u003d value.getValueAt(row, \"type\")\n\t\trow_data[\u0027Status\u0027] \u003d value.getValueAt(row, \"Status\")\n\t\trow_data[\u0027ticketPriority\u0027] \u003d value.getValueAt(row, \"ticketPriority\")\n\t\trow_data[\u0027priorityId\u0027] \u003d value.getValueAt(row, \"priorityId\")\n\t\trow_data[\u0027staffName\u0027] \u003d value.getValueAt(row, \"staffName\")\n\t\t#Append the individual row date to the table data object\n\t\ttable_data.append(row_data)\n\t\t\n\treturn table_data\n#\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "classes": "Table/Cell_Detail_NoBG"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "locationId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": " "
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "view",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": true,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "1_globalTEMPLATES/Tables/TableOptions",
+              "visible": false,
+              "width": 40
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "id",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Ticket"
+              },
+              "justify": "center",
+              "number": "value",
+              "numberFormat": "none",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "view",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": true,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "1_globalTEMPLATES/Tables/TableNumericHash",
+              "visible": true,
+              "width": 70
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "locationName",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Congregation"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 120
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "title",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Subject"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "string",
+              "resizable": true,
+              "sort": "ascending",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 120
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "type",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Type"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 70
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Status",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Status"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 50
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ticketPriority",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Priority"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 50
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "timeCreated",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Created Date"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 80
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "dueDate",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Due Date"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "date",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 50
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "staffId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Staff"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "statusId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Status"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ticketTypeId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Status"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "priorityId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Status"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "completed",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Completed"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "date",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 70
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "staffName",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": "Staff"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 80
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "congregationNotes",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": " "
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 80
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "RITINotes",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": " "
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 80
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "contact",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail"
+                },
+                "title": " "
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 80
+            }
+          ],
+          "pager": {
+            "initialOption": 10
+          },
+          "rows": {
+            "highlight": {
+              "color": "#ccffff"
+            },
+            "striped": {
+              "enabled": false
+            }
+          },
+          "selection": {
+            "style": {
+              "backgroundColor": "#9af4eb4d"
+            }
+          },
+          "style": {
+            "classes": "Table/Cell_Detail"
+          },
+          "virtualized": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "WinterShelterNewTask",
+              "pageScope": true,
+              "script": "\t# clear the selected row\n\tself.props.selection.selectedRow \u003d -1\n\tself.view.params.selectedRowData.Created \u003d system.date.now()\n\tself.view.params.selectedRowData[\u0027Due Date\u0027] \u003d \u0027\u0027\n\tself.view.params.selectedRowData.Task \u003d \u0027\u0027\n\tself.view.params.selectedRowData[\u0027Task Type\u0027] \u003d \u0027\u0027\n\tself.view.params.selectedRowData.id \u003d \u0027\u0027\n\tself.view.params.selectedRowData.notes \u003d \u0027\u0027\n\tself.view.params.selectedRowData.priority \u003d \u0027\u0027\n\tself.view.params.selectedRowData.staffId \u003d \u0027\u0027\n\tself.view.params.selectedRowData.statusId \u003d \u0027\u0027\n\tself.view.params.selectedRowData.typeId \u003d \u0027\u0027\n\t\n\tsystem.perspective.print(\"recieved message WinterShelterNewTask on Table\")",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "refreshTasksDashboard",
+              "pageScope": true,
+              "script": "\t### Refresh data\n\t#system.perspective.print(\"Refresh Case Notes Dashboard\")\n\tself.refreshBinding(\"props.data\")\n\tself.props.selection.selectedRow \u003d None",
+              "sessionScope": true,
+              "viewScope": true
+            }
+          ]
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "direction": "column"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "refreshTicketsDashboardData",
+          "pageScope": true,
+          "script": "\t#from time import sleep\n\t\t### Refresh data\n\t\n\tself.view.refreshBinding(\"custom.sql_data\")\n\n\t",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

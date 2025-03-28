@@ -1,0 +1,72 @@
+{
+  "custom": {},
+  "params": {
+    "funcSelectVolunteer": false
+  },
+  "propConfig": {
+    "params.funcSelectVolunteer": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 47,
+      "width": 1100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.params.funcSelectVolunteer \u003d True\n\n"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_select"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary",
+            "marginBottom": "5px",
+            "marginTop": "5px"
+          },
+          "text": "select volunteer"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder_2"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_TEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

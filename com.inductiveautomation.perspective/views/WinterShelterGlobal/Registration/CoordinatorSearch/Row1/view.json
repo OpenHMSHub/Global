@@ -1,0 +1,233 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 1209
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_FirstName"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "firstName",
+            "filter": "volunteerSearch",
+            "key": "firstName",
+            "placeholder": "First Name",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_MiddleName"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "middleName",
+            "filter": "volunteerSearch",
+            "key": "middleName",
+            "placeholder": "Middle Name",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_LastName"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "lastName",
+            "filter": "volunteerSearch",
+            "key": "lastName",
+            "placeholder": "Last Name",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_NickName"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "nickName",
+            "filter": "volunteerSearch",
+            "key": "nickName",
+            "placeholder": "Nickname",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Gender"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "FilterGlobal/getGenderId"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "genderId",
+            "filter": "volunteerSearch",
+            "key": "gender",
+            "placeholder": "Gender",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "lblSearch"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header",
+            "textAlign": "end"
+          },
+          "text": "Search:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Search"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": [
+              "volunteerGroupName",
+              "firstName",
+              "middleName",
+              "lastName",
+              "nickName",
+              "dob"
+            ],
+            "filter": "volunteerSearch",
+            "key": "search",
+            "placeholder": "Search",
+            "searchType": "like"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Table/Search_Bar"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t#Clear the filter components\n\tsystem.perspective.sendMessage(messageType\u003d\"clearFilter\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "ClearFilters"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Filtering/Filters/ClearFilters"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

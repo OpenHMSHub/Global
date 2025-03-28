@@ -1,0 +1,310 @@
+{
+  "custom": {},
+  "params": {
+    "Call": true,
+    "Category": "Call",
+    "Reminder": false,
+    "ScheduleMeeting": false,
+    "SendEmail": false,
+    "ToDo": false,
+    "TypeID": 2,
+    "text": "Task Type"
+  },
+  "propConfig": {
+    "params.Call": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value :\n\t\tself.params.ScheduleMeeting \u003d False\n\t\tself.params.ToDo \u003d False\n\t\tself.params.Reminder \u003d False\n\t\tself.params.SendEmail \u003d False\n\t\tself.params.Category \u003d \"Call\"\n\t\tself.params.TypeID \u003d 2"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.Category": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.Category.Faith_Meetings": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Category.Fundraising": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Category.Personal_Growth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Category.Seminar": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Category.Social_Event": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Category[0]": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.PersonalGrowth": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.Reminder": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value :\n\t\tself.params.ScheduleMeeting \u003d False\n\t\tself.params.ToDo \u003d False\n\t\tself.params.Call \u003d False\n\t\tself.params.SendEmail \u003d False\n\t\tself.params.Category \u003d \"Reminder\"\n\t\tself.params.TypeID \u003d 4"
+      },
+      "paramDirection": "inout"
+    },
+    "params.ScheduleMeeting": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value :\n\t\tself.params.ToDo \u003d False\n\t\tself.params.Call \u003d False\n\t\tself.params.Reminder \u003d False\n\t\tself.params.SendEmail \u003d False\n\t\tself.params.Category \u003d \"Schedule Meeting\"\n\t\tself.params.TypeID \u003d 3"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.Seminar": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.SendEmail": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value :\n\t\tself.params.ScheduleMeeting \u003d False\n\t\tself.params.ToDo \u003d False\n\t\tself.params.Call \u003d False\n\t\tself.params.Reminder \u003d False\n\t\tself.params.Category \u003d \"Send Email\"\n\t\tself.params.TypeID \u003d 5"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.SocialEvent": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.ToDo": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value \u003d\u003d True :\n\t\tself.params.ScheduleMeeting \u003d False\n\t\tself.params.Call \u003d False\n\t\tself.params.Reminder \u003d False\n\t\tself.params.SendEmail \u003d False\n\t\tself.params.Category \u003d \"To Do\"\n\t\tself.params.TypeID \u003d 1\n"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.TypeID": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params[\u0027Schedule Meeting\u0027]": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value :\n\t\tself.params.ClassesAndWorkshop \u003d False\n\t\tself.params.SocialEvent \u003d False\n\t\tself.params.Seminar \u003d False\n\t\tself.params.FaithMeetings \u003d False\n\t\tself.params.PersonalGrowth \u003d False\n\t\tself.params.Category \u003d \"Schedule Meeting\""
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 164,
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 1,
+              "width": 0.168
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.text"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "selected": false,
+                "text": "test"
+              },
+              "path": "Events/Dashboard/CategoryButton",
+              "style": {
+                "classes": "Text/Add_HeaderText"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 1,
+              "width": 0.0833
+            },
+            "propConfig": {
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "path": "../Label.position.width"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#FF0000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "25px"
+        },
+        "props": {
+          "direction": "column-reverse",
+          "mode": "percent",
+          "style": {
+            "fontWeight": "bold"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "127px"
+        },
+        "propConfig": {
+          "props.instances[0].selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.ToDo"
+              },
+              "type": "property"
+            }
+          },
+          "props.instances[1].selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.Call"
+              },
+              "type": "property"
+            }
+          },
+          "props.instances[2].selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.ScheduleMeeting"
+              },
+              "type": "property"
+            }
+          },
+          "props.instances[3].selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.Reminder"
+              },
+              "type": "property"
+            }
+          },
+          "props.instances[4].selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.SendEmail"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "instances": [
+            {
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": "",
+                "marginTop": 10
+              },
+              "text": "To Do"
+            },
+            {
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": "",
+                "marginTop": 10
+              },
+              "text": "Call"
+            },
+            {
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": "",
+                "marginTop": 10
+              },
+              "text": "Schedule Meeting"
+            },
+            {
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": "",
+                "marginTop": 10
+              },
+              "text": "Reminder"
+            },
+            {
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": "",
+                "marginTop": 10
+              },
+              "text": "Send Email"
+            }
+          ],
+          "path": "WinterShelter/Tasks/Dashboard/Main/Edit/Cards/CategoryButton",
+          "style": {
+            "marginLeft": 20,
+            "marginTop": 10
+          }
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "direction": "column",
+      "justify": "space-between",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

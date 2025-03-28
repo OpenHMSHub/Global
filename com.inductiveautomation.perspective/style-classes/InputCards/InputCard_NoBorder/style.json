@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "marginTop": "5px",
+      "paddingBottom": "5px",
+      "paddingLeft": "10px",
+      "paddingRight": "10px"
+    }
+  }
+}

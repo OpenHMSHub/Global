@@ -1,0 +1,3996 @@
+{
+  "custom": {
+    "CanceledSchedule": [],
+    "IsNewRegistration": false,
+    "activePane": 0,
+    "addSeason": true,
+    "addedDays": [],
+    "amenities": "",
+    "congregationInfo": {
+      "addressLine1": "",
+      "addressLine2": "",
+      "city": "",
+      "congregationId": null,
+      "congregationName": "",
+      "currentSeason": "",
+      "firstSeason": "",
+      "phone": "",
+      "providerId": null,
+      "state": "",
+      "zip": ""
+    },
+    "currentSeasonId": 3,
+    "currentSeasonName": "2024-2025",
+    "daysDataset": {
+      "$": [
+        "ds",
+        192,
+        1742455759355
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "scheduleId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "totalBeds",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "HostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "gender",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dayOfYear",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "DateFromDayOfYear",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "status",
+          "type": "String"
+        }
+      ]
+    },
+    "editEnabled": false,
+    "hostMoreData": {
+      "$": [
+        "ds",
+        192,
+        1742455759830
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "HostMoreOption",
+          "type": "String"
+        }
+      ]
+    },
+    "lastSeasonId": -1,
+    "locationInfo": {
+      "addressLine1": "",
+      "addressLine2": "",
+      "city": "",
+      "dateSelectionDays": [],
+      "dateSelectionPattern": null,
+      "dateSelectionPattern_db": [],
+      "frequencyId": null,
+      "hostLocal": true,
+      "hostLocationType": "",
+      "hostLocationTypeId": null,
+      "locationId": null,
+      "locationName": "",
+      "notes": "",
+      "pickupTime": null,
+      "state": "",
+      "transportId": null,
+      "zip": ""
+    },
+    "previousSeasonId": -1,
+    "primaryCoordinator": {
+      "city": "",
+      "email": "",
+      "first": "",
+      "humanId": null,
+      "id": null,
+      "last": "",
+      "notes": "",
+      "phone1": "",
+      "phone2": "",
+      "preferred": "",
+      "state": "",
+      "street": "",
+      "zip": ""
+    },
+    "registeredThisSeason": false,
+    "reset": false,
+    "schedule": [],
+    "scheduleData": {
+      "$": [
+        "ds",
+        192,
+        1742455759576
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dayOfYear",
+          "type": "Integer"
+        }
+      ]
+    },
+    "scheduleInfo": {
+      "hostMoreFinances": false,
+      "hostMoreList": [],
+      "hostMoreMeals": false,
+      "hostMoreOther": false,
+      "hostMoreOtherDetail": "",
+      "hostMoreSpace": false,
+      "hostMoreTransportation": false,
+      "hostMoreVolunteers": false,
+      "reminderCall": true,
+      "scheduleComments": ""
+    },
+    "schedulePrev": [],
+    "secondaryCoordinator": {
+      "city": "",
+      "email": "",
+      "first": "",
+      "hasBackupCoordinator": false,
+      "humanId": null,
+      "id": null,
+      "last": "",
+      "notes": "",
+      "phone1": "",
+      "phone2": "",
+      "preferred": "",
+      "state": "",
+      "street": "",
+      "zip": ""
+    },
+    "selectedSeasonId": -1,
+    "services": {
+      "accessible": "",
+      "breakfast": false,
+      "capacity": 0,
+      "capacityLastSeason": 0,
+      "clothing": false,
+      "comments": "",
+      "dinner": false,
+      "families": false,
+      "genderId": null,
+      "haircuts": false,
+      "hygieneItems": false,
+      "laundry": false,
+      "locationSeasonId": null,
+      "nights": 0,
+      "otherService": false,
+      "otherServiceList": "",
+      "partners": "",
+      "sackLunches": false,
+      "shortNotice": false,
+      "showers": false,
+      "smoking": "",
+      "stairs": ""
+    },
+    "sqlData": {
+      "$": [
+        "ds",
+        192,
+        1742455759397
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "accessible_original",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "stairs_original",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "smoking_original",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "bedsActualLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "transportId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Frequency",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "frequencyId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionPattern",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionDays",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "pickupTime",
+          "type": "String"
+        }
+      ]
+    },
+    "todayDayOfYear": 79,
+    "viewPreviousSeasons": true
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\t#sqlData \u003d self.custom.sqlData\n\t#self.refreshBinding(\"custom.sqlData\")\n\tself.getChild(\"root\").getChild(\"RequireFields\").position.display \u003d False\n#\tsystem.perspective.print(\"1: \" +str(self.getChild(\"root\").getChild(\"RegistrationForm\").props.views[2].viewParams.capacity))\n#\tsystem.perspective.print(\"2: \" + str(self.getChild(\"root\").getChild(\"RegistrationForm\").props.views[3].viewParams.newCapacity))\n\t#self.view.custom.reset \u003d True"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "locationID": 286
+  },
+  "propConfig": {
+    "custom.CanceledSchedule": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/getCanceledSchedule_BySeason"
+        },
+        "transforms": [
+          {
+            "code": "\tCancelledScheduleData \u003d value\n\tCancelledSchedule \u003d[]\n\tif CancelledScheduleData.getRowCount():\n\t\tfor row in range(CancelledScheduleData.getRowCount()):\n\t\t\tdayOfYear \u003d CancelledScheduleData.getValueAt(row,\u0027dayOfYear\u0027)\n\t\t\tCancelledSchedule.append(dayOfYear)\n\treturn CancelledSchedule",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.IsNewRegistration": {
+      "persistent": true
+    },
+    "custom.activePane": {
+      "persistent": true
+    },
+    "custom.addSeason": {
+      "onChange": {
+        "enabled": null,
+        "script": "\timport traceback\n\n\n\ttry:\n\t\tif currentValue.value:\n\t\t\tproject \u003d \"RITI\"\n\t\t\tlocationId \u003d self.custom.locationInfo.locationId\n\t\t\t#Verify the congregation is not already registered for the season\n\t\t\tpath \u003d \"WinterShelter/Registration/getLocationStatus\"\n\t\t\tparameters \u003d {\u0027locationId\u0027:locationId}\n\t\t\tstatusDS \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\tstatus \u003d statusDS.getValueAt(0,\u0027status\u0027)\n\t\t\t#system.perspective.print(str(status)) \n\t\t\tif status \u003d\u003d 0:\n\t\t\t\tsystem.perspective.print(\u0027New season for Congregation ID \u0027 + str(locationId)) \n\t\t\t\t#Register the location\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/insertNewSeasonRegistration\"\n\t\t\t\tparameters \u003d {\u0027locationId\u0027:locationId, \u0027newSeasonId\u0027:self.custom.currentSeasonId, \u0027lastActiveSeasonId\u0027:self.custom.lastSeasonId}\n\t\t\t\tsuccess \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t#Refresh the table\n\t\t\tmessageType \u003d \u0027resetWinterRegistration\u0027\n\t\t\tsystem.perspective.sendMessage(messageType,scope \u003d \"session\")\n\t\t#reset when done\n\t\tself.custom.addSeason \u003d False\n\texcept:\n\t\tlogger \u003d system.util.getLogger(\"Winter Shelter PopupRegisterLocation buttonYes\")\n\t\tmsg \u003d traceback.format_exc()\n\t\tlogger.error(msg)\n"
+      },
+      "persistent": true
+    },
+    "custom.addedDays": {
+      "binding": {
+        "config": {
+          "path": "view.custom.daysDataset"
+        },
+        "transforms": [
+          {
+            "code": "\tdaysHosting \u003d [] \n\tif value is not None and value.getRowCount() \u003e 0:\n\t\tfor i in range(value.getRowCount()):\n\t\t\tdayOfYear \u003d value.getValueAt(i,\u0027dayOfYear\u0027)\n\t\t\tstatus \u003d value.getValueAt(i,\u0027status\u0027)\n\t\t\tif dayOfYear is not None and status is not None and status in (\u0027Addition\u0027):\n\t\t\t\tdaysHosting.append(int(dayOfYear))\n\treturn daysHosting",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.amenities": {
+      "persistent": true
+    },
+    "custom.congregationInfo": {
+      "persistent": true
+    },
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.currentSeasonName": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027Seasons\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.daysDataset": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}",
+            "todayDayOfTheYear": "{view.custom.todayDayOfYear}"
+          },
+          "queryPath": "WinterShelterGlobal/Schedule/GetSchedulePerLocation_ScheduleDetail"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.editEnabled": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.currentSeasonId} \u003d {view.custom.selectedSeasonId},true,false)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.hostMoreData": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/getLocationHostMore_BySeason"
+        },
+        "type": "query"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.getChild(\"root\").getChild(\"RequireFields\").position.display \u003d False\n\tself.custom.reset \u003d True"
+      },
+      "persistent": true
+    },
+    "custom.lastSeasonId": {
+      "binding": {
+        "config": {
+          "path": "/root/FlexContainer/season.props.options"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount():\n\t\treturn value.getValueAt(value.getRowCount()-1,\u0027id\u0027)\n\telse:\n\t\treturn -1",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.custom.selectedSeasonId \u003d self.custom.lastSeasonId"
+      },
+      "persistent": true
+    },
+    "custom.locationInfo": {
+      "persistent": true
+    },
+    "custom.previousSeasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "currentSeasonId": "{view.custom.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/GetLastSeason_FromCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None and value.getRowCount() \u003e0:\n\t\treturn value.getValueAt(0,\u0027id\u0027)\n\telse:\n\t\treturn -1",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.primaryCoordinator": {
+      "persistent": true
+    },
+    "custom.registeredThisSeason": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.lastSeasonId} \u003d {view.custom.currentSeasonId},True,False)"
+        },
+        "type": "expr"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value:\n\t\t#Congregation is registered\n\t\tself.custom.viewPreviousSeasons \u003d True\n\telse:\n\t\t#congregation is not registered\n\t\tself.custom.viewPreviousSeasons \u003d False"
+      },
+      "persistent": true
+    },
+    "custom.reset": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value:\n\t\tsystem.perspective.print(\u0027Registration Data Reset\u0027)\n\t\tself.refreshBinding(\"custom.schedulePrev\")\n\t\tself.refreshBinding(\"custom.CanceledSchedule\")\n#\t\tself.refreshBinding(\u0027getChild(\"root\").getChild(\"RegistrationForm\").props.views[3].viewParams.newCapacity\u0027)\n\t\t#Refreshing the SQL binding causes an infintie loop. Don\u0027t do this.\n\t\t#self.refreshBinding(\"custom.sqlData\")\n\t\tself.custom.amenities \u003d \u0027\u0027\n\t\tlocationData \u003d self.custom.sqlData\n\t\tif locationData is not None and locationData.getRowCount():\n\t\t\tself.custom.congregationInfo \u003d {\n\t\t\t\t  \"congregationId\": locationData.getValueAt(0,\u0027congregationId\u0027),\n\t\t\t\t  \"providerId\": locationData.getValueAt(0,\u0027providerId\u0027),\n\t\t\t\t  \"congregationName\": locationData.getValueAt(0,\u0027congregationName\u0027),\n\t\t\t\t  \"firstSeason\": str(locationData.getValueAt(0,\u0027firstSeason\u0027)),\n\t\t\t\t  \"currentSeason\": str(locationData.getValueAt(0,\u0027currentSeason\u0027)),\n\t\t\t\t  \"addressLine1\": locationData.getValueAt(0,\u0027congregationAddressLine1\u0027),\n\t\t\t\t  \"addressLine2\": locationData.getValueAt(0,\u0027congregationAddressLine2\u0027),\n\t\t\t\t  \"city\": locationData.getValueAt(0,\u0027congregationCity\u0027),\n\t\t\t\t  \"state\": locationData.getValueAt(0,\u0027congregationState\u0027),\n\t\t\t\t  \"zip\": str(locationData.getValueAt(0,\u0027congregationZipCode\u0027)),\n\t\t\t\t  \"phone\": locationData.getValueAt(0,\u0027congregationPhone\u0027)\n\t\t\t\t}\n\t\t\tself.custom.locationInfo \u003d {\n\t\t\t\t  \"hostLocal\":locationData.getValueAt(0,\u0027hostLocal\u0027),\n\t\t\t\t  \"hostLocationTypeId\":locationData.getValueAt(0,\u0027hostLocationTypeId\u0027),\n\t\t\t\t  \"hostLocationType\":locationData.getValueAt(0,\u0027hostLocationType\u0027),\n\t\t\t\t  \"locationId\": locationData.getValueAt(0,\u0027locationId\u0027),\n\t\t\t\t  \"locationName\": locationData.getValueAt(0,\u0027locationName\u0027),\n\t\t\t\t  \"addressLine1\": locationData.getValueAt(0,\u0027locationAddressLine1\u0027),\n\t\t\t\t  \"addressLine2\": locationData.getValueAt(0,\u0027locationAddressLine2\u0027),\n\t\t\t\t  \"city\": locationData.getValueAt(0,\u0027locationCity\u0027),\n\t\t\t\t  \"state\": locationData.getValueAt(0,\u0027locationState\u0027),\n\t\t\t\t  \"zip\": str(locationData.getValueAt(0,\u0027locationZipCode\u0027)),\n\t\t\t\t  \"notes\": locationData.getValueAt(0,\u0027registrationNotes\u0027),\n\t\t\t\t  \"transportId\":locationData.getValueAt(0,\u0027transportId\u0027),\n\t\t\t\t  \"frequencyId\":locationData.getValueAt(0,\u0027frequencyId\u0027),\n\t\t\t\t  \"dateSelectionPattern\":locationData.getValueAt(0,\u0027dateSelectionPattern\u0027),\n\t\t\t\t  \"dateSelectionPattern_db\":eval(locationData.getValueAt(0,\u0027dateSelectionDays\u0027)),\n\t\t\t\t  \"dateSelectionDays\":eval(locationData.getValueAt(0,\u0027dateSelectionDays\u0027)),\n\t\t\t\t  \"pickupTime\":locationData.getValueAt(0,\u0027pickupTime\u0027)\n\t\t\t\t}\n\t\t\tself.custom.primaryCoordinator \u003d {\n\t\t\t\t\"id\":locationData.getValueAt(0,\u0027coordinatorId\u0027),\n\t\t\t\t\"humanId\":locationData.getValueAt(0,\u0027coordinatorHumanId\u0027),\n\t\t\t\t\"first\": locationData.getValueAt(0,\u0027coordinatorFirstName\u0027),\n\t\t\t\t\"last\": locationData.getValueAt(0,\u0027coordinatorLastName\u0027),\n\t\t\t\t\"street\": locationData.getValueAt(0,\u0027coordinatorAddress\u0027),\n\t\t\t\t\"city\": locationData.getValueAt(0,\u0027coordinatorCity\u0027),\n\t\t\t\t\"state\": locationData.getValueAt(0,\u0027coordinatorState\u0027),\n\t\t\t\t\"zip\": str(locationData.getValueAt(0,\u0027coordinatorZipCode\u0027)),\n\t\t\t\t\"phone1\": locationData.getValueAt(0,\u0027coordinatorPhone\u0027),\n\t\t\t\t\"phone2\": locationData.getValueAt(0,\u0027coordinatorAltPhone\u0027),\n\t\t\t\t\"email\": locationData.getValueAt(0,\u0027coordinatorEmail\u0027),\n\t\t\t\t\"preferred\": locationData.getValueAt(0,\u0027coordinatorPreferredCommunication\u0027),\n\t\t\t\t\"notes\": locationData.getValueAt(0,\u0027coordinatorNotes\u0027)\n\t\t\t\t}\n\t\t\tself.custom.secondaryCoordinator \u003d {\n\t\t\t\t\"hasBackupCoordinator\": locationData.getValueAt(0,\u0027hasBackupCoordinator\u0027),\n\t\t\t\t\"id\":locationData.getValueAt(0,\u0027secondaryCoordinatorId\u0027),\n\t\t\t\t\"humanId\":locationData.getValueAt(0,\u0027secondaryCoordinatorHumanId\u0027),\n\t\t\t\t\"first\": locationData.getValueAt(0,\u0027secondaryCoordinatorFirstName\u0027),\n\t\t\t\t\"last\": locationData.getValueAt(0,\u0027secondaryCoordinatorLastName\u0027),\n\t\t\t\t\"street\": locationData.getValueAt(0,\u0027secondaryCoordinatorAddress\u0027),\n\t\t\t\t\"city\": locationData.getValueAt(0,\u0027secondaryCoordinatorCity\u0027),\n\t\t\t\t\"state\": locationData.getValueAt(0,\u0027secondaryCoordinatorState\u0027),\n\t\t\t\t\"zip\": str(locationData.getValueAt(0,\u0027secondaryCoordinatorZipCode\u0027)),\n\t\t\t\t\"phone1\": locationData.getValueAt(0,\u0027secondaryCoordinatorPhone\u0027),\n\t\t\t\t\"phone2\": locationData.getValueAt(0,\u0027secondaryCoordinatorAltPhone\u0027),\n\t\t\t\t\"email\": locationData.getValueAt(0,\u0027secondaryCoordinatorEmail\u0027),\n\t\t\t\t\"preferred\": locationData.getValueAt(0,\u0027secondaryCoordinatorPreferredCommunication\u0027),\n\t\t\t\t\"notes\": locationData.getValueAt(0,\u0027secondaryCoordinatorNotes\u0027)\n\t\t\t\t}\n\t\t\tself.custom.services \u003d {\n\t\t\t\t\t\t\n\t\t\t\t\t  \"locationSeasonId\": locationData.getValueAt(0,\u0027locationSeasonId\u0027),\n\t\t\t\t\t  \"capacity\": locationData.getValueAt(0,\u0027capacity\u0027),\n\t\t\t\t\t  \"capacityLastSeason\": locationData.getValueAt(0,\u0027capacityLastSeason\u0027),\n\t\t\t\t\t  \"genderId\": locationData.getValueAt(0,\u0027genderId\u0027),\n\t\t\t\t\t  \"gender\": locationData.getValueAt(0,\u0027genderAccepted\u0027),\n\t\t\t\t\t  \"families\": locationData.getValueAt(0,\u0027families\u0027),\n\t\t\t\t\t  \"shortNotice\": locationData.getValueAt(0,\u0027extraShortNotice\u0027),\n\t\t\t\t\t  \"showers\":locationData.getValueAt(0,\u0027showers\u0027),\n\t\t\t\t\t  \"clothing\":locationData.getValueAt(0,\u0027clothing\u0027),\n\t\t\t\t\t  \"laundry\":locationData.getValueAt(0,\u0027laundry\u0027),\n\t\t\t\t\t  \"sackLunches\":locationData.getValueAt(0,\u0027sackLunches\u0027),\n\t\t\t\t\t  \"breakfast\":locationData.getValueAt(0,\u0027breakfast\u0027),\n\t\t\t\t\t  \"dinner\":locationData.getValueAt(0,\u0027dinner\u0027),\n\t\t\t\t\t  \"haircuts\":locationData.getValueAt(0,\u0027haircuts\u0027),\n\t\t\t\t\t  \"hygieneItems\":locationData.getValueAt(0,\u0027hygieneItems\u0027),\n\t\t\t\t\t  \"otherService\":locationData.getValueAt(0,\u0027otherService\u0027),\n\t\t\t\t\t  \"otherServiceList\":locationData.getValueAt(0,\u0027otherServiceList\u0027),\n\t\t\t\t\t  \"accessible\": locationData.getValueAt(0,\u0027accessible_original\u0027),\n\t\t\t\t\t  \"smoking\": locationData.getValueAt(0,\u0027smoking_original\u0027),\n\t\t\t\t\t  \"stairs\": locationData.getValueAt(0,\u0027stairs_original\u0027),\n\t\t\t\t\t  \"partners\": locationData.getValueAt(0,\u0027partners\u0027),\n\t\t\t\t\t  \"comments\": locationData.getValueAt(0,\u0027serviceNotes\u0027),\n\t\t\t\t\t  \"nights\": locationData.getValueAt(0, \u0027nightsInt\u0027)\n\t\t\t\t\t}\n#\t\t\tself.refreshBinding(\u0027getChild(\"root\").getChild(\"RegistrationForm\").props.views[3].viewParams.newCapacity\u0027)\t\t\n\t\t\thostMoreData \u003d self.custom.hostMoreData\n\t\t\thostMoreList \u003d []\n\t\t\thostMoreSpace \u003d False\n\t\t\thostMoreMeals \u003d False\n\t\t\thostMoreTransportation \u003d False\n\t\t\thostMoreFinances \u003d False\n\t\t\thostMoreVolunteers \u003d False\n\t\t\thostMoreOther \u003d False\n\t\t\tif hostMoreData is not None and hostMoreData.getRowCount():\n\t\t\t\tfor row in range(hostMoreData.getRowCount()):\n\t\t\t\t\thostMoreItem \u003d hostMoreData.getValueAt(row,\u0027id\u0027)\n\t\t\t\t\thostMoreList.append(hostMoreItem)\n\t\t\tif 1 in hostMoreList:\n\t\t\t\thostMoreSpace \u003d True\n\t\t\tif 2 in hostMoreList:\n\t\t\t\thostMoreMeals \u003d True\n\t\t\tif 3 in hostMoreList:\n\t\t\t\thostMoreTransportation \u003d True\n\t\t\tif 4 in hostMoreList:\n\t\t\t\thostMoreFinances \u003d True\n\t\t\tif 5 in hostMoreList:\n\t\t\t\thostMoreVolunteers \u003d True\n\t\t\tif 6 in hostMoreList:\n\t\t\t\thostMoreOther \u003d True\n\t\t\t\n\t\t\t\n\t\t\tself.custom.scheduleInfo \u003d {\n\n\t\t\t\t\t  \"scheduleComments\": locationData.getValueAt(0,\u0027scheduleComments\u0027),\n\t\t\t\t\t  \"reminderCall\": locationData.getValueAt(0,\u0027reminderCall\u0027),\n\t\t\t\t\t  \"hostMoreList\":hostMoreList,\n\t\t\t\t\t  \"hostMoreSpace\":hostMoreSpace,\n\t\t\t\t\t  \"hostMoreMeals\":hostMoreMeals,\n\t\t\t\t\t  \"hostMoreTransportation\":hostMoreTransportation,\n\t\t\t\t\t  \"hostMoreFinances\":hostMoreFinances,\n\t\t\t\t\t  \"hostMoreVolunteers\":hostMoreVolunteers,\n\t\t\t\t\t  \"hostMoreOther\":hostMoreOther,\n\t\t\t\t\t  \"hostMoreOtherDetail\": locationData.getValueAt(0,\u0027otherHostMore\u0027)\n\t\t\t\t\t }\n\t\t\t\t\t\n\t\t\tscheduleData \u003d self.custom.scheduleData\n\t\t\tself.custom.schedule \u003d[]\n#\t\t\tself.custom.schedulePrev \u003d []\n\t\t\t#schedule \u003d []\n\t\t\tif scheduleData.getRowCount():\n\t\t\t\tfor row in range(scheduleData.getRowCount()):\n\t\t\t\t\tdayOfYear \u003d scheduleData.getValueAt(row,\u0027dayOfYear\u0027)\n\t\t\t\t\tself.custom.schedule.append(dayOfYear)\n#\t\t\t\t\tself.custom.schedulePrev.append(dayOfYear)\n\t\telse:#No data returned, clear it all out\n\t\t\tself.custom.schedule \u003d[]\n#\t\t\tself.custom.schedulePrev \u003d []\n\t\t\t\n\t\t\tself.custom.congregationInfo \u003d {\n\t\t\t  \"congregationId\": None,\n\t\t\t  \"providerId\": None,\n\t\t\t  \"congregationName\": \u0027\u0027,\n\t\t\t  \"firstSeason\": \u0027\u0027,\n\t\t\t  \"currentSeason\": \u0027\u0027,\n\t\t\t  \"addressLine1\": \u0027\u0027,\n\t\t\t  \"addressLine2\": \u0027\u0027,\n\t\t\t  \"city\": \u0027\u0027,\n\t\t\t  \"state\": \u0027\u0027,\n\t\t\t  \"zip\": \u0027\u0027,\n\t\t\t  \"phone\": \u0027\u0027\n\t\t\t\t}\t\n\t\t\tself.custom.locationInfo \u003d {\n\t\t\t\t\t  \"hostLocal\":True,\n\t\t\t\t\t  \"hostLocationTypeId\":None,\n\t\t\t\t\t  \"hostLocationType\":\u0027\u0027,\n\t\t\t\t\t  \"locationId\": None,\n\t\t\t\t\t  \"locationName\": \u0027\u0027,\n\t\t\t\t\t  \"addressLine1\": \u0027\u0027,\n\t\t\t\t\t  \"addressLine2\": \u0027\u0027,\n\t\t\t\t\t  \"city\": \u0027\u0027,\n\t\t\t\t\t  \"state\": \u0027\u0027,\n\t\t\t\t\t  \"zip\": \u0027\u0027,\n\t\t\t\t\t  \"notes\": \u0027\u0027,\n\t\t\t\t\t  \"frequencyId\":None,\n\t\t\t\t\t  \"transportId\":None,\n\t\t\t\t\t  \"dateSelectionPattern\":None,\n\t\t\t\t\t  \"dateSelectionPattern_db\":[],\n\t\t\t\t\t  \"dateSelectionDays\":[],\n\t\t\t\t\t  \"pickupTime\":None\n\t\t\t\t\t}\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\tself.custom.primaryCoordinator \u003d {\n\t\t\t\t\t\"id\":None,\n\t\t\t\t\t\"humanId\":None,\n\t\t\t\t\t\"first\": \u0027\u0027,\n\t\t\t\t\t\"last\": \u0027\u0027,\n\t\t\t\t\t\"street\": \u0027\u0027,\n\t\t\t\t\t\"city\": \u0027\u0027,\n\t\t\t\t\t\"state\": \u0027\u0027,\n\t\t\t\t\t\"zip\": \u0027\u0027,\n\t\t\t\t\t\"phone1\": \u0027\u0027,\n\t\t\t\t\t\"phone2\": \u0027\u0027,\n\t\t\t\t\t\"email\": \u0027\u0027,\n\t\t\t\t\t\"preferred\": \u0027\u0027,\n\t\t\t\t\t\"notes\": \u0027\u0027\n\t\t\t\t\t}\n\t\t\tself.custom.secondaryCoordinator \u003d {\n\t\t\t\t\t\"hasBackupCoordinator\": False,\n\t\t\t\t\t\"id\":None,\n\t\t\t\t\t\"humanId\":None,\n\t\t\t\t\t\"first\": \u0027\u0027,\n\t\t\t\t\t\"last\": \u0027\u0027,\n\t\t\t\t\t\"street\": \u0027\u0027,\n\t\t\t\t\t\"city\": \u0027\u0027,\n\t\t\t\t\t\"state\": \u0027\u0027,\n\t\t\t\t\t\"zip\": \u0027\u0027,\n\t\t\t\t\t\"phone1\": \u0027\u0027,\n\t\t\t\t\t\"phone2\": \u0027\u0027,\n\t\t\t\t\t\"email\": \u0027\u0027,\n\t\t\t\t\t\"preferred\": \u0027\u0027,\n\t\t\t\t\t\"notes\": \u0027\u0027\n\t\t\t\t\t}\n\t\t\tself.custom.services \u003d {\n\t\t\t\t  \"locationSeasonId\": None,\n\t\t\t\t  \"capacity\": 0,\n\t\t\t\t  \"capacityLastSeason\": 0,\n\t\t\t\t  \"genderId\": None,\n\t\t\t\t  \"gender\": \u0027\u0027,\n\t\t\t\t  \"families\": False,\n\t\t\t\t  \"shortNotice\": False,\n\t\t\t\t  \"showers\":False,\n\t\t\t\t  \"clothing\":False,\n\t\t\t\t  \"laundry\":False,\n\t\t\t\t  \"sackLunches\":False,\n\t\t\t\t  \"breakfast\":False,\n\t\t\t\t  \"dinner\":False,\n\t\t\t\t  \"haircuts\":False,\n\t\t\t\t  \"hygieneItems\":False,\n\t\t\t\t  \"otherService\":False,\n\t\t\t\t  \"otherServiceList\":\u0027\u0027,\n\t\t\t\t  \"accessible\": \u0027\u0027,\n\t\t\t\t  \"smoking\": \u0027\u0027,\n\t\t\t\t  \"stairs\": \u0027\u0027,\n\t\t\t\t  \"partners\": \u0027\u0027,\n\t\t\t\t  \"comments\": \u0027\u0027,\n\t\t\t\t  \"nights\":0\n\t\t\t\t\t}\n\t\t\t\t\t \t\t\t\t\t\t\t   \n\t\t#\n\t\t#Set the bit to false once all the data has been processed\n\t\tself.custom.activePane \u003d 0\n\t\tself.custom.reset \u003d False"
+      },
+      "persistent": true
+    },
+    "custom.scheduleData": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/getLocationSchedule_BySeason"
+        },
+        "type": "query"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.refreshBinding(\"custom.hostMoreData\")"
+      },
+      "persistent": true
+    },
+    "custom.schedulePrev": {
+      "binding": {
+        "config": {
+          "path": "view.custom.sqlData"
+        },
+        "transforms": [
+          {
+            "code": "\tlocationData \u003d value\n\tif locationData.getRowCount():\n\t\tscheduleData \u003d self.custom.scheduleData\n\t\tschedulePrev \u003d []\n\t\tif scheduleData.getRowCount():\n\t\t\tfor row in range(scheduleData.getRowCount()):\n\t\t\t\tdayOfYear \u003d scheduleData.getValueAt(row,\u0027dayOfYear\u0027)\n\t\t\t\tschedulePrev.append(dayOfYear)\n\telse:#No data returned, clear it all out\n\t\tschedulePrev \u003d []\n\treturn schedulePrev",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.secondaryCoordinator": {
+      "persistent": true
+    },
+    "custom.selectedSeasonId": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.refreshBinding(\"custom.sqlData\")"
+      },
+      "persistent": true
+    },
+    "custom.services": {
+      "persistent": true
+    },
+    "custom.services.gender": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "genderId": "{view.custom.services.genderId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/getGenderName"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None and value.getRowCount() \u003e 0:\n\t\treturn value.getValueAt(0,\u0027gender\u0027)\n\telse:\n\t\treturn \u0027\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      }
+    },
+    "custom.sqlData": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/RegistrationDetail"
+        },
+        "type": "query"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.refreshBinding(\"custom.scheduleData\")\n\t\n\tcapacity \u003d (self.custom.sqlData).getValueAt(0,\u0027capacity\u0027)\n\tgenderId \u003d (self.custom.sqlData).getValueAt(0,\u0027congregationCity\u0027)\n\tbedsProjected \u003d (self.custom.sqlData).getValueAt(0,\u0027bedsProjected\u0027) if (self.custom.sqlData).getRowCount()\u003e0 else None\n\tif capacity \u003d\u003d 0 or genderId \u003d\u003d None or bedsProjected \u003d\u003d None or bedsProjected \u003c 1:\n\t\tself.custom.IsNewRegistration \u003d True\n\telse:\n\t\tself.custom.IsNewRegistration \u003d False\n\t#self.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"season\").refreshBinding(\u0027props.options\u0027)\n\t#self.getChild(\"root\").getChild(\"RequireFields\").position.display \u003d False\n\t#self.custom.reset \u003d True"
+      },
+      "persistent": true
+    },
+    "custom.todayDayOfYear": {
+      "binding": {
+        "config": {
+          "expression": "toInt(getDayOfYear(now(0)))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.viewPreviousSeasons": {
+      "persistent": true
+    },
+    "params.locationID": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.refreshBinding(\"custom.sqlData\")"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 789,
+      "width": 1057
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Text": {
+            "binding": {
+              "config": {
+                "expression": "\u0027Winter Shelter Registration - \u0027 + {view.custom.locationInfo.locationName}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Header/Header",
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.addSeason \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Registration Required Button"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.registeredThisSeason"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn not value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/getCurrentSeason"
+              },
+              "transforms": [
+                {
+                  "code": "\tcurrentSeason \u003d value.getValueAt(0,\"Seasons\")\n\ttext \u003d \"Register For \" + str(currentSeason) + \" Season\"\n\treturn text",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "primary": false,
+          "style": {
+            "classes": "Buttons/Btn_Orange_Active",
+            "marginBottom": "20px",
+            "marginLeft": "50px",
+            "marginRight": "50px",
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "seasonLabel"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.viewPreviousSeasons"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_InfoText",
+                "textAlign": "left"
+              },
+              "text": "Season:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "season"
+            },
+            "position": {
+              "basis": "160px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.viewPreviousSeasons"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.options": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "locationId": "{view.params.locationID}"
+                    },
+                    "queryPath": "WinterShelterGlobal/Filters/getSeasonsByLocation"
+                  },
+                  "type": "query"
+                }
+              },
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.custom.selectedSeasonId"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "Dropdowns/DD_Options"
+              },
+              "placeholder": {
+                "color": "#AAAAAA",
+                "text": "Season"
+              },
+              "style": {
+                "classes": "Filter/Filter_Border_Default Filter/Filter_Text_Default"
+              },
+              "wrapMultiSelectValues": false
+            },
+            "type": "ia.input.dropdown"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.viewPreviousSeasons \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "ViewPreviousButton"
+            },
+            "position": {
+              "basis": "240px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.viewPreviousSeasons"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn not value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "classes": "Buttons/Secondary"
+              },
+              "text": "View Previous Seasons"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Debug Label"
+            },
+            "position": {
+              "basis": "600px",
+              "display": false,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\u0027Current Season: \u0027 + {view.custom.currentSeasonId}\r\n+\u0027 Selected Season: \u0027 + {view.custom.selectedSeasonId}\r\n+\u0027 Last Season: \u0027 + {view.custom.lastSeasonId}\r\n+\u0027 Edit Enabled: \u0027 + {view.custom.editEnabled}\r\n+\u0027 Acitve Pane: \u0027 + {.../RegistrationFormReadOnly.props.activePane}\r\n+\u0027 Location ID: \u0027 + {view.custom.locationInfo.hostLocationTypeId}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Error_Message"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Placeholder"
+            },
+            "position": {
+              "basis": "1px",
+              "grow": 1
+            },
+            "props": {
+              "path": "1_globalTEMPLATES/Placeholder"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginLeft": "50px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "FormPage"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{../RegistrationForm.props.activePane}\u003c5"
+              },
+              "type": "expr"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.viewPreviousSeasons"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "../RegistrationForm.props.activePane"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn \u0027STEP \u0027 + str(value+1) + \u0027/5\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#0066FF",
+            "fontSize": "14px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "PageName"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.viewPreviousSeasons"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "../RegistrationForm.props.activePane"
+              },
+              "transforms": [
+                {
+                  "expression": "switch({value}, 0, 1, 2, 3, 4, 5\r\n, \u0027Congregation Information\u0027\r\n, \u0027Coordinator Information\u0027\r\n, \u0027Services\u0027\r\n, \u0027Date Registration\u0027\r\n, \u0027Summary\u0027\r\n, \u0027Confirmation\u0027\r\n, \u0027Unknown\u0027\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#0066FF",
+            "fontSize": "22px",
+            "marginBottom": "10px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Progress"
+            },
+            "position": {
+              "height": 0.2,
+              "width": 1,
+              "y": 0.4
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "path": ".../RegistrationForm.props.activePane"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "bar": {
+                "color": "#0066FF"
+              },
+              "max": 4,
+              "style": {
+                "borderBottomLeftRadius": "10px",
+                "borderBottomRightRadius": "10px",
+                "borderTopLeftRadius": "10px",
+                "borderTopRightRadius": "10px",
+                "overflow": "hidden",
+                "paddingLeft": "53px",
+                "paddingRight": "53px"
+              },
+              "track": {
+                "color": "#D5D5D5"
+              }
+            },
+            "type": "ia.display.progress"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Page1"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 0"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 0"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page2"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page3"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 2"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 2"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page4"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 3"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 3"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Page5"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.checked": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003e 3"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.viewing": {
+                    "binding": {
+                      "config": {
+                        "expression": "{..../RegistrationForm.props.activePane} \u003d 4"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.viewing}||{this.custom.checked}, \u0027#0066FF\u0027 ,\u0027#AAAAAA\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.checked}, \u0027material/check_circle\u0027 ,\u0027material/radio_button_unchecked\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "borderBottomLeftRadius": "15px",
+                    "borderBottomRightRadius": "15px",
+                    "borderStyle": "none",
+                    "borderTopLeftRadius": "15px",
+                    "borderTopRightRadius": "15px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "Dots"
+            },
+            "position": {
+              "height": 1,
+              "width": 1
+            },
+            "props": {
+              "justify": "space-between",
+              "style": {
+                "borderBottomLeftRadius": "10px",
+                "borderBottomRightRadius": "10px",
+                "borderTopLeftRadius": "10px",
+                "borderTopRightRadius": "10px",
+                "overflow": "visible",
+                "paddingLeft": "50px",
+                "paddingRight": "50px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "15px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.viewPreviousSeasons"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent"
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "RegistrationForm"
+        },
+        "position": {
+          "basis": "1500px",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "hasChanged({view.custom.editEnabled}) || hasChanged({view.custom.viewPreviousSeasons})"
+              },
+              "transforms": [
+                {
+                  "code": "\tif self.view.custom.viewPreviousSeasons:\n\t\tif self.view.custom.editEnabled:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.activePane": {
+            "binding": {
+              "config": {
+                "path": "view.custom.activePane"
+              },
+              "type": "property"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\tself.getSibling(\"RequireFields\").refreshBinding(\u0027props.text\u0027)"
+            }
+          },
+          "props.views[0].viewParams.congregationAddressLine1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.addressLine1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationAddressLine2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.addressLine2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationName": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.phone"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationZipCode": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.firstSeason": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.firstSeason"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \u0027None\u0027:\n#\t\treturn self.view.custom.congregationInfo.currentSeason\n\t\treturn \u0027None\u0027\n\telse:\n\t\treturn value\n#\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostLocal": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.hostLocal"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostLocationTypeId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.hostLocationTypeId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationAddressLine1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.addressLine1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationAddressLine2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.addressLine2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationCity": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.locationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationName": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.locationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationZipCode": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.congregationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorAddress": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.street"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorAltPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.phone2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorEmail": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorFirstName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.first"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorHumanId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.humanId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorLastName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.last"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorNotes": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.notes"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorPreferredCommunication": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.preferred"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorZip": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.hasBackupCoordinator": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.hasBackupCoordinator"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorAddress": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.street"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorAltPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.phone2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorEmail": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorFirstName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.first"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorHumanId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.humanId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorLastName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.last"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorNotes": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.notes"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorPreferredCommunication": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.preferred"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorZip": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoorindatorState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.IsNewRegistration": {
+            "binding": {
+              "config": {
+                "path": "view.custom.IsNewRegistration"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.breakfast": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.breakfast"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.capacity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.capacity"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.capacityFromDB": {
+            "binding": {
+              "config": {
+                "path": "view.custom.sqlData"
+              },
+              "transforms": [
+                {
+                  "code": "\tcapacity \u003d 0\n\tif value.getRowCount() \u003e 0:\n\t\tcapacity \u003d value.getValueAt(0,\u0027capacity\u0027)\n\t\tif capacity \u003d\u003d None:\n\t\t\tcapacity \u003d 0\n\treturn capacity",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.capacityLastSeason": {
+            "binding": {
+              "config": {
+                "path": "view.custom.services.capacityLastSeason"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.clothing": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.clothing"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.comments": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.comments"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.dinner": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.dinner"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.families": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.families"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.genderId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.genderId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.haircuts": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.haircuts"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.hygieneItems": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.hygieneItems"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.laundry": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.laundry"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.locationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.otherService": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.otherService"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.otherServiceList": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.otherServiceList"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.partners": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.partners"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.reminder": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.reminderCall"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.sackLunches": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.sackLunches"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.shortNotice": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.shortNotice"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.showers": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.showers"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.smoking": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.smoking"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.stairs": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.stairs"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.transportId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.transportId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.wheelchair": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.accessible"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.CanceledSchedule": {
+            "binding": {
+              "config": {
+                "path": "view.custom.CanceledSchedule"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.addedDays": {
+            "binding": {
+              "config": {
+                "path": "view.custom.addedDays"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.comments": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.scheduleComments"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.dateSelectionDays": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.dateSelectionDays"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.dateSelectionPattern": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.dateSelectionPattern"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.dateSelectionPattern_db": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.dateSelectionPattern_db"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.frequencyId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.frequencyId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.locationID": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationID"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.newCapacity": {
+            "binding": {
+              "config": {
+                "path": "view.custom.services.capacity"
+              },
+              "transforms": [
+                {
+                  "code": "\tcapacity \u003d value\n\tcapacityLastSeason \u003d self.view.custom.services.capacityLastSeason\n\tif capacity \u003d\u003d 0:\n\t\tif capacityLastSeason \u003c 8:\n\t\t\treturn 8\n\t\telif capacityLastSeason \u003e\u003d8 and capacityLastSeason \u003c 12:\n\t\t\treturn 12\n\t\telse:\n\t\t\treturn capacityLastSeason\n\telse:\n\t\treturn capacity",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.nights": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.nights"
+              },
+              "type": "property"
+            },
+            "persistent": true
+          },
+          "props.views[3].viewParams.pickupTime": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.pickupTime"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.proceed": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tsystem.perspective.print(\u0027proceedChange: \u0027+str(currentValue.value))"
+            }
+          },
+          "props.views[3].viewParams.schedule": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.schedule"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.schedulePrev": {
+            "binding": {
+              "config": {
+                "path": "view.custom.schedulePrev"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.selectedSeasonId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.selectedSeasonId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.comments": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.notes"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.congregation": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.coordinator": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.primaryCoordinator.first} + \u0027 \u0027 + {view.custom.primaryCoordinator.last}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.guestsCount": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.services.capacity} * {this.props.views[4].viewParams.totalNights}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.hostMoreFinances": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreFinances"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.hostMoreMeals": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreMeals"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.hostMoreOther": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreOther"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.hostMoreOtherDetail": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreOtherDetail"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.hostMoreSpace": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreSpace"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.hostMoreTransportation": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreTransportation"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.hostMoreVolunteers": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreVolunteers"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.location": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.locationInfo.addressLine1}\r\n+ \u0027, \u0027\r\n+{view.custom.locationInfo.addressLine2}\r\n+ if({view.custom.locationInfo.addressLine2} \u003d \u0027\u0027,\u0027\u0027,\u0027, \u0027)\r\n+ {view.custom.locationInfo.city}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.phone": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.primaryCoordinator.phone1} !\u003d None \u0026\u0026 {view.custom.primaryCoordinator.phone1} !\u003d \u0027\u0027),{view.custom.primaryCoordinator.phone1},{view.custom.primaryCoordinator.phone2}) "
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.startDate": {
+            "binding": {
+              "config": {
+                "path": "view.custom.schedule"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value is not None:\n\t\tschedule \u003d []\n\t\tgetCurrentSeason \u003d system.db.runNamedQuery(\"WinterShelterGlobal/getCurrentSeason\")\n\t\tYear1 \u003d (getCurrentSeason.getValueAt(0,1)).split(\u0027-\u0027)[0]\n\t\tYear2 \u003d (getCurrentSeason.getValueAt(0,1)).split(\u0027-\u0027)[1]\n\t\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(Year1), 10, 1))\n\t\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(Year1), 12, 31))\n\t\tfor dayOfYear in value:\n\t\t\tif dayOfYear \u003e\u003d startDayOfSeason: # and dayOfYear \u003c\u003d endDayOfCurrentYear:\n\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(Year1))\n\t\t\telse:\n\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(Year2))\n\t\t\tschedule.append(dates)\n\t\tschedule.sort()\n\t\tstartDate \u003d schedule[0]\n\t\t\n#\t\timport datetime\n#\t\tdate \u003d datetime.date(2022, 1, 1)\n#\t\tdelta \u003d datetime.timedelta(value - 1)\n#\t\tstartDate \u003d date + delta\n\telse:\n\t\tstartDate \u003d None\n\treturn startDate",
+                  "type": "script"
+                },
+                {
+                  "formatType": "datetime",
+                  "formatValue": {
+                    "date": "medium"
+                  },
+                  "type": "format"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.totalNights": {
+            "binding": {
+              "config": {
+                "path": "view.custom.schedule"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn len(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.types": {
+            "binding": {
+              "config": {
+                "path": "view.custom.services.gender"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "appearance": {
+            "arrows": {
+              "enabled": false
+            },
+            "dots": {
+              "enabled": false
+            }
+          },
+          "behavior": {
+            "desktopDraggable": false,
+            "mobileSwipeable": false
+          },
+          "style": {
+            "marginTop": "20px",
+            "overflow": "hidden"
+          },
+          "views": [
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "Address",
+                "proceed": false
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/Edit/CongregationInfo"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "",
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/Edit/CoordInfo"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "",
+                "proceed": true,
+                "services": ""
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/Edit/Services"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "",
+                "nights": 0,
+                "pattern": null,
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/Edit/DateRegistration"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "hostMore",
+                "proceed": false
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/Edit/Summary"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "header": "Registration Complete",
+                "message": "We have recorded your registration. Thank you for being a part of Room in the Inn!",
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/Edit/Confirmation"
+            }
+          ]
+        },
+        "type": "ia.display.carousel"
+      },
+      {
+        "meta": {
+          "name": "RegistrationFormReadOnly"
+        },
+        "position": {
+          "basis": "1500px",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "hasChanged({view.custom.editEnabled}) || hasChanged({view.custom.viewPreviousSeasons})"
+              },
+              "transforms": [
+                {
+                  "code": "\tif self.view.custom.viewPreviousSeasons:\n\t\tif self.view.custom.editEnabled:\n\t\t\treturn False\n\t\telse:\n\t\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.activePane": {
+            "binding": {
+              "config": {
+                "path": "view.custom.activePane"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationAddressLine1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.addressLine1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationAddressLine2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.addressLine2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationName": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.phone"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.congregationZipCode": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationInfo.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.firstSeason": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.firstSeason"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \u0027None\u0027:\n\t\treturn self.view.custom.congregationInfo.currentSeason\n\telse:\n\t\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostLocal": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.hostLocal"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.hostLocationTypeId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.hostLocationTypeId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationAddressLine1": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.addressLine1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationAddressLine2": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.addressLine2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.locationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationName": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.locationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[0].viewParams.locationZipCode": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorAddress": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.street"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorAltPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.phone2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorEmail": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorFirstName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.first"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorHumanId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.humanId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorLastName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.last"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorNotes": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.notes"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorPreferredCommunication": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.preferred"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.coordinatorZip": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.primaryCoordinator.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.hasBackupCoordinator": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.hasBackupCoordinator"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorAddress": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.street"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorAltPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.phone2"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorCity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.city"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorEmail": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.email"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorFirstName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.first"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorHumanId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.humanId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorLastName": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.last"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorNotes": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.notes"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorPhone": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorPreferredCommunication": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.preferred"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoordinatorZip": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.zip"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[1].viewParams.secondaryCoorindatorState": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.secondaryCoordinator.state"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.breakfast": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.breakfast"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.capacity": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.capacity"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.capacityLastSeason": {
+            "binding": {
+              "config": {
+                "path": "view.custom.services.capacityLastSeason"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.clothing": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.clothing"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.comments": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.comments"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.dinner": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.dinner"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.families": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.families"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.genderId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.genderId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.haircuts": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.haircuts"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.hygieneItems": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.hygieneItems"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.laundry": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.laundry"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.locationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.otherService": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.otherService"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.otherServiceList": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.otherServiceList"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.partners": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.partners"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.sackLunches": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.sackLunches"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.shortNotice": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.shortNotice"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.showers": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.showers"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.smoking": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.smoking"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.stairs": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.stairs"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.transportId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.locationInfo.transportId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[2].viewParams.wheelchair": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.services.accessible"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.comments": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.scheduleComments"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreFinances": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreFinances"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreMeals": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreMeals"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreOther": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreOther"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreOtherDetail": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreOtherDetail"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreSpace": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreSpace"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreTransportation": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreTransportation"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.hostMoreVolunteers": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.hostMoreVolunteers"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.locationID": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationID"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.nights": {
+            "persistent": true
+          },
+          "props.views[3].viewParams.reminder": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.scheduleInfo.reminderCall"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.schedule": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.schedule"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.schedulePrev": {
+            "binding": {
+              "config": {
+                "path": "view.custom.schedulePrev"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[3].viewParams.selectedSeasonId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.selectedSeasonId"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.comments": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.locationInfo.notes"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.congregation": {
+            "binding": {
+              "config": {
+                "path": "view.custom.congregationInfo.congregationName"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.coordinator": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.primaryCoordinator.first} + \u0027 \u0027 + {view.custom.primaryCoordinator.last}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.guestsCount": {
+            "binding": {
+              "config": {
+                "path": "view.custom.services.capacity"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.location": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.locationInfo.addressLine1}\r\n+ \u0027, \u0027\r\n+{view.custom.locationInfo.addressLine2}\r\n+ if({view.custom.locationInfo.addressLine2} \u003d \u0027\u0027,\u0027\u0027,\u0027, \u0027)\r\n+ {view.custom.locationInfo.city}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.views[4].viewParams.phone": {
+            "binding": {
+              "config": {
+                "path": "view.custom.primaryCoordinator.phone1"
+              },
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.startDate": {
+            "binding": {
+              "config": {
+                "path": "view.custom.schedule[0]"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value is not None:\n\t\timport datetime\n\t\tdate \u003d datetime.date(2022, 1, 1)\n\t\tdelta \u003d datetime.timedelta(value - 1)\n\t\tstartDate \u003d date + delta\n\telse:\n\t\tstartDate \u003d None\n\treturn startDate",
+                  "type": "script"
+                },
+                {
+                  "formatType": "datetime",
+                  "formatValue": {
+                    "date": "medium"
+                  },
+                  "type": "format"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.totalNights": {
+            "binding": {
+              "config": {
+                "path": "view.custom.schedule"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn len(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.views[4].viewParams.types": {
+            "binding": {
+              "config": {
+                "path": "view.custom.services.gender"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "appearance": {
+            "arrows": {
+              "enabled": false
+            },
+            "dots": {
+              "enabled": false
+            }
+          },
+          "behavior": {
+            "desktopDraggable": false,
+            "mobileSwipeable": false
+          },
+          "style": {
+            "marginTop": "20px",
+            "overflow": "hidden"
+          },
+          "views": [
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "Address",
+                "proceed": false
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/View/CongregationInfo"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "",
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/View/CoordInfo"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "GuestTypes",
+                "proceed": true,
+                "services": ""
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/View/Services"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "neededToProceed": "",
+                "nights": 0,
+                "pattern": null,
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/View/DateRegistration"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/View/Summary"
+            },
+            {
+              "alignItems": "flex-start",
+              "direction": "row",
+              "justify": "flex-start",
+              "viewParams": {
+                "header": "Registration Complete",
+                "message": "Thank you for being a part of Room in the Inn!",
+                "proceed": true
+              },
+              "viewPath": "WinterShelterGlobal/Registration/Steps/View/Confirmation"
+            }
+          ]
+        },
+        "type": "ia.display.carousel"
+      },
+      {
+        "meta": {
+          "name": "RequireFields"
+        },
+        "position": {
+          "basis": "32px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "../RegistrationForm.props.views"
+              },
+              "transforms": [
+                {
+                  "code": "\tneeded \u003d value[self.getSibling(\"RegistrationForm\").props.activePane][\u0027viewParams\u0027][\u0027neededToProceed\u0027]\n\tif needed \u003d\u003d \u0027\u0027 or needed is None:\n\t\tself.position.display \u003d False\n\treturn \u0027*Please provide info for the \u0027 + needed + \u0027 field.\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#D80000",
+            "fontSize": "12px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tif self.view.custom.activePane \u003e 0:\n\t\tself.view.custom.activePane -\u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "BackButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.activePane} \u003e 0 \r\n\u0026\u0026 {view.custom.activePane} !\u003d 5"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#AAAAAA",
+                  "path": "material/chevron_left"
+                }
+              },
+              "primary": false,
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none",
+                "marginRight": "20px"
+              },
+              "text": "Back",
+              "textStyle": {
+                "color": "#AAAAAA"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tselectedLocation \u003d self.view.custom.congregationInfo.congregationId\n\t\n\tselectedSeason \u003d self.view.custom.selectedSeasonId\n\tprevSeasonId \u003d self.view.custom.previousSeasonId\n\tsystem.perspective.print(\"selected location - \" + str(selectedLocation) + \"selectedSeason - \" + str(selectedSeason) + \"prevSeasonId - \" + str(prevSeasonId))\n\tparams \u003d {\"locationId\":selectedLocation, \"seasonId\":selectedSeason, \"previousSeasonId\" : prevSeasonId, \"CalledFromPage\":\"Registration\"} #, \"EndDate\":eDate, \"VolunteerID\":volunteerID}\n\tbyteData \u003d system.report.executeReport(path\u003d\"WinterShelter/Registration Report\", project\u003d\"RITI\", parameters\u003dparams, fileType\u003d\"pdf\")\n\t\n#\tfilename \u003d self.getSibling(\"TextField\").props.text+\".pdf\"\n\tfilename \u003d self.view.custom.congregationInfo.congregationName + \"_Registration_Report.pdf\"\n\tsystem.perspective.download(filename, byteData)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "PrintButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if({.../RegistrationForm.props.activePane}\u003d5, True, False)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderBottomLeftRadius": "5px",
+                "borderBottomRightRadius": "5px",
+                "borderStyle": "none",
+                "borderTopLeftRadius": "5px",
+                "borderTopRightRadius": "5px",
+                "classes": "Buttons/Main",
+                "marginRight": "20px"
+              },
+              "text": "Print",
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\timport traceback\n\timport base64\n\tfrom com.inductiveautomation.ignition.gateway import IgnitionGateway\n\tfrom com.inductiveautomation.ignition.gateway.images import ImageRecord\n\t\n\t## function to format email text\n\tdef emailText_to_htmlFormat(emailText):\n\t\timport re\n\t\t# replace apostrope sign with single quote\n\t\temailText \u003d emailText.replace(\"’\",\"\u0027\")\n\t\t# replace long dash with single dash\n\t\temailText \u003d emailText.replace(\"–\",\"-\")\n\t\t# convert link to html format (if \u003c\u003e found)\n\t\tpattern \u003d \"\u003c[A-Za-z0-9-–@,.!?:\\s/\u0027]*\u003e\"\n\t\tmatches \u003d re.findall(pattern, emailText)\n\t\tif len(matches)\u003e0:\n\t\t\tfor oneMatch in matches:\n\t\t\t\toneMatchWithoutSymbol \u003d oneMatch[1:-1]\n\t\t\t\t## check if match is email then add mailto: before email in href\n\t\t\t\tif (\u0027@\u0027 in oneMatchWithoutSymbol) and (\u0027.\u0027 in oneMatchWithoutSymbol):\n\t\t\t\t\toneMatchFormated \u003d \u0027\u003ca href \u003d\"mailto:\u0027 +oneMatchWithoutSymbol + \u0027\"\u003e\u0027 + oneMatchWithoutSymbol + \u0027\u003c/a\u003e\u0027\n\t\t\t\telse:\n\t\t\t\t\toneMatchFormated \u003d \u0027\u003ca href \u003d\"\u0027 +oneMatchWithoutSymbol + \u0027\"\u003e\u0027 + oneMatchWithoutSymbol + \u0027\u003c/a\u003e\u0027\n\t\t\t\temailText \u003d emailText.replace(oneMatch,oneMatchFormated)\n\t\t# add bold text as required (if # found)\n\t\tpattern \u003d \"#[A-Za-z0-9-–@,.!?:\\s\u0027]*#\"\n\t\tmatches \u003d re.findall(pattern, emailText)\n\t\tif len(matches)\u003e0:\n\t\t\tfor oneMatch in matches:\n\t\t\t\toneMatchWithoutSymbol \u003d oneMatch[1:-1]\n\t\t\t\toneMatchFormated \u003d \u0027\u003cb\u003e\u0027 +oneMatchWithoutSymbol + \u0027\u003c/b\u003e\u0027\n\t\t\t\temailText \u003d emailText.replace(oneMatch,oneMatchFormated)\n\t\t# convert newline in python to break(\u003cbr\u003e tag) in html\n\t\temailText \u003d emailText.replace(\u0027\\n\u0027,\u0027\u003cbr\u003e\u0027)\n\t\temailText \u003d emailText.replace(\u0027\u003cbr\u003e-\u0027,\u0027\u003cbr\u003e\u0026emsp;-\u0027)\n\t\t## convert text to html format\n\t\temailTextFormated \u003d \"\u003cHTML\u003e\u003cBODY\u003e\"\n\t\temailTextFormated \u003d emailTextFormated + emailText\n\t\temailTextFormated \u003d emailTextFormated + \"\u003c/BODY\u003e\u003c/HTML\u003e\"\n\t\treturn emailTextFormated\n\t\t\t\n\ttry:\n\t\tself.props.enabled \u003d False\n\t\tsystem.perspective.print(\"nights : \" + str(self.view.custom.services.nights))\n\t\tproject \u003d \"RITI\"\n\t\tviews \u003d self.parent.parent.getChild(\"RegistrationForm\").props.views\n\t\tactivePane \u003d self.parent.parent.getChild(\"RegistrationForm\").props.activePane\n\t\teditEnabled \u003d self.view.custom.editEnabled\n\t\tIsNewRegistration \u003d self.view.custom.IsNewRegistration\n\t\tchangedFields \u003d \u0027\u0027\n\t\t#system.perspective.print(\"Active Pane Number: \" + str(activePane))\n\t\t#Ready to proceed. Move to next page, manage submissions and closes.\n\t\tif views[activePane][\u0027viewParams\u0027][\u0027proceed\u0027] or not editEnabled:\n\t\t\tself.parent.parent.getChild(\"RequireFields\").position.display \u003d False\n\t\t\t\n\t\t\t#Confirmation Page \u003d Close Button\n\t\t\tif activePane \u003d\u003d (len(views)-1):\n\t\t\t\tview \u003d self.view\n\t\t\t\tsystem.perspective.print(\u0027clicked close button\u0027)\n\t\t\t\tview.refreshBinding(\"custom.sqlData\")\n\t\t\t\t#self.view.custom.reset \u003d True\n\t\t\t\t#self.view.custom.activePane \u003d 0\n#\t\t\t\treturn\n\t\t\t#Review Page \u003d Submit Button\t\n\t\t\tif activePane \u003d\u003d (len(views)-2) and editEnabled:\n\t\t\t\tsystem.perspective.print(\u0027Submitting new data\u0027)\n\t\t\t\t#\n\t\t\t\t#Update Congregation Information\n\t\t\t\t#\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/updateShelterCongregation\"\n\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\"providerId\":self.view.custom.congregationInfo.providerId,\n\t\t\t\t\t\t\t\"congregationStreet\":self.view.custom.congregationInfo.addressLine1,\n\t\t\t\t\t\t\t\"congregationStreet2\":self.view.custom.congregationInfo.addressLine2,\n\t\t\t\t\t\t\t\"congregationCity\":self.view.custom.congregationInfo.city,\n\t\t\t\t\t\t\t\"congregationState\":self.view.custom.congregationInfo.state,\n\t\t\t\t\t\t\t\"congregationZipCode\":self.view.custom.congregationInfo.zip,\n\t\t\t\t\t\t\t\"congregationPhone\":self.view.custom.congregationInfo.phone\n\t\t\t\t\t\t\t}\n\t\t\t\tupdateCongregation \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\tsystem.perspective.print(\"Update Congregation:\" + str(updateCongregation))\n\t\t\t\t#\n\t\t\t\t#Update Location info\n\t\t\t\t#\n\t\t\t\tlocationId \u003d self.view.custom.locationInfo.locationId\n\t\t\t\thostLocationTypeId \u003d self.view.custom.locationInfo.hostLocationTypeId\n\t\t\t\thostLocal\u003d True\n\t\t\t\t#Location Tyoe 2 is a remote address location\n\t\t\t\tif hostLocationTypeId \u003d\u003d 2:\n\t\t\t\t\thostLocal \u003d False\n\t\t\t\t#hostLocal \u003d self.view.custom.locationInfo.hostLocal\n\t\t\t\tif hostLocal:\n\t\t\t\t\taddressLine1 \u003d self.view.custom.congregationInfo.addressLine1\n\t\t\t\t\taddressLine2 \u003d self.view.custom.congregationInfo.addressLine2\n\t\t\t\t\tcity \u003d self.view.custom.congregationInfo.city\n\t\t\t\t\tstate \u003d self.view.custom.congregationInfo.state\n\t\t\t\t\tzipCode \u003d self.view.custom.congregationInfo.zip\n\t\t\t\telse:\n\t\t\t\t\taddressLine1 \u003d self.view.custom.locationInfo.addressLine1\n\t\t\t\t\taddressLine2 \u003d self.view.custom.locationInfo.addressLine2\n\t\t\t\t\tcity \u003d self.view.custom.locationInfo.city\n\t\t\t\t\tstate \u003d self.view.custom.locationInfo.state\n\t\t\t\t\tzipCode \u003d self.view.custom.locationInfo.zip\n\t\t\t\t\tif zipCode \u003d\u003d None or zipCode \u003d\u003d \u0027\u0027:\n\t\t\t\t\t\tzipCode \u003d -1\n\t\t\t\t\t\t\n\t\t\t\t# check if congregation info changed\n\t\t\t\tcongregationInfo_SQL \u003d system.db.runPrepQuery(\"select addressLine1,addressLine2,city,state,zipCode,hostLocal from shelter.location where id \u003d \" + str(locationId))\n\t\t\t\tif congregationInfo_SQL.getRowCount()\u003e0:\n\t\t\t\t\tif str(congregationInfo_SQL.getValueAt(0,\u0027addressLine1\u0027)) !\u003d str(addressLine1):\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027addressLine1, \u0027\n\t\t\t\t\tif str(congregationInfo_SQL.getValueAt(0,\u0027addressLine2\u0027)) !\u003d str(addressLine2):\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027addressLine2, \u0027\n\t\t\t\t\tif str(congregationInfo_SQL.getValueAt(0,\u0027city\u0027)) !\u003d str(city):\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027city, \u0027\n\t\t\t\t\tif str(congregationInfo_SQL.getValueAt(0,\u0027state\u0027)) !\u003d str(state):\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027state, \u0027\n\t\t\t\t\tif str(congregationInfo_SQL.getValueAt(0,\u0027zipCode\u0027)) !\u003d str(zipCode):\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027zipCode, \u0027\n\t\t\t\t\tif str(congregationInfo_SQL.getValueAt(0,\u0027hostLocal\u0027)) !\u003d str(hostLocal):\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027hostLocal, \u0027\n\t\t\t\t\t\t\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/updateShelterLocation\"\n\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\"locationId\":locationId,\n\t\t\t\t\t\t\t\"locationStreet\":addressLine1,\n\t\t\t\t\t\t\t\"locationStreet2\":addressLine2,\n\t\t\t\t\t\t\t\"locationCity\":city,\n\t\t\t\t\t\t\t\"locationState\":state,\n\t\t\t\t\t\t\t\"locationZipCode\":zipCode,\n\t\t\t\t\t\t\t\"hostLocal\":hostLocal\n\t\t\t\t\t\t\t}\n\t\t\t\tupdateLocation \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\tsystem.perspective.print(\"Update Location:\" +str(updateLocation))\n#COMMENTED OUT FOR TESTING 6/25 TO GET AROUND BREEZE BOTTLENECK\t\t\n\t\t\t\t#\n\t\t\t\t#Update primary coordinator\n\t\t\t\t#\n\t\t\t\t#first remove any primary coordinators for this location\n\t\t\t\t\n\t\t\t\t## check if primary coord information is provided\n\t\t\t\tsystem.perspective.print(\u0027coordinateId: \u0027+str(self.view.custom.primaryCoordinator.id))\n\t\t\t\tif self.view.custom.primaryCoordinator.id !\u003d None and self.view.custom.primaryCoordinator.id \u003e 0 and self.view.custom.primaryCoordinator.id !\u003d \"\":\n\t\t\t\t\t# check if primary coordinator info changed\n\t\t\t\t\tcoordinatorInfo_SQL \u003d system.db.runPrepQuery(\"select humanId,notes from shelter.Coordinator where isPrimary \u003d 1 and locationId \u003d \" + str(locationId))\n\t\t\t\t\tcoordinatorPrefferedCommunication_SQL \u003d system.db.runPrepQuery(\"select preferredCommunication from humans.Human where id \u003d \" + str(self.view.custom.primaryCoordinator.humanId))\n\t\t\t\t\tif coordinatorInfo_SQL.getRowCount()\u003e0:\n\t\t\t\t\t\tif str(coordinatorInfo_SQL.getValueAt(0,\u0027humanId\u0027)) !\u003d str(self.view.custom.primaryCoordinator.humanId) or str(coordinatorInfo_SQL.getValueAt(0,\u0027notes\u0027)) !\u003d str(self.view.custom.primaryCoordinator.notes) or str(coordinatorPrefferedCommunication_SQL.getValueAt(0,\u0027preferredCommunication\u0027)) !\u003d str(self.view.custom.primaryCoordinator.preferred):\n\t\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027Primary coordinator, \u0027\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\tpath \u003d \"WinterShelter/Registration/deleteShelterPrimaryCoordinator\"\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\"locationId\":self.view.custom.locationInfo.locationId,\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\tdeletePrimaryCoordinator \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tpath \u003d \"WinterShelter/Registration/insertShelterCoordinator\"\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\"locationId\":self.view.custom.locationInfo.locationId,\n\t\t\t\t\t\t\t\t\"humanId\":self.view.custom.primaryCoordinator.humanId,\n\t\t\t\t\t\t\t\t\"coordinatorId\":self.view.custom.primaryCoordinator.id,\n\t\t\t\t\t\t\t\t\"isPrimary\":True,\n\t\t\t\t\t\t\t\t\"notes\":self.view.custom.primaryCoordinator.notes\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\tupdatePrimaryCoordinator \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tsystem.perspective.print(\"Update Primary Coordinator:\" + str(updatePrimaryCoordinator))\n\t\t\t\t\tpath \u003d \"WinterShelter/Registration/updateShelterCoordinatorHuman\"\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\"humanId\":self.view.custom.primaryCoordinator.humanId,\n\t\t\t\t\t\t\t\t\"preferredCommunication\":self.view.custom.primaryCoordinator.preferred\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\tupdatePrimaryCoordinatorHuman \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tsystem.perspective.print(\"Update Primary Coordinator Human:\" + str(updatePrimaryCoordinatorHuman))\n\t\t\t\t# if primary coordinator not selected but comment added in comment section, then save comment with null humanId\n\t\t\t\telif (self.view.custom.primaryCoordinator.id \u003d\u003d None or self.view.custom.primaryCoordinator.id \u003c 1) or ((self.view.custom.primaryCoordinator.notes !\u003d None) and (self.view.custom.primaryCoordinator.notes !\u003d \"\")):\n\t\t\t\t\t# check if primary coordinator info changed\n\t\t\t\t\tcoordinatorInfo_SQL \u003d system.db.runPrepQuery(\"select humanId,notes from shelter.Coordinator where isPrimary \u003d 1 and locationId \u003d \" + str(locationId))\n\t\t\t\t\tif coordinatorInfo_SQL.getRowCount()\u003e0:\n\t\t\t\t\t\tif str(coordinatorInfo_SQL.getValueAt(0,\u0027humanId\u0027)) !\u003d str(self.view.custom.primaryCoordinator.humanId) or str(coordinatorInfo_SQL.getValueAt(0,\u0027notes\u0027)) !\u003d str(self.view.custom.primaryCoordinator.notes):\n\t\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027Primary coordinator, \u0027\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\tpath \u003d \"WinterShelter/Registration/deleteShelterPrimaryCoordinator\"\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\"locationId\":self.view.custom.locationInfo.locationId,\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\tdeletePrimaryCoordinator \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tpath \u003d \"WinterShelter/Registration/insertShelterCoordinator\"\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\"locationId\":self.view.custom.locationInfo.locationId,\n\t\t\t\t\t\t\t\t\"humanId\":self.view.custom.primaryCoordinator.humanId,\n\t\t\t\t\t\t\t\t\"coordinatorId\":self.view.custom.primaryCoordinator.id,\n\t\t\t\t\t\t\t\t\"isPrimary\":True,\n\t\t\t\t\t\t\t\t\"notes\":self.view.custom.primaryCoordinator.notes\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\tupdatePrimaryCoordinator \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tsystem.perspective.print(\"Update Note only :\" + str(updatePrimaryCoordinator))\n\t\t\t\t#\n\t\t\t\t#Update secondary coordinator\n\t\t\t\t#\n\t\t\t\t#first remove any backup coordinators for this location\n#\t\t\t\tsystem.perspective.print(\"secondary Coordinator id: \"+str(self.view.custom.secondaryCoordinator.id))\n\t\t\t\tif self.view.custom.secondaryCoordinator.hasBackupCoordinator \u003d\u003d True:\n#\t\t\t\tif 1 \u003d\u003d 1:\n\t\t\t\t\t# check if secondary coordinator info changed\n\t\t\t\t\tcoordinatorInfo_SQL \u003d system.db.runPrepQuery(\"select humanId,notes from shelter.Coordinator where isPrimary \u003d 0 and locationId \u003d \" + str(locationId))\n\t\t\t\t\tcoordinatorPrefferedCommunication_SQL \u003d system.db.runPrepQuery(\"select preferredCommunication from humans.Human where id \u003d \" + str(self.view.custom.secondaryCoordinator.humanId))\n\t\t\t\t\tif coordinatorInfo_SQL.getRowCount()\u003e0:\n\t\t\t\t\t\tif str(coordinatorInfo_SQL.getValueAt(0,\u0027humanId\u0027)) !\u003d str(self.view.custom.secondaryCoordinator.humanId) or str(coordinatorInfo_SQL.getValueAt(0,\u0027notes\u0027)) !\u003d str(self.view.custom.secondaryCoordinator.notes) or str(coordinatorPrefferedCommunication_SQL.getValueAt(0,\u0027preferredCommunication\u0027)) !\u003d str(self.view.custom.secondaryCoordinator.preferred):\n\t\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027Secondary coordinator, \u0027\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\tif self.view.custom.secondaryCoordinator.id !\u003d None and self.view.custom.secondaryCoordinator.id !\u003d \"\" and self.view.custom.secondaryCoordinator.id \u003e0:\n\t\t\t\t\t\tpath \u003d \"WinterShelter/Registration/deleteShelterBackupCoordinator\"\n\t\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\t\"locationId\":self.view.custom.locationInfo.locationId,\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\tdeleteSecondaryCoordinator \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\t\tsystem.perspective.print(\"Delete Secondary Coordinator:\" + str(deleteSecondaryCoordinator))\n\t\t\t\t\t#add them back in if they exist\n\t\t\t\t\tsecondaryExists \u003d self.view.custom.secondaryCoordinator.hasBackupCoordinator\n\t\t\t\t\tif secondaryExists:\n\t\t\t\t\t\tsystem.perspective.print(\"Secondary Coordinator Exists\")\n\t\t\t\t\t\t#path \u003d \"WinterShelter/Registration/updateShelterCoordinator\"\n\t\t\t\t\t\tpath \u003d \"WinterShelter/Registration/insertShelterCoordinator\"\n\t\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\t\"locationId\":self.view.custom.locationInfo.locationId,\n\t\t\t\t\t\t\t\t\t\"humanId\":self.view.custom.secondaryCoordinator.humanId,\n\t\t\t\t\t\t\t\t\t\"coordinatorId\":self.view.custom.secondaryCoordinator.id,\n\t\t\t\t\t\t\t\t\t\"isPrimary\":False,\n\t\t\t\t\t\t\t\t\t\"notes\":self.view.custom.secondaryCoordinator.notes\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\tupdateSecondaryCoordinator \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\t\tsystem.perspective.print(\"Insert Secondary Coordinator:\" + str(updateSecondaryCoordinator))\n\t\t\t\t\t\tpath \u003d \"WinterShelter/Registration/updateShelterCoordinatorHuman\"\n\t\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\t\t\"humanId\":self.view.custom.secondaryCoordinator.humanId,\n\t\t\t\t\t\t\t\t\t\"preferredCommunication\":self.view.custom.secondaryCoordinator.preferred\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\tupdateSecondaryCoordinatorHuman \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\t\tsystem.perspective.print(\"Update Secondary Coordinator Human:\" + str(updateSecondaryCoordinatorHuman))\n\t\t\t\t#\n\t\t\t\t#Update Seasonal Data\n\t\t\t\t#\n\t\t\t\tdateSelectionVal \u003d \"[\"\n\t\t\t\tif len(self.view.custom.locationInfo.dateSelectionDays) \u003e 0:\n\t\t\t\t\tfor oneDay in self.view.custom.locationInfo.dateSelectionDays:\n\t\t\t\t\t\tdateSelectionVal \u003d dateSelectionVal + str(oneDay) + \",\"\n\t\t\t\t\tdateSelectionVal \u003d dateSelectionVal[:-1] \n\t\t\t\tdateSelectionVal \u003d dateSelectionVal + \"]\"\n\t\t\t\t\n#\t\t\t\tThere is no inserting of the frequency. Attempting to reference frequencyTypeId but the pointer is to frequency\n#\t\t\t\tADDED ANDREW HUNT 10/06/22\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/insertFrequency\"\n\t\t\t\tif self.view.custom.locationInfo.frequencyId is not None and self.view.custom.locationInfo.frequencyId !\u003d \u0027\u0027 and self.view.custom.locationInfo.frequencyId !\u003d -1:\n\t\t\t\t\t# check if frequency type changed\n\t\t\t\t\tfrequencyType_SQL \u003d system.db.runPrepQuery(\"select TOP 1 frequencyTypeId from shelter.Frequency where locationId \u003d \" + str(locationId) + \" ORDER BY timeCreated DESC\")\n\t\t\t\t\tif frequencyType_SQL.getRowCount()\u003e0:\n\t\t\t\t\t\tif str(frequencyType_SQL.getValueAt(0,\u0027frequencyTypeId\u0027)) !\u003d str(self.view.custom.locationInfo.frequencyId):\n\t\t\t\t\t\t\tsystem.perspective.print(\u0027frequencyType: \u0027+ str(frequencyType_SQL.getValueAt(0,\u0027frequencyTypeId\u0027))+str(self.view.custom.locationInfo.frequencyId))\n\t\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027frequencyType, \u0027\t\n\t\t\t\t\t\t\t\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\u0027locationId\u0027:locationId,\n\t\t\t\t\t\t\u0027frequencyTypeId\u0027:self.view.custom.locationInfo.frequencyId\n\t\t\t\t\t\t}\n\t\t\t\t\tsystem.perspective.print(str(locationId)+\u0027 \u0027+str(self.view.custom.locationInfo.frequencyId))\n\t\t\t\t\tinsFrequency \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tinsFrequencyId \u003d system.db.runScalarPrepQuery(\u0027SELECT TOP 1 id FROM shelter.Frequency WHERE locationId \u003d ? and frequencyTypeId \u003d ? ORDER BY timeCreated DESC\u0027,\n\t\t\t\t\t\t\t\t[locationId,self.view.custom.locationInfo.frequencyId])\n\t\t\t\telse:\n\t\t\t\t\tinsFrequencyId \u003d None\n\t\t\t\t\t\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/insertTransport\"\n\t\t\t\tif self.view.custom.locationInfo.transportId is not None and self.view.custom.locationInfo.transportId !\u003d \u0027\u0027 and self.view.custom.locationInfo.transportId !\u003d -1:\n\t\t\t\t\t# check if frequency type changed\n\t\t\t\t\tTransport_SQL \u003d system.db.runPrepQuery(\"select TOP 1 transportTypeId from shelter.Transport where locationId \u003d \" + str(locationId) + \" ORDER BY timeCreated DESC\")\n\t\t\t\t\tif Transport_SQL.getRowCount()\u003e0:\n\t\t\t\t\t\tif str(Transport_SQL.getValueAt(0,\u0027transportTypeId\u0027)) !\u003d str(self.view.custom.locationInfo.transportId):\n\t\t\t\t\t\t\tsystem.perspective.print(\u0027transportType: \u0027+ str(Transport_SQL.getValueAt(0,\u0027transportTypeId\u0027))+str(self.view.custom.locationInfo.transportId))\n\t\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027transportType, \u0027\n\t\t\t\t\t\t\t\n\t\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\u0027locationId\u0027:locationId,\n\t\t\t\t\t\t\u0027transportTypeId\u0027:self.view.custom.locationInfo.transportId,\n\t\t\t\t\t\t\u0027capacity\u0027:10\n\t\t\t\t\t\t}\n\t\t\t\t\tsystem.perspective.print(\u0027LOCATION TRANSPORT: \u0027+str(locationId)+\u0027 \u0027+str(self.view.custom.locationInfo.transportId))\n\t\t\t\t\tinsTransport \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\tinsTransportId \u003d system.db.runScalarPrepQuery(\u0027SELECT TOP 1 id FROM shelter.Transport WHERE locationId \u003d ? and transportTypeId \u003d ? ORDER BY timeCreated DESC\u0027,\n\t\t\t\t\t\t\t\t[locationId,self.view.custom.locationInfo.transportId])\n\t\t\t\telse:\n\t\t\t\t\tinsTransportId \u003d None\n\t\t\t\t\n\t\t\t\t# check if seasonal data changed\n\t\t\t\tseasonalData_SQL \u003d system.db.runPrepQuery(\"select * from shelter.LocationSeasonal where locationId \u003d \" + str(locationId) + \" and seasonId \u003d \" +str(self.view.custom.currentSeasonId))\n\t\t\t\tif seasonalData_SQL.getRowCount()\u003e0:\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027hostLocationTypeId\u0027)) !\u003d str(self.view.custom.locationInfo.hostLocationTypeId):\n\t\t\t\t\t\tsystem.perspective.print(\u0027hostLocation: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027hostLocationTypeId\u0027))+str(self.view.custom.locationInfo.hostLocationTypeId))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027hostLocation, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027beds\u0027)) !\u003d str(self.view.custom.services.capacity):\n\t\t\t\t\t\tsystem.perspective.print(\u0027beds: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027beds\u0027))+str(self.view.custom.services.capacity))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027beds, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027genderId\u0027)) !\u003d str(self.view.custom.services.genderId):\n\t\t\t\t\t\tsystem.perspective.print(\u0027genderId: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027genderId\u0027))+str(self.view.custom.services.genderId))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027gender, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027families\u0027)) !\u003d str(self.view.custom.services.families):\n\t\t\t\t\t\tsystem.perspective.print(\u0027families: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027families\u0027))+str(self.view.custom.services.families))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027families, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027extraShortNotice\u0027)) !\u003d str(self.view.custom.services.shortNotice):\n\t\t\t\t\t\tsystem.perspective.print(\u0027extraShortNotice: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027extraShortNotice\u0027))+str(self.view.custom.services.shortNotice))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027extraShortNotice, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027showers\u0027)) !\u003d str(self.view.custom.services.showers):\n\t\t\t\t\t\tsystem.perspective.print(\u0027showers: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027showers\u0027))+str(self.view.custom.services.showers))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027showers, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027clothing\u0027)) !\u003d str(self.view.custom.services.clothing):\n\t\t\t\t\t\tsystem.perspective.print(\u0027clothing: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027clothing\u0027))+str(self.view.custom.services.clothing))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027clothing, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027laundry\u0027)) !\u003d str(self.view.custom.services.laundry):\n\t\t\t\t\t\tsystem.perspective.print(\u0027laundry: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027laundry\u0027))+str(self.view.custom.services.laundry))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027laundry, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027sackLunches\u0027)) !\u003d str(self.view.custom.services.sackLunches):\n\t\t\t\t\t\tsystem.perspective.print(\u0027sackLunches: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027sackLunches\u0027))+str(self.view.custom.services.sackLunches))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027sackLunches, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027breakfast\u0027)) !\u003d str(self.view.custom.services.breakfast):\n\t\t\t\t\t\tsystem.perspective.print(\u0027breakfast: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027breakfast\u0027))+str(self.view.custom.services.breakfast))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027breakfast, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027dinner\u0027)) !\u003d str(self.view.custom.services.dinner):\n\t\t\t\t\t\tsystem.perspective.print(\u0027dinner: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027dinner\u0027))+str(self.view.custom.services.dinner))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027dinner, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027haircuts\u0027)) !\u003d str(self.view.custom.services.haircuts):\n\t\t\t\t\t\tsystem.perspective.print(\u0027haircuts: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027haircuts\u0027))+str(self.view.custom.services.haircuts))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027haircuts, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027hygieneItems\u0027)) !\u003d str(self.view.custom.services.hygieneItems):\n\t\t\t\t\t\tsystem.perspective.print(\u0027hygieneItems: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027hygieneItems\u0027))+str(self.view.custom.services.hygieneItems))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027hygieneItems, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027otherService\u0027)) !\u003d str(self.view.custom.services.otherService):\n\t\t\t\t\t\tsystem.perspective.print(\u0027otherService: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027otherService\u0027))+str(self.view.custom.services.otherService))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027otherService, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027otherServiceList\u0027)) !\u003d str(self.view.custom.services.otherServiceList):\n\t\t\t\t\t\tsystem.perspective.print(\u0027otherServiceList: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027otherServiceList\u0027))+str(self.view.custom.services.otherServiceList))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027otherServiceList, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027accessible\u0027)) !\u003d str(self.view.custom.services.accessible):\n\t\t\t\t\t\tsystem.perspective.print(\u0027accessible: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027accessible\u0027))+str(self.view.custom.services.accessible))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027accessible, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027stairs\u0027)) !\u003d str(self.view.custom.services.stairs):\n\t\t\t\t\t\tsystem.perspective.print(\u0027stairs: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027stairs\u0027))+str(self.view.custom.services.stairs))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027stairs, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027smoking\u0027)) !\u003d str(self.view.custom.services.smoking):\n\t\t\t\t\t\tsystem.perspective.print(\u0027smoking: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027smoking\u0027))+str(self.view.custom.services.smoking))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027smoking, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027partners\u0027)) !\u003d str(self.view.custom.services.partners):\n\t\t\t\t\t\tsystem.perspective.print(\u0027partners: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027partners\u0027))+str(self.view.custom.services.partners))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027partners, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027serviceNotes\u0027)) !\u003d str(self.view.custom.services.comments):\n\t\t\t\t\t\tsystem.perspective.print(\u0027serviceNotes: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027serviceNotes\u0027))+str(self.view.custom.services.comments))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027serviceNotes, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027notes\u0027)) !\u003d str(self.view.custom.locationInfo.notes):\n\t\t\t\t\t\tsystem.perspective.print(\u0027locationInfo_notes: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027notes\u0027))+str(self.view.custom.locationInfo.notes))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027locationInfo_notes, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027scheduleComments\u0027)) !\u003d str(self.view.custom.scheduleInfo.scheduleComments):\n\t\t\t\t\t\tsystem.perspective.print(\u0027scheduleComments: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027scheduleComments\u0027))+str(self.view.custom.scheduleInfo.scheduleComments))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027scheduleComments, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027reminderCall\u0027)) !\u003d str(self.view.custom.scheduleInfo.reminderCall):\n\t\t\t\t\t\tsystem.perspective.print(\u0027reminderCall: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027reminderCall\u0027))+str(self.view.custom.scheduleInfo.reminderCall))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027reminderCall, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027otherHostMore\u0027)) !\u003d str(self.view.custom.scheduleInfo.hostMoreOtherDetail):\n\t\t\t\t\t\tsystem.perspective.print(\u0027otherHostMore: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027otherHostMore\u0027))+str(self.view.custom.scheduleInfo.hostMoreOtherDetail))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027otherHostMore, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027nights\u0027)) !\u003d str(self.view.custom.services.nights):\n\t\t\t\t\t\tsystem.perspective.print(\u0027nights: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027nights\u0027))+str(self.view.custom.services.nights))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027nights, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027dateSelectionPattern\u0027)) !\u003d str(self.view.custom.locationInfo.dateSelectionPattern):\n\t\t\t\t\t\tsystem.perspective.print(\u0027dateSelectionPattern: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027dateSelectionPattern\u0027))+str(self.view.custom.locationInfo.dateSelectionPattern))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027dateSelectionPattern, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027dateSelectionDays\u0027)) !\u003d str(dateSelectionVal):\n\t\t\t\t\t\tsystem.perspective.print(\u0027dateSelectionDays: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027dateSelectionDays\u0027))+str(dateSelectionVal))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027dateSelectionDays, \u0027\t\n\t\t\t\t\tif str(seasonalData_SQL.getValueAt(0,\u0027pickupTime\u0027)) !\u003d str(self.view.custom.locationInfo.pickupTime):\n\t\t\t\t\t\tsystem.perspective.print(\u0027pickupTime: \u0027+ str(seasonalData_SQL.getValueAt(0,\u0027pickupTime\u0027))+str(self.view.custom.locationInfo.pickupTime))\n\t\t\t\t\t\tchangedFields \u003d changedFields + \u0027pickupTime, \u0027\t\n\t\t\t\t\t\t\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/updateShelterSeasonal\"\n\t\t\t\tparameters \u003d {\n\t\t\t\t\t\t\t\"locationSeasonId\":self.view.custom.services.locationSeasonId\n\t\t\t\t\t\t\t,\"hostLocationTypeId\":self.view.custom.locationInfo.hostLocationTypeId\n\t\t\t\t\t\t\t,\"beds\":self.view.custom.services.capacity\n\t\t\t\t\t\t\t,\"genderId\":self.view.custom.services.genderId\n\t\t\t\t\t\t\t,\"families\":self.view.custom.services.families\n\t\t\t\t\t\t\t,\"extraShortNotice\": self.view.custom.services.shortNotice\n\t\t\t\t\t\t\t,\"showers\": self.view.custom.services.showers\n\t\t\t\t\t\t\t,\"clothing\": self.view.custom.services.clothing\n\t\t\t\t\t\t\t,\"laundry\": self.view.custom.services.laundry\n\t\t\t\t\t\t\t,\"sackLunches\": self.view.custom.services.sackLunches\n\t\t\t\t\t\t\t,\"breakfast\": self.view.custom.services.breakfast\n\t\t\t\t\t\t\t,\"dinner\": self.view.custom.services.dinner\n\t\t\t\t\t\t\t,\"haircuts\": self.view.custom.services.haircuts\n\t\t\t\t\t\t\t,\"hygieneItems\": self.view.custom.services.hygieneItems\n\t\t\t\t\t\t\t,\"otherService\": self.view.custom.services.otherService\n\t\t\t\t\t\t\t,\"otherServiceList\": self.view.custom.services.otherServiceList\n\t\t\t\t\t\t\t,\"accessible\": self.view.custom.services.accessible\n\t\t\t\t\t\t\t,\"stairs\": self.view.custom.services.stairs\n\t\t\t\t\t\t\t,\"smoking\": self.view.custom.services.smoking\n\t\t\t\t\t\t\t,\"partners\": self.view.custom.services.partners\n\t\t\t\t\t\t\t,\"serviceNotes\": self.view.custom.services.comments\n\t\t\t\t\t\t\t,\"notes\": self.view.custom.locationInfo.notes\n\t\t\t\t\t\t\t,\"scheduleComments\": self.view.custom.scheduleInfo.scheduleComments\n\t\t\t\t\t\t\t,\"reminderCall\": self.view.custom.scheduleInfo.reminderCall\n\t\t\t\t\t\t\t,\"otherHostMore\": self.view.custom.scheduleInfo.hostMoreOtherDetail\n\t\t\t\t\t\t\t,\"nights\": self.view.custom.services.nights\n\t\t\t\t\t\t\t,\"transportId\":insTransportId\n#\t\t\t\t\t\t\t,\"transportId\":self.view.custom.locationInfo.transportId\n\t\t\t\t\t\t\t,\"frequencyId\":insFrequencyId\n#\t\t\t\t\t\t\t,\"frequencyId\":self.view.custom.locationInfo.frequencyId\n\t\t\t\t\t\t\t,\"dateSelectionPattern\":self.view.custom.locationInfo.dateSelectionPattern\n\t\t\t\t\t\t\t,\"dateSelectionDays\":dateSelectionVal\n\t\t\t\t\t\t\t,\"pickupTime\":self.view.custom.locationInfo.pickupTime\n\t\t\t\t\t\t\t}\n\t\t\t\tsystem.perspective.print(\u0027Update Seasonal Data with parameters\u0027)\n\t\t\t\tsystem.perspective.print(\u0027Update Seasonal Data\u0027)\n\t\t\t\tsystem.perspective.print(\u0027transportId: \u0027+str(self.view.custom.locationInfo.transportId))\n#\t\t\t\tif IsNewRegistration \u003d\u003d True:\n#\t\t\t\t\t## Insert Activity log record for new registration\n#\t\t\t\t\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n#\t\t\t\t\tsystem.db.runPrepUpdate(insertLogQuery, [locationId, \"new_registration\", self.view.custom.locationInfo.locationName])\n#\t\t\t\t\tsystem.perspective.print(\u0027parameters: \u0027+str(parameters))\n#\t\t\t\telse:\n#\t\t\t\t\t## Insert Activity log record update registration\n#\t\t\t\t\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n#\t\t\t\t\tsystem.db.runPrepUpdate(insertLogQuery, [self.view.custom.locationInfo.locationId, \"registration_changed\", self.view.custom.locationInfo.locationName])\n\t\t\t\tupdateSeasonalData \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\tsystem.perspective.print(\u0027Update Seasonal Data\u0027)\n\t\t\t\t#\n\t\t\t\t#Update the schedule\n\t\t\t\t#\n\t\t\t\t# check if scedule changed\n\t\t\t\tif self.view.custom.schedulePrev !\u003d self.view.custom.schedule:\n\t\t\t\t\tchangedFields \u003d changedFields + \u0027schedule, \u0027\n\t\t\t\t\t\n\t\t\t\tschedule \u003d self.view.custom.schedule\n\t\t\t\tnewSchedule \u003d []\n\t\t\t\tfor date in range(0,len(schedule)):\n\t\t\t\t\tnewDate \u003d int(schedule[date])\n\t\t\t\t\tnewSchedule.append(newDate)\n\t\t\t\tsystem.perspective.print(newSchedule)\n\t\t\t\tgenderId \u003d self.view.custom.services.genderId\n\t\t\t\ttotalBeds \u003d self.view.custom.services.capacity\n\t\t\t\tif genderId \u003d\u003d None or genderId \u003d\u003d \u0027\u0027:\n\t\t\t\t\tgenderIdNew \u003d -1\n\t\t\t\telse:\n\t\t\t\t\tgenderIdNew \u003d genderId\n\t\t\t\twinterShelter.editRegistrationSchedule(self.view.custom.locationInfo.locationId,newSchedule,genderIdNew,totalBeds)\t\n\t\t\t\tsystem.perspective.print(\"Done\")\n\t\t\t\t#\n\t\t\t\t#Update host more\n\t\t\t\t#\n\t\t\t\t#Remove the original values\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/deleteHostMore\"\n\t\t\t\tparameters \u003d {\"locationId\":locationId}\n\t\t\t\tdeleteHostMore\u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t#Insert the new values\n\t\t\t\thostMoreList \u003d []\n\t\t\t\thostMoreList.append(self.view.custom.scheduleInfo.hostMoreSpace)\n\t\t\t\thostMoreList.append(self.view.custom.scheduleInfo.hostMoreMeals)\n\t\t\t\thostMoreList.append(self.view.custom.scheduleInfo.hostMoreTransportation)\n\t\t\t\thostMoreList.append(self.view.custom.scheduleInfo.hostMoreFinances)\n\t\t\t\thostMoreList.append(self.view.custom.scheduleInfo.hostMoreVolunteers)\n\t\t\t\thostMoreList.append(self.view.custom.scheduleInfo.hostMoreOther)\n\t\t\t\tsystem.perspective.print(str(hostMoreList))\n\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/insertHostMore\"\n\t\t\t\tfor item in range(0,6):\n\t\t\t\t\tif hostMoreList[item]:\n\t\t\t\t\t\tparameters \u003d {\"locationId\":locationId,\n\t\t\t\t\t\t\t\t\t\t\"hostMoreId\":item+1}\n\t\t\t\t\t\tsystem.perspective.print(str(parameters))\n\t\t\t\t\t\tinsertHostMore\u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\tsystem.perspective.print(\u0027Update Host More Data\u0027)\n\t\t\t\t\n\t\t\t\tif IsNewRegistration \u003d\u003d True:\n\t\t\t\t\t## Insert Activity log record for new registration\n\t\t\t\t\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n\t\t\t\t\tsystem.db.runPrepUpdate(insertLogQuery, [locationId, \"new_registration\", self.view.custom.locationInfo.locationName])\n\t\t\t\t\t## Insert audit log\n\t\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/InsertCongregationLog\"\n\t\t\t\t\tparameters \u003d {\"locationId\":locationId, \"actionBy\":self.session.custom.loggedInStaffEmployeeID, \"action\":\"New Congregation\", \"actionFields\":\"\", \"userName\":self.session.props.auth.user.userName}\n\t\t\t\t\tsystem.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\telse:\n\t\t\t\t\t## Insert Activity log record update registration\n\t\t\t\t\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n\t\t\t\t\tsystem.db.runPrepUpdate(insertLogQuery, [self.view.custom.locationInfo.locationId, \"registration_changed\", self.view.custom.locationInfo.locationName])\n\t\t\t\t\t## Insert audit log\n\t\t\t\t\tif changedFields !\u003d None and changedFields !\u003d \u0027\u0027:\n\t\t\t\t\t\tchangedFields \u003d changedFields[:-2]\n\t\t\t\t\t\tpath \u003d \"WinterShelterGlobal/Registration/InsertCongregationLog\"\n\t\t\t\t\t\tparameters \u003d {\"locationId\":locationId, \"actionBy\":self.session.custom.loggedInStaffEmployeeID, \"action\":\"Edit Congregation\", \"actionFields\":changedFields, \"userName\":self.session.props.auth.user.userName}\n\t\t\t\t\t\tsystem.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t## also add into the Registration table data if we are before 10/31 for current season registration\n\t\t\t\tcurrentDate \u003d system.date.now()\n\t\t\t\tdate_11_1 \u003d system.date.getDate(system.date.getYear(currentDate), 10, 1)\n\t\t\t\tsystem.perspective.print(\"check if reg data needs update\")\n\t\t\t\tsystem.perspective.print(\"current season Id \u003d \")\n\t\t\t\tsystem.perspective.print(int(self.view.custom.currentSeasonId))\n\t\t\t\tsystem.perspective.print(\"location season Id \u003d \")\n\t\t\t\tsystem.perspective.print(int(self.view.custom.selectedSeasonId))\n\t\t\t\tsystem.perspective.print(int(self.view.custom.currentSeasonId) \u003d\u003d int(self.view.custom.selectedSeasonId))\n\t\t\t\tsystem.perspective.print(system.date.isBefore(currentDate, date_11_1))\n\t\t\t\tif int(self.view.custom.currentSeasonId) \u003d\u003d int(self.view.custom.selectedSeasonId) and (IsNewRegistration or system.date.isBefore(currentDate, date_11_1)) :\n\t\t\t\t\t## only store / overwrite location seasonal registration data until 10/31 for current season \n\t\t\t\t\t## prev season data edits or current season edits after 10/31 should not be overwritten\n\t\t\t\t\tsystem.perspective.print(\"in reg data entry \")\n\t\t\t\t\tdeleteQ \u003d \"DELETE FROM [shelter].[LocationRegistrationDetails] WHERE locationId \u003d ? and seasonId \u003d ?\"\n\t\t\t\t\tsystem.db.runPrepUpdate(deleteQ, [locationId, self.view.custom.currentSeasonId])\n\t\t\t\t\t\n\t\t\t\t\tbedsProjected \u003d int(self.view.custom.services.capacity) * len(self.view.custom.schedule)\n\t\t\t\t\tscheduleDays \u003d \u0027,\u0027.join([str(i) for i in self.view.custom.schedule])\n\t\t\t\t\t\n\t\t\t\t\t## determine hostMore\n\t\t\t\t\thostMoreString \u003d \"\"\n\t\t\t\t\tfor item in range(0,6):\n\t\t\t\t\t\tif hostMoreList[item]:\n\t\t\t\t\t\t\thostMoreString \u003d hostMoreString + str(item + 1) + \",\"\n\t\t\t\t\tif hostMoreString !\u003d \"\":\n\t\t\t\t\t\thostMoreString \u003d hostMoreString[:-1] ## remove extra , at the end\n\t\t\t\t\t\n\t\t\t\t\tinsertQ \u003d \"\"\"INSERT INTO [shelter].[LocationRegistrationDetails]\n\t\t\t\t\t           ([locationId], [seasonId], [genderId], [transportTypeId]\n\t\t\t\t\t\t\t   , [transportCapacity],[frequencyTypeId],[hostLocationTypeId],[nights]\n\t\t\t\t\t           ,[beds],[accessible],[families],[extraShortNotice]\n\t\t\t\t\t           ,[stairs],[smoking],[reminderCall],[showers]\n\t\t\t\t\t           ,[clothing],[laundry],[sackLunches],[breakfast]\n\t\t\t\t\t           ,[dinner],[haircuts],[hygieneItems],[otherService]\n\t\t\t\t\t           ,[otherServiceList],[serviceNotes],[timeCreated],[notes]\n\t\t\t\t\t           ,[partners],[scheduleComments],[otherHostMore],[bedsProjected]\n\t\t\t\t\t           ,[bedsActual],[dateSelectionPattern],[dateSelectionDays],[scheduleDaysOfTheYear]\n\t\t\t\t\t           ,[congregationStreet],[congregationStreet2],[congregationCity],[congregationState]\n\t\t\t\t\t           ,[congregationZip],[congregationPhone],[congregationProviderId],[hostLocationStreet]\n\t\t\t\t\t           ,[hostLocationStreet2],[hostLocationCity],[hostLocationState],[hostLocationZip]\n\t\t\t\t\t           ,[hostLocal],[primaryCoordHumanId],[primaryCoordNotes],[primaryCoordPrefCommunication]\n\t\t\t\t\t           ,[secondaryCoordHumanId],[secondaryCoordNotes],[secondaryCoordPrefCommunication],[hostMoreIds]\n\t\t\t\t\t           ,[pickupTime])\n\t\t\t\t\t\t\tVALUES (?,?,?,?,\n\t\t\t\t\t\t\t\t\t10,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,CURRENT_TIMESTAMP,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t0,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?,?,?,?,\n\t\t\t\t\t\t\t\t\t?\n\t\t\t\t\t\t\t   )\n\t\t\t\t\t\"\"\"\n\t\t\t\t\tqArgs \u003d[locationId, self.view.custom.currentSeasonId, self.view.custom.services.genderId, self.view.custom.locationInfo.transportId, \n\t\t\t\t\tself.view.custom.locationInfo.frequencyId, self.view.custom.locationInfo.hostLocationTypeId, self.view.custom.services.nights,\n\t\t\t\t\tself.view.custom.services.capacity, self.view.custom.services.accessible, self.view.custom.services.families, self.view.custom.services.shortNotice,\n\t\t\t\t\tself.view.custom.services.stairs, self.view.custom.services.smoking, self.view.custom.scheduleInfo.reminderCall, self.view.custom.services.showers,\n\t\t\t\t\tself.view.custom.services.clothing, self.view.custom.services.laundry, self.view.custom.services.sackLunches, self.view.custom.services.breakfast,\n\t\t\t\t\tself.view.custom.services.dinner, self.view.custom.services.haircuts, self.view.custom.services.hygieneItems, self.view.custom.services.otherService,\n\t\t\t\t\tself.view.custom.services.otherServiceList, self.view.custom.services.comments, self.view.custom.locationInfo.notes,\n\t\t\t\t\tself.view.custom.services.partners, self.view.custom.scheduleInfo.scheduleComments, self.view.custom.scheduleInfo.hostMoreOtherDetail, bedsProjected,\n\t\t\t\t\tself.view.custom.locationInfo.dateSelectionPattern, dateSelectionVal, scheduleDays,\n\t\t\t\t\tself.view.custom.congregationInfo.addressLine1, self.view.custom.congregationInfo.addressLine2,self.view.custom.congregationInfo.city,self.view.custom.congregationInfo.state,\n\t\t\t\t\tself.view.custom.congregationInfo.zip, self.view.custom.congregationInfo.phone, self.view.custom.congregationInfo.providerId,addressLine1,\n\t\t\t\t\taddressLine2, city, state, zipCode,\n\t\t\t\t\thostLocal, self.view.custom.primaryCoordinator.humanId,self.view.custom.primaryCoordinator.notes, self.view.custom.primaryCoordinator.preferred,\n\t\t\t\t\tself.view.custom.secondaryCoordinator.humanId,self.view.custom.secondaryCoordinator.notes, self.view.custom.secondaryCoordinator.preferred, hostMoreString,\n\t\t\t\t\tself.view.custom.locationInfo.pickupTime\n\t\t\t\t\t]\n\t\t\t\t\t\n\t\t\t\t\tsystem.db.runPrepUpdate(insertQ, qArgs)\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t# refresh about pannel data\n\t\t\t\tsystem.perspective.sendMessage(\u0027RefreshAboutPanel\u0027,{},\u0027session\u0027)\n\t\t\t\tif IsNewRegistration \u003d\u003d True:\n\t\t\t\t\t## send notification to RITI\n\t\t\t\t\tcongregationName \u003d self.view.custom.congregationInfo.congregationName\n\t\t\t\t\tto_addr \u003d \"test@test.org\" \n\t\t\t\t\tmessage \u003d str(congregationName) + \" has been registered.\"\n\t\t\t\t\tfilename \u003d \"Registration Report.pdf\"\n\t\t\t\t\tselectedLocation \u003d self.view.custom.congregationInfo.congregationId\n\t\t\t\t\tselectedSeason \u003d self.view.custom.selectedSeasonId\n\t\t\t\t\tprevSeasonId \u003d self.view.custom.previousSeasonId\n\t\t\t\t\tparams \u003d {\"locationId\":selectedLocation, \"seasonId\":selectedSeason, \"previousSeasonId\" : prevSeasonId, \"CalledFromPage\":\"Registration\"} #, \"EndDate\":eDate, \"VolunteerID\":volunteerID}\n\t\t\t\t\tsystem.perspective.print(\u0027email: \u0027+str(params))\n\t\t\t\t\tbyteData \u003d system.report.executeReport(path\u003d\"WinterShelter/Registration Report\", project\u003d\"RITI\", parameters\u003dparams, fileType\u003d\"pdf\")\t\t\t\t\t\n\t\t\t\t\tlogger \u003d system.util.getLogger(\u0027EmailLogs\u0027)\n\t\t\t\t\ttry:\n#\t\t\t\t\t\tsystem.net.sendEmail(fromAddr\u003d\"test-notifications@test.org\", subject\u003d\u0027New congregation registered: \u0027+ str(congregationName), \n#\t\t\t\t\t\t\t\t\t\t\tbody\u003d message, to\u003d to_addr, attachmentNames\u003d[filename], attachmentData\u003d [byteData],smtpProfile\u003d\"testnotifications\")\n\t\t\t\t\t\tlogger.info(\u0027Email sent successfully.\\nSubject: New congregation registered: \u0027+ str(congregationName) + \u0027\\nTo: \u0027 + to_addr)\n\t\t\t\t\texcept:\n\t\t\t\t\t\tlogger.info(\u0027Could not send email because none of the recipients had valid email addresses.\u0027)\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t## send Thank you for registering email\n\t\t\t\t\t# check is email enable\n\t\t\t\t\tgetIsEnableEvent \u003d system.db.runPrepQuery(\"SELECT id, settingName, settingValue FROM shelter.Settings WHERE timeRetired is NULL AND settingName \u003d \u0027PostRegistrationEmail_Enable\u0027\")\n\t\t\t\t\tisEnableEmail \u003d  getIsEnableEvent.getValueAt(0,\u0027settingValue\u0027)\n\t\t\t\t\t# get email text\n\t\t\t\t\tgetEmailText \u003d system.db.runPrepQuery(\"SELECT id, settingName, settingValue FROM shelter.Settings WHERE timeRetired is NULL AND settingName \u003d \u0027PostRegistrationEmail_Text\u0027\")\n\t\t\t\t\temailText \u003d  getEmailText.getValueAt(0,\u0027settingValue\u0027)\n\t\t\t\t\t## send email only when setting enable\t\n\t\t\t\t\tif isEnableEmail \u003d\u003d \u0027true\u0027:\t\n\t\t\t\t\t\temail \u003d \u0027\u0027\n\t\t\t\t\t\tusers \u003d system.user.getUsers(\u0027congregation\u0027)\n\t\t\t\t\t\tusername \u003d \u0027(New User)\u0027\n\t\t\t\t\t\tcongregationName \u003d self.view.custom.congregationInfo.congregationName\n\t\t\t\t\t\tfor user in users:\n\t\t\t\t\t\t\tname \u003d user.get(\u0027firstname\u0027)\n\t\t\t\t\t\t\tif name \u003d\u003d congregationName:\n\t\t\t\t\t\t\t\tcontactInfo \u003d user.getContactInfo()\n\t\t\t\t\t\t\t\tfor item in contactInfo:\n\t\t\t\t\t\t\t\t\tif item.getContactType() \u003d\u003d \u0027email\u0027:\n\t\t\t\t\t\t\t\t\t\temail \u003d item.getValue()\n\t\t\t\t\t\t\t\t\t\tbreak\n\t\t\t\t\t\tfromAddress \u003d project.GetEmails.getRitiMainEmail()\n\t\t\t\t\t\tprimary_coord_email \u003d self.view.custom.primaryCoordinator.email\n\t\t\t\t\t\tsecondary_coord_email \u003d self.view.custom.secondaryCoordinator.email\n\t\t\t\t\t\ttoAddress \u003d []\n\t\t\t\t\t\tif email !\u003d None and email !\u003d \u0027\u0027:\n\t\t\t\t\t\t\ttoAddress.append(email)\n\t\t\t\t\t\tif primary_coord_email !\u003d None and primary_coord_email !\u003d \u0027\u0027:\n\t\t\t\t\t\t\ttoAddress.append(primary_coord_email)\n\t\t\t\t\t\tif secondary_coord_email !\u003d None and secondary_coord_email !\u003d \u0027\u0027:\n\t\t\t\t\t\t\ttoAddress.append(secondary_coord_email)\n\t\t\t\t\t\tsystem.perspective.print(\u0027email: \u0027+str(toAddress))\n\t\t\t\t\t\tsubject \u003d \u0027Room in the Inn: thank you for registering\u0027\n\t\t\t\t\t\t#read image as byte and then convert it into base64\n\t\t\t\t\t\tcontext \u003d IgnitionGateway.get()\n\t\t\t\t\t\timageManager \u003d context.getImageManager()\t\t\n\t\t\t\t\t\timageData \u003d imageManager.getImage(\"57d71ebcee482b3b107972d5_room_in_the_inn_logo.png\")\n\t\t\t\t\t\tRITI_Logo \u003d imageData.getBytes(ImageRecord.Data)\t\t\t\t\n\t\t\t\t\t\tRITI_Logo_Base64 \u003d base64.b64encode(RITI_Logo)\t\t\n\t\t\t\t\t\tfilename \u003d \"Registration Report.pdf\"\n\t\t\t\t\t\tselectedLocation \u003d self.view.custom.congregationInfo.congregationId\n\t\t\t\t\t\tselectedSeason \u003d self.view.custom.selectedSeasonId\n\t\t\t\t\t\tprevSeasonId \u003d self.view.custom.previousSeasonId\n\t\t\t\t\t\tparams \u003d {\"locationId\":selectedLocation, \"seasonId\":selectedSeason, \"previousSeasonId\" : prevSeasonId, \"CalledFromPage\":\"Registration\"} #, \"EndDate\":eDate, \"VolunteerID\":volunteerID}\n\t\t\t\t\t\tbyteData \u003d system.report.executeReport(path\u003d\"WinterShelter/Registration Report\", project\u003d\"RITI\", parameters\u003dparams, fileType\u003d\"pdf\")\t\t\n#\t\t\t\t\t\tbody \u003d \"\u003cHTML\u003e\u003cBODY\u003eYour Winter Shelter registration has been submitted. Thank you for all the hard work that has been put into this program and the work that will come! If you have any questions, please reach out to us. We look forward to a great season with you.\"\n#\t\t\t\t\t\tbody +\u003d \"\u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\"\n#\t\t\t\t\t\tbody +\u003d \u0027\u003cimg src\u003d\"data:image/png;base64,\u0027+ str(RITI_Logo_Base64) +\u0027\" alt\u003d\"RITI_Logo\" width\u003d\"140\" height\u003d\"35\"/\u003e\u0027\n#\t\t\t\t\t\tbody +\u003d \"\u003cbr\u003eWinter Shelter Team\u003cbr\u003eRoom in the Inn\u003cbr\u003eshelter@roomintheinn.com\u003cbr\u003e615-251-7019\u003c/BODY\u003e\u003c/HTML\u003e\"\n\t\t\t\t\t\tgetCurrentSeason \u003d system.db.runNamedQuery(path\u003d\"WinterShelterGlobal/getCurrentSeason\",project\u003dproject)\n\t\t\t\t\t\tseason \u003d getCurrentSeason.getValueAt(0,\u0027Seasons\u0027)\n\t\t\t\t\t\t# replace parameter with original value\n\t\t\t\t\t\temailText \u003d emailText.replace(\u0027@season\u0027,season)\n\t\t\t\t\t\temailTextFormated \u003d emailText_to_htmlFormat(emailText)\n\t\t\t\t\t\tbody \u003d emailTextFormated\n\t\t\t\t\t\t\n\t\t\t\t\t\tsmtpProfile \u003d \u0027roomintheinn.org\u0027\t\t\t\t\t\n\t\t\t\t\t\tlogger \u003d system.util.getLogger(\u0027EmailLogs\u0027)\n\t\t\t\t\t\ttry:\n#\t\t\t\t\t\t\tsystem.net.sendEmail(smtpProfile \u003d smtpProfile, fromAddr \u003d fromAddress, subject \u003d subject, body \u003d body, to \u003d toAddress, attachmentNames\u003d[filename], attachmentData\u003d [byteData], html\u003d1)\n\t\t\t\t\t\t\tlogger.info(\u0027Email sent successfully.\\nSubject: \u0027 + str(subject) + \u0027 \\nTo: \u0027 + str(toAddress))\n\t\t\t\t\t\texcept:\n\t\t\t\t\t\t\tlogger.info(\u0027Could not send email because none of the recipients had valid email addresses: \u0027+str(toAddress))\n\t\t\t\telse:\n\t\t\t\t\t## send notification to RITI after every submission\n\t\t\t\t\tcongregationName \u003d self.view.custom.congregationInfo.congregationName\n\t\t\t\t\temail \u003d \u0027\u0027\n\t\t\t\t\tusers \u003d system.user.getUsers(\u0027congregation\u0027)\n\t\t\t\t\tusername \u003d \u0027(New User)\u0027\n\t\t\t\t\tcongregationName \u003d self.view.custom.congregationInfo.congregationName\n\t\t\t\t\tfor user in users:\n\t\t\t\t\t\tname \u003d user.get(\u0027firstname\u0027)\n\t\t\t\t\t\tif name \u003d\u003d congregationName:\n\t\t\t\t\t\t\tcontactInfo \u003d user.getContactInfo()\n\t\t\t\t\t\t\tfor item in contactInfo:\n\t\t\t\t\t\t\t\tif item.getContactType() \u003d\u003d \u0027email\u0027:\n\t\t\t\t\t\t\t\t\temail \u003d item.getValue()\n\t\t\t\t\t\t\t\t\tbreak\n\t\t\t\t\tto_addr \u003d []\n\t\t\t\t\tto_addr.append(email)\n\t\t\t\t\tto_addr.append(\"shelter@roomintheinn.org\") #wshelter@roomintheinn.org\n\t\t\t\t\tmessage \u003d str(congregationName) + \"\u0027s winter shelter registration has been updated. Updated fields are \" + str(changedFields) + \".\"\n\t\t\t\t\tfilename \u003d \"Registration Report.pdf\"\n\t\t\t\t\tselectedLocation \u003d self.view.custom.congregationInfo.congregationId\n\t\t\t\t\tselectedSeason \u003d self.view.custom.selectedSeasonId\n\t\t\t\t\tprevSeasonId \u003d self.view.custom.previousSeasonId\n\t\t\t\t\tparams \u003d {\"locationId\":selectedLocation, \"seasonId\":selectedSeason, \"previousSeasonId\" : prevSeasonId, \"CalledFromPage\":\"Registration\"} #, \"EndDate\":eDate, \"VolunteerID\":volunteerID}\n\t\t\t\t\tsystem.perspective.print(\u0027email: \u0027+str(params))\n\t\t\t\t\tbyteData \u003d system.report.executeReport(path\u003d\"WinterShelter/Registration Report\", project\u003d\"RITI\", parameters\u003dparams, fileType\u003d\"pdf\")\t\t\t\t\t\n\t\t\t\t\tlogger \u003d system.util.getLogger(\u0027UpdateCongregation_EmailLogs\u0027)\n\t\t\t\t\ttry:\n#\t\t\t\t\t\tsystem.net.sendEmail(fromAddr\u003d\"discovery-notifications@roomintheinn.org\", subject\u003d\u0027Congregation registration updated: \u0027+ str(congregationName), \n#\t\t\t\t\t\t\t\t\t\t\tbody\u003d message, to\u003d to_addr, attachmentNames\u003d[filename], attachmentData\u003d [byteData],smtpProfile\u003d\"discoverynotifications\")\n\n\t\t\t\t\t\tlogger.info(\u0027Email sent successfully.\\nSubject: New congregation registered: \u0027+ str(congregationName) + \u0027\\nTo: \u0027 + str(to_addr))\n\t\t\t\t\texcept:\n\t\t\t\t\t\tlogger.info(\u0027Could not send email because none of the recipients had valid email addresses.\u0027)\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t#Proceed to next page if not submit or close\n\t\t\tsystem.perspective.print(self.view.custom.activePane)\n\t\t\tif activePane \u003d\u003d (len(views)-1):\n\t\t\t\tsystem.perspective.print(self.view.custom.activePane)\n\t\t\t\tsystem.perspective.print(\u0027closed\u0027)\n\t\t\t\t#self.view.custom.activePane \u003d 0\n\t\t\t\tsystem.perspective.navigate(\"/WinterShelter/Congregations/Detail/\"+str(self.view.params.locationID)+\u0027/\u0027+str(\"Congregation\")+\u0027/2\u0027)\n\t\t\t\t#system.perspective.refresh()\n\t\t\t\tsystem.perspective.print(\u0027navigated\u0027)\n\t\t\t\t#system.perspective.navigate(view \u003d \"WinterShelter/Detail/Congregation_Detail\")\n\t\t\telse:\n\t\t\t\tself.view.custom.activePane +\u003d 1\n\t\t\tself.parent.parent.getChild(\"RequireFields\").position.display \u003d False\n\t\t#Not ready to proceed. Display prompts.\n\t\telse:\n\t\t\tself.parent.parent.getChild(\"RequireFields\").position.display \u003d True\n\t\tself.props.enabled \u003d True\n\texcept:\n\t\tlogger \u003d system.util.getLogger(\"Winter Shelter Registration Edit Submit Button\")\n\t\tself.props.enabled \u003d True\n\t\tmsg \u003d traceback.format_exc()\n\t\tlogger.error(msg)\n\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "NextButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if(({.../RegistrationForm.props.activePane} \u003d 4)  //\u0026\u0026 ({.../RegistrationForm.position.display}\u003dTrue)\r\n\t, \u0027Submit\u0027\r\n\t,if({.../RegistrationForm.props.activePane}\u003d5  //|| (({.../RegistrationForm.props.activePane} \u003d 4) \u0026\u0026 ({.../RegistrationForm.position.display}\u003dFalse))\r\n\t\t, \u0027Close\u0027\r\n\t\t, \u0027Next\u0027)\r\n\t)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderBottomLeftRadius": "5px",
+                "borderBottomRightRadius": "5px",
+                "borderStyle": "none",
+                "borderTopLeftRadius": "5px",
+                "borderTopRightRadius": "5px",
+                "classes": "Buttons/Main"
+              },
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "custom": {
+          "test": 176,
+          "trigger": true,
+          "word": "test"
+        },
+        "meta": {
+          "name": "Buttons"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.test": {
+            "binding": {
+              "config": {
+                "path": "this.custom.trigger"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "code": "\tif value:\n\t\tsystem.db.runNamedQuery(\"WinterShelter/Registration/NewCongregation\", \n\t\t\t{\"line1\":self.custom.word, \"line2\":self.custom.word, \"city\":self.custom.word, \"leader\":self.custom.word, \"congregation\":self.custom.word, \"email\":self.custom.word, \"notes\":self.custom.word, \"phone\":self.custom.word, \"state\":\"AZ\", \"website\":self.custom.word, \"zip\":15675})\n\t\treturn system.db.runNamedQuery(\"WinterShelter/Registration/getNewCongregationID\",\n\t\t\t{\"line1\":self.custom.word, \"leader\":self.custom.word, \"congregation\":self.custom.word, \"phone\":self.custom.word}).getValueAt(0,0)\n\treturn 0",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.viewPreviousSeasons"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "marginBottom": "30px",
+            "marginTop": "20px",
+            "overflow": "visible",
+            "paddingLeft": "50px",
+            "paddingRight": "50px",
+            "paddingTop": "3px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "RegistrationDetail"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "props": {
+          "params": {
+            "locationID": -1
+          },
+          "path": "WinterShelterGlobal/Registration/Detail/RegistrationDetail"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "resetWinterRegistration",
+          "pageScope": true,
+          "script": "\tself.getChild(\"FlexContainer\").getChild(\"season\").refreshBinding(\u0027props.options\u0027)\n\t#self.view.refreshBinding(\"custom.sqlData\")\n\t",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

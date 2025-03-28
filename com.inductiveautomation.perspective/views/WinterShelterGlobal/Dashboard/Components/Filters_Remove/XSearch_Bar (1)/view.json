@@ -1,0 +1,159 @@
+{
+  "custom": {},
+  "params": {
+    "clear": false,
+    "keyUpPulse": false,
+    "searchText": ""
+  },
+  "propConfig": {
+    "params.clear": {
+      "access": "PUBLIC",
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value is True:\n\t\ttxf \u003d self.getChild(\"root\").getChild(\"TextField\")\n\t\ttxf.props.text \u003d \u0027\u0027\n\tself.params.clear \u003d False"
+      },
+      "paramDirection": "inout"
+    },
+    "params.keyUpPulse": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.searchText": {
+      "binding": {
+        "config": {
+          "path": "/root/TextField.props.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 218
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onKeyUp": {
+              "config": {
+                "script": "\tself.view.params.keyUpPulse \u003d not(self.view.params.keyUpPulse)\n\tsystem.perspective.print((\u0027onKeyUp\u0027))\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "TextField"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "this.props.text"
+              },
+              "transforms": [
+                {
+                  "code": "\ttext \u003d \"Filter/Filter_Text_Default\"\n\tif value !\u003d \u0027\u0027 and value !\u003d None:\n\t\ttext \u003d \"Filter/Filter_Text_TeelBlue\"\n\treturn text",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tsystem.perspective.print((\u0027the value of the property changes\u0027))\t"
+            },
+            "persistent": false
+          }
+        },
+        "props": {
+          "deferUpdates": false,
+          "rejectUpdatesWhileFocused": false,
+          "style": {
+            "marginLeft": "5px",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\ttxf \u003d self.getSibling(\"TextField\")\n\ttxf.props.text \u003d \u0027\u0027\n\t\n\tself.view.params.keyUpPulse \u003d not(self.view.params.keyUpPulse)\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "16px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "toBoolean({../TextField.props.text})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#0C4E8B",
+          "path": "material/close",
+          "style": {
+            "classes": "Table/Filter_Clear_Icon",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "path": "./TextField.props.text"
+          },
+          "transforms": [
+            {
+              "code": "\tif value \u003d\u003d \u0027\u0027 or value \u003d\u003d None:\n\t\treturn \"Filter/Filter_Border_Default\"\n\telse:\n\t\treturn \"Filter/Filter_Border_TeelBlue\"",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "alignItems": "flex-start",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

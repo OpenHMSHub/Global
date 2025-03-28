@@ -1,0 +1,3446 @@
+{
+  "custom": {},
+  "params": {
+    "endDOB": "2100-01-01",
+    "gender": "%",
+    "selPage": 1,
+    "startDOB": "1900-01-01"
+  },
+  "propConfig": {
+    "params.endDOB": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.gender": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selPage": {
+      "onChange": {
+        "enabled": null,
+        "script": "\timport traceback\n\ttry:\n\t\trawData \u003d self.getChild(\"root\").getChild(\"Table\").custom.filteredData\n\t\tif rawData !\u003d None:\n\t\t\tmaxRow \u003d rawData.rowCount\n\t\t\trows \u003d self.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"RowsDropdown\").props.value\n\t\t\tpage \u003d int(currentValue.value)\n\t\t\tstartRow \u003d rows * (page-1)\n\t\t\tendRow \u003d rows * page\n\t\t\tif startRow \u003e 0:\n\t\t\t\tdelList \u003d range(0,startRow)\n\t\t\telse:\n\t\t\t\tdelList \u003d []\n\t\t\tif endRow \u003c maxRow:\n\t\t\t\tdelList.extend(range(endRow,maxRow))\n\t\t\t\t\n\t\t\tself.getChild(\"root\").getChild(\"Table\").custom.pagedData \u003d system.dataset.deleteRows(rawData,delList)\n\t\t\t\n\t\t\t#Moves the \"view window\" on the pagination tab container\n\t\t\tiCurTab \u003d self.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex\n\t\t\tmaxPage \u003d maxRow / rows\n\t\t\tif iCurTab !\u003d 4 and page \u003e 2 and page \u003c maxPage - 2:\t\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[2] \u003d str(page - 2)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[3] \u003d str(page - 1)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[4] \u003d str(page)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[5] \u003d str(page + 1)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[6] \u003d str(page + 2)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 4\n\t\t\t#First\n\t\t\telif iCurTab \u003d\u003d 0:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[2] \u003d \"1\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[3] \u003d \"2\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[4] \u003d \"3\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[5] \u003d \"4\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[6] \u003d \"5\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 2\n\t\t\t#Last\n\t\t\telif iCurTab \u003d\u003d 8:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[2] \u003d str(maxPage - 4)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[3] \u003d str(maxPage - 3)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[4] \u003d str(maxPage - 2)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[5] \u003d str(maxPage - 1)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[6] \u003d str(maxPage)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 6\n\t\t\t#Prev for tabs 1 and 2\n\t\t\telif iCurTab \u003d\u003d 1 and page \u003c\u003d2:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d page + 1\n\t\t\t#Next for tab 1\n\t\t\telif iCurTab \u003d\u003d 7 and page \u003c\u003d2:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d page + 1\n\t\t\t#Next for last 2 tabs\n\t\t\telif iCurTab \u003d\u003d 7 and page \u003e\u003d maxPage - 2:\n\t\t\t\tdiff \u003d maxPage - page\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 8 - diff\n\texcept:\n\t\tlogger \u003d system.util.getLogger(\"Registrations_Table view.params.selPage OnChange\")\n\t\tmsg \u003d traceback.format_exc()\n\t\tlogger.error(msg)"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.startDOB": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 620,
+      "width": 1200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "DockID": 3,
+          "selectionValue": "Acklen Avenue Church of Christ"
+        },
+        "events": {
+          "component": {
+            "onRowClick": {
+              "config": {
+                "script": "\t#2020-12-28 Updated By Taylor Turner\n\t# Corrected issues with id not passed into preview\n\t# Showing the same id, no matter what \n\t\n\t#2021-1-31 Updated By Phillip Bourner\n\t# Updated script to work with table data no longer ein a dataset\n\t# Added to row click the functionality of the double click script. disabled double click script\n\t\n\t# 2021-2-04 Does not display full string data\n\t\n\tselectedColumn \u003d self.props.selection.selectedColumn\n\tif selectedColumn \u003d\u003d \"Name\": \n\t\t#Display the detail screen\n\t\tcongregationID \u003d self.props.data[event.row][\u0027id\u0027]\n\t\tpage \u003d \u0027/WinterShelter/Congregations/Detail/\u0027 + str(congregationID)\n\t\tsystem.perspective.navigate(page)\n\telif selectedColumn \u003d\u003d \"options\":\n\t\t#Display the popout preview\n\t\tcongregationID \u003d self.props.data[event.row][\u0027id\u0027]\n\t\tid \u003d \"PreviewCongregation\" \n\t\tparams \u003d {\"CongregationID\":congregationID}\n\t\tif self.custom.DockID !\u003d congregationID:\n\t\t\tsystem.perspective.openDock(id\u003did,params\u003dparams)\n\t\t\tpayload \u003d {\"CongregationID\":congregationID}\n\t\t\tsystem.perspective.sendMessage(\"DockUpdate\", payload, scope \u003d \u0027page\u0027 )\n\t\telse:\n\t\t\tsystem.perspective.toggleDock(id\u003did,params\u003dparams)\n\t\tself.custom.DockID \u003d congregationID\n\telse:\n\t\t#This is a unique popup ID to easily add open and close\n\t\t#Functionality for multiple popup template instances\n\t\tUniquePopupId \u003d \"8Ej1tV/U\"\n\t\t\n\t\t#If the popup is already open and swaping to new cell, close it\n\t\ttry:\n\t\t\tsystem.perspective.closePopup(UniquePopupId)\n\t\texcept:\n\t\t\tpass\n\t\t\n\t\tselectedDict \u003d self.props.selection.data[0]\n\t\tnotShortenedDS \u003dself.custom.pagedData\n\t\tmassagedColumn \u003d selectedColumn.replace(\u0027_\u0027,\u0027 \u0027)\n\t\tcellValue \u003d notShortenedDS.getValueAt(event.row,massagedColumn)\n\t\tsystem.perspective.openPopup(UniquePopupId, \"WinterShelter/Dashboard/Components/Tables/Popups/Cell Popup\", params \u003d {\"selectionValue\":cellValue, \"UniquePopupId\":UniquePopupId}, showCloseIcon \u003d False, draggable \u003d False)\n"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onRowDoubleClick": [
+              {
+                "config": {
+                  "script": "\t#2020-12-21 By Ethan Strike\n\t#This enables a popout on double click to display the full value of a filtered cell\n\t#This code allows comparison between two tables, as each page of the table uses a row index\n\t#that may not necesarily be the same as the unique ID key for the row.\n\t\n\t\n\t#CHANGE THIS TO SOMETHING UNIQUE\n\t#This is a unique popup ID to easily add open and close\n\t#Functionality for multiple popup template instances\n\tUniquePopupId \u003d \"8Ej1tV/U\"\n\t\n\t#If the popup is already open and swaping to new cell, close it\n\ttry:\n\t\tsystem.perspective.closePopup(UniquePopupId)\n\texcept:\n\t\tpass\n\t\n\tselectedDict \u003d self.props.selection.data[0]\n\tcellValue \u003d selectedDict[self.props.selection.selectedColumn]\n\tsystem.perspective.openPopup(UniquePopupId, \"WinterShelter/Dashboard/Components/Tables/Popups/Cell Popup\", params \u003d {\"selectionValue\":cellValue, \"UniquePopupId\":UniquePopupId}, showCloseIcon \u003d False, draggable \u003d False)\n\n\t\n#\t#Gets the ID key value of the selected row on the table\n#\tselectedID \u003d self.props.data[self.props.selection.selectedRow][\"id\"]\n#\t#Creates a python dataset from the dataset that contains the unfiltered data\n#\tpyData \u003d system.dataset.toPyDataSet(self.custom.sqlFullStrings)\n#\t#Loops through the full data, and compares the ID of each table.\n#\t#This is effectively the same as a join where ID \u003d ID sql query\n#\tfor row in range(pyData.getRowCount()):\n#\t\t#If the ID is a match, get the row of the unfiltered data, \n#\t\t#and get the value for the selected column\n#\t\tif pyData[row][\"id\"] \u003d\u003d selectedID:\n#\t\t\t#Store the value to display in the popup\n#\t\t\tcellValue \u003d pyData.getValueAt(row, self.props.selection.selectedColumn)\n#\t\t\t#Pass the value to the popup\n#\t\t\tsystem.perspective.openPopup(UniquePopupId, \"WinterShelter/Dashboard/Components/Tables/Popups/Cell Popup\", params \u003d {\"selectionValue\":cellValue, \"UniquePopupId\":UniquePopupId}, showCloseIcon \u003d False, draggable \u003d False)\n#\t\t\t\n#\t\t\t\n#\t\t\t#Testing Popup at cursor location\n#\t\t\t#self.custom.selectionValue \u003d cellValue\n"
+                },
+                "enabled": false,
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": true,
+                  "id": "8Ej1tV/U",
+                  "modal": false,
+                  "overlayDismiss": false,
+                  "position": {
+                    "relativeLocation": "bottom-right"
+                  },
+                  "positionType": "relative",
+                  "resizable": true,
+                  "showCloseIcon": true,
+                  "type": "open",
+                  "viewParams": {
+                    "selectionValue": "{/root/Table.custom.selectionValue}"
+                  },
+                  "viewPath": "WinterShelter/Dashboard/Components/Tables/Popups/Cell Popup"
+                },
+                "enabled": false,
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "100%"
+        },
+        "propConfig": {
+          "custom.filteredData": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "filters": "{this.custom.filters}",
+                  "source": "hasChanged({this.custom.sqlData})"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\treturn self.custom.sqlData\n\t\n\t#return filters.applyFiltersOnDataset(self.custom.sqlData, self.custom.filters)\n",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "custom.filters": {
+            "binding": {
+              "config": {
+                "path": "session.custom.filters"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn filters.retrievePageFilters(value, self.page.props.pageId)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "custom.pagedData": {
+            "binding": {
+              "config": {
+                "path": "this.custom.filteredData"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n\treducedDataset \u003d system.dataset.deleteRows(self.custom.filteredData,range(self.parent.getChild(\"FlexContainer\").getChild(\"RowsDropdown\").props.value,self.custom.filteredData.rowCount))\n\treturn reducedDataset",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "custom.sqlData": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelter/Dashboard/RegistrationsShortStrings",
+                "returnFormat": "dataset"
+              },
+              "type": "query"
+            },
+            "persistent": false
+          },
+          "custom.sqlFullStrings": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelter/Dashboard/RegistrationsFormattedFull",
+                "returnFormat": "dataset"
+              },
+              "type": "query"
+            }
+          },
+          "custom.stringLimitData": {
+            "binding": {
+              "config": {
+                "path": "this.custom.pagedData"
+              },
+              "transforms": [
+                {
+                  "code": "\tpyds \u003d system.dataset.toPyDataSet(value)\n\tcolumns \u003d value.getColumnNames()\n\tdata \u003d []\n\tfor row in pyds:\n\t\trowData \u003d []\n\t\tfor column in columns:\n\t\t\t#limit specific column strings\n\t\t\tif column\u003d\u003d\u0027Date Comments\u0027 or column\u003d\u003d\u0027Special Services\u0027 or column\u003d\u003d\u0027Comments\u0027 or column\u003d\u003d\u0027cComments\u0027 or column\u003d\u003d\u0027Comments2\u0027 or column\u003d\u003d\u0027Partner Congregations in Hosting\u0027 or column\u003d\u003d\u0027Backup Coordinator1\u0027 or column\u003d\u003d\u0027Backup Coordinator2\u0027 or column\u003d\u003d\u0027Congregation Leader\u0027 or column\u003d\u003d\u0027Nights Hosted\u0027 or column\u003d\u003d\u0027Could do more if\u0027 or column\u003d\u003d\u0027Date Comments\u0027 or column\u003d\u003d\u0027Comments for RITI\u0027:\n\t\t\t\tcellString \u003d str(row[column])\n\t\t\t\tif len(cellString)\u003e10:\n\t\t\t\t\tshortened \u003d cellString[0:10]+\u0027...\u0027 \n\t\t\t\t\trowData.append(shortened)\n\t\t\t\telse:\n\t\t\t\t\trowData.append(cellString)\n\n\t\t\telse:\n\t\t\t\trowData.append(row[column])\n\t\tdata.append(rowData)\n#\t\tsystem.perspective.print(rowData) \n\theaders \u003d []\n\tfor column in columns:\n\t\theaders.append(str(column))\n\treturn system.dataset.toDataSet(headers,data)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "this.custom.stringLimitData"
+              },
+              "transforms": [
+                {
+                  "code": "\t#\timport math\n\t#table_data is the data object to return\n\ttable_data \u003d []\n\t#Iterate over the results of the query\n\tfor row in range(value.getRowCount()):\n\t\trow_data \u003d {}\n\t\tstyle \u003d {}\n\t\tstyle[\u0027classes\u0027] \u003d \"Table/Cell_Dashboard\"\n\t\t#Map query results into correct attributes\n\t\trow_data[\u0027id\u0027] \u003d value.getValueAt(row, \"ID\")\n\t\trow_data[\u0027options\u0027] \u003d \u0027\u0027\n\t\trow_data[\u0027Name\u0027] \u003d value.getValueAt(row, \"Name\")\n\t\trow_data[\u0027Address\u0027] \u003d value.getValueAt(row, \"Address\")\n\t\trow_data[\u0027City\u0027] \u003d value.getValueAt(row, \"City\")\n\t\trow_data[\u0027Zipcode\u0027] \u003d value.getValueAt(row, \"Zipcode\")\n\t\trow_data[\u0027Phone\u0027] \u003d value.getValueAt(row, \"Phone\")\n\t\trow_data[\u0027Evening_Phone\u0027] \u003d value.getValueAt(row, \"Evening Phone\")\n\t\trow_data[\u0027Email\u0027] \u003d value.getValueAt(row, \"Email\")\n\t\trow_data[\u0027Preferred_Communication\u0027] \u003d value.getValueAt(row, \"Preferred Communication\")\n\t\trow_data[\u0027Comments\u0027] \u003d value.getValueAt(row, \"Comments\")\n\t\trow_data[\u0027Comments2\u0027] \u003d value.getValueAt(row, \"Comments2\")\n\t\trow_data[\u0027Coordinator\u0027] \u003d value.getValueAt(row, \"Coordinator\")\n\t\trow_data[\u0027cCity\u0027] \u003d value.getValueAt(row, \"cCity\")\n\t\trow_data[\u0027cZipcode\u0027] \u003d value.getValueAt(row, \"cZipcode\")\n\t\trow_data[\u0027cComments\u0027] \u003d value.getValueAt(row, \"cComments\")\n\t\trow_data[\u0027cPhone\u0027] \u003d value.getValueAt(row, \"cPhone\")\n\t\trow_data[\u0027cEmail\u0027] \u003d value.getValueAt(row, \"cEmail\")\n\t\trow_data[\u0027cAddress\u0027] \u003d value.getValueAt(row, \"cAddress\")\n\t\trow_data[\u0027Backup_Coordinator1\u0027] \u003d value.getValueAt(row, \"Backup Coordinator1\")\n\t\trow_data[\u0027Backup_Coordinator2\u0027] \u003d value.getValueAt(row, \"Backup Coordinator2\")\n\t\trow_data[\u0027bcCity\u0027] \u003d value.getValueAt(row, \"bcCity\")\n\t\trow_data[\u0027bcZipcode\u0027] \u003d value.getValueAt(row, \"bcZipcode\")\n\t\trow_data[\u0027bcEmail\u0027] \u003d value.getValueAt(row, \"bcEmail\")\n\t\trow_data[\u0027bcAddress\u0027] \u003d value.getValueAt(row, \"bcAddress\")\n\t\trow_data[\u0027bcPhone\u0027] \u003d value.getValueAt(row, \"bcPhone\")\n\t\trow_data[\u0027bcPreferred_Communication\u0027] \u003d value.getValueAt(row, \"bcPreferred Communication\")\n\t\trow_data[\u0027Congregation_Leader\u0027] \u003d value.getValueAt(row, \"Congregation Leader\")\n\t\trow_data[\u0027Nights_Hosted\u0027] \u003d value.getValueAt(row, \"Nights Hosted\")\n\t\trow_data[\u0027Days_To_Host\u0027] \u003d value.getValueAt(row, \"Days_To_Host\")\n\t\trow_data[\u0027Number_of_Days\u0027] \u003d value.getValueAt(row, \"Number_of_Days\")\n\t\trow_data[\u0027Number_of_Guests\u0027] \u003d value.getValueAt(row, \"Number_of_Guests\")\n\t\trow_data[\u0027Evening_Phone\u0027] \u003d value.getValueAt(row, \"Evening Phone\")\n\t\trow_data[\u0027Gender_of_Guests\u0027] \u003d value.getValueAt(row, \"Gender of Guests\")\n\t\trow_data[\u0027Stairs\u0027] \u003d value.getValueAt(row, \"Stairs\")\n\t\trow_data[\u0027Partner_Congregations_in_Hosting\u0027] \u003d value.getValueAt(row, \"Partner Congregations in Hosting\")\n\t\trow_data[\u0027Wheelchair_Access\u0027] \u003d value.getValueAt(row, \"Wheelchair Access\")\n\t\trow_data[\u0027Designated_Smoking_Area\u0027] \u003d value.getValueAt(row, \"Designated Smoking Area?\")\n\t\trow_data[\u0027Can_Host_Families\u0027] \u003d value.getValueAt(row, \"Can Host Families\")\n\t\trow_data[\u0027Reminder_Call\u0027] \u003d value.getValueAt(row, \"Reminder Call\")\n\t\trow_data[\u0027Could_do_more_if\u0027] \u003d value.getValueAt(row, \"Could do more if\")\n\t\trow_data[\u0027Extreme_Weather\u0027] \u003d value.getValueAt(row, \"Extreme Weather\")\n\t\trow_data[\u0027Special_Services\u0027] \u003d value.getValueAt(row, \"Special Services\")\n\t\trow_data[\u0027Date_Comments\u0027] \u003d value.getValueAt(row, \"Date Comments\")\n\t\trow_data[\u0027Comments_for_RITI\u0027] \u003d value.getValueAt(row, \"Comments for RITI\")\n\t\trow_data[\u0027Submission_Date\u0027] \u003d value.getValueAt(row, \"Submission Date\")\n\t\trow_data[\u0027Projected\u0027] \u003d value.getValueAt(row, \"2020 Projected\")\n\t\trow_data[\u0027Delimeter\u0027] \u003d value.getValueAt(row, \"Delimeter\")\n\n\t\t#Append the individual row date to the table data object\n\t\ttable_data.append(row_data)\n\t\t\n\treturn table_data\n#\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "classes": "Table/Cell_Dashboard"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "options",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": " "
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "view",
+              "resizable": false,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {
+                "rowData": {
+                  "ID": "value"
+                }
+              },
+              "viewPath": "WinterShelter/Dashboard/Components/Tables/Templates/TableOptions",
+              "visible": true,
+              "width": 40
+            },
+            {
+              "align": "center",
+              "boolean": "value",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Name",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Congregation Name"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": true,
+              "style": {
+                "classes": "",
+                "color": "#0c4e85",
+                "cursor": "pointer",
+                "fontFamily": "Proxima Nova ExCn Medium",
+                "fontWeight": "bold",
+                "text-align": "left"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "WinterShelter/Dashboard/Components/Tables/Templates/Name",
+              "visible": true,
+              "width": 275
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Submission_Date",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Submission Date"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 120
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Nights_Hosted",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Nights Hosted"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Number_of_Guests",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Number of Guests"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Gender_of_Guests",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Gender of Guests"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Address",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Address"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": true,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Zipcode",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Zipcode"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "string",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Phone",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Phone"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Email",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Email"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": true,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "Participants/Dashboard/Components/Tables/Templates/Checkbox",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Coordinator",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Coordinator"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 150
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "cAddress",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "cAddress"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "Participants/Dashboard/Components/Tables/Templates/Checkbox",
+              "visible": true,
+              "width": 250
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "cZipcode",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "cZipcode"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "string",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "cPhone",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "cPhone"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "cEmail",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "cEmail"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Preferred_Communication",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Preferred Communication"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 140
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Comments",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Comments"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 120
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Backup_Coordinator1",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Backup Coordinator"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "bcAddress",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "bcAddress"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "bcCity",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "bcCity"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 150
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "bcZipcode",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "bcZipcode"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "bcPhone",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": ""
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "bcEmail",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "bcEmail"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "bcPreferred_Communication",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "bcPreferred Communication"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 150
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Comments2",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Comments"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Nights_Hosted",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Nights Hosted"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Evening_Phone",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": ""
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Number_of_Guests",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Number of Guests"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Gender_of_Guests",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Gender of Guests"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Can_Host_Families",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Can Host Families"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Extreme_Weather",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Extreme Weather"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Special_Services",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Special Services"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 150
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Wheelchair_Access",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Wheelchair Access"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Stairs",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": ""
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Designated_Smoking_Area",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Designated Smoking Area?"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 150
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Partner_Congregations_in_Hosting",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Partner Congregations in Hosting"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Days_To_Host",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Days To Host"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Reminder_Call",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Reminder Call"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Date_Comments",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Date Comments"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 150
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Could_do_more_if",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Could do more if"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Comments_for_RITI",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Comments for RITI"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "id",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": ""
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Congregation_Leader",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Congregation Leader"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "headerGroups": [
+            [
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Name"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "ID"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Birth Date"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Gender"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Intake Date"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Last Action"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Suspension"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Shelter"
+              }
+            ]
+          ],
+          "pager": {
+            "bottom": false,
+            "options": [
+              5,
+              15,
+              25,
+              50,
+              100
+            ]
+          },
+          "rows": {
+            "striped": {
+              "enabled": false
+            },
+            "subviewExpansionMode": "single"
+          },
+          "selection": {
+            "enableColumnSelection": true
+          },
+          "virtualized": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "filterHandler",
+              "pageScope": true,
+              "script": "\t\n\t\u0027\u0027\u0027\n\treturn\n\t\n\tfrom datetime import datetime, date\n\t\n\tif(payload[\u0027key\u0027] \u003d\u003d \u0027gender\u0027):\n\t\tcurFilter \u003d str(self.view.params.gender)\n\t\t#If checkbox is checked, we\u0027re adding the payload\n\t\tif(payload[\u0027state\u0027]):\n\t\t\t#If not default, need to do on-purpose SQL injection\n\t\t\tif(curFilter !\u003d \u0027%\u0027):\n\t\t\t\tself.view.params.gender \u003d curFilter + \"%\u0027 OR [humans].[Human].[gender] LIKE \u0027\" + str(payload[\u0027val\u0027]) \n\t\t\t#Else, it\u0027s default, just set the value\n\t\t\telse:\n\t\t\t\tself.view.params.gender \u003d str(payload[\u0027val\u0027])\n\t\t#If checkbox isn\u0027t checked, we\u0027re removing the payload\n\t\telse:\n\t\t\t#If we already have a SQL injection, we need to remove the selected query\n\t\t\tif(\u0027LIKE\u0027 in curFilter):\n\t\t\t\tself.view.params.gender \u003d curFilter.replace(\"%\u0027 OR [humans].[Human].[gender] LIKE \u0027\" + str(payload[\u0027val\u0027]), \u0027\u0027)\n\t\t\t#If no SQL injection, set to default\n\t\t\telse:\n\t\t\t\tself.view.params.gender \u003d \u0027%\u0027\n\telif(payload[\u0027key\u0027] \u003d\u003d \u0027dobRange\u0027):\n\t\tcurStartDate \u003d str(self.view.params.startDOB)\n\t\tcurEndDate \u003d str(self.view.params.endDOB)\n\t\t\n\t\ttoday \u003d datetime.now()\n\t\t#If 55+ is selected, force it to 55-120\n\t\tageRange \u003d payload[\u0027val\u0027].replace(\u0027+\u0027,\u0027-120\u0027)\n\t\tdashPtr \u003d str(ageRange).find(\u0027-\u0027)\n\t\t\n\t\tstartAge \u003d int(ageRange[0:dashPtr])\n\t\tendAge \u003d int(ageRange[dashPtr + 1:])\n\t\t#Start date is now minus end age. End date is now minus start age\n\t\t#I would like to confess I spent 3 entire minutes remembering how dates worked on this part\n\t\tnewStartDOB \u003d today.replace(year \u003d datetime.now().year - endAge)\n\t\tnewEndDOB \u003d today.replace(year \u003d datetime.now().year - startAge)\n\t\t\n\t\t#If checkbox is checked, we\u0027re adding the payload\n\t\tif(payload[\u0027state\u0027]):\n\t\t\t#If not default, need to do on-purpose SQL injection\n\t\t\t#Note, added if not self check because saw weird instance where this happened from clicking too fast\n\t\t\tif(curEndDate !\u003d \"2110-01-01\" and  curEndDate !\u003d newEndDOB.strftime(\"%Y-%m-%d\")):\n\t\t\t\tnewEndQueryStr \u003d curEndDate + \"\u0027 OR [humans].[Human].[dob] BETWEEN \u0027\" + newStartDOB.strftime(\"%Y-%m-%d\") + \"\u0027 AND \u0027\" + newEndDOB.strftime(\"%Y-%m-%d\")\n\t\t\t\tself.view.params.startDOB \u003d curStartDate\n\t\t\t\tself.view.params.endDOB \u003d newEndQueryStr\n\t\t\t#Else, it\u0027s default, just add the range\n\t\t\telse:\n\t\t\t\tself.view.params.startDOB \u003d newStartDOB.strftime(\"%Y-%m-%d\")\n\t\t\t\tself.view.params.endDOB \u003d newEndDOB.strftime(\"%Y-%m-%d\")\n\t\t#If checkbox isn\u0027t checked, we\u0027re removing the payload\n\t\telse:\n\t\t\t#If we already have a SQL injection, we need to remove the selected query\n\t\t\tif(\u0027OR [humans]\u0027 in curEndDate):\n\t\t\t\tself.view.params.endDOB \u003d curEndDate.replace(\"\u0027 OR [humans].[Human].[dob] BETWEEN \u0027\" + newStartDOB.strftime(\"%Y-%m-%d\") + \"\u0027 AND \u0027\" + newEndDOB.strftime(\"%Y-%m-%d\"), \u0027\u0027)\n\t\t\t#If no SQL injection, set to default\n\t\t\telse:\n\t\t\t\tself.view.params.startDOB \u003d \u00271910-01-01\u0027\n\t\t\t\tself.view.params.endDOB \u003d \u00272110-01-01\u0027\n\t#Have to refresh the binding for the query to run again with the new query strings in the view params\n\tself.refreshBinding(\"props.data\")\n\t\n\t\u0027\u0027\u0027\n\t",
+              "sessionScope": true,
+              "viewScope": true
+            },
+            {
+              "messageType": "refreshRegistration",
+              "pageScope": true,
+              "script": "\t\n\t\u0027\u0027\u0027\n\tself.refreshBinding(\"props.data\")\n\t\u0027\u0027\u0027",
+              "sessionScope": true,
+              "viewScope": true
+            },
+            {
+              "messageType": "update-filters",
+              "pageScope": true,
+              "script": "\t\n\t#Commented Out unitl Filters are fixed\n\t\u0027\u0027\u0027\n\tself.custom.filters \u003d filters.messageHandler_UpdateFilter(payload, self.custom.filters)\n\t\u0027\u0027\u0027",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "active-filters",
+              "pageScope": true,
+              "script": "\t\n\t\u0027\u0027\u0027\n\tfilters.messageHandler_respondWithActiveFilters(payload, self.custom.filters)\n\t\u0027\u0027\u0027",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "RowsDropdown"
+            },
+            "position": {
+              "basis": "105px"
+            },
+            "propConfig": {
+              "props.value": {
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tsystem.perspective.print(\"RowsDropdown.props.value OnChange\")\n\t#   #OLD LOGIC\n\tcurPage \u003d int(self.view.params.selPage)\n\tif previousValue \u003e currentValue:\n\t\tself.view.params.selPage \u003d curPage - 1\n\telse:\n\t\tself.view.params.selPage \u003d curPage + 1\t\n\n#\tself.view.params.selPage \u003d 3 #Page 1"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "Dropdowns/DDL_TablePagerItems",
+                "marginBottom": "0px",
+                "marginTop": "0px",
+                "paddingBottom": "6px",
+                "paddingTop": "6px"
+              },
+              "options": [
+                {
+                  "label": "5 rows",
+                  "value": 5
+                },
+                {
+                  "label": "15 rows",
+                  "value": 15
+                },
+                {
+                  "label": "25 rows",
+                  "value": 25
+                },
+                {
+                  "label": "50 rows",
+                  "value": 50
+                },
+                {
+                  "label": "100 rows",
+                  "value": 100
+                }
+              ],
+              "style": {
+                "classes": "Dropdowns/DDL_TablePagerBuiltIn"
+              },
+              "value": 50
+            },
+            "type": "ia.input.dropdown"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "path": "../Label_0.custom.basisMinusRows"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TabContainer"
+            },
+            "position": {
+              "basis": "351px"
+            },
+            "propConfig": {
+              "props.currentTabIndex": {
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tsystem.perspective.print(\"TabContainer.props.currentTabIndex OnChange\")\n\trawData \u003d self.parent.parent.getChild(\"Table\").custom.filteredData\n\tprevTab \u003d int(self.view.params.selPage)\n\tmaxTab \u003d rawData.rowCount / self.getSibling(\"RowsDropdown\").props.value\n\tselTab \u003d self.props.currentTabIndex\n\tif selTab \u003d\u003d 0:\n\t\t#\"First\"\n\t\tself.view.params.selPage \u003d 1\n\telif selTab \u003d\u003d 1 and prevTab \u003e 1:\n\t\t#\"Prev\"\n\t\tself.view.params.selPage \u003d prevTab - 1\n\telif selTab \u003d\u003d 7 and prevTab \u003c maxTab:\n\t\t#\"Next\"\n\t\tself.view.params.selPage \u003d prevTab + 1\n\telif selTab \u003d\u003d 8:\n\t\t#\"Last\"\n\t\tself.view.params.selPage \u003d maxTab\n\telse:\n\t\tself.view.params.selPage \u003d self.props.tabs[selTab]\n\t\t\n\t"
+                }
+              }
+            },
+            "props": {
+              "currentTabIndex": 2,
+              "menuStyle": {
+                "classes": "Table/Pager_Aqua"
+              },
+              "tabStyle": {
+                "active": {
+                  "fontWeight": "bold"
+                }
+              },
+              "tabs": [
+                "First",
+                "\u003c",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "\u003e",
+                "Last"
+              ]
+            },
+            "type": "ia.container.tab"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "custom.basisMinusRows": {
+                "binding": {
+                  "config": {
+                    "expression": "numberformat({this.position.basis} - {../RowsDropdown.position.basis},\"#\")+\"px\""
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "numberformat(({view.props.defaultSize.width}-{../TabContainer.position.basis})/2,\"#\")+\"px\""
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "alignItems": "center",
+          "style": {
+            "classes": "Background/Default"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

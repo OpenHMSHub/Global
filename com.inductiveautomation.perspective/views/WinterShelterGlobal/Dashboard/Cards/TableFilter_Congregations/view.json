@@ -1,0 +1,439 @@
+{
+  "custom": {
+    "searchPayload": "value"
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.session.custom.selectedDateRange \u003d \"currentCalendar\"\n\tself.session.custom.dateRangeFromDate \u003d system.date.format(system.date.now(),\u0027MM/dd/yyyy\u0027)\n\tself.session.custom.dateRangeToDate \u003d system.date.format(system.date.now(),\u0027MM/dd/yyyy\u0027)\t\n\tself.session.custom.isClearFilter \u003d 0\n\tself.getChild(\"root\").getChild(\"gender\").props.params.selectedValues \u003d -1 \n\tself.getChild(\"root\").getChild(\"guests\").props.params.selectedValues \u003d -1\t\n\tsself.getChild(\"root\").getChild(\"nights\").props.params.selectedValues \u003d -1\t\n\tself.getChild(\"root\").getChild(\"families\").props.params.selectedValues \u003d -1\t\n\tself.getChild(\"root\").getChild(\"city\").props.params.selectedValues \u003d -1\t\n\tself.getChild(\"root\").getChild(\"services\").props.params.selectedValues \u003d -1\n\tself.getChild(\"root\").getChild(\"wheelchair\").props.params.selectedValues \u003d -1\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+        },
+        "enabled": false,
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "City": "value",
+    "Gender": "value",
+    "endDateTime": {
+      "$": [
+        "ts",
+        201,
+        1629973301029
+      ],
+      "$ts": 1629973301029
+    },
+    "maxGuests": "value",
+    "minGuests": "value",
+    "startDateTime": {
+      "$": [
+        "ts",
+        201,
+        1629973301029
+      ],
+      "$ts": 1629973301029
+    }
+  },
+  "propConfig": {
+    "custom.searchPayload": {
+      "persistent": true
+    },
+    "params.City": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Gender": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.endDateTime": {
+      "binding": {
+        "config": {
+          "path": "session.custom.dateRangeToDate"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.maxGuests": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minGuests": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.startDateTime": {
+      "binding": {
+        "config": {
+          "path": "session.custom.dateRangeFromDate"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 879
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ShelterDate"
+        },
+        "position": {
+          "basis": "28%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.Gender"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "date": {
+              "$": [
+                "ts",
+                201,
+                1592902180067
+              ],
+              "$ts": 1592902180067
+            },
+            "text": "Last Shelter Date"
+          },
+          "path": "WinterShelter/Templates/Input_Date",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "marginLeft": "40px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Registered"
+        },
+        "position": {
+          "basis": "15%",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "Registered",
+            "options": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              }
+            ],
+            "placeholder": "Registered",
+            "searchType": "match"
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DatasetFilter_SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "NightsHosted"
+        },
+        "position": {
+          "basis": "15%",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "Night",
+            "options": [
+              {
+                "label": "Monday",
+                "value": "Monday"
+              },
+              {
+                "label": "Tuesday",
+                "value": "Tuesday"
+              },
+              {
+                "label": "Wednesday",
+                "value": "Wednesday"
+              },
+              {
+                "label": "Thursday",
+                "value": "Thursday"
+              },
+              {
+                "label": "Friday",
+                "value": "Friday"
+              },
+              {
+                "label": "Saturday",
+                "value": "Saturday"
+              },
+              {
+                "label": "Sunday",
+                "value": "Sunday"
+              }
+            ],
+            "placeholder": "Night",
+            "searchType": "match",
+            "selection": ""
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DatasetFilter_SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "minGuests"
+        },
+        "position": {
+          "basis": "12%"
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.minGuests"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "Number_Of_Guests",
+            "placeholder": "Min Guests"
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DNU - DatasetFilter_UpperNumericBound",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "maxGuests"
+        },
+        "position": {
+          "basis": "12%"
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.maxGuests"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "Number_Of_Guests",
+            "placeholder": "Max Guests"
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DNU - DatasetFilter_LowerNumericBound",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Gender"
+        },
+        "position": {
+          "basis": "14%"
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.Gender"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "Gender",
+            "placeholder": "Gender",
+            "searchType": "match",
+            "selection": ""
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DatasetFilter_SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "City"
+        },
+        "position": {
+          "basis": "15%"
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.City"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "City",
+            "placeholder": "City",
+            "searchType": "match"
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DatasetFilter_SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Growth"
+        },
+        "position": {
+          "basis": "15%"
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "Wheelchair_Access",
+            "options": [
+              {
+                "label": "Has Wheelchair Access",
+                "value": 1
+              },
+              {
+                "label": "No Wheelchair Access",
+                "value": 0
+              }
+            ],
+            "placeholder": "Growth",
+            "searchType": "match"
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DatasetFilter_SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "filler"
+        },
+        "position": {
+          "basis": "4.1%"
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header_Detail",
+            "paddingLeft": "40px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "searchBar"
+        },
+        "position": {
+          "basis": "16%",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "column_name": "",
+            "placeholder": "Search",
+            "searchType": "full_text"
+          },
+          "path": "1_TEMPLATES/Filtering/Filters/DatasetFilter_Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"gender\").props.params.clear\u003dTrue\n\tself.getSibling(\"families\").props.params.clear\u003dTrue\n\tself.getSibling(\"NightsHosted\").props.params.clear\u003dTrue\n\tself.getSibling(\"MinGuests\").props.params.clear\u003dTrue\n\tself.getSibling(\"MaxGuests\").props.params.clear\u003dTrue\n\tself.getSibling(\"services\").props.params.clear\u003dTrue\n\tself.getSibling(\"wheelchair\").props.params.clear\u003dTrue\n\tself.getSibling(\"searchBar\").props.params.clear\u003dTrue"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "5%"
+        },
+        "props": {
+          "path": "1_TEMPLATES/Filtering/Filters/ClearFilters",
+          "style": {
+            "marginRight": "40px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Table/Filter_Header"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

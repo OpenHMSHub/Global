@@ -1,0 +1,19 @@
+{
+  "base": {
+    "style": {
+      "color": "#9db8d1",
+      "fontFamily": "Gibson",
+      "fontSize": "12px",
+      "fontWeight": "normal",
+      "textAlign": "left"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "checked",
+      "style": {
+        "fontSize": "5px"
+      }
+    }
+  ]
+}

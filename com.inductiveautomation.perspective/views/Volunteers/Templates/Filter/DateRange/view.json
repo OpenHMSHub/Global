@@ -1,0 +1,161 @@
+{
+  "custom": {
+    "default": true
+  },
+  "params": {
+    "header": "Dates:",
+    "max": "",
+    "min": "",
+    "return_message": ""
+  },
+  "propConfig": {
+    "custom.default": {
+      "persistent": true
+    },
+    "params.header": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.max": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.min": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.return_message": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 304
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.view.custom.default \u003d True\n\t#print \"Icon click\"\n\tself.view.params.min \u003d \"\"\n\tself.view.params.max \u003d \"\"\n\t#Send a message to the requesting view\n\tpayload \u003d {\"min\":self.view.params.min,\"max\":self.view.params.max}\n\tmessageiD \u003d self.view.params.return_message\n\tsystem.perspective.sendMessage(messageiD,payload,scope \u003d \"page\")\n\tsystem.perspective.closePopup(\u0027date_range_popup\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "16px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#0C4E8B",
+          "path": "material/close",
+          "style": {
+            "classes": "Table/Filter_Clear_Icon",
+            "marginTop": "9px"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "draggable": false,
+                  "id": "sM9htpBg",
+                  "modal": true,
+                  "overlayDismiss": false,
+                  "position": {
+                    "relativeLocation": "center"
+                  },
+                  "positionType": "relative",
+                  "resizable": false,
+                  "showCloseIcon": false,
+                  "type": "open",
+                  "viewParams": {
+                    "header": "{view.params.header}",
+                    "max": "{view.params.max}",
+                    "min": "{view.params.min}",
+                    "return_message": "{view.params.return_message}"
+                  },
+                  "viewPath": "Participants/Templates/Filter/DateRangeSelection"
+                },
+                "scope": "C",
+                "type": "popup"
+              },
+              {
+                "config": {
+                  "script": "\tself.view.custom.default \u003d False"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "275px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.header} + \" \"+ dateFormat({view.params.min},\u0027yyyy-MM-dd\u0027) + \" to \" + dateFormat({view.params.max},\u0027yyyy-MM-dd\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Text",
+            "marginLeft": "5px",
+            "marginTop": "9px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "path": "./Label.props.text"
+          },
+          "transforms": [
+            {
+              "code": "\tif self.view.custom.default:\n\t\treturn \"Dropdowns/DD_Default\"\n\telse:\n\t\treturn \"Dropdowns/DD_TeelBlue\"",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "alignItems": "flex-start",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "color": "#000000",
+      "fontFamily": "Arial",
+      "fontSize": "14px",
+      "overflow": "hidden",
+      "whiteSpace": "nowrap"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#1c94fc",
+        "color": "#FFFFFF"
+      }
+    }
+  ]
+}

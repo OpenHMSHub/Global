@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "#E71D36",
+      "fontFamily": "Gibsonbook",
+      "fontSize": "50px",
+      "textAlign": "left"
+    }
+  }
+}

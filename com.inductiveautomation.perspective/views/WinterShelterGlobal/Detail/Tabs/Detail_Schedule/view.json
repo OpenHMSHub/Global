@@ -1,0 +1,95 @@
+{
+  "custom": {},
+  "params": {
+    "locationID": 160
+  },
+  "propConfig": {
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ViewCanvas"
+        },
+        "position": {
+          "basis": "800px",
+          "display": false,
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances[0].viewParams.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationID"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "instances": [
+            {
+              "bottom": "auto",
+              "height": "auto",
+              "left": "0px",
+              "position": "absolute",
+              "right": "auto",
+              "style": {
+                "classes": ""
+              },
+              "top": "0px",
+              "viewParams": {},
+              "viewPath": "WinterShelterGlobal/Schedule/Tabs/Schedule_Detail",
+              "width": "auto",
+              "zIndex": "auto"
+            }
+          ],
+          "style": {
+            "classes": "Background/Alternative",
+            "overflow": "hidden"
+          },
+          "transitionSettings": {
+            "duration": "1s",
+            "timingFunction": "linear"
+          }
+        },
+        "type": "ia.display.viewcanvas"
+      },
+      {
+        "meta": {
+          "name": "Schedule_Detail"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationID"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Schedule/Tabs/Schedule_Detail"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "custom": {},
+  "params": {
+    "participantID": "value"
+  },
+  "propConfig": {
+    "params.participantID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 20,
+      "width": 24
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Image"
+        },
+        "position": {
+          "basis": "50%",
+          "shrink": 0
+        },
+        "props": {
+          "fit": {
+            "height": 12,
+            "mode": "absolute",
+            "width": 12
+          },
+          "source": "/system/images/SVGs/View in Pane.svg",
+          "style": {
+            "cursor": "pointer",
+            "paddingRight": 1
+          }
+        },
+        "type": "ia.display.image"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "center",
+      "alignItems": "center",
+      "justify": "center",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

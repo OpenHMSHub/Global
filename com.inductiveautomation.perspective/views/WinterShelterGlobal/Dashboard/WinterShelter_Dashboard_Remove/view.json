@@ -1,0 +1,89 @@
+{
+  "custom": {},
+  "params": {
+    "tab_id": "Registrations"
+  },
+  "propConfig": {
+    "params.tab_id": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 971,
+      "width": 1273
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "70px",
+          "shrink": 0
+        },
+        "props": {
+          "path": "WinterShelter/Dashboard/Cards/WinterShelterDashboard_Header"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tabs"
+        },
+        "position": {
+          "basis": "75%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.tab_id": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.tab_id"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "SelectedTab": "Registrations"
+          },
+          "path": "WinterShelter/Dashboard/Cards/WinterShelterDashboard_Tabs",
+          "style": {
+            "backgroundColor": "#f3f4f8"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "winter-shelter-navigation",
+          "pageScope": true,
+          "script": "\tselectedTab \u003d payload[\u0027selectedTab\u0027]\n\t\n\tself.view.params.tab_id \u003d selectedTab",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

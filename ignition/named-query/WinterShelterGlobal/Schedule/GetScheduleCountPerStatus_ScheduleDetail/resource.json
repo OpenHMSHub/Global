@@ -1,0 +1,55 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "33edd4bcaf1c365c1fbe15529b56a40ccc93a12ed2a4d89594c29fa508c221cf",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "locationId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "todayDayOfTheYear",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "seasonId",
+        "sqlType": 2
+      },
+      {
+        "type": "QueryString",
+        "identifier": "status",
+        "sqlType": 7
+      }
+    ]
+  }
+}

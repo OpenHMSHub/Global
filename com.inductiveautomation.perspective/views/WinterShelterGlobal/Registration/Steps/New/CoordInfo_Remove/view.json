@@ -1,0 +1,1425 @@
+{
+  "custom": {
+    "keyFields": {
+      "State": true
+    }
+  },
+  "params": {
+    "addressLine11": "",
+    "addressLine12": "",
+    "addressLine21": "",
+    "addressLine22": "",
+    "afterHoursPhone1": "",
+    "afterHoursPhone2": "",
+    "city1": "",
+    "city2": "",
+    "comments1": "",
+    "comments2": "",
+    "email1": "",
+    "email2": "",
+    "firstName1": "",
+    "firstName2": "",
+    "hasBackupCoordinator": true,
+    "lastName1": "",
+    "lastName2": "",
+    "neededToProceed": "Firstname",
+    "prefferedComms1": "Call",
+    "prefferedComms2": "Call",
+    "primaryPhone1": "",
+    "primaryPhone2": "",
+    "proceed": false,
+    "secondaryPhone1": "",
+    "secondaryPhone2": "",
+    "state1": "KY",
+    "state2": "KY",
+    "zip1": "",
+    "zip2": ""
+  },
+  "propConfig": {
+    "custom.Comments": {
+      "persistent": true
+    },
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#Script to determine if we can proceed to the next page of registration\n\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.Address": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.addressLine11} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.addressLine11})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.City": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.city1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.city1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Email": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.email1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.email1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.EveningPhone": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.afterHoursPhone1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.afterHoursPhone1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Firstname": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.firstName1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.firstName1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.LastName": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.lastName1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.lastName1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Phone": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.primaryPhone1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.primaryPhone1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Zip": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.zip1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.zip1})"
+        },
+        "type": "expr"
+      }
+    },
+    "params.addressLine11": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.addressLine12": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.addressLine21": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.addressLine22": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.afterHoursPhone1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.afterHoursPhone2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.city1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.city2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.comments1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.comments2": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.email1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.email2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.firstName1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.firstName2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hasBackupCoordinator": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.lastName1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.lastName2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.prefferedComms1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.prefferedComms2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.primaryPhone1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.primaryPhone2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.proceed": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.secondaryPhone1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryPhone2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.state1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.state2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.zip1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.zip2": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1500,
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Text/Add_HeaderText",
+            "paddingLeft": "0px"
+          },
+          "text": "The main contact for your congregation\u0027s Room In The Inn program"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Checkbox"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "checkedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            },
+            "path": "material/radio_button_checked"
+          },
+          "indeterminateIcon": {
+            "path": "material/radio_button_checked"
+          },
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "auto"
+          },
+          "text": "Auto-fill from last season",
+          "uncheckedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            },
+            "path": "material/radio_button_unchecked",
+            "style": {
+              "fontSize": "20px"
+            }
+          }
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "TextInput"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.firstName1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "First",
+                "requiredField": true,
+                "text": "Name"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "TextInput_0"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.lastName1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "Last",
+                "text": ""
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "CoordName"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "space-between"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "CoordAddress"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.addressLine11"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "Street",
+            "requiredField": true,
+            "text": "Address"
+          },
+          "path": "WinterShelter/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "TextInput_0"
+            },
+            "position": {
+              "basis": "160px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.city1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": false,
+                "placeHolder": "City",
+                "requiredField": false,
+                "text": "Time"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput",
+              "style": {
+                "marginRight": "20px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "TextInput_2"
+            },
+            "position": {
+              "basis": "120px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.zip1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": false,
+                "placeHolder": "ZIP",
+                "requiredField": false,
+                "text": "Time"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "CoordCityZip"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "TextInput"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.primaryPhone1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "888-888-8888",
+                "requiredField": true,
+                "text": "Primary Phone"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput",
+              "style": {
+                "marginRight": "20px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "TextInput_0"
+            },
+            "position": {
+              "basis": "200px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.secondaryPhone1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "(088)888 888",
+                "text": "Secondary Phone"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "CoordPhones"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "2\\0px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "EveningPhone"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.afterHoursPhone1"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "888-888-8888",
+            "requiredField": true,
+            "text": "Evening/After Hours Phone"
+          },
+          "path": "WinterShelter/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CoordEmail"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.email1"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "jdoe@email.com",
+            "requiredField": true,
+            "text": "Email"
+          },
+          "path": "WinterShelter/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Preferred Method of Communication"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordPerferredLabel"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "CoordPerferred"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.prefferedComms1"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "radios": [
+            {
+              "selected": true,
+              "text": "Call",
+              "value": "Call"
+            },
+            {
+              "selected": false,
+              "text": "Email",
+              "value": "Email"
+            },
+            {
+              "selected": false,
+              "text": "Text",
+              "value": "Text"
+            }
+          ],
+          "selectedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          },
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-15px"
+          },
+          "unselectedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            }
+          }
+        },
+        "type": "ia.input.radio-group"
+      },
+      {
+        "meta": {
+          "name": "CoordComments"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.comments1"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "comment",
+            "requiredField": false,
+            "text": "Comments"
+          },
+          "path": "WinterShelter/Registration/Cards/TextInput",
+          "style": {
+            "marginBottom": "20px",
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#9db8d1",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "propConfig": {
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.addBackupCoord}, \"material/remove_circle_outline\", \"material/add_circle_outline\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "color": "#9db8d1",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "cursor": "pointer",
+                "paddingLeft": "20px"
+              },
+              "text": "Add a backup coordinator"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Label_0"
+            },
+            "props": {
+              "style": {
+                "color": "#0066FF",
+                "cursor": "pointer",
+                "paddingLeft": "5px"
+              },
+              "text": "(recommended)"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "AddBackup"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.addBackupCoord": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.hasBackupCoordinator"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TextInput"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.firstName2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "First",
+                    "requiredField": false,
+                    "text": "Name"
+                  },
+                  "path": "WinterShelter/Registration/Cards/TextInput"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "TextInput_0"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.lastName2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "Last",
+                    "text": ""
+                  },
+                  "path": "WinterShelter/Registration/Cards/TextInput"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "CoordName"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "props": {
+              "justify": "space-between"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "CoordAddress"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.addressLine12"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "Street",
+                "requiredField": false,
+                "text": "Address"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput",
+              "style": {
+                "marginTop": "20px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TextInput_0"
+                },
+                "position": {
+                  "basis": "160px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.city2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": false,
+                    "placeHolder": "City",
+                    "requiredField": false,
+                    "text": "Time"
+                  },
+                  "path": "WinterShelter/Registration/Cards/TextInput",
+                  "style": {
+                    "marginRight": "20px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "TextInput_2"
+                },
+                "position": {
+                  "basis": "120px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.zip2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": false,
+                    "placeHolder": "ZIP",
+                    "requiredField": false,
+                    "text": "Time"
+                  },
+                  "path": "WinterShelter/Registration/Cards/TextInput"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "CoordCityZip"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "justify": "space-between",
+              "style": {
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TextInput"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.primaryPhone2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "(088)888 888",
+                    "requiredField": false,
+                    "text": "Primary Phone"
+                  },
+                  "path": "WinterShelter/Registration/Cards/TextInput",
+                  "style": {
+                    "marginRight": "20px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "TextInput_0"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.secondaryPhone2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "(088)888 888",
+                    "text": "Secondary Phone"
+                  },
+                  "path": "WinterShelter/Registration/Cards/TextInput"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "CoordPhones"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginTop": "2\\0px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EveningPhone"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.afterHoursPhone2"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "(088)888 888",
+                "requiredField": false,
+                "text": "Evening/After Hours Phone"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput",
+              "style": {
+                "marginTop": "20px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "CoordEmail"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.email2"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "jdoe@email.com",
+                "requiredField": false,
+                "text": "Email"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput",
+              "style": {
+                "marginTop": "20px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#9db8d1",
+                    "fontFamily": "Proxima NovaC Medium",
+                    "fontSize": "17px"
+                  },
+                  "text": "Preferred Method of Communication"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "50px",
+                  "display": false
+                },
+                "props": {
+                  "style": {
+                    "color": "#D80000"
+                  },
+                  "text": "*"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "CoorPerferredLabel"
+            },
+            "position": {
+              "basis": "25px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginTop": "20px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "CoordPerferred"
+            },
+            "position": {
+              "basis": "35px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.prefferedComms2"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "radios": [
+                {
+                  "selected": true,
+                  "text": "Call",
+                  "value": "Call"
+                },
+                {
+                  "selected": false,
+                  "text": "Email",
+                  "value": "Email"
+                },
+                {
+                  "selected": false,
+                  "text": "Text",
+                  "value": "Text"
+                }
+              ],
+              "selectedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                }
+              },
+              "style": {
+                "classes": "Text/Add_HeaderText"
+              },
+              "unselectedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                }
+              }
+            },
+            "type": "ia.input.radio-group"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "borderBottomColor": "#9db8d1",
+                "borderBottomStyle": "solid",
+                "borderBottomWidth": "1px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "CoordComments"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.comments2"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "comments...",
+                "requiredField": false,
+                "text": "Comments"
+              },
+              "path": "WinterShelter/Registration/Cards/TextInput",
+              "style": {
+                "marginTop": "20px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "BackupCoord"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "../AddBackup.custom.addBackupCoord"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

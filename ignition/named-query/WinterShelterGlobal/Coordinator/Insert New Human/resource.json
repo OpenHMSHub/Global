@@ -1,0 +1,250 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "43d3441c41273cdd3b4c071ec6aa8228e9e50742c5863e741471d06368aefc46",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "dob",
+        "sqlType": 8
+      },
+      {
+        "type": "Parameter",
+        "identifier": "first_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "middle_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "last_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "nick_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dob_quality",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "ssn",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "ssn_quality",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "gender_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "race_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "ethnicity_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "veteran_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "disability_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "phone",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "alt_phone",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "email",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "communication_type_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "emergency_contact_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "emergency_contact_email",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "emergency_contact_phone",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "emergency_contact_type_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "family_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "hoh_relationship_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "full_register",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "mentalHealth",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "chronicHealthConditions",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "physicalDisability",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "developmentalDisability",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "substanceAbuse",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "lastHmisUpdateDate",
+        "sqlType": 8
+      },
+      {
+        "type": "Parameter",
+        "identifier": "lastHmisUpdateBy",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "viSpidatScore",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "viSpidateAssessmentDate",
+        "sqlType": 8
+      },
+      {
+        "type": "Parameter",
+        "identifier": "vaHealthCareEligible",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "incomeSource",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "incomeAmount",
+        "sqlType": 4
+      },
+      {
+        "type": "Parameter",
+        "identifier": "incomeStartDate",
+        "sqlType": 8
+      },
+      {
+        "type": "Parameter",
+        "identifier": "triMorbid",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "biracialId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "zipCode",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "city",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "street",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "preferredCommunication",
+        "sqlType": 7
+      }
+    ]
+  }
+}

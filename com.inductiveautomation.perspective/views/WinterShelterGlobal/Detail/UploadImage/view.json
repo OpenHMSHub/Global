@@ -1,0 +1,67 @@
+{
+  "custom": {},
+  "params": {
+    "congregationId": 21
+  },
+  "propConfig": {
+    "params.congregationId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 142,
+      "width": 389
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onFileReceived": [
+              {
+                "config": {
+                  "script": "\tfrom javax.imageio import ImageIO\n\tfrom java.io import ByteArrayInputStream\n\tinput_stream \u003d ByteArrayInputStream(event.file.getBytes())\n\tbuf \u003d ImageIO.read(input_stream)\n\tpayload \u003d {\n\t\t\"congregationId\":self.view.params.congregationId,\n\t\t\"bytes\":event.file.getBytes(),\n\t\t\"height\":buf.height,\n\t\t\"width\":buf.width\n\t}\n\tsystem.perspective.print(buf.height)\n\tsystem.util.sendRequest(project\u003d\"RITI\", messageHandler\u003d\"uploadCongregationImage\",payload\u003dpayload)\n\tsystem.perspective.sendMessage(\"imageUpdated\", scope \u003d \"page\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": true,
+                  "id": "6MJZL2WB",
+                  "modal": false,
+                  "overlayDismiss": false,
+                  "resizable": true,
+                  "showCloseIcon": true,
+                  "type": "close",
+                  "viewPath": "WinterShelter/Detail/UploadImage",
+                  "viewportBound": false
+                },
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "FileUpload"
+        },
+        "position": {
+          "basis": "145px",
+          "grow": 1
+        },
+        "type": "ia.input.fileupload"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

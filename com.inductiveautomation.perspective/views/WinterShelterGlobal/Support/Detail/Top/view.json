@@ -1,0 +1,111 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tUTCOffset \u003d self.session.props.device.timezone.utcOffset\n\ttimeCreated \u003d system.date.addMinutes(system.date.now(),int(UTCOffset*60))\n\tself.params.row_data.timeCreated \u003d system.date.format(timeCreated,\u0027MM/dd/YYYY\u0027)"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "congregation_search": false,
+    "locationId": 160,
+    "row_data": {
+      "RITINotes": "",
+      "Status": "",
+      "completed": "None",
+      "congregationNotes": "",
+      "contact": "",
+      "dueDate": "None",
+      "id": -1,
+      "locationId": -1,
+      "locationName": "",
+      "priorityId": -1,
+      "staffId": -1,
+      "staffName": "",
+      "statusId": -1,
+      "ticketPriority": "",
+      "ticketTypeId": -1,
+      "timeCreated": "",
+      "title": "",
+      "type": ""
+    },
+    "view_height": "270px"
+  },
+  "propConfig": {
+    "params.congregation_search": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.row_data": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.view_height": {
+      "binding": {
+        "config": {
+          "path": "/root/Edit.props.params.view_height"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1556
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Edit"
+        },
+        "position": {
+          "basis": "30%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.Row_Data": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.row_data"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationId"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "view_height": "270px"
+          },
+          "path": "WinterShelterGlobal/Support/Detail/Edit/SupportDetailEdit"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

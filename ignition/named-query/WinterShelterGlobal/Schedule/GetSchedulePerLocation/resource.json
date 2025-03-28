@@ -1,0 +1,70 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "763d56667ad9d314f147861c0d70a7c2e864aa11e464a293ff3c421da4590584",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "locationId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "month1StartDayOfYear",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "month2StartDayOfYear",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "month1EndDayOfYear",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "month2EndDayOfYear",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "month1SeasonId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "month2SeasonId",
+        "sqlType": 2
+      }
+    ]
+  }
+}

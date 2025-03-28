@@ -1,0 +1,97 @@
+{
+  "custom": {},
+  "params": {
+    "CardType": "Services",
+    "Date": 1601528400000,
+    "ID": "value",
+    "Size": 150
+  },
+  "propConfig": {
+    "params.CardType": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Date": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.ID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Size": {
+      "binding": {
+        "config": {
+          "path": "/root/EmbeddedView.props.params.Size"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "props.defaultSize.height": {
+      "binding": {
+        "config": {
+          "path": "/root/EmbeddedView.props.params.Size"
+        },
+        "type": "property"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 736
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "propConfig": {
+          "props.params.Date": {
+            "binding": {
+              "config": {
+                "path": "view.params.Date"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.ID": {
+            "binding": {
+              "config": {
+                "path": "view.params.ID"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "If({view.params.CardType} \u003d \"Header\",\r\n\t\"Participants/Activity/CardHeader\",\r\n\t\"Participants/Activity/\"+{view.params.CardType}+\"/\"+{view.params.CardType})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Size": 150
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

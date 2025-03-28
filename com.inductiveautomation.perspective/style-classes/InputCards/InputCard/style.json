@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "borderBottomColor": "#9db8d1",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "marginTop": "5px",
+      "paddingBottom": "5px",
+      "paddingLeft": "10px",
+      "paddingRight": "10px"
+    }
+  }
+}

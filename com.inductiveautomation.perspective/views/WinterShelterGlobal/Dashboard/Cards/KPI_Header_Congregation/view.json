@@ -1,0 +1,447 @@
+{
+  "custom": {
+    "BedLast_FromKPI": 0,
+    "BedsThisSeason": 0,
+    "lastSeasonId": 1,
+    "occupancy": {
+      "$": [
+        "ds",
+        192,
+        1738584979787
+      ],
+      "$columns": [
+        {
+          "data": [
+            0
+          ],
+          "name": "Registered",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "Percentage",
+          "type": "Integer"
+        }
+      ]
+    }
+  },
+  "params": {
+    "congregationCount": 0,
+    "seasonId": -1
+  },
+  "propConfig": {
+    "custom.BedLast_FromKPI": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "seasonId": "{view.custom.lastSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Dashboard/Get_Attendance_KPI_PreviousSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tdataset \u003d value\t\n\tif dataset is not None and dataset.getRowCount() \u003e 0:\n\t\ttotalBeds \u003d dataset.getValueAt(0,\u0027totalBeds\u0027)\n\telse:\n\t\ttotalBeds \u003d 0\n\treturn totalBeds",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.BedsLastSeason": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "accessible": "{session.custom.filters.winterShelterRegistrations.HDCP.where}",
+            "breakfast": "{session.custom.filters.winterShelterRegistrations.breakfast.where}",
+            "city": "{session.custom.filters.winterShelterRegistrations.city.where}",
+            "clothing": "{session.custom.filters.winterShelterRegistrations.clothing.where}",
+            "dinner": "{session.custom.filters.winterShelterRegistrations.dinner.where}",
+            "families": "{session.custom.filters.winterShelterRegistrations.families.where}",
+            "friday": "{session.custom.filters.winterShelterRegistrations.friday.where}",
+            "gender": "{session.custom.filters.winterShelterRegistrations.genders.where}",
+            "haircuts": "{session.custom.filters.winterShelterRegistrations.haircuts.where}",
+            "hygieneItems": "{session.custom.filters.winterShelterRegistrations.hygieneItems.where}",
+            "laundry": "{session.custom.filters.winterShelterRegistrations.laundry.where}",
+            "locationName": "{session.custom.filters.winterShelterRegistrations.locationName.where}",
+            "maxGuests": "{session.custom.filters.winterShelterRegistrations.maxGuests.where}",
+            "minGuests": "{session.custom.filters.winterShelterRegistrations.minGuests.where}",
+            "monday": "{session.custom.filters.winterShelterRegistrations.monday.where}",
+            "reminderCall": "{session.custom.filters.winterShelterRegistrations.reminderCall.where}",
+            "sackLunches": "{session.custom.filters.winterShelterRegistrations.sackLunches.where}",
+            "saturday": "{session.custom.filters.winterShelterRegistrations.saturday.where}",
+            "search": "{session.custom.filters.winterShelterRegistrations.search.where}",
+            "season": "{view.custom.lastSeasonId}",
+            "shortNotice": "{session.custom.filters.winterShelterRegistrations.shortNotice.where}",
+            "showers": "{session.custom.filters.winterShelterRegistrations.showers.where}",
+            "smoking": "{session.custom.filters.winterShelterRegistrations.smoking.where}",
+            "stairs": "{session.custom.filters.winterShelterRegistrations.stairs.where}",
+            "sunday": "{session.custom.filters.winterShelterRegistrations.sunday.where}",
+            "thursday": "{session.custom.filters.winterShelterRegistrations.thursday.where}",
+            "tuesday": "{session.custom.filters.winterShelterRegistrations.tuesday.where}",
+            "wednesday": "{session.custom.filters.winterShelterRegistrations.wednesday.where}",
+            "zipCode": "{session.custom.filters.winterShelterRegistrations.zipCode.where}"
+          },
+          "queryPath": "WinterShelterGlobal/Dashboard/KPI_BedsThisSeason",
+          "returnFormat": "dataset"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,0) !\u003d None and value.getValueAt(0,0) !\u003d \u0027\u0027:\n\t\t\tBedLast \u003d value.getValueAt(0,0)\n\t\telse:\n\t\t\tBedLast \u003d 0\n\telse:\n\t\tBedLast \u003d 0\n\tif BedLast \u003d\u003d 0:\n\t\tBedLast \u003d self.view.custom.BedLast_FromKPI\n\treturn BedLast",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      }
+    },
+    "custom.BedsThisSeason": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "city": "{session.custom.filters.winterShelterCongregations.city.value}",
+            "fullyRegistered": "{session.custom.filters.winterShelterCongregations.timeRetired.where}",
+            "gender": "{session.custom.filters.winterShelterCongregations.genders.where}",
+            "locationName": "{session.custom.filters.winterShelterCongregations.locationName.value}",
+            "maxGuests": "{session.custom.filters.winterShelterCongregations.maxGuests.value}",
+            "minGuests": "{session.custom.filters.winterShelterCongregations.minGuests.value}",
+            "search": "{session.custom.filters.winterShelterCongregations.search.value}",
+            "season": "{view.params.seasonId}",
+            "zipCode": "{session.custom.filters.winterShelterCongregations.zipCode.value}"
+          },
+          "queryPath": "WinterShelterGlobal/Dashboard/KPI_BedsThisSeason_OnCongregation"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,0) !\u003d None and value.getValueAt(0,0) !\u003d \u0027\u0027:\n\t\t\treturn value.getValueAt(0,0)\n\t\telse:\n\t\t\treturn 0\n\telse:\n\t\treturn 0",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.lastSeasonId": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/GetLastSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tlastSeasonId \u003d value.getValueAt(0,\u0027id\u0027)\n\treturn lastSeasonId",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.occupancy": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "city": "{session.custom.filters.winterShelterCongregations.city.value}",
+            "fullyRegistered": "{session.custom.filters.winterShelterCongregations.timeRetired.where}",
+            "gender": "{session.custom.filters.winterShelterCongregations.genders.where}",
+            "locationName": "{session.custom.filters.winterShelterCongregations.locationName.value}",
+            "maxGuests": "{session.custom.filters.winterShelterCongregations.maxGuests.value}",
+            "minGuests": "{session.custom.filters.winterShelterCongregations.minGuests.value}",
+            "search": "{session.custom.filters.winterShelterCongregations.search.value}",
+            "season": "{view.params.seasonId}",
+            "zipCode": "{session.custom.filters.winterShelterCongregations.zipCode.value}"
+          },
+          "queryPath": "WinterShelterGlobal/Dashboard/Registration_Counts_OnCongregation"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.congregationCount": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.seasonId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 185,
+      "width": 1430
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "KPI1"
+        },
+        "position": {
+          "basis": "270px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.custom.occupancy"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn value.getValueAt(0,\u0027Registered\u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.percent": {
+            "binding": {
+              "config": {
+                "path": "view.params.congregationCount"
+              },
+              "transforms": [
+                {
+                  "code": "#\treturn value.getValueAt(0,\u0027Percentage\u0027)\n\tTotalCongregation \u003d value\n\tif TotalCongregation !\u003d None and TotalCongregation !\u003d \u0027\u0027 and TotalCongregation !\u003d 0:\n\t\tregistered \u003d (self.view.custom.occupancy).getValueAt(0,\u0027registered\u0027)\n\t\tpercent \u003d registered * 100 / TotalCongregation\n\telse:\n\t\tpercent \u003d 0\n\treturn percent",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Title": "Registered Congregations"
+          },
+          "path": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex",
+          "style": {
+            "classes": "KPIs/KPI_Card",
+            "marginLeft": "40px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "KPI2"
+        },
+        "position": {
+          "basis": "270px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.LeftValue": {
+            "binding": {
+              "config": {
+                "path": "view.custom.BedsThisSeason"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.RightValue": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "accessible": "{session.custom.filters.winterShelterRegistrations.HDCP.where}",
+                  "breakfast": "{session.custom.filters.winterShelterRegistrations.breakfast.where}",
+                  "city": "{session.custom.filters.winterShelterRegistrations.city.where}",
+                  "clothing": "{session.custom.filters.winterShelterRegistrations.clothing.where}",
+                  "dinner": "{session.custom.filters.winterShelterRegistrations.dinner.where}",
+                  "families": "{session.custom.filters.winterShelterRegistrations.families.where}",
+                  "friday": "{session.custom.filters.winterShelterRegistrations.friday.where}",
+                  "gender": "{session.custom.filters.winterShelterRegistrations.genders.where}",
+                  "haircuts": "{session.custom.filters.winterShelterRegistrations.haircuts.where}",
+                  "hygieneItems": "{session.custom.filters.winterShelterRegistrations.hygieneItems.where}",
+                  "laundry": "{session.custom.filters.winterShelterRegistrations.laundry.where}",
+                  "locationName": "{session.custom.filters.winterShelterRegistrations.locationName.where}",
+                  "maxGuests": "{session.custom.filters.winterShelterRegistrations.maxGuests.where}",
+                  "minGuests": "{session.custom.filters.winterShelterRegistrations.minGuests.where}",
+                  "monday": "{session.custom.filters.winterShelterRegistrations.monday.where}",
+                  "reminderCall": "{session.custom.filters.winterShelterRegistrations.reminderCall.where}",
+                  "sackLunches": "{session.custom.filters.winterShelterRegistrations.sackLunches.where}",
+                  "saturday": "{session.custom.filters.winterShelterRegistrations.saturday.where}",
+                  "search": "{session.custom.filters.winterShelterRegistrations.search.where}",
+                  "season": "{view.custom.lastSeasonId}",
+                  "shortNotice": "{session.custom.filters.winterShelterRegistrations.shortNotice.where}",
+                  "showers": "{session.custom.filters.winterShelterRegistrations.showers.where}",
+                  "smoking": "{session.custom.filters.winterShelterRegistrations.smoking.where}",
+                  "stairs": "{session.custom.filters.winterShelterRegistrations.stairs.where}",
+                  "sunday": "{session.custom.filters.winterShelterRegistrations.sunday.where}",
+                  "thursday": "{session.custom.filters.winterShelterRegistrations.thursday.where}",
+                  "tuesday": "{session.custom.filters.winterShelterRegistrations.tuesday.where}",
+                  "wednesday": "{session.custom.filters.winterShelterRegistrations.wednesday.where}",
+                  "zipCode": "{session.custom.filters.winterShelterRegistrations.zipCode.where}"
+                },
+                "queryPath": "WinterShelterGlobal/Dashboard/KPI_BedsThisSeason",
+                "returnFormat": "dataset"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,0) !\u003d None and value.getValueAt(0,0) !\u003d \u0027\u0027:\n\t\t\tBedLast \u003d value.getValueAt(0,0)\n\t\telse:\n\t\t\tBedLast \u003d 0\n\telse:\n\t\tBedLast \u003d 0\n\tif BedLast \u003d\u003d 0:\n\t\tBedLast \u003d self.view.custom.BedLast_FromKPI\n\treturn BedLast",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "LeftPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "LeftTitle": "Beds This Season",
+            "RightPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "RightTitle": "Beds Last Season"
+          },
+          "path": "WinterShelterGlobal/Dashboard/Cards/KPI/Small_Double_Flex",
+          "style": {
+            "classes": "KPIs/KPI_Card",
+            "marginRight": "20px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "KPI3"
+        },
+        "position": {
+          "basis": "270px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.LeftValue": {
+            "binding": {
+              "config": {
+                "expression": "if ({view.custom.BedsLastSeason} \u003d 0, 100,\r\nround((({view.custom.BedsThisSeason}-{view.custom.BedsLastSeason})/{view.custom.BedsLastSeason})*100)\r\n)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.RightValue": {
+            "binding": {
+              "config": {
+                "expression": "({view.custom.BedsThisSeason}-{view.custom.BedsLastSeason})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "LeftPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Percent_Flex_Small",
+            "LeftTitle": "Bed Growth %",
+            "RightPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "RightTitle": "Bed Growth"
+          },
+          "path": "WinterShelterGlobal/Dashboard/Cards/KPI/Small_Double_Flex",
+          "style": {
+            "classes": "KPIs/KPI_Card",
+            "marginRight": "20px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "KPI5"
+        },
+        "position": {
+          "basis": "270px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.LeftValue": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "city": "{session.custom.filters.winterShelterCongregations.city.value}",
+                  "fullyRegistered": "{session.custom.filters.winterShelterCongregations.timeRetired.where}",
+                  "gender": "{session.custom.filters.winterShelterCongregations.genders.where}",
+                  "lastSeasonId": "{view.custom.lastSeasonId}",
+                  "locationName": "{session.custom.filters.winterShelterCongregations.locationName.value}",
+                  "maxGuests": "{session.custom.filters.winterShelterCongregations.maxGuests.value}",
+                  "minGuests": "{session.custom.filters.winterShelterCongregations.minGuests.value}",
+                  "search": "{session.custom.filters.winterShelterCongregations.search.value}",
+                  "season": "{view.params.seasonId}",
+                  "zipCode": "{session.custom.filters.winterShelterCongregations.zipCode.value}"
+                },
+                "queryPath": "WinterShelterGlobal/Dashboard/KPI_PercentBedGrowth_ByCongregation"
+              },
+              "transforms": [
+                {
+                  "code": "\t#\tpydataset \u003d system.dataset.toPyDataSet(value)\n\tcount \u003d 0\n\tfor i in range(value.getRowCount()):\n\t\tPercentBedGrowth \u003d value.getValueAt(i,\u0027PercentBedGrowth\u0027)\n\t\tif PercentBedGrowth !\u003d None:\n\t\t\tPercentBedGrowth \u003d  round(PercentBedGrowth)\n\t\t\tif PercentBedGrowth \u003e\u003d 10:\n\t\t\t\tcount \u003d count + 1\n\treturn count",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.RightValue": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "city": "{session.custom.filters.winterShelterCongregations.city.value}",
+                  "fullyRegistered": "{session.custom.filters.winterShelterCongregations.timeRetired.where}",
+                  "gender": "{session.custom.filters.winterShelterCongregations.genders.where}",
+                  "lastSeasonId": "{view.custom.lastSeasonId}",
+                  "locationName": "{session.custom.filters.winterShelterCongregations.locationName.value}",
+                  "maxGuests": "{session.custom.filters.winterShelterCongregations.maxGuests.value}",
+                  "minGuests": "{session.custom.filters.winterShelterCongregations.minGuests.value}",
+                  "search": "{session.custom.filters.winterShelterCongregations.search.value}",
+                  "season": "{view.params.seasonId}",
+                  "zipCode": "{session.custom.filters.winterShelterCongregations.zipCode.value}"
+                },
+                "queryPath": "WinterShelterGlobal/Dashboard/KPI_PercentBedGrowth_ByCongregation"
+              },
+              "transforms": [
+                {
+                  "code": "\t#\tpydataset \u003d system.dataset.toPyDataSet(value)\n\tcount \u003d 0\n\tfor i in range(value.getRowCount()):\n\t\tPercentBedGrowth \u003d value.getValueAt(i,\u0027PercentBedGrowth\u0027)\n\t\tif PercentBedGrowth !\u003d None:\n\t\t\tPercentBedGrowth \u003d  round(PercentBedGrowth)\n\t\t\tif PercentBedGrowth \u003c\u003d -10:\n\t\t\t\t\n\t\t\t\tcount \u003d count + 1\n\treturn count",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "LeftPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "LeftTitle": "Congregation +10%",
+            "RightPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "RightTitle": "Congregation -10%"
+          },
+          "path": "WinterShelterGlobal/Dashboard/Cards/KPI/Small_Double_Flex",
+          "style": {
+            "classes": "KPIs/KPI_Card",
+            "marginRight": "40px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "alignItems": "center",
+      "style": {
+        "classes": "KPIs/KPI_Flex_Container",
+        "overflow": "hidden",
+        "overflowY": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

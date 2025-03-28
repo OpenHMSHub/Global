@@ -1,0 +1,80 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "3ee7bf4eb36f0e233437ef011d0db0242374929de0df088a725ed271100b30d6",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "locationName",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "city",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "zipCode",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "minGuests",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "maxGuests",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "search",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "season",
+        "sqlType": 2
+      },
+      {
+        "type": "QueryString",
+        "identifier": "gender",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "fullyRegistered",
+        "sqlType": 7
+      }
+    ]
+  }
+}

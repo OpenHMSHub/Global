@@ -1,0 +1,174 @@
+{
+  "custom": {},
+  "params": {
+    "activity_range": 365,
+    "participant_id": 4739,
+    "selection": null
+  },
+  "propConfig": {
+    "params.activity_range": {
+      "binding": {
+        "config": {
+          "path": "/root/ActivityRange.props.params.selection"
+        },
+        "transforms": [
+          {
+            "code": "\tif value \u003d\u003d 0 or value \u003d\u003d None:\n\t\treturn 36500\n\telse:\n\t\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.participant_id": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selection": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_ActivityType.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "110px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Filter/Header_Text",
+            "paddingLeft": "40px"
+          },
+          "text": "Last Activity:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ActivityRange"
+        },
+        "position": {
+          "basis": "150px"
+        },
+        "props": {
+          "params": {
+            "options": {
+              "$": [
+                "ds",
+                192,
+                1615127132325
+              ],
+              "$columns": [
+                {
+                  "data": [
+                    1,
+                    7,
+                    14,
+                    30,
+                    60,
+                    90,
+                    180,
+                    365,
+                    730,
+                    1095,
+                    1460,
+                    1825,
+                    0
+                  ],
+                  "name": "id",
+                  "type": "Integer"
+                },
+                {
+                  "data": [
+                    "Yesterday",
+                    "7 Days",
+                    "14 Days",
+                    "30 Days",
+                    "60 Days",
+                    "90 Days",
+                    "180 Days",
+                    "1 Year",
+                    "2 Years",
+                    "3 Years",
+                    "4 Years",
+                    "5 Years",
+                    "All Time"
+                  ],
+                  "name": "activity_range",
+                  "type": "String"
+                }
+              ]
+            },
+            "placeholder": "Activity Range",
+            "selection": 365
+          },
+          "path": "1_TEMPLATES/Filtering/Conditionals/Conditional_SingleDropDown_NoClear",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_ActivityType"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "participantId": "{view.params.participant_id}"
+                },
+                "queryPath": "Participants/Activities/ActivityFeedFilter"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "placeholder": "Activity Type",
+            "selection": null
+          },
+          "path": "Participants/Activity/Filter/Activity_MulitDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "marginRight": "40px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Filter/Filter_Text"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

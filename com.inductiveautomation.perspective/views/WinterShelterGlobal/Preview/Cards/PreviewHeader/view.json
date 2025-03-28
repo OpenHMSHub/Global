@@ -1,0 +1,71 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 62
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "62px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_Header"
+          },
+          "text": "Congregation"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "id": "PreviewCongregation",
+                "type": "close",
+                "viewParams": {
+                  "CongregationID": "-1"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_Header",
+            "cursor": "pointer",
+            "marginRight": "10px"
+          },
+          "text": "X"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "background": "linear-gradient(90deg, rgba(22,165,189,1) 0%, rgba(13,185,165,1) 100%)"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "custom": {},
+  "params": {
+    "dataset": {
+      "$": [
+        "ds",
+        192,
+        1630256694749
+      ],
+      "$columns": [
+        {
+          "data": [
+            4,
+            5,
+            1,
+            0,
+            3,
+            2
+          ],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Client refused",
+            "Data not collected",
+            "Female",
+            "Male",
+            "Transgender Female to Male",
+            "Transgender Male to Female"
+          ],
+          "name": "gender",
+          "type": "String"
+        }
+      ]
+    },
+    "defaultFilePrefix": "toExcel"
+  },
+  "propConfig": {
+    "params.dataset": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.defaultFilePrefix": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 30
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t#Clear the filter components\n\tsystem.perspective.sendMessage(\"tableToPDF\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "toPDF"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "props": {
+          "image": {
+            "height": 16,
+            "icon": {
+              "color": "#0C4E8B",
+              "path": "material/picture_as_pdf"
+            },
+            "position": "center",
+            "width": 16
+          },
+          "style": {
+            "classes": "Filter/Filter_Border_Default Filter/Filter_Container"
+          },
+          "text": "",
+          "textStyle": {
+            "classes": "GreyColor"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

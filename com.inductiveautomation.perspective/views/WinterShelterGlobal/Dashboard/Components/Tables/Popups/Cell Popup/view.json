@@ -1,0 +1,167 @@
+{
+  "custom": {
+    "UniquePopupId": "7dQtTtpR",
+    "data": null
+  },
+  "params": {
+    "UniquePopupId": "7dQtTtpR",
+    "selectionValue": null
+  },
+  "propConfig": {
+    "custom.UniquePopupId": {
+      "binding": {
+        "config": {
+          "path": "view.params.UniquePopupId"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.data": {
+      "binding": {
+        "config": {
+          "path": "view.params.selectionValue"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.UniquePopupId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectionValue": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 100,
+      "width": 250
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(str(self.view.params.UniquePopupId))"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close_Button"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "image": {
+                "height": 15,
+                "position": "right",
+                "style": {
+                  "classes": "Buttons/Secondary_Orange"
+                },
+                "width": 15
+              },
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none",
+                "classes": "Buttons/Secondary_Orange",
+                "color": "#3ec3d9"
+              },
+              "text": "X"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "backgroundColor": "#3ec3d9",
+            "padding": "2px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "parent.props.style.backgroundColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.props.style.classes"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.data"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "top",
+          "style": {
+            "color": "#3ec3d9",
+            "key": "value",
+            "marginLeft": "2.5%",
+            "marginRight": "5%",
+            "marginTop": "2.5%",
+            "padding": 5
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "alignItems": "flex-start",
+      "justify": "flex-end",
+      "style": {
+        "backgroundColor": "#FFFFFF",
+        "boxShadow": "#3ec3d9 10px 10px 5px"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

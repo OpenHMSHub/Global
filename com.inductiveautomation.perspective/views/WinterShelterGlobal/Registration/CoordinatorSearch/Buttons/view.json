@@ -1,0 +1,183 @@
+{
+  "custom": {},
+  "params": {
+    "funcSelectVolunteer": false
+  },
+  "propConfig": {
+    "params.funcSelectVolunteer": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 47,
+      "width": 1100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.params.funcSelectVolunteer \u003d True\n\n"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_select"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Main",
+            "marginBottom": "5px",
+            "marginTop": "5px"
+          },
+          "text": "select coordinator"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder_1"
+        },
+        "position": {
+          "basis": "10px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\timport traceback\n\ttry:\n\t\tlogger \u003d system.util.getLogger(\"Breeze Manual Volunteer Update\")\n\t\tlogger.info(\"Breeze Manual Volunteer Update Request\")\n\t\tself.props.style.classes \u003d \"Buttons/Main\"\n\t\tIntegrations.breeze.timer.person.getVolunteers(updateAll\u003dFalse)\n\t\tlogger.info(\"Request Complete\")\n\t\tself.props.style.classes \u003d \"Buttons/Secondary\"\n\t\tself.view.custom.updateAll \u003d False\n\texcept:\n\t    logger \u003d system.util.getLogger(\"Breeze Manual Volunteer Update\")\n\t    msg \u003d traceback.format_exc()\n\t    logger.error(msg)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "syncBreeze"
+        },
+        "position": {
+          "basis": "280px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.progress": {
+            "binding": {
+              "config": {
+                "expression": "{[default]RITI/Volunteers/Breeze/progressCount} + \u0027 of \u0027 + {[default]RITI/Volunteers/Breeze/progressTotal}"
+              },
+              "type": "expr"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "False //{[default]RITI/Volunteers/Breeze/progressCount} \u003d {[default]RITI/Volunteers/Breeze/progressTotal}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary",
+            "marginBottom": "5px",
+            "marginRight": "10px",
+            "marginTop": "5px"
+          },
+          "text": "Sync New Breeze Volunteers"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "syncBreezeActive"
+        },
+        "position": {
+          "basis": "280px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.progress": {
+            "binding": {
+              "config": {
+                "expression": "{[default]RITI/Volunteers/Breeze/progressCount} + \u0027 of \u0027 + {[default]RITI/Volunteers/Breeze/progressTotal}"
+              },
+              "type": "expr"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{[default]RITI/Volunteers/Breeze/progressCount} \u003d {[default]RITI/Volunteers/Breeze/progressTotal}"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn not value",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]RITI/Volunteers/Breeze/progressType} \u003c 2,\r\n\u0027Syncing Volunteer \u0027 + {this.custom.progress},\r\n\u0027Syncing Congregation \u0027 + {this.custom.progress})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary",
+            "marginBottom": "5px",
+            "marginRight": "10px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder_2"
+        },
+        "position": {
+          "basis": "850px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

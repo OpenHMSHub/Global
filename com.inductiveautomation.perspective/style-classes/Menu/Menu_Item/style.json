@@ -1,0 +1,11 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#0c4e8b",
+      "color": "#0D80e3",
+      "fontFamily": "Gibson",
+      "fontSize": "18px",
+      "opacity": "0.70"
+    }
+  }
+}

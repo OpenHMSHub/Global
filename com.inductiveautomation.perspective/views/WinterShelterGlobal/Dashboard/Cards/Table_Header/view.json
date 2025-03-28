@@ -1,0 +1,142 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 806
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "Auto",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header",
+            "paddingRight": "10px",
+            "textAlign": "end"
+          },
+          "text": "Filter by:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "custom": {
+          "filters": [],
+          "filtervalues": []
+        },
+        "meta": {
+          "name": "Gender"
+        },
+        "position": {
+          "basis": "120px"
+        },
+        "props": {
+          "params": {
+            "key": "Gender",
+            "label": "Gender",
+            "type": "gender"
+          },
+          "path": "1_TEMPLATES/Filtering/Gender",
+          "style": {
+            "cursor": "pointer",
+            "marginRight": "10px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "filters": [],
+          "filtervalues": []
+        },
+        "meta": {
+          "name": "Age"
+        },
+        "position": {
+          "basis": "120px"
+        },
+        "props": {
+          "params": {
+            "key": "BirthDate",
+            "label": "Age",
+            "type": "age:any"
+          },
+          "path": "1_TEMPLATES/Filtering/Age",
+          "style": {
+            "cursor": "pointer",
+            "marginRight": "10px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "custom": {
+          "filters": [],
+          "filtervalues": []
+        },
+        "meta": {
+          "name": "Veteran"
+        },
+        "position": {
+          "basis": "120px"
+        },
+        "props": {
+          "params": {
+            "key": "veteran",
+            "label": "Veteran Status",
+            "label_false": "No",
+            "label_true": "Yes",
+            "type": "boolean"
+          },
+          "path": "1_TEMPLATES/Filtering/Boolean",
+          "style": {
+            "cursor": "pointer",
+            "marginRight": "10px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Search"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "path": "1_TEMPLATES/Filtering/Search_Bar",
+          "style": {
+            "marginRight": "40px",
+            "paddingBottom": "4px",
+            "paddingTop": "4px"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "center",
+      "alignItems": "center",
+      "style": {
+        "borderStyle": "none",
+        "classes": "Table/Filter_Header_Container",
+        "overflow": "hidden"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

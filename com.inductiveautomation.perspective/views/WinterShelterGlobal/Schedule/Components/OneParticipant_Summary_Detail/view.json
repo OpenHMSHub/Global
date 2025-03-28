@@ -1,0 +1,122 @@
+{
+  "custom": {},
+  "params": {
+    "isActive": true,
+    "participantId": -1,
+    "participantName": "value"
+  },
+  "propConfig": {
+    "params.dayOfMonth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dayOfWeek": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fghg": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.isActive": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.participantId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.participantName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 25,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "id": "PreviewParticipant",
+                "type": "toggle",
+                "viewParams": {
+                  "isActive": "{view.params.isActive}",
+                  "participantID": "{view.params.participantId}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Image"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "fit": {
+            "height": 15,
+            "mode": "absolute",
+            "width": 15
+          },
+          "source": "/system/images/SVGs/View in Pane.svg",
+          "style": {
+            "cursor": "pointer",
+            "paddingBottom": 1,
+            "paddingRight": 1,
+            "paddingTop": 5
+          }
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "150px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.participantName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "paddingLeft": 2
+          },
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "ActivityCards/Card_TextDark",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

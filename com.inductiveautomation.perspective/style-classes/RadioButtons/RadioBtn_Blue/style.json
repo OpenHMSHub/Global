@@ -1,0 +1,17 @@
+{
+  "base": {
+    "style": {
+      "borderStyle": "none",
+      "color": "#0D80E3",
+      "fontFamily": "Gibson",
+      "fontSize": "18px",
+      "outlineStyle": "none"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "checked",
+      "style": {}
+    }
+  ]
+}

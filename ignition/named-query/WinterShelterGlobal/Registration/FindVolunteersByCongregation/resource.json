@@ -1,0 +1,90 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "a797a4bbfb463d44e51ff3f82b107d0cbe18f937eb7b2d177814854949bbc4b1",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "QueryString",
+        "identifier": "firstName",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "middleName",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "lastName",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "nickName",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "dobYear",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "dobMonth",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "dobDay",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "search",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "email",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "genderId",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "congregationId",
+        "sqlType": 2
+      }
+    ]
+  }
+}

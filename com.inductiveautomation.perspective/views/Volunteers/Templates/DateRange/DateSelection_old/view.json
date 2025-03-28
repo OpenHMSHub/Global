@@ -1,0 +1,441 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 450
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblDateRangeHeader"
+            },
+            "position": {
+              "basis": "100%"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "color": "#0C4E8B",
+                "fontSize": "25px",
+                "padding": 20
+              },
+              "text": "Date Range"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "10%"
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#FFFFFF",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": 1,
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopStyle": "none"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tself.session.custom.selectedDateRange \u003d \"currentCalendar\"\n\tself.parent.parent.getChild(\"footer\").getChild(\"From\").props.text \u003d system.date.format(self.props.value, \u0027MM/dd/yyyy\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "DateTimePickerCurrent"
+            },
+            "position": {
+              "basis": "35%"
+            },
+            "props": {
+              "formattedValue": "Sep 17, 2020 12:00 PM",
+              "formattedValues": {
+                "date": "Aug 19, 2020"
+              },
+              "maxDate": {
+                "$": [
+                  "ts",
+                  192,
+                  1600946845553
+                ],
+                "$ts": 1600946845553
+              },
+              "pickerType": "date",
+              "style": {
+                "backgroundColor": "#0C4E8B",
+                "borderStyle": "none",
+                "margin": 20
+              },
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1611048534478
+                ],
+                "$ts": 1600324200000
+              }
+            },
+            "type": "ia.input.date-time-picker"
+          },
+          {
+            "meta": {
+              "name": "DateRangeLabelsFlex"
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "propConfig": {
+              "custom.firstDayOfMonth": {
+                "binding": {
+                  "config": {
+                    "queryPath": "Shelter/Filter/GetFirstDayOfMonth"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn value.getValueAt(0,0)",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "query"
+                }
+              },
+              "custom.firstDayOfYear": {
+                "binding": {
+                  "config": {
+                    "queryPath": "Shelter/Filter/GetFirstDayOfYear"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn value.getValueAt(0,0)",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "instances": [
+                {
+                  "dateRangeLabel": "Hour",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Yesterday",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Week",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "4 Weeks",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Month to Date",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "90 Days",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "6 Months",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Year to Date",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                }
+              ],
+              "path": "Shelter/Templates/DateRange/DateRangeOptions",
+              "style": {
+                "margin": 20
+              },
+              "useDefaultViewWidth": false,
+              "wrap": "wrap"
+            },
+            "type": "ia.display.flex-repeater"
+          },
+          {
+            "meta": {
+              "name": "DateTimePicker"
+            },
+            "position": {
+              "basis": "253px"
+            },
+            "props": {
+              "formattedValue": "Jan 20, 2021 12:00 PM",
+              "pickerType": "date",
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1611146912503
+                ],
+                "$ts": 1611124200000
+              }
+            },
+            "type": "ia.input.date-time-picker"
+          }
+        ],
+        "meta": {
+          "name": "body"
+        },
+        "position": {
+          "basis": "70%"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#FFFFFF"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "From",
+              "visible": false
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.custom.selectedDateRange} \u003d \"Hour\", dateFormat(dateArithmetic(now(), -1, \"hour\"),\"MM/dd/yyyy hh\"),if({session.custom.selectedDateRange} \u003d \"Yesterday\",dateFormat(dateArithmetic(now(), -1, \"days\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Week\",dateFormat(dateArithmetic(now(), -1, \"weeks\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"4 Weeks\",dateFormat(dateArithmetic(now(), -4, \"weeks\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Month to Date\",dateFormat({.../body/DateRangeLabelsFlex.custom.firstDayOfMonth},\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"MM/dd/yyyy\",dateFormat(dateArithmetic(now(), -90, \"days\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"6 Months\",dateFormat(dateArithmetic(now(), -6, \"months\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"Year to Date\",dateFormat({.../body/DateRangeLabelsFlex.custom.firstDayOfYear},\"MM/dd/yyyy\"),dateformat({.../body/DateTimePickerCurrent.props.value},\"MM/dd/yyyy\")))))))))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#2B2B2B"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "To",
+              "visible": false
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.custom.selectedDateRange} \u003d \"Hour\", dateFormat(now(),\"MM/dd/yyyy hh\"),if({session.custom.selectedDateRange} \u003d \"Yesterday\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Week\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"4 Weeks\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Month to Date\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"90 Days\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"6 Months\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"Year to Date\",dateFormat(now(),\"MM/dd/yyyy\"), dateFormat({.../body/DateTimePickerNext.props.value},\"MM/dd/yyyy\")))))))))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#2B2B2B"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u0027zvDv8Csr\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnCancel"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "image": {
+                "style": {
+                  "backgroundColor": "#181818",
+                  "borderBottomLeftRadius": 5,
+                  "borderBottomRightRadius": 5,
+                  "borderColor": "#4D4D4D",
+                  "borderStyle": "solid",
+                  "borderTopLeftRadius": 5,
+                  "borderTopRightRadius": 5,
+                  "borderWidth": 1
+                },
+                "width": 50
+              },
+              "style": {
+                "backgroundColor": "#0C4E8B",
+                "borderBottomLeftRadius": 5,
+                "borderBottomRightRadius": 5,
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 5,
+                "borderTopRightRadius": 5,
+                "borderWidth": 1
+              },
+              "text": "Cancel",
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "filler"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tself.session.custom.dateRangeFromDate \u003d self.getSibling(\"From\").props.text\n\tself.session.custom.dateRangeToDate \u003d self.getSibling(\"To\").props.text\n\tsystem.perspective.closePopup(\u0027zvDv8Csr\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnApply"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "image": {
+                "style": {
+                  "backgroundColor": "#181818",
+                  "borderBottomLeftRadius": 5,
+                  "borderBottomRightRadius": 5,
+                  "borderColor": "#4D4D4D",
+                  "borderStyle": "solid",
+                  "borderTopLeftRadius": 5,
+                  "borderTopRightRadius": 5,
+                  "borderWidth": 1
+                }
+              },
+              "style": {
+                "backgroundColor": "#0C4E8B",
+                "borderBottomLeftRadius": 5,
+                "borderBottomRightRadius": 5,
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 5,
+                "borderTopRightRadius": 5,
+                "borderWidth": 1
+              },
+              "text": "Apply",
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "filler1"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "footer"
+        },
+        "position": {
+          "basis": "20%"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FFFFFF",
+            "paddingBottom": 25,
+            "paddingTop": 25
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

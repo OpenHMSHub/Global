@@ -1,0 +1,828 @@
+{
+  "custom": {
+    "SelectedDayofMonth": "",
+    "dateRangeFromDate": {
+      "$": [
+        "ts",
+        192,
+        1735799292969
+      ],
+      "$ts": 1735799292969
+    },
+    "dateRangeToDate": {
+      "$": [
+        "ts",
+        192,
+        1735799292970
+      ],
+      "$ts": 1735799292970
+    },
+    "filters": {
+      "P_1_TEMPLATES_Filtering_Filters_Search_Bar": [
+        {
+          "key": " ",
+          "type": "full_text",
+          "value": ""
+        }
+      ],
+      "P_2b0f4447": [],
+      "P_2d5f9293": [],
+      "P_2ecba7b0": [],
+      "P_300181d3": [],
+      "P_Events_Dashboard_Components_EventDetail_Events_Detail": [],
+      "P_Events_Dashboard_Components_EventDetail_Events_Detail_Dashboard": [],
+      "P_Events_Dashboard_Components_EventDetail_Events_Detail_Header": [],
+      "P_Participants_Dashboard_Components_Tabs_Dashboard_Participants": [],
+      "P_Participants_Medications_Cards_Content": [],
+      "P_Participants_Medications_Cards_Medications": [],
+      "P_Participants_Medications_Cards_Medications_History": [],
+      "P_Participants_Medications_Cards_Medications_Tabs": [],
+      "P_Participants_Medications_Cards_Storage_Tabs": [],
+      "P_Participants_Medications_Participant_Medications": [],
+      "P_Participants_Medications_Tabs_Medications": [],
+      "P_Participants_Storage_Bins_Cards_Content": [],
+      "P_Participants_Storage_Bins_Cards_Storage_Bins": [],
+      "P_Participants_Storage_Bins_Cards_Storage_History": [],
+      "P_Participants_Storage_Bins_Cards_Storage_Tabs": [],
+      "P_Participants_Storage_Bins_Participant_Storage_Bins": [],
+      "P_Participants_Storage_Bins_Tabs_Storage_Bins": [],
+      "P_Settings_Humans_Dashboard_Main_Filter_TableFilter_Humans": [],
+      "P_Shelter_Current_Residents_Residents": [],
+      "P_Shelter_Dashboard_Components_Tabs_CurrentResidents_Shelter": [],
+      "P_Volunteers_Dashboard_Cards_Volunteer_Tabs": [],
+      "P_Volunteers_Dashboard_Components_Tables_Filter_TableFilter_Volunteers": [],
+      "P_Volunteers_Dashboard_Components_Tables_Filter_TableFilter_Volunteers_Old": [],
+      "P_Volunteers_Dashboard_Components_Tables_Filter_TableFilter_Volunteers_Old2": [],
+      "P_Volunteers_Dashboard_Components_Tables_Filter__TableFilter_Volunteers": [],
+      "P_Volunteers_Dashboard_Components_Tabs_Dashboard_Volunteers": [],
+      "P_Volunteers_Dashboard_Volunteer_Dashboard": [],
+      "P_Volunteers_Facilitators_Detail_Cards_FacilitatorDetail_Tabs": [],
+      "P_Volunteers_Facilitators_Detail_Components_Tabs_Volunteers": [],
+      "P_Volunteers_Facilitators_Detail_Facilitator_Detail": [],
+      "P_Volunteers_Facilitators_Detail_Facilitator_Volunteers": [],
+      "P_Volunteers_Groups_Cards_Table_Header": [],
+      "P_Volunteers_Groups_Components_Tables_Filter_TableFilter_Groups": [],
+      "P_Volunteers_Groups_Components_Tabs_Dashboard_Volunteers": [],
+      "P_Volunteers_Reports_Cards_Filter_ReportFilter": [],
+      "P_Volunteers_Reports_Report": [],
+      "P_WinterShelter_Registration_Detail_RegistrationDetail": [
+        {
+          "key": "Gender",
+          "type": "match",
+          "value": "11"
+        }
+      ],
+      "WinterShelterTasks": {
+        "DueDate": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "caseNotesDashboard": {
+        "EnteredBy": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NoteDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NoteType": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "hmis": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "program": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "service": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "caseNotesDetail": {
+        "EnteredBy": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NoteDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NoteType": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "hmis": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "drugScreenDashboard": {
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "administeredById": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "drugScreenReasonId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "drugScreenTypeId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "passed": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "testDate": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "incidentDashboard": {
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "damage": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "incidentDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "injury": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "locationId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "suspension": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "participantDashboard": {
+        "BirthDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "FullRegistration": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "GenderId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MaxAge": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MinAge": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "RaceId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Shelter": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "VeteranId": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "participantProgramDetail": {
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "referralDashboard": {
+        "BirthDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MaxAge": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MinAge": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "ProgramName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "ProviderName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "ProviderType": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "ReferralDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "ReferralStatus": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "ReferralType": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Status": {
+          "value": "value",
+          "where": "1\u003d1"
+        }
+      },
+      "reinstatementDetail": {
+        "reinstateDate": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "servicesDashboard": {
+        "HMIS": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "employeeId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "firstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "lastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "middleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "nickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "programId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "serviceDate": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "serviceId": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "settingsHumans": {
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "RaceId": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "SSN": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dobYear": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "settingsVolunteers": {
+        "active": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "firstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "lastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "middleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "nickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "provider": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "search": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "suspensionDashboard": {
+        "FirstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "LastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "MiddleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "NickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "Search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dateBegin": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dateEnd": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dateReinstated": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "duration": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "suspensionActive": {
+          "value": "isNull",
+          "where": "dateReinstated is Null"
+        },
+        "typeId": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "volunteerSearch": {
+        "dobDay": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dobMonth": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dobYear": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "email": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "firstName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "lastName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "middleName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "nickName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "results": {
+          "humanId": 15124,
+          "volunteerId": 1224,
+          "volunteerSelected": false
+        },
+        "search": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "winterShelterCongregations": {
+        "city": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "genders": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "locationName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "maxGuests": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "minGuests": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "percentGrowth": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "timeRetired": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "zipCode": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      },
+      "winterShelterRegistrations": {
+        "HDCP": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "breakfast": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "city": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "clothing": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "dinner": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "families": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "friday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "genders": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "haircuts": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "hygieneItems": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "laundry": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "locationName": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "maxGuests": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "minGuests": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "monday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "reminderCall": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "sackLunches": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "saturday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "search": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "season": {
+          "value": null,
+          "where": 11
+        },
+        "shortNotice": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "showers": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "smoking": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "stairs": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "sunday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "thursday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "tuesday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "wednesday": {
+          "value": null,
+          "where": "1\u003d1"
+        },
+        "zipCode": {
+          "value": null,
+          "where": "1\u003d1"
+        }
+      }
+    },
+    "selectedServeDate": {
+      "$": [
+        "ts",
+        192,
+        1732608216892
+      ],
+      "$ts": 1732608216892
+    }
+  },
+  "propConfig": {
+    "custom.isAdministrator": {
+      "binding": {
+        "config": {
+          "expression": "hasRole(\"Administrator\",{this.props.auth.user.userName},\"default\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.isCareCoordinator": {
+      "binding": {
+        "config": {
+          "expression": "hasRole(\"Care Coordinator\",{this.props.auth.user.userName},\"default\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.isManager": {
+      "binding": {
+        "config": {
+          "expression": "hasRole(\"WS Manager\",{this.props.auth.user.userName},\"default\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.isSupportCoordinator": {
+      "binding": {
+        "config": {
+          "expression": "hasRole(\"Support Coordinator\",{this.props.auth.user.userName},\"default\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.isWSManager": {
+      "binding": {
+        "config": {
+          "expression": "hasRole(\"WS Manager\",{this.props.auth.user.userName},\"default\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.isWSSupportCoordinator": {
+      "binding": {
+        "config": {
+          "expression": "hasRole(\"WS Support Coordinator\",{this.props.auth.user.userName},\"default\")"
+        },
+        "type": "expr"
+      }
+    },
+    "props.auth": {
+      "access": "PRIVATE",
+      "persistent": false
+    },
+    "props.device.accelerometer": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.identifier": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.timezone": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.type": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.userAgent": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.gateway": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.data": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.permissionGranted": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.host": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.id": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.lastActivity": {
+      "access": "SYSTEM",
+      "persistent": false
+    }
+  },
+  "props": {
+    "address": "127.0.0.1",
+    "device": {},
+    "geolocation": {},
+    "locale": "uk-UA",
+    "theme": "RITI",
+    "timeZoneId": "Europe/Kiev"
+  }
+}

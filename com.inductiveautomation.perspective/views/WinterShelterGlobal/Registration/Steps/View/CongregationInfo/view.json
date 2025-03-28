@@ -1,0 +1,879 @@
+{
+  "custom": {
+    "keyFields": {}
+  },
+  "params": {
+    "congregationAddressLine1": "x",
+    "congregationAddressLine2": "",
+    "congregationCity": "v",
+    "congregationId": 0,
+    "congregationName": "abc",
+    "congregationPhone": 1,
+    "congregationState": "",
+    "congregationZipCode": 43240,
+    "firstSeason": "x",
+    "hostLocal": false,
+    "hostLocationTypeId": 0,
+    "locationAddressLine1": "s",
+    "locationAddressLine2": "",
+    "locationCity": "d",
+    "locationId": 0,
+    "locationName": "",
+    "locationState": null,
+    "locationZipCode": 44035,
+    "neededToProceed": "",
+    "proceed": true
+  },
+  "propConfig": {
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#Script to determine if we can proceed to the next page of registration\n\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.Address": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.congregationAddressLine1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.congregationAddressLine1})\r\n\u0026\u0026\r\n{view.params.locationAddressLine1} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.locationAddressLine1})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.City": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.congregationCity} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.congregationCity})\r\n\u0026\u0026\r\n{view.params.locationCity} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.locationCity})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Phone": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.congregationPhone} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.congregationPhone})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Zipcode": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.congregationZipCode} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.congregationZipCode})\r\n\u0026\u0026\r\n{view.params.locationZipCode} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.locationZipCode})"
+        },
+        "type": "expr"
+      }
+    },
+    "params.congregationAddressLine1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationAddressLine2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationCity": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.congregationName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationPhone": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationState": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationZipCode": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.email": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.firstSeason": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.hostLocal": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostLocationTypeId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.leader": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationAddressLine1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationAddressLine2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationCity": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationState": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationZipCode": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.proceed": {
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 588,
+      "width": 920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "instructionLabel"
+        },
+        "position": {
+          "basis": "52px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Text/Add_HeaderText",
+            "paddingLeft": "0px"
+          },
+          "text": "General Information about your group."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "congregationName"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.congregationName"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/Add_InfoText",
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "congregationHosting Since"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.firstSeason"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027Hosting Since \u0027 + value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/Add_InfoText"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "addressLine1"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.congregationAddressLine1"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "Line 1",
+                    "requiredField": false,
+                    "text": "Address"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "addressLine2"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.congregationAddressLine2"
+                      },
+                      "type": "property"
+                    },
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\tif self.parent.parent.getChild(\"rightPane\").getChild(\"HostLocal\").props.value:\n\t\tself.view.params.hostAddressLine2 \u003d currentValue.value"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": false,
+                    "placeHolder": "Line 2",
+                    "requiredField": false,
+                    "text": "Time"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "congregationCity"
+                    },
+                    "position": {
+                      "basis": "160px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.congregationCity"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif self.parent.parent.parent.getChild(\"rightPane\").getChild(\"HostLocal\").props.value:\n\t\tself.view.params.hostCity \u003d currentValue.value"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": false,
+                        "placeHolder": "City",
+                        "requiredField": false,
+                        "text": "Time"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                      "style": {
+                        "marginRight": "20px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "congregationZip"
+                    },
+                    "position": {
+                      "basis": "120px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.congregationZipCode"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif self.parent.parent.parent.getChild(\"rightPane\").getChild(\"HostLocal\").props.value:\n\t\tself.view.params.hostZip \u003d currentValue.value"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": false,
+                        "placeHolder": "Zip",
+                        "requiredField": false,
+                        "text": "Time"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "space-between",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "custom": {
+                  "formattedText": "145-267-5632"
+                },
+                "meta": {
+                  "name": "congregationPhone"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.formattedText": {
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\tif currentValue.value !\u003d self.props.params.inputText:\n\t\tself.props.inputText \u003d currentValue.value"
+                    }
+                  },
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.congregationPhone"
+                      },
+                      "type": "property"
+                    },
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\tdef phone_format(n):                                                                                                                                  \n\t\treturn format(int(n[:-1]), \",\").replace(\",\", \"-\") + n[-1]\n\t\n\tvalue \u003d str(currentValue.value)\n\tif \u0027-\u0027 not in value and len(value) \u003e\u003d 7:\n\t\tself.custom.formattedText \u003d phone_format(str(currentValue.value))"
+                    }
+                  }
+                },
+                "props": {
+                  "inputText": "145-267-5632",
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "888-888-8888",
+                    "requiredField": false,
+                    "text": "Phone"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "20px"
+                  },
+                  "text": "123-345-4567"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "leftPane"
+            },
+            "position": {
+              "basis": "45%",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "placeholder"
+            },
+            "position": {
+              "basis": "10%",
+              "shrink": 0
+            },
+            "props": {
+              "path": "1_globalTEMPLATES/Placeholder"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Where will you be hosting?"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "10px",
+                      "display": false,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#D80000"
+                      },
+                      "text": "*"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "HostingLocation"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "HostLocation"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.hostLocationTypeId"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value \u003d\u003d 5:\n\t\treturn 3\n\telse:\n\t\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "enabled": false,
+                  "radios": [
+                    {
+                      "selected": true,
+                      "text": "Our Site",
+                      "value": 0
+                    },
+                    {
+                      "selected": false,
+                      "text": "Room In The Inn Campus",
+                      "value": 3
+                    },
+                    {
+                      "selected": false,
+                      "text": "Other",
+                      "value": 2
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "disabled": "#0066FF",
+                      "enabled": "#0066FF"
+                    }
+                  },
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "marginLeft": "-15px"
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "disabled": "#9db8d1",
+                      "enabled": "#9db8d1"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              },
+              {
+                "meta": {
+                  "name": "RITILocation"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{../HostLocation.props.index} \u003d 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.hostLocationTypeId"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "enabled": false,
+                  "radios": [
+                    {
+                      "selected": true,
+                      "text": "Drexel House",
+                      "value": 5
+                    },
+                    {
+                      "selected": false,
+                      "text": "Main Building",
+                      "value": 3
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "disabled": "#0066FF",
+                      "enabled": "#0066FF"
+                    }
+                  },
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "marginLeft": "-15px"
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "disabled": "#9db8d1",
+                      "enabled": "#9db8d1"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              },
+              {
+                "meta": {
+                  "name": "HostingLine1"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{../HostLocation.props.index} \u003d 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.locationAddressLine1"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "Line 1",
+                    "requiredField": false,
+                    "text": "Address at which you will be hosting"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "HostingLine2"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{../HostLocation.props.index} \u003d 1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.locationAddressLine2"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": false,
+                    "placeHolder": "Line 2",
+                    "requiredField": false,
+                    "text": "Time"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "City"
+                    },
+                    "position": {
+                      "basis": "160px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.locationCity"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": false,
+                        "placeHolder": "City",
+                        "requiredField": false,
+                        "text": ""
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                      "style": {
+                        "marginRight": "20px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Zip"
+                    },
+                    "position": {
+                      "basis": "120px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.locationZipCode"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": false,
+                        "placeHolder": "Zip",
+                        "requiredField": false,
+                        "text": "Time"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "HostCityStZip"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{../HostLocation.props.index} \u003d 2"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "justify": "space-between",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "rightPane"
+            },
+            "position": {
+              "basis": "45%",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "480px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#9db8d1",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

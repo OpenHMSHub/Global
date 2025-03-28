@@ -1,0 +1,94 @@
+{
+  "custom": {},
+  "params": {
+    "dockName": null,
+    "messageName": null,
+    "text": "Winter Shelter Registration"
+  },
+  "propConfig": {
+    "params.dockName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.messageName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 62
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "62px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "25px",
+            "fontWeight": "lighter",
+            "paddingLeft": "30px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\timport traceback\n\ttry:\n\t\tmessageName \u003d self.view.params.messageName\n\t\tdockName \u003d self.view.params.dockName\n\t\tif messageName is not None:\n\t\t\tsystem.perspective.sendMessage(messageName,{},\u0027session\u0027)\n\t\tif dockName is not None:\n\t\t\tsystem.perspective.closeDock(dockName)\n\texcept:\n\t\tlogger \u003d system.util.getLogger(\"Docked Window Header\")\n\t\tmsg \u003d traceback.format_exc()\n\t\tlogger.error(msg)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "path": "material/close",
+          "style": {
+            "marginRight": "50px"
+          }
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "background": "linear-gradient(90deg, rgba(22,165,189,1) 0%, rgba(13,185,165,1) 100%)"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

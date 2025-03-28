@@ -1,0 +1,178 @@
+{
+  "custom": {},
+  "params": {
+    "birthDate": "",
+    "fromDB": true,
+    "locationId": 1,
+    "markedForDelete": false,
+    "participantId": 1,
+    "participantName": "value",
+    "scheduleId": ""
+  },
+  "propConfig": {
+    "params.birthDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dayOfMonth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dayOfWeek": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fghg": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fromDB": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.markedForDelete": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.participantId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.participantName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.scheduleId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "props.defaultSize.height": {
+      "binding": {
+        "config": {
+          "expression": "if({view.params.markedForDelete} \u003d True,0,40)"
+        },
+        "type": "expr"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 180
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.session.custom.isAdministrator or self.session.custom.isWSManager or self.session.custom.isWSSupportCoordinator:\n\t\tself.view.params.markedForDelete \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "if({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator}, \"material/clear\",\"\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": ""
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "150px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.participantName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "textAlign": "left",
+            "textIndent": 10
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "birthDate"
+        },
+        "position": {
+          "basis": "150px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.birthDate"
+              },
+              "transforms": [
+                {
+                  "formatType": "datetime",
+                  "formatValue": "MM/dd/yyyy",
+                  "type": "format"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "textAlign": "left",
+            "textIndent": 10
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "borderColor": "#D5D5D5",
+        "borderStyle": "solid",
+        "borderWidth": "0.3px",
+        "classes": "ActivityCards/Card_TextDark",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

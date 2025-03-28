@@ -1,0 +1,16 @@
+{
+  "scope": "DG",
+  "version": 1,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "data.bin"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "yogini",
+      "timestamp": "2024-08-21T08:52:14Z"
+    },
+    "lastModificationSignature": "191b75977bb87e7cc3199f746d50a26a1f2988a239a428e291900899b4616a86"
+  }
+}

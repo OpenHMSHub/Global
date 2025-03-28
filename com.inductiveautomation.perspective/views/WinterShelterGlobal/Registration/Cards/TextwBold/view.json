@@ -1,0 +1,63 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 59,
+      "width": 507
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 53,
+          "width": 493
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_InfoText",
+            "paddingLeft": "0px"
+          },
+          "text": "Please consider hosting as many dates as possible, including holidays. Your guests are counting on you!  Our nights of greatest need are "
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 17,
+          "rotate": {
+            "anchor": "284% 294%"
+          },
+          "width": 207,
+          "x": 278.5,
+          "y": 27.5
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_InfoText",
+            "fontWeight": "bold",
+            "paddingLeft": "0px"
+          },
+          "text": "Sunday, Monday and Wednesday."
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Text/Add_InfoText"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

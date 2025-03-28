@@ -1,0 +1,307 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1496
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "sqlData": 1
+        },
+        "meta": {
+          "name": "KPI"
+        },
+        "position": {
+          "basis": "175px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.seasonId": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.seasonId"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Dashboard/Cards/KPI_Header_Registration"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Filter"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.maxGuests": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Filters/GuestCountDropdownList"
+              },
+              "type": "query"
+            }
+          },
+          "props.params.minGuests": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Filters/GuestCountDropdownList"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "seasonId": 12
+          },
+          "path": "WinterShelterGlobal/Dashboard/Components/Filter/Winter_Shelter_Registration_Filter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "30px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\u0027Showers:\u0027 + {session.custom.filters.winterShelterRegistrations.showers.where}\r\n+ \u0027, Clothing:\u0027 + {session.custom.filters.winterShelterRegistrations.clothing.where}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Background/Alternative Text/Error_Message"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "30px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\u0027Season ID:\u0027 + {../Content/Table.props.params.seasonId}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Background/Alternative Text/Error_Message"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Amenities"
+            },
+            "position": {
+              "basis": "150px",
+              "shrink": 0
+            },
+            "props": {
+              "path": "WinterShelterGlobal/Dashboard/Components/Filter/Winter_Shelter_Registration_Amenities"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.seasonId": {
+                "binding": {
+                  "config": {
+                    "path": ".../Filter.props.params.seasonId"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "maxGuests": {
+                  "$": [
+                    "ds",
+                    192,
+                    1685342331466
+                  ],
+                  "$columns": [
+                    {
+                      "data": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        20,
+                        24
+                      ],
+                      "name": "value",
+                      "type": "Integer"
+                    },
+                    {
+                      "data": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        20,
+                        24
+                      ],
+                      "name": "label",
+                      "type": "Integer"
+                    }
+                  ]
+                },
+                "minGuests": {
+                  "$": [
+                    "ds",
+                    192,
+                    1685342331466
+                  ],
+                  "$columns": [
+                    {
+                      "data": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        20,
+                        24
+                      ],
+                      "name": "value",
+                      "type": "Integer"
+                    },
+                    {
+                      "data": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        20,
+                        24
+                      ],
+                      "name": "label",
+                      "type": "Integer"
+                    }
+                  ]
+                }
+              },
+              "path": "WinterShelterGlobal/Dashboard/Components/Tables/Registrations_Table",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "600px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Dashboard_Registrations"
+        },
+        "position": {
+          "basis": "320px",
+          "display": false
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Dashboard/Tabs/Dashboard_Registrations"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

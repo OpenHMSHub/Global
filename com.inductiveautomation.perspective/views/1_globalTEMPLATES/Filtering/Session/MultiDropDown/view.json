@@ -1,0 +1,176 @@
+{
+  "custom": {
+    "key": "value"
+  },
+  "params": {
+    "column_name": "Gender",
+    "filter": "",
+    "key": "",
+    "options": [],
+    "placeholder": "value",
+    "searchType": "match"
+  },
+  "propConfig": {
+    "custom.key": {
+      "persistent": true
+    },
+    "params.column_name": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.key": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.options": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.placeholder": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.searchType": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 150
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "selecting": true
+        },
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tmessageType \u003d \u0027selecting\u0027\n\tpayload \u003d {\u0027current\u0027: self.props.placeholder.text}\n\tsystem.perspective.sendMessage(messageType,payload)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "filter"
+        },
+        "position": {
+          "basis": "100%"
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.options"
+              },
+              "type": "property"
+            }
+          },
+          "props.placeholder.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.placeholder"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "this.props.value"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d -1 or value \u003d\u003d None:\n\t\treturn \"Dropdowns/DD_Default\"\n\telse:\n\t\treturn \"Dropdowns/DD_TeelBlue\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "session.custom.filters"
+              },
+              "transforms": [
+                {
+                  "code": "\tnewValue \u003d None\n\ttry:\n\t\tnewValue \u003d value[self.view.params.filter][self.view.params.key][\"value\"]\n\texcept:\n\t\tpass\n\t\t\n\treturn newValue",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\t# Update the session\u0027s filter listing for this page\n\tif origin in [\"Browser\", \"Script\"]:\n\t\tfilter \u003d self.view.params.filter\t\n\t\tkey \u003d self.view.params.key\n\t\tcolumnName \u003d self.view.params.column_name\n\t\tsearchType \u003d self.view.params.searchType\n\t\tselection \u003d currentValue.value\n\t\t\t\n\t\tfilters.updateFilterList(\n\t\t\tself.session,\n\t\t\tfilter,\n\t\t\tsearchType,\n\t\t\tkey,\n\t\t\tcolumnName,\n\t\t\tselection\n\t\t)"
+            }
+          }
+        },
+        "props": {
+          "dropdownOptionStyle": {
+            "classes": "Dropdowns/DD_Options"
+          },
+          "multiSelect": true,
+          "placeholder": {},
+          "search": {
+            "enabled": false
+          },
+          "style": {},
+          "wrapMultiSelectValues": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "selecting",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tif payload[\u0027current\u0027] \u003d\u003d self.props.placeholder.text:\n\t\tself.custom.selecting \u003d True\n\telse:\n\t\tself.custom.selecting \u003d False",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.input.dropdown"
+      }
+    ],
+    "meta": {
+      "name": "Filter"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "clearFilter",
+          "pageScope": true,
+          "script": "\tself.getChild(\"filter\").props.value \u003d None",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

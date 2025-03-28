@@ -1,0 +1,223 @@
+{
+  "custom": {},
+  "params": {
+    "locationId": 194,
+    "locationName": "",
+    "nextSeason": "",
+    "thisSeason": ""
+  },
+  "propConfig": {
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.nextSeason": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.thisSeason": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.xx": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 202,
+      "width": 400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "lblHeader"
+            },
+            "position": {
+              "basis": "100%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\u0027Register \u0027 + {view.params.locationName} + \u0027 for the current season?\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "color": "#0C4E8B",
+                "fontSize": "25px",
+                "padding": 20,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "120px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#FFFFFF",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": 1,
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopStyle": "none"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "filler"
+            },
+            "position": {
+              "basis": "1px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u0027pop_register_congregation\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnCancel"
+            },
+            "position": {
+              "basis": "100px",
+              "shrink": 0
+            },
+            "props": {
+              "image": {
+                "height": 30,
+                "width": 50
+              },
+              "style": {
+                "backgroundColor": "#0C4E8B",
+                "borderBottomLeftRadius": 5,
+                "borderBottomRightRadius": 5,
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 5,
+                "borderTopRightRadius": 5,
+                "borderWidth": 1
+              },
+              "text": "No",
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "filler1"
+            },
+            "position": {
+              "basis": "1px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\timport traceback\n\ttry:\n\t\tproject \u003d \"RITI\"\n\t\tlocationId \u003d self.view.params.locationId\n\t\t#Verify the congregation is not already registered fro the season\n\t\tpath \u003d \"WinterShelter/Registration/getLocationStatus\"\n\t\tparameters \u003d {\u0027locationId\u0027:locationId}\n\t\tstatusDS \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\tstatus \u003d statusDS.getValueAt(0,\u0027status\u0027)\n\t\tsystem.perspective.print(str(status)) \n\t\tif status \u003d\u003d 0:\n\t\t\tsystem.perspective.print(\u0027New season for Congregation ID \u0027 + str(locationId)) \n\t\t\t#Register the location\n\t\t\tpath \u003d \"WinterShelter/Registration/insertNewSeasonRegistration\"\n\t\t\tparameters \u003d {\u0027locationId\u0027:locationId}\n\t\t\tsuccess \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t#Refresh the table\n\t\tmessageType \u003d \u0027resetWinterRegistration\u0027\n\t\tsystem.perspective.sendMessage(messageType,scope \u003d \"session\")\n\t\tsystem.perspective.closePopup(\u0027pop_register_congregation\u0027)\n\texcept:\n\t\tlogger \u003d system.util.getLogger(\"Winter Shelter PopupRegisterLocation buttonYes\")\n\t\tmsg \u003d traceback.format_exc()\n\t\tlogger.error(msg)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnApply"
+            },
+            "position": {
+              "basis": "100px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#0C4E8B",
+                "borderBottomLeftRadius": 5,
+                "borderBottomRightRadius": 5,
+                "borderStyle": "solid",
+                "borderTopLeftRadius": 5,
+                "borderTopRightRadius": 5,
+                "borderWidth": 1
+              },
+              "text": "Yes",
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "filler_0"
+            },
+            "position": {
+              "basis": "1px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "footer"
+        },
+        "position": {
+          "basis": "80px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#FFFFFF",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

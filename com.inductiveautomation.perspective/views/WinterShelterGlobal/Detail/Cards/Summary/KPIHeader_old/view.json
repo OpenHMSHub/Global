@@ -1,0 +1,923 @@
+{
+  "custom": {
+    "currentSeasonId": 12,
+    "dateExtraction": [
+      "07/02",
+      "07/14",
+      "07/28"
+    ],
+    "info": {
+      "$": [
+        "ds",
+        192,
+        1656662791380
+      ],
+      "$columns": [
+        {
+          "data": [
+            162
+          ],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            32
+          ],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Acklen Avenue Church of Christ"
+          ],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2021-2022"
+          ],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2022-2023"
+          ],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [
+            "900 Acklen Ave"
+          ],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37203
+          ],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "615-292-5549"
+          ],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            5
+          ],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Drexel House"
+          ],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [
+            160
+          ],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Acklen Avenue Church of Christ"
+          ],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "900 Acklen Ave"
+          ],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37203
+          ],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1569449650000
+          ],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [
+            827
+          ],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            17513
+          ],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Steve"
+          ],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Jackson"
+          ],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Steve Jackson"
+          ],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [
+            "5121 Fredericksburg Way E"
+          ],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Brentwood"
+          ],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37027
+          ],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "(615) 477-8114"
+          ],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "stevejackson1109@gmail.com"
+          ],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Call"
+          ],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            828
+          ],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            17300
+          ],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Emily"
+          ],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Fritz"
+          ],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Emily Fritz"
+          ],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [
+            "920 Mt Pleasant Rd"
+          ],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Kingston Springs"
+          ],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37082
+          ],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "(717) 799-2442"
+          ],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "emilylanz@gmail.com"
+          ],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            235
+          ],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            12
+          ],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            12
+          ],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            12
+          ],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            90
+          ],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            2
+          ],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Women Only"
+          ],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            1655107042420
+          ],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [
+            "None"
+          ],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "Frequency",
+          "type": "String"
+        }
+      ]
+    },
+    "lastHost": [
+      "06/30"
+    ],
+    "nextHost": [
+      "07/02"
+    ]
+  },
+  "params": {
+    "locationID": 160
+  },
+  "propConfig": {
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}"
+          },
+          "queryPath": "WinterShelter/Filters/getSeasonsByLocation"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount():\n\t\treturn value.getValueAt(value.getRowCount()-1,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.dateExtraction": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}"
+          },
+          "queryPath": "WinterShelter/getCurrentSchedule"
+        },
+        "transforms": [
+          {
+            "code": "\tdate \u003d []\n\tdaysBefore \u003d []\n\tdaysAfter \u003d []\n\tdata \u003d system.dataset.toPyDataSet(value)\n\tfor row in data:\n\t\t\n\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear\u003drow[1])\n\t\tdate.append(dates)\n\t\tdate.sort()\n\t\t\n\tfor days in date:\n\t\t\n\t\tdateNow \u003d system.date.now()\n\t\tdateNowFormat \u003d system.date.format(dateNow,\"MM/dd/YYYY\")\n\t\tisBefore \u003d system.date.isBefore(days,dateNow)\n\t\t\n\t\t\n\t\tif isBefore:\n\t\t\t\n\t\t\tisBeforeFormat \u003d system.date.format(days,\"MM/dd\")\n\t\t\tdaysBefore.append(isBeforeFormat)\n\t\t\tdaysBefore.sort()\n\t\t\tself.custom.lastHost \u003d daysBefore[-1:]\n\t\t\t\n\t\telse:\n\t\t\t\n\t\t\tisAfterFormat \u003d system.date.format(days,\"MM/dd\")\n\t\t\tdaysAfter.append(isAfterFormat)\n\t\t\tdaysAfter.sort()\n\n\t\t\tif daysAfter[0:1] \u003d\u003d dateNowFormat:\n\t\t\t\n\t\t\t\tself.custom.nextHost \u003d daysAfter[0:1]\n\t\t\t\t\n\t\t\telse:\n\t\t\t\tself.custom.nextHost \u003d daysAfter[0:1]#system.date.format(days,\"YYYY-MM-dd\")\n\t\n\treturn daysAfter",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.info": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}"
+          },
+          "queryPath": "WinterShelter/Registration/RegistrationDetail"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 268,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BedsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"bedsActual\")\n\t\t#return \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Beds Last Season"
+              },
+              "path": "Volunteers/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "ProjectedThisSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"bedsProjected\")\n#\t\treturn \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Projected This Season"
+              },
+              "path": "Volunteers/Detail/Cards/Summary/KPI/Metric_Flex"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiA"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BedsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.lastHost[0]"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Last Hosting"
+              },
+              "path": "Volunteers/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiB"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BedsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.nextHost[0]"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Next Hosting"
+              },
+              "path": "Volunteers/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiC"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

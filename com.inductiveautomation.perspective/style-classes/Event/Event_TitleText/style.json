@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "#3ec3d9",
+      "cursor": "pointer",
+      "fontFamily": "Proxima NovaC Medium",
+      "fontSize": "30px"
+    }
+  }
+}

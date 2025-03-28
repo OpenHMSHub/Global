@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "#668FB0",
+      "fontFamily": "Gibsonbook",
+      "fontSize": "12px",
+      "textTransform": "uppercase"
+    }
+  }
+}

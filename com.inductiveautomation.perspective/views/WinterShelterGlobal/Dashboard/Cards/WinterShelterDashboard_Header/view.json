@@ -1,0 +1,42 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 70
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "425px",
+          "shrink": 0
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "classes": "Text/Page_Header",
+            "paddingLeft": 40,
+            "textAlign": "left"
+          },
+          "text": "Winter Shelter"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Text/Page_Header"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

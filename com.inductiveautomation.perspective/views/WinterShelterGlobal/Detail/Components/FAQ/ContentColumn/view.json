@@ -1,0 +1,72 @@
+{
+  "custom": {},
+  "params": {
+    "infoCards": [
+      {
+        "body": "You may email shelter@roomintheinn.org or call 615-251-7019. Please, give as much notice as possible so that other arrangements can be made.",
+        "title": "Who do I contact if I am sick or unable to host?"
+      },
+      {
+        "body": "If a situation is life-threatening or dangerous, congregations should call 911 immediately. For all other concerns or questions, Room In The Inn has an emergency number that is answered 24/7 at 615-251-7064.\u003cul\u003e\u003cli\u003eFighting\u003c/li\u003e\u003cli\u003eIntoxicated guest\u003c/li\u003e\u003cli\u003eIncident at a congregation\u003c/li\u003e\u003cli\u003eCOVID or sick\u003c/li\u003e\u003cli\u003eLost guest\u003c/li\u003e\u003c/ul\u003e",
+        "title": "What if there is an emergency?"
+      }
+    ]
+  },
+  "propConfig": {
+    "params.infoCards": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 760,
+      "width": 497
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.params.infoCards"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "elementPosition": {
+            "basis": "auto",
+            "grow": 0,
+            "shrink": 0
+          },
+          "elementStyle": {
+            "margin-bottom": "20px"
+          },
+          "path": "WinterShelterGlobal/Detail/Components/FAQ/ContentTitleAndBody",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

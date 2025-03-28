@@ -1,0 +1,56 @@
+{
+  "custom": {},
+  "params": {
+    "Comment": "value"
+  },
+  "propConfig": {
+    "params.Comment": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 70
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView_Comment"
+        },
+        "position": {
+          "basis": "33%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.params.Comment"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Comments"
+          },
+          "path": "Participants/Activity/Services/ServicesLabel"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

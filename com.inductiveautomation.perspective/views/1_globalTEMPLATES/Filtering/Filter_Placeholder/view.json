@@ -1,0 +1,21 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 40
+    }
+  },
+  "root": {
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Table/Filter_Header_Container"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

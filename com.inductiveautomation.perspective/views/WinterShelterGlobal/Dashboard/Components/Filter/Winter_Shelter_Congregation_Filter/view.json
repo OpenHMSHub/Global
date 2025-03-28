@@ -1,0 +1,530 @@
+{
+  "custom": {},
+  "params": {
+    "PercentGrowth": {
+      "selectedValue": "value",
+      "where": "value"
+    },
+    "maxGuests": [],
+    "minGuests": []
+  },
+  "propConfig": {
+    "params.PercentGrowth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.maxGuests": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minGuests": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.seasonId": {
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 1807
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "lblFilter"
+        },
+        "position": {
+          "basis": "70px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.sqlData": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "accessible": "{session.custom.filters.winterShelterRegistrations.HDCP.where}",
+                  "amenities": "{session.custom.filters.winterShelterRegistrations.amenities.where}",
+                  "city": "{session.custom.filters.winterShelterRegistrations.city.where}",
+                  "families": "{session.custom.filters.winterShelterRegistrations.families.where}",
+                  "friday": "{session.custom.filters.winterShelterRegistrations.friday.where}",
+                  "genders": "{session.custom.filters.winterShelterRegistrations.genders.where}",
+                  "locationName": "{session.custom.filters.winterShelterRegistrations.locationName.where}",
+                  "maxGuests": "{session.custom.filters.winterShelterRegistrations.maxGuests.where}",
+                  "minGuests": "{session.custom.filters.winterShelterRegistrations.minGuests.where}",
+                  "monday": "{session.custom.filters.winterShelterRegistrations.monday.where}",
+                  "reminderCall": "{session.custom.filters.winterShelterRegistrations.reminderCall.where}",
+                  "saturday": "{session.custom.filters.winterShelterRegistrations.saturday.where}",
+                  "season": "{session.custom.filters.winterShelterRegistrations.season.where}",
+                  "shortNotice": "{session.custom.filters.winterShelterRegistrations.shortNotice.where}",
+                  "smoking": "{session.custom.filters.winterShelterRegistrations.smoking.where}",
+                  "stairs": "{session.custom.filters.winterShelterRegistrations.stairs.where}",
+                  "sunday": "{session.custom.filters.winterShelterRegistrations.sunday.where}",
+                  "thursday": "{session.custom.filters.winterShelterRegistrations.thursday.where}",
+                  "tuesday": "{session.custom.filters.winterShelterRegistrations.tuesday.where}",
+                  "wednesday": "{session.custom.filters.winterShelterRegistrations.wednesday.where}",
+                  "zipCode": "{session.custom.filters.winterShelterRegistrations.zipCode.where}"
+                },
+                "queryPath": "WinterShelter/Dashboard/Registrations",
+                "returnFormat": "dataset"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Filter/Header_Text"
+          },
+          "text": "Filters:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Active"
+        },
+        "position": {
+          "basis": "160px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "this.meta.name"
+              },
+              "transforms": [
+                {
+                  "code": "\theaders \u003d [\"value\", \"label\"]\n\tdata \u003d []\n\t#val \u003d system.date.format(system.date.now(), \"YYYY-MM-dd hh:mm:ss\")\n\tval \u003d \u0027isNotNull\u0027\n\tlabel \u003d \u0027Registered Only\u0027\n\tlist \u003d [val,label]\n\tdata.append(list)\n\t#val \u003d system.date.format(system.date.now(), \"YYYY-MM-dd hh:mm:ss\")\n\tval \u003d \u0027isNull\u0027\n\tlabel \u003d \u0027Unregistered Only\u0027\n\tlist \u003d [val,label]\n\tdata.append(list)\n\t\n\tdataset \u003d system.dataset.toDataSet(headers, data)\n\treturn dataset",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "bg.fullyRegistered",
+            "filter": "winterShelterCongregations",
+            "key": "timeRetired",
+            "placeholder": "(All Congregations)",
+            "searchType": "nullOrNotNull"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "marginBottom": "2px",
+            "marginLeft": "5px",
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PercentGrowth_old"
+        },
+        "position": {
+          "basis": "160px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "PercentBedGrowth",
+            "filter": "winterShelterCongregations",
+            "key": "percentGrowth",
+            "options": {
+              "$": [
+                "ds",
+                192,
+                1660114696067
+              ],
+              "$columns": [
+                {
+                  "data": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "name": "id",
+                  "type": "Integer"
+                },
+                {
+                  "data": [
+                    "0 to 10%",
+                    "Greater than 10%",
+                    "0 to -10%",
+                    "Less than -10%"
+                  ],
+                  "name": "label",
+                  "type": "String"
+                }
+              ]
+            },
+            "placeholder": "Percent Growth",
+            "searchType": "nullOrNotNull",
+            "selected_value": null
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/DropDown_ForPercentGrowth",
+          "style": {
+            "marginBottom": "2px",
+            "marginLeft": "5px",
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LocationName"
+        },
+        "position": {
+          "basis": "250px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "l.locationName",
+            "filter": "winterShelterCongregations",
+            "key": "locationName",
+            "placeholder": "Congregation Name",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PercentGrowth"
+        },
+        "position": {
+          "basis": "256px"
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "this.props.value"
+              },
+              "transforms": [
+                {
+                  "code": "\ttext \u003d \"Filter/Filter_Text_Default Filter/Filter_Border_Default\"\n\tif value !\u003d None:\n\t\tif value !\u003d \"\" and value \u003e -1:\n\t\t\ttext \u003d \"Filter/Filter_Text_TeelBlue Filter/Filter_Border_TeelBlue\"\n\treturn text",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tif previousValue is not None and previousValue.value is not None and (currentValue is None or currentValue.value is None):\n\t\tself.getSibling(\"Active\").focus()\n\twhere \u003d \"1\u003d1\"\n\tif currentValue.value !\u003d None and currentValue.value !\u003d -1:\n\t\n\t\tselectedValue \u003d int(currentValue.value)\n\t\n\t\t\n\t\n\t\tfilter_value \u003d selectedValue\n\t\tif selectedValue \u003d\u003d 0:\n\t\t\twhere \u003d \" bg.PercentBedGrowth \u003e\u003d 0 and bg.PercentBedGrowth \u003c\u003d 10 \"\n\t\telif selectedValue \u003d\u003d 1:\n\t\t\twhere \u003d \" bg.PercentBedGrowth \u003e\u003d 10 \"\n\t\telif selectedValue \u003d\u003d 2:\n\t\t\twhere \u003d \" bg.PercentBedGrowth \u003e\u003d -10 and bg.PercentBedGrowth \u003c\u003d 0 \"\n\t\telif selectedValue \u003d\u003d 3:\n\t\t\twhere \u003d \" bg.PercentBedGrowth \u003c\u003d -10 \"\n\t\t\n\t\t\n\t\tself.session.custom.filters.winterShelterCongregations.percentGrowth.value \u003d filter_value\n\t\t\n\telse:\t\n\t\tsystem.perspective.print(\"winterShelterCongregations : percentGrowth : else\")\n\tself.session.custom.filters.winterShelterCongregations.percentGrowth.where\u003d where"
+            }
+          }
+        },
+        "props": {
+          "dropdownOptionStyle": {
+            "classes": "Dropdowns/DD_Options"
+          },
+          "options": [
+            {
+              "label": "0 to 10%",
+              "value": 0
+            },
+            {
+              "label": "Greater than 10%",
+              "value": 1
+            },
+            {
+              "label": "0 to -10%",
+              "value": 2
+            },
+            {
+              "label": "Less than -10%",
+              "value": 3
+            }
+          ],
+          "placeholder": {
+            "color": "#AAAAAA",
+            "text": "Percent Growth"
+          },
+          "showClearIcon": true,
+          "style": {
+            "borderBottomLeftRadius": 3,
+            "borderBottomRightRadius": 3,
+            "borderTopLeftRadius": 3,
+            "borderTopRightRadius": 3,
+            "margin": 3
+          },
+          "value": null
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "City"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "l.city",
+            "filter": "winterShelterCongregations",
+            "key": "city",
+            "placeholder": "City",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ZipCode"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "l.zipCode",
+            "filter": "winterShelterCongregations",
+            "key": "zipCode",
+            "placeholder": "Zip Code",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MinGuests"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.minGuests"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "ISNULL(ls.beds,lsp.beds)",
+            "filter": "winterShelterCongregations",
+            "key": "minGuests",
+            "placeholder": "Min Guests",
+            "searchType": "lowerBoundInclusive"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MaxGuests"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.maxGuests"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "ISNULL(ls.beds,lsp.beds)",
+            "filter": "winterShelterCongregations",
+            "key": "maxGuests",
+            "placeholder": "Max Guests",
+            "searchType": "upperBoundInclusive"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "genders"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Filters/getGenders"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "bg.genderId",
+            "filter": "winterShelterCongregations",
+            "key": "genders",
+            "placeholder": "Genders Accepted",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/MultiDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Filtering/Filter_Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ExportToExcel"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "params": {
+            "dataset": "value",
+            "defaultFilePrefix": "toExcel"
+          },
+          "path": "1_globalTEMPLATES/Tables/TableToExcel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "lblSearch"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header",
+            "textAlign": "end"
+          },
+          "text": "Search:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Search"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": [
+              "l.locationName",
+              "l.city",
+              "l.zipCode",
+              "g.genderAccepted"
+            ],
+            "filter": "winterShelterCongregations",
+            "key": "search",
+            "placeholder": "Search",
+            "searchType": "like"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Table/Search_Bar"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t#Clear the filter components\n\tsystem.perspective.sendMessage(messageType\u003d\"clearFilter\")\n\tself.getSibling(\"PercentGrowth\").props.value \u003d -1"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "ClearFilters"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Filtering/Filters/ClearFilters"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Filter/Header_Text"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

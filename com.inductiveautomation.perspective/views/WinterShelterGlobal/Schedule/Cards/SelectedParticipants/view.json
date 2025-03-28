@@ -1,0 +1,611 @@
+{
+  "custom": {
+    "allowSuspended": null,
+    "allowWithPartialRegistration": null,
+    "allowWithoutShelterProgram": null,
+    "currentSeasonId": null,
+    "disableForPastDates": null,
+    "noOfSelectedGuests": 0,
+    "participantToAdd": {
+      "dateOfBirth": "",
+      "id": -1,
+      "name": ""
+    },
+    "seasonForSchedule": null,
+    "selectedCongregation": {
+      "dayOfYear": "",
+      "gender": "",
+      "id": "",
+      "name": "",
+      "originalStatusValue": "",
+      "scheduleId": "",
+      "status": "",
+      "totalBeds": ""
+    },
+    "settingsData": null
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tsystem.perspective.sendMessage(\"ResetSearch\", payload\u003d{}, scope\u003d\"session\")\n\tsystem.perspective.sendMessage(\"ResetRegistration\", payload\u003d{}, scope\u003d\"session\")"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "selectedId": 0,
+    "selected_id": 0
+  },
+  "propConfig": {
+    "custom.allowSuspended": {
+      "binding": {
+        "config": {
+          "expression": "lookup({view.custom.settingsData},\u0027allow_suspended_participants\u0027,true,\u0027settingName\u0027,\u0027settingValue\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.allowWithPartialRegistration": {
+      "binding": {
+        "config": {
+          "expression": "lookup({view.custom.settingsData},\u0027allow_participants_with_partial_registration\u0027,true,\u0027settingName\u0027,\u0027settingValue\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.allowWithoutShelterProgram": {
+      "binding": {
+        "config": {
+          "expression": "lookup({view.custom.settingsData},\u0027allow_participants_without_winter_shelter\u0027,true,\u0027settingName\u0027,\u0027settingValue\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027id\u0027)",
+            "type": "script"
+          },
+          {
+            "formatType": "numeric",
+            "formatValue": "integer",
+            "type": "format"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.disableForPastDates": {
+      "binding": {
+        "config": {
+          "expression": "lookup({view.custom.settingsData},\u0027disable_checkin_for_past_dates\u0027,true,\u0027settingName\u0027,\u0027settingValue\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.noOfSelectedGuests": {
+      "binding": {
+        "config": {
+          "path": "/root/FlexContainer/participantsList.props.instances"
+        },
+        "transforms": [
+          {
+            "code": "\tcount \u003d 0\n\tif value is not None and len(value) \u003e 0:\n\t\tfor instance in value:\n\t\t\tif instance[\u0027markedForDelete\u0027] \u003d\u003d False:\n\t\t\t\tcount \u003d count + 1\n\t\t\n\treturn count\t",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.participantToAdd": {
+      "persistent": true
+    },
+    "custom.seasonForSchedule": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "scheduleId": "{view.custom.selectedCongregation.scheduleId}"
+          },
+          "queryPath": "WinterShelterGlobal/getSeasonForScheduleId"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.selectedCongregation": {
+      "persistent": true
+    },
+    "custom.settingsData": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/Settings/GetAllSettings"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.dob_day": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.dob_month": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.dob_year": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.first_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.last_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.middle_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.nick_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.race_id": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.search_active": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.search_selection": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selectedId": {
+      "paramDirection": "output"
+    },
+    "params.selected_first_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selected_last_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selected_middle_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.ssn": {
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 500,
+      "width": 250
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Text": "Selected Participants"
+          },
+          "path": "1_globalTEMPLATES/Header/Header",
+          "style": {
+            "borderTopLeftRadius": "8px",
+            "borderTopRightRadius": "8px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "CongregationName"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.selectedCongregation.name"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Table/Column_Medium"
+              },
+              "textStyle": {
+                "textAlign": "left",
+                "textIndent": 15
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "55px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.noOfSelectedGuests"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "KPIs/KPI_Value"
+                  },
+                  "textStyle": {
+                    "textAlign": "right"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "51px"
+                },
+                "props": {
+                  "style": {
+                    "classes": "KPIs/KPI_Value"
+                  },
+                  "text": "of",
+                  "textStyle": {
+                    "fontSize": "35px",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "basis": "70px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.selectedCongregation.totalBeds"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "KPIs/KPI_Value"
+                  },
+                  "textStyle": {
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "NoOfGuests"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.selectedCongregation.name} !\u003d None \u0026\u0026 {view.custom.selectedCongregation.name} !\u003d \"\" "
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "participantsList"
+            },
+            "position": {
+              "basis": "340px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.instances": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "dayOfYear": "{view.custom.selectedCongregation.dayOfYear}",
+                      "locationId": "{view.custom.selectedCongregation.id}",
+                      "scheduleId": "{view.custom.selectedCongregation.scheduleId}",
+                      "seasonId": "{view.custom.seasonForSchedule}"
+                    },
+                    "queryPath": "WinterShelterGlobal/Schedule/GetParticipants"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\timport copy\n\tinstances \u003d []\n\tinstanceStruct \u003d {\n\t\t\t  \"instanceStyle\": {\n\t\t\t    \"classes\": \"\"\n\t\t\t  },\n\t\t\t  \"instancePosition\": {},\n\t\t\t  \"participantId\": -1,\n\t\t\t  \"locationId\":self.view.custom.selectedCongregation.id,\n\t\t\t  \"participantName\":\u0027\u0027,\n\t\t\t  \"birthDate\":None,\n\t\t\t  \"scheduleId\":self.view.custom.selectedCongregation.scheduleId,\n\t\t\t  \"fromDB\": True,\n\t\t\t  \"markedForDelete\":False \n\t\t\t}\n\tif value is not None and value.getRowCount() \u003e 0:\n\t\tfor i in range(value.getRowCount()):\n\t\t\tthisStruct \u003d copy.deepcopy(instanceStruct)\n\t\t\tthisStruct[\u0027participantId\u0027] \u003d value.getValueAt(i,\u0027participantId\u0027)\n\t\t\tthisStruct[\u0027participantName\u0027] \u003d value.getValueAt(i,\u0027participantName\u0027)\n\t\t\tthisStruct[\u0027birthDate\u0027] \u003d value.getValueAt(i,\u0027BirthDate\u0027)\n\t\t\tinstances.append(thisStruct)\n\treturn instances",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "path": "WinterShelterGlobal/Schedule/Components/OneParticipant",
+              "style": {
+                "borderColor": "#0C4E8B",
+                "borderStyle": "solid",
+                "borderWidth": "1px",
+                "marginBottom": 5,
+                "marginLeft": 15,
+                "marginRight": 15,
+                "marginTop": 5
+              },
+              "useDefaultViewWidth": false
+            },
+            "type": "ia.display.flex-repeater"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\timport time\n\tparticipantsList \u003d \tself.parent.parent.getChild(\"participantsList\").props.instances\n\t\t\t\t\t\t\n\tif len(participantsList) \u003e 0:\n\t\t## check for date validations\n\t\tif (system.date.isAfter(system.date.midnight(self.session.custom.selectedServeDate), system.date.midnight(system.date.now()))):\n\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Check-in for future dates not allowed.\"\n\t\telif(self.view.custom.disableForPastDates \u003d\u003d True and system.date.isBefore(system.date.midnight(self.session.custom.selectedServeDate), system.date.midnight(system.date.now()))):\n\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Check-in for past dates not allowed.\"\n\t\telse:\n\t\t\t## add into the schedule - partcipants table\n\t\t\tinsertQ \u003d \"INSERT INTO shelter.ScheduleParticipant (locationId, participantId, scheduleId, seasonId, dayOfYear, timeCreated) VALUES \"\n\t\t\tfor participant in participantsList:\n\t\t\t\tinsertQ \u003d insertQ + \"(\" + str(self.view.custom.selectedCongregation.id) + \",\"\n\t\t\t\tinsertQ \u003d insertQ + str(participant[\u0027participantId\u0027]) + \",\"\n\t\t\t\tinsertQ \u003d insertQ + str(self.view.custom.selectedCongregation.scheduleId).strip() + \",\"\n\t\t\t\tinsertQ \u003d insertQ + str(int(self.view.custom.currentSeasonId))+ \",\"\n\t\t\t\tinsertQ \u003d insertQ + str(self.view.custom.selectedCongregation.dayOfYear) + \",CURRENT_TIMESTAMP),\"\n\t#\t\t\tinsertQ \u003d \"INSERT INTO shelter.ScheduleParticipant (locationId, participantId, scheduleId, seasonId, dayOfYear, timeCreated) VALUES (?,?,?,?,?,CURRENT_TIMESTAMP) \"\n\t#\t\t\tsystem.db.runPrepUpdate(insertQ,[int(self.view.custom.selectedCongregation.id), int(participant[\u0027participantId\u0027]), int(self.view.custom.selectedCongregation.scheduleId),int(self.view.custom.currentSeasonId),int(self.view.custom.selectedCongregation.dayOfYear)])\n\t\t\tinsertQ \u003d insertQ[:-1]\n\t#\t\tsystem.perspective.print(insertQ)\n\t\t\ttry:\n\t\t\t\tsystem.db.runUpdateQuery(insertQ)\n\t\t\t\tself.view.custom.selectedCongregation.status \u003d \"Checked-In\"\n\t\t\t\tself.view.custom.selectedCongregation.originalStatusValue \u003d \"Checked-In\"\n\t\t\t\t## also add WinterShelter Night entry if someone checks in in the Winter Shelter Activity Log\n\t\t\t\tcheckInDate \u003d calendar.getDateForSeasonForDayOfYear(self.view.custom.selectedCongregation.dayOfYear,int(self.view.custom.currentSeasonId))\n\t\t\t\tif checkInDate !\u003d None:\n\t\t\t\t\t## delete any no-show logs for this location\n\t\t\t\t\tdeleteQ \u003d \"DELETE FROM shelter.ActivityLog WHERE locationId \u003d ? AND activityType \u003d \u0027winter_shelter_night\u0027 and activityDescription \u003d \u0027No-Show\u0027 AND CONVERT(DATE,timeCreated) \u003d ?\"\n\t\t\t\t\tcheckInDateWithoutTime \u003d system.date.format(checkInDate, \"yyyy-MM-dd\")\n\t\t\t\t\tsystem.db.runPrepUpdate(deleteQ, [self.view.custom.selectedCongregation.id, checkInDateWithoutTime])\n\t\t\t\t\tinsertLogQ \u003d \"INSERT INTO shelter.ActivityLog( locationId, activityType, activityDescription , timeCreated, referenceId) VALUES (?,?,?,?,?)\"\n\t\t\t\t\tsystem.db.runPrepUpdate(insertLogQ, [self.view.custom.selectedCongregation.id, \"winter_shelter_night\", \"Checked-In\", checkInDate, self.view.custom.selectedCongregation.scheduleId])\n\t\t\t\telse:\n\t\t\t\t\tsystem.perspective.print(\"check in date none\")\n\t\t\t\tsystem.perspective.sendMessage(\"participantCheckedIn\",payload\u003d{}, scope\u003d\"session\")\n\t\t\t\tself.parent.parent.getChild(\"participantsList\").refreshBinding(\"props.instances\")\n\t\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Check-in successful.\"\n\t\t\texcept Exception as e:\n\t\t\t\tsystem.perspective.print(str(e))\n\t\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Error in Check-in. Please try again ...\"\n\t\t\n\t\ttime.sleep(3)\n\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"\"\n\t\t\t\n\t\t\t\n\t\t\n\t\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "CheckIn"
+                },
+                "position": {
+                  "basis": "100px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.selectedCongregation.originalStatusValue} !\u003d \"Checked-In\" \u0026\u0026 ({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator})\r\n"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Buttons/Main",
+                    "margin": 2
+                  },
+                  "text": "Check-In"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\timport time\n\tparticipantsList \u003d \tself.parent.parent.getChild(\"participantsList\").props.instances\n\tif participantsList is not None and len(participantsList) \u003e 0:\n\t\t\n\t\ttry:\n\t\t\titemsToDelete \u003d filter(lambda x: (x.fromDB \u003d\u003d True and x.markedForDelete \u003d\u003d True), participantsList) ## that were stored and now marked for delete \n\t\t\titemsToAdd \u003d filter(lambda x: (x.fromDB \u003d\u003d False and x.markedForDelete \u003d\u003d False), participantsList)  ## newly added paticipants\n\t\t\titemsDeleted \u003d False\n\t\t\titemsAdded \u003d False\n\t\t\tif itemsToDelete is not None and len(itemsToDelete) \u003e 0:\n\t\t\t\tparticipantIds \u003d [str(x.participantId) for x in itemsToDelete]\n\t\t\t\tupdateQ \u003d \"UPDATE shelter.ScheduleParticipant SET timeRetired \u003d CURRENT_TIMESTAMP WHERE \" \n\t\t\t\tupdateQ \u003d updateQ  + \" scheduleId \u003d \" + str(self.view.custom.selectedCongregation.scheduleId).strip()\n\t\t\t\tupdateQ \u003d updateQ  + \" AND locationId \u003d \" + str(self.view.custom.selectedCongregation.id).strip()\n\t\t\t\tupdateQ \u003d updateQ  + \" AND seasonId \u003d \" + str(self.view.custom.currentSeasonId).strip()\n\t\t\t\tupdateQ \u003d updateQ  + \" AND dayOfYear \u003d \" + str(self.view.custom.selectedCongregation.dayOfYear).strip()\n\t\t\t\tupdateQ \u003d updateQ + \" AND participantId IN (\" + \",\".join(participantIds) + \")\"\n\t\t\t\t\n\t\t\t\tsystem.perspective.print(updateQ)\n\t\t\t\tsystem.db.runUpdateQuery(updateQ)\n\t\t\t\titemsDeleted \u003d True\n\t\t\t\t\n\t\t\tif itemsToAdd is not None and len(itemsToAdd) \u003e 0:\n\t\t\t\tinsertQ \u003d \"INSERT INTO shelter.ScheduleParticipant (locationId, participantId, scheduleId, seasonId, dayOfYear, timeCreated) VALUES \"\n\t\t\t\tfor participant in itemsToAdd:\n\t\t\t\t\tinsertQ \u003d insertQ + \"(\" + str(self.view.custom.selectedCongregation.id) + \",\"\n\t\t\t\t\tinsertQ \u003d insertQ + str(participant[\u0027participantId\u0027]) + \",\"\n\t\t\t\t\tinsertQ \u003d insertQ + str(self.view.custom.selectedCongregation.scheduleId).strip() + \",\"\n\t\t\t\t\tinsertQ \u003d insertQ + str(self.view.custom.currentSeasonId) + \",\"\n\t\t\t\t\tinsertQ \u003d insertQ + str(self.view.custom.selectedCongregation.dayOfYear) + \", CURRENT_TIMESTAMP),\"\n\t\t\t\tinsertQ \u003d insertQ[:-1]\n\t\t\t\tsystem.perspective.print(insertQ)\n\t\t\t\tsystem.db.runUpdateQuery(insertQ)\n\t\t\t\titemsAdded \u003d True\n\t\t\tif itemsAdded \u003d\u003d True or itemsDeleted \u003d\u003d True:\n\t\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Update successful\"\n\t\t\t\tself.parent.parent.getChild(\"participantsList\").refreshBinding(\u0027props.instances\u0027)\n\t\t\t\tsystem.perspective.sendMessage(\"participantCheckedIn\",payload\u003d{}, scope\u003d\"session\")\n\t\t\telse:\n\t\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Please select participants to update\"\n\t\texcept Exception as e:\n\t\t\tsystem.perspective.print(str(e))\n\t\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"Update error. Try again ...\"\n\t\t\n\t\ttime.sleep(3)\n\t\t## clear the message\n\t\t\n\t\tself.parent.parent.getChild(\"Error\").props.text \u003d \"\"\n\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Update"
+                },
+                "position": {
+                  "basis": "100px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.selectedCongregation.originalStatusValue} \u003d \"Checked-In\" \u0026\u0026 ({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator})\r\n"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Buttons/Main",
+                    "margin": 2
+                  },
+                  "text": "Update"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.getChild(\"participantsList\").refreshBinding(\"props.instances\")"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Clear"
+                },
+                "position": {
+                  "basis": "100px"
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.selectedCongregation.status} \u003d \"Checked-In\" \u0026\u0026 ({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Buttons/Delete",
+                    "margin": 2
+                  },
+                  "text": "CANCEL"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "Buttons"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "justify": "space-between",
+              "style": {
+                "overflow": "hidden",
+                "paddingLeft": 13,
+                "paddingRight": 13
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Error"
+            },
+            "position": {
+              "basis": "25px"
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Error_Message"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "Background/Default"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Alternative"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "congregationSelected",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tif payload is not None:\n\t\tself.view.custom.selectedCongregation.id \u003d payload[\u0027locationId\u0027]\n\t\tself.view.custom.selectedCongregation.scheduleId \u003d payload[\u0027scheduleId\u0027]\n\t\tself.view.custom.selectedCongregation.name \u003d payload[\u0027locationName\u0027]\n\t\tself.view.custom.selectedCongregation.totalBeds \u003d payload[\u0027totalBeds\u0027]\n\t\tself.view.custom.selectedCongregation.gender \u003d payload[\u0027gender\u0027]\n\t\tself.view.custom.selectedCongregation.status \u003d payload[\u0027status\u0027]\n\t\tself.view.custom.selectedCongregation.dayOfYear \u003d payload[\u0027dayOfYear\u0027]\n\t\tself.view.custom.selectedCongregation.originalStatusValue \u003d payload[\u0027originalStatusValue\u0027]",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "AddParticipant",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\timport time\n\timport copy\n\tmessage \u003d \"\"\n#\tsystem.perspective.print(\"AddParticipant\")\n\tproject \u003d \"RITI\"\n\ttry:\n\t\tif payload is not None and payload[\u0027participantId\u0027] is not None:\n\t\t\t\n\t\t\tparticipantToAdd \u003d payload[\u0027participantId\u0027]\n\t\t\t## check if participant is already checked into some other shelter on the same night\n\t\t\tcheckParticipantQ \u003d \"SELECT participantId FROM shelter.ScheduleParticipant where timeRetired IS NULL and seasonId \u003d ? and dayOfYear \u003d ? and participantId \u003d ?\"\n\t\t\tcheckInData \u003d system.db.runPrepQuery(checkParticipantQ, [self.view.custom.currentSeasonId, self.view.custom.selectedCongregation.dayOfYear, participantToAdd])\n\t\t\tsystem.perspective.print(checkInData)\n\t\t\tif checkInData is None or checkInData.getRowCount() \u003d\u003d 0:\n\t\t\t## participant not checked into Winter Shelter\n\t\t\t\t## check if participant is checkedinto any other shelter.\n\t\t\t\tpathSQ \u003d \"Shelter/CurrentResidents/CheckIfParticipantAlreadyCheckedIn\"\n\t\t\t\tparamsSQ \u003d {\"participantId\":participantToAdd}\n\t\t\t\tretValSQ \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpathSQ,parameters\u003dparamsSQ)\n\t\t\t\tif retValSQ is not None and retValSQ.getRowCount() \u003e 0: ## value exists that means partcipant is already checked into some other Shelter\n\t\t\t\t\tmessage \u003d \"Participant is already checked in to another bed.\"\n\t\t\t\telse:\n\t\t\t\t\t## get the details of participant to check Gender and get name\n\t\t\t\t\tparticipantDetailsQ \u003d \"\"\"\n\t\t\t\t\tSELECT CONCAT(pd.firstName, \u0027 \u0027, pd.lastName) as participantName, pd.gender , pd.suspension, pd.fullRegistration, rd.programName, pd.BirthDate\n\t\t\t\t\tFROM (SELECT * FROM participant.Dashboard where ID \u003d ? ) pd\n\t\t\t\t\tleft join \n\t\t\t\t\tparticipant.ReferralDashboard rd\n\t\t\t\t\tON pd.ID \u003d rd.participantId\n\t\t\t\t\t\"\"\"\n\t\t\t\t\tsystem.perspective.print(participantDetailsQ)\n\t\t\t\t\tparticipantDetails \u003d system.db.runPrepQuery(participantDetailsQ, [participantToAdd])\n\t\t\t\t\t\n\t\t\t\t\tif participantDetails !\u003d None and participantDetails.getRowCount() \u003e 0:\n\t\t\t\t\t\t## check that the Gender matches\n\t\t\t\t\t\tparticipantGender \u003d participantDetails.getValueAt(0,\u0027gender\u0027)\n\t\t\t\t\t\tif participantGender is not None:\n\t\t\t\t\t\t\tparticipantGender \u003d str(participantGender).strip()\n\t\t\t\t\t\tparticipantName \u003d participantDetails.getValueAt(0,\u0027participantName\u0027)\n\t\t\t\t\t\tparticipantBirthDate \u003d participantDetails.getValueAt(0,\u0027BirthDate\u0027)\n\t\t\t\t\t\tparticipantInSuspension \u003d participantDetails.getValueAt(0,\u0027suspension\u0027)\n\t\t\t\t\t\tfullRegistration \u003d participantDetails.getValueAt(0,\u0027fullRegistration\u0027)\n\t\t\t\t\t\tprogramName \u003d participantDetails.getValueAt(0,\u0027programName\u0027)\n\t\t\t\t\t\t\n\t\t\t\t\t\tsystem.perspective.print(participantGender)\t\n\t\t\t\t\t\tselectedLocationGender \u003d self.view.custom.selectedCongregation.gender\n\t\t\t\t\t\tsystem.perspective.print(selectedLocationGender)\n\t\t\t\t\t\t\n\t\t\t\t\t\tgenderMatch \u003d False\n\t\t\t\t\t\tregistrationValid \u003d True\n\t\t\t\t\t\tprogramValid \u003d True\n\t\t\t\t\t\tlocationGenderSettingInvalid \u003d False\n\t\t\t\t\t\t\n\t\t\t\t\t\texistingParticipants \u003d  self.getChild(\"FlexContainer\").getChild(\"participantsList\").props.instances\n\t\t\t\t\t\tif selectedLocationGender \u003d\u003d \"Male\" and ( participantGender \u003d\u003d \"Male\" or participantGender \u003d\u003d \"Transgender Female to Male\"):\n\t\t\t\t\t\t\tgenderMatch \u003d True\n\t\t\t\t\t\telif selectedLocationGender \u003d\u003d \"Male and Female\": # and ( participantGender \u003d\u003d \"Male\" or participantGender \u003d\u003d \"Female\") :\n\t\t\t\t\t\t\tgenderMatch \u003d True\n\t\t\t\t\t\telif selectedLocationGender \u003d\u003d \"Families with Children\": \n\t\t\t\t\t\t\tgenderMatch \u003d True\n\t\t\t\t\t\telif selectedLocationGender \u003d\u003d \"All\": \n\t\t\t\t\t\t\tgenderMatch \u003d True\n\t\t\t\t\t\telif selectedLocationGender \u003d\u003d \"Female\" and ( participantGender \u003d\u003d \"Female\" or participantGender \u003d\u003d \"Transgender Male to Female\"):\n\t\t\t\t\t\t\tgenderMatch \u003d True\n\t\t\t\t\t\telif selectedLocationGender \u003d\u003d \"Male or Female\":\n\t\t\t\t\t\t\tgenderMatch \u003d False\n\t\t\t\t\t\t\tlocationGenderSettingInvalid \u003d True\n\t\t\t\t\t\t\t## check who is present already or if its first entry\n\t#\t\t\t\t\t\tif existingParticipants is not None and len(existingParticipants) \u003d\u003d 0:\n\t#\t\t\t\t\t\t\tgenderMatch \u003d True ## you can add any gender\n\t\t\t\t\t\t\t\n\t\t\t\t\t\telif participantGender \u003d\u003d \u0027Client refused\u0027 or participantGender \u003d\u003d \u0027Data not collected\u0027 or participantGender \u003d\u003d \"Client doesn\u0027t know\" or participantGender \u003d\u003d \"Non-Binary\":\n\t\t\t\t\t\t\tgenderMatch \u003d True\n\t\t\t\t\t\tsystem.perspective.print(participantGender)\n\t\t\t\t\t\t\n\t\t\t\t\t\tif self.view.custom.allowWithPartialRegistration \u003d\u003d False and fullRegistration \u003d\u003d False:\n\t\t\t\t\t\t\tregistrationValid \u003d False\n\t\t\t\t\t\tif self.view.custom.allowWithoutShelterProgram \u003d\u003d False and programName !\u003d \"Winter Shelter\":\n\t\t\t\t\t\t\tprogramValid \u003d False\n\t\t\n\t\t\t\t\t\tif genderMatch \u003d\u003d True: ## Check further condition\n\t\t\t\t\t\t\tsystem.perspective.print(\"gendermatch true\") \n\t\t\t\t\t\t\tif registrationValid \u003d\u003d True: ## Check further condition\n\t\t\t\t\t\t\t\tsystem.perspective.print(\"reg valid true\")\n\t\t\t\t\t\t\t\tif programValid \u003d\u003d True:## Check further condition\n\t\t\t\t\t\t\t\t\tsystem.perspective.print(\"program valid true\")\n\t\t\t\t\t\t\t\t\tif participantInSuspension \u003d\u003d False:  \n\t\t\t\t\t\t\t\t\t\t## check if participant already exists\n\t\t\t\t\t\t\t\t\t\tif participantToAdd in [instance.participantId for instance in existingParticipants]:\n\t\t\t\t\t\t\t\t\t\t\tmessage \u003d \"Participant is already added\"\n\t\t\t\t\t\t\t\t\t\telse: # add the participant to list\n\t\t\t\t\t\t\t\t\t\t\tinstanceStruct \u003d {\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"instanceStyle\": {\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"classes\": \"\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t  },\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"instancePosition\": {},\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"participantId\": -1,\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"locationId\":-1,\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"participantName\":\u0027\u0027,\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"birthDate\":\u0027\u0027,\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"scheduleId\":-1,\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"fromDB\": False,\n\t\t\t\t\t\t\t\t\t\t\t\t\t  \"markedForDelete\":False \n\t\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\tinstanceStruct[\u0027participantId\u0027] \u003d participantToAdd\n\t\t\t\t\t\t\t\t\t\t\tinstanceStruct[\u0027locationId\u0027] \u003d self.view.custom.selectedCongregation.id\n\t\t\t\t\t\t\t\t\t\t\tinstanceStruct[\u0027participantName\u0027] \u003d participantName\n\t\t\t\t\t\t\t\t\t\t\tinstanceStruct[\u0027scheduleId\u0027] \u003d self.view.custom.selectedCongregation.scheduleId\n\t\t\t\t\t\t\t\t\t\t\tinstanceStruct[\u0027birthDate\u0027] \u003d participantBirthDate\n\t\t\t\t\t\t\t\t\t\t\tsystem.perspective.print(instanceStruct)\n\t\t\t\t\t\t\t\t\t\t\texistingParticipants.append(instanceStruct)\n\t\t\t\t\t\t\t\t\t\t\tself.getChild(\"FlexContainer\").getChild(\"participantsList\").props.instances \u003d existingParticipants\n\t\t\t\t\t\t\t\t\telse: ## check if suspended participant is allowed\n\t\t\t\t\t\t\t\t\t\tif self.view.custom.allowSuspended \u003d\u003d True:\n\t\t\t\t\t\t\t\t\t\t\t## also store in view custom so that we can add on confirmation\n\t\t\t\t\t\t\t\t\t\t\tself.view.custom.participantToAdd.id \u003d payload[\u0027participantId\u0027]\n\t\t\t\t\t\t\t\t\t\t\tself.view.custom.participantToAdd.name \u003d participantName\n\t\t\t\t\t\t\t\t\t\t\tself.view.custom.participantToAdd.dateOfBirth \u003d participantBirthDate\n\t\t\t\t\t\t\t\t\t\t\t## show a confirmation popup\n\t\t\t\t\t\t\t\t\t\t\tsystem.perspective.openPopup(\"checkInWarning\",\"WinterShelterGlobal/Schedule/Cards/CheckInWarning\",params\u003d{}, showCloseIcon \u003d False, resizable \u003d False, draggable \u003d False, overlayDismiss \u003d True, modal  \u003d True)\n\t\t\t\t\t\t\t\t\t\telse:\n\t\t\t\t\t\t\t\t\t\t\tsystem.perspective.print(\"suspended participant not allowed to check-in\")\n\t\t\t\t\t\t\t\t\t\t\tmessage \u003d \"A Suspended participant is not allowed to check-in\"\n\t\t\t\t\t\t\t\telse:\n\t\t\t\t\t\t\t\t\tsystem.perspective.print(\"without winter registration is not allowed\")\n\t\t\t\t\t\t\t\t\tmessage \u003d \"A participant without Winter Shelter program is not allowed to check-in\"\n\t\t\t\t\t\t\telse:\n\t\t\t\t\t\t\t\tsystem.perspective.print(\"partial registration false\")\n\t\t\t\t\t\t\t\tmessage \u003d \"A participant with patial registration is not allowed to check-in\"\n\t\t\t\t\t\telse:\n\t\t\t\t\t\t\t## show error for gender mismtach\n\t\t\t\t\t\t\tsystem.perspective.print(\"gendermatch false\")\n\t\t\t\t\t\t\tif locationGenderSettingInvalid \u003d\u003d True:\n\t\t\t\t\t\t\t\tmessage \u003d \"Allowed Gender for congregation cannot be determined\"\n\t\t\t\t\t\t\telse:\n\t\t\t\t\t\t\t\tmessage \u003d \"A \" + str(participantGender) + \" participant is not allowed to check-in\"\n\t\t\t\t\telse:\n\t\t\t\t\t\tmessage \u003d \"Participant details could not be verified\" \n\t\t\telse:\n\t\t\t\tmessage \u003d \"Participant is already checked in to other Location\"\n\t\telse:\n\t\t\tmessage \u003d \"Payload not received\" \n\t\t\n\t\t\t \n\texcept:\n\t\tmessage \u003d \"Internal error, try again\"\n\tsystem.perspective.print(message)\n\tif message !\u003d \"\":\n\t\tself.getChild(\"FlexContainer\").getChild(\"Error\").props.text \u003d message\n\t\ttime.sleep(3)\n\t\tself.getChild(\"FlexContainer\").getChild(\"Error\").props.text \u003d \"\"",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "AllowSuspendedParticipant",
+          "pageScope": true,
+          "script": "\timport time\n\timport copy\n\tsystem.perspective.print(\"Add Suspended Participant OK\")\n\tparticipantToAdd \u003d self.view.custom.participantToAdd.id\n\tparticipantName \u003d self.view.custom.participantToAdd.name\n\texistingParticipants \u003d  self.getChild(\"FlexContainer\").getChild(\"participantsList\").props.instances\n\tif participantToAdd in [instance.participantId for instance in existingParticipants]:\n\t\tself.getChild(\"FlexContainer\").getChild(\"Error\").props.text \u003d \"Participant is already added\"\n\t\ttime.sleep(3)\n\t\tself.getChild(\"FlexContainer\").getChild(\"Error\").props.text \u003d \"\"\n\telse: # add the participant to list\n\t\tinstanceStruct \u003d {\n\t\t\t\t  \"instanceStyle\": {\n\t\t\t\t\t\"classes\": \"\"\n\t\t\t\t  },\n\t\t\t\t  \"instancePosition\": {},\n\t\t\t\t  \"participantId\": -1,\n\t\t\t\t  \"locationId\":-1,\n\t\t\t\t  \"participantName\":\u0027\u0027,\n\t\t\t\t  \"birthDate\":\u0027\u0027,\n\t\t\t\t  \"scheduleId\":-1,\n\t\t\t\t  \"fromDB\": False,\n\t\t\t\t  \"markedForDelete\":False \n\t\t\t\t}\n\t\tinstanceStruct[\u0027participantId\u0027] \u003d participantToAdd\n\t\tinstanceStruct[\u0027locationId\u0027] \u003d self.view.custom.selectedCongregation.id\n\t\tinstanceStruct[\u0027participantName\u0027] \u003d participantName\n\t\tinstanceStruct[\u0027scheduleId\u0027] \u003d self.view.custom.selectedCongregation.scheduleId\n\t\tinstanceStruct[\u0027birthDate\u0027] \u003d self.view.custom.participantToAdd.dateOfBirth\n\t\tsystem.perspective.print(instanceStruct)\n\t\texistingParticipants.append(instanceStruct)\n\t\tself.getChild(\"FlexContainer\").getChild(\"participantsList\").props.instances \u003d existingParticipants\n\t\n\t\t",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "ServeDateSelected",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.custom.selectedCongregation.id \u003d -1\n\tself.view.custom.selectedCongregation.scheduleId \u003d -1\n\tself.view.custom.selectedCongregation.name \u003d \u0027\u0027\n\tself.view.custom.selectedCongregation.totalBeds \u003d -1\n\tself.view.custom.selectedCongregation.gender \u003d \u0027\u0027\n\tself.view.custom.selectedCongregation.status \u003d \u0027\u0027\n\tself.view.custom.selectedCongregation.dayOfYear \u003d -1",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

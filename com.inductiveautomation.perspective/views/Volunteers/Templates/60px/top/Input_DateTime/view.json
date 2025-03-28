@@ -1,0 +1,126 @@
+{
+  "custom": {
+    "date_object": {
+      "$": [
+        "ts",
+        0,
+        1610664453351
+      ],
+      "$ts": 0
+    }
+  },
+  "params": {
+    "date": null,
+    "text": "Time"
+  },
+  "propConfig": {
+    "params.date": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 60,
+      "width": 220
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "DateTimeInput"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.maxDate": {
+            "binding": {
+              "config": {
+                "expression": "addYears(now(0),150)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.minDate": {
+            "binding": {
+              "config": {
+                "expression": "addYears(now(0),-150)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.date"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "formattedValue": "Jan 6, 1937",
+          "formattedValues": {
+            "date": "Jun 23, 2020"
+          },
+          "inputProps": {
+            "style": {
+              "classes": "DateTime/Add_Date_NoBorder",
+              "textAlign": "left"
+            }
+          },
+          "modalStyle": {
+            "classes": "DateTime/Add_Date_NoBorder"
+          },
+          "style": {
+            "classes": "DateTime/Add_Date_NoBorder"
+          }
+        },
+        "type": "ia.input.date-time-input"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

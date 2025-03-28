@@ -1,0 +1,224 @@
+{
+  "custom": {},
+  "params": {
+    "dob": "",
+    "firstName": "",
+    "gender": -1,
+    "lastName": "",
+    "middleName": ""
+  },
+  "propConfig": {
+    "params.dob": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_DOB.props.params.date"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.firstName": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_FirstName.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.gender": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_Gender.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.lastName": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_LastName.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.middleName": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_MiddleName.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 60,
+      "width": 1209
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_FirstName"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "First Name",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text_Mandatory",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_MiddleName"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Middle Name",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_LastName"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Last Name",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text_Mandatory",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_DOB"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "date": "",
+            "text": "Date of Birth"
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Date_WithColorCoding",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Gender"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.highlight": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.selection"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d 5:\n\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "Participants/Registration/GetGender"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "selection": -1,
+            "text": "Gender"
+          },
+          "path": "WinterShelterGlobal/Templates/Input_DropDownSingle_Mandatory",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

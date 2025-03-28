@@ -1,0 +1,292 @@
+{
+  "custom": {
+    "data": [],
+    "function": 0
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.custom.function \u003d 0\n\tself.params.reservationId \u003d -1\n\tself.session.custom.dateRangeFromDate \u003d system.date.now()\n\tself.session.custom.dateRangeToDate \u003d system.date.now()"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "locationId": -1,
+    "month1": 10,
+    "month2": 11,
+    "reservationId": -1,
+    "seasonId": 12,
+    "year1": 2022,
+    "year2": 2022
+  },
+  "propConfig": {
+    "custom.data": {
+      "persistent": true
+    },
+    "custom.function": {
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.month1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.month2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.seasonId": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.year1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.year2": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 450
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Text": "Serve Calendar"
+          },
+          "path": "1_globalTEMPLATES/Header/Header",
+          "style": {
+            "borderTopLeftRadius": "8px",
+            "borderTopRightRadius": "8px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "leftFiller"
+            },
+            "position": {
+              "basis": "10px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "Background/Default"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Calendar1"
+            },
+            "position": {
+              "basis": "370px"
+            },
+            "propConfig": {
+              "props.params.locationId": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.locationId"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.month": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.month1"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.seasonId": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.seasonId"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.year": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.year1"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "dayOfYearMonthEnd": 334,
+                "dayOfYearMonthStart": 305,
+                "leftNavigation": true
+              },
+              "path": "WinterShelterGlobal/Schedule/Components/Detail_Calendar"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "middleFiller"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "Background/Default"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Calendar2"
+            },
+            "position": {
+              "basis": "370px"
+            },
+            "propConfig": {
+              "props.params.locationId": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.locationId"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.month": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.month2"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.seasonId": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.seasonId"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.year": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.year2"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "dayOfYearMonthEnd": 365,
+                "dayOfYearMonthStart": 335,
+                "leftNavigation": false
+              },
+              "path": "WinterShelterGlobal/Schedule/Components/Detail_Calendar"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "rightFiller"
+            },
+            "position": {
+              "basis": "10px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "Background/Default"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "calendars"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "Background/Alternative",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "borderBottomLeftRadius": "8px",
+        "borderBottomRightRadius": "8px",
+        "classes": "Background/Alternative"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "reservationselected",
+          "pageScope": false,
+          "script": "\t# implement your handler here\n\t\n\tself.view.params.reservationId \u003d payload[\u0027reservationId\u0027]\n\tself.getChild(\"DatesAndNotes\").getChild(\"EmbeddedView Notes\").props.params.CaseNote \u003d payload[\u0027notes\u0027]\n\t#system.perspective.print(system.date.parse(payload[\u0027checkInDate\u0027]))\n\t#self.getChild(\"EmbeddedView Dates Input\").props.params.beginDate \u003d system.date.parse(payload[\u0027checkInDate\u0027],\"yyyy-MM-dd hh:mm:ss\")\n\t#self.getChild(\"EmbeddedView Dates Input\").props.params.endDate \u003d payload[\u0027checkOutDate\u0027]\n\tself.session.custom.dateRangeFromDate \u003d payload[\u0027checkInDate\u0027]\n\tself.session.custom.dateRangeToDate \u003d payload[\u0027checkOutDate\u0027]",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "refreshReservations",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.params.reservationId \u003d -1",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

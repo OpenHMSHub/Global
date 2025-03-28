@@ -1,0 +1,148 @@
+{
+  "custom": {},
+  "params": {
+    "LeftPath": "WinterShelter/Dashboard/Cards/KPI/Metric_Flex_Small",
+    "LeftTitle": "\"Left Title\"",
+    "LeftValue": 21582,
+    "RightPath": "WinterShelter/Dashboard/Cards/KPI/Metric_Flex_Small",
+    "RightTitle": "\"Right Title\"",
+    "RightValue": 28542
+  },
+  "propConfig": {
+    "params.LeftPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.LeftTitle": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.LeftValue": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.RightPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.RightTitle": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.RightValue": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 140,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "LeftKPI"
+        },
+        "position": {
+          "basis": "50%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Path": {
+            "binding": {
+              "config": {
+                "path": "view.params.LeftPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Title": {
+            "binding": {
+              "config": {
+                "path": "view.params.LeftTitle"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.params.LeftValue"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Path"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "RightKPI"
+        },
+        "position": {
+          "basis": "50%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Path": {
+            "binding": {
+              "config": {
+                "path": "view.params.RightPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Title": {
+            "binding": {
+              "config": {
+                "path": "view.params.RightTitle"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.params.RightValue"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Path"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "space-between",
+      "style": {
+        "backgroundColor": "#FFFFFF",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

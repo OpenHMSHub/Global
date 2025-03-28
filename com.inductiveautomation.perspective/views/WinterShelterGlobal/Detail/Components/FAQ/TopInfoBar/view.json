@@ -1,0 +1,69 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 140,
+      "width": 1006
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "180px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "number": 6152517064,
+            "title": "Emergency"
+          },
+          "path": "WinterShelterGlobal/Detail/Components/FAQ/NumberAndTitle"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "basis": "225px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "number": 6152517019,
+            "title": "Scheduling \u0026 Questions"
+          },
+          "path": "WinterShelterGlobal/Detail/Components/FAQ/NumberAndTitle"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "iconPath": "material/picture_as_pdf",
+            "title": "Congregation Handbook"
+          },
+          "path": "WinterShelterGlobal/Detail/Components/FAQ/IconAndTitle"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "custom": {},
+  "params": {
+    "Address": "",
+    "City": "",
+    "zipcode": ""
+  },
+  "propConfig": {
+    "params.Address": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_Address.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.City": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_City.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.zipcode": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_ZipCode.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 60,
+      "width": 1209
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_Address"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Address",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_City"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "CIty",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_ZipCode"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Zipcode",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

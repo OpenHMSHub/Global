@@ -1,0 +1,168 @@
+{
+  "custom": {},
+  "params": {
+    "func_select_participant": true,
+    "volunteer": true
+  },
+  "propConfig": {
+    "params.func_select_participant": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.volunteer": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 47,
+      "width": 1100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(\"MakeVolunteerSelection\", scope \u003d \"session\")\n\tsystem.perspective.sendMessage(\"HideVolunteerSearch\", scope \u003d \"session\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_select"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.volunteer"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value:\n\t \tvalue \u003d \"Select Volunteer\"\n\telse:\n\t\tvalue \u003d \"Select Group\"\n\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary",
+            "marginBottom": "5px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tmessageType \u003d \u0027ResetVolunteerSearch\u0027\n\tsystem.perspective.sendMessage(messageType)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_new"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary",
+            "marginBottom": "5px",
+            "marginLeft": "10px",
+            "marginTop": "5px"
+          },
+          "text": "clear search"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder_2"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "Volunteers/Templates/Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.params.volunteer \u003d not self.view.params.volunteer"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_toggle"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.volunteer"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value:\n\t\tvalue \u003d \"Search Groups\"\n\telse:\n\t\tvalue \u003d \"Search Volunteers\"\n\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary",
+            "marginBottom": "5px",
+            "marginLeft": "10px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "custom": {
+      "voluteer": true
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

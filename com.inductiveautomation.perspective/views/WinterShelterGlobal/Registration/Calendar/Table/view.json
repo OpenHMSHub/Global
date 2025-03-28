@@ -1,0 +1,416 @@
+{
+  "custom": {
+    "end": {
+      "$": [
+        "ts",
+        192,
+        1664647560069
+      ],
+      "$ts": 1685491200000
+    },
+    "month": 5,
+    "nights": 0,
+    "start": {
+      "$": [
+        "ts",
+        192,
+        1664647560069
+      ],
+      "$ts": 1654041600000
+    },
+    "year": 2022
+  },
+  "params": {
+    "daysHosting": [],
+    "enabled": true,
+    "importantDays": [
+      329,
+      330,
+      365,
+      359,
+      358,
+      1
+    ],
+    "nights": 0,
+    "refresh": false
+  },
+  "propConfig": {
+    "custom.end": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[default]RITI/Winter Shelter/Season End"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.month": {
+      "binding": {
+        "config": {
+          "expression": "toInt(getMonth({this.custom.start}))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.nights": {
+      "binding": {
+        "config": {
+          "path": "view.params.daysHosting"
+        },
+        "transforms": [
+          {
+            "code": "\tdays \u003d list(value)\n\tdayCount \u003d len(days)\n\tnights \u003d 0\n\t\n\tif dayCount \u003e 0:\n\t\t#Get start of 2 years involved alon with day of week they start.\n\t\tfirstYear \u003d system.date.getDate(system.date.getYear(self.custom.start),0,1)\n\t\tstartYearWeekday \u003d system.date.getDayOfWeek(firstYear)\n\t\tseasonStartYearDay \u003d system.date.getDayOfYear(self.custom.start)\n\t\tsecondYear \u003d system.date.addYears(firstYear,1)\n\t\tstartSecYearWeekday \u003d system.date.getDayOfWeek(secondYear)\n\t\t\n\t\t#Loop through days and enable days scheduled.\n\t\tSunday \u003d False\n\t\tMonday \u003d False\n\t\tTuesday \u003d False\n\t\tWednesday \u003d False\n\t\tThursday \u003d False\n\t\tFriday \u003d False\n\t\tSaturday \u003d False\n\t\tfor day in days:\n\t\t\tif day \u003e\u003d seasonStartYearDay:\n\t\t\t\tmodifier \u003d startYearWeekday\n\t\t\telse:\n\t\t\t\tmodifier \u003d startSecYearWeekday\n\t\t\tweekday \u003d (day + modifier-1)%7\n\t\t\tif weekday \u003d\u003d 0:\n\t\t\t\tSaturday \u003d True\n\t\t\telif weekday \u003d\u003d 1:\n\t\t\t\tSunday \u003d True\n\t\t\telif weekday \u003d\u003d 2:\n\t\t\t\tMonday \u003d True\n\t\t\telif weekday \u003d\u003d 3:\n\t\t\t\tTuesday \u003d True\n\t\t\telif weekday \u003d\u003d 4:\n\t\t\t\tWednesday \u003d True\n\t\t\telif weekday \u003d\u003d 5:\n\t\t\t\tThursday \u003d True\n\t\t\telif weekday \u003d\u003d 6:\n\t\t\t\tFriday \u003d True\t\t\t\t\n\t\n\t\tnights \u003d 0\n\t\tif Sunday: nights +\u003d 1\n\t\tif Monday: nights +\u003d 2\n\t\tif Tuesday: nights +\u003d 4\n\t\tif Wednesday: nights +\u003d 8\n\t\tif Thursday: nights +\u003d16\n\t\tif Friday: nights +\u003d 32\n\t\tif Saturday: nights +\u003d 64\n\t\n\tself.params.nights \u003d nights\n\treturn nights",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.start": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[default]RITI/Winter Shelter/Season Start"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.year": {
+      "binding": {
+        "config": {
+          "expression": "toInt(getYear({this.custom.start}))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.daysHosting": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif origin !\u003d \u0027Script\u0027:\n\t\tself.getChild(\"root\").getChild(\"Days\").refreshBinding(\u0027props.instances\u0027)"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.enabled": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.importantDays": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.nights": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.refresh": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 281,
+      "width": 296
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t#Only go back to november\n\tif self.view.custom.month !\u003d 5:\n\t\tif self.view.custom.month \u003e 0:\n\t\t\tself.view.custom.month -\u003d1\n\t\telse: \n\t\t\tself.view.custom.month \u003d 11\n\t\t\tself.view.custom.year -\u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.month} !\u003d getMonth({view.custom.start})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "path": "material/chevron_left"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "dateFormat(getDate({view.custom.year},{view.custom.month},1), \u0027MMMM YYYY\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t#Do not go past march\n\tif self.view.custom.month !\u003d 4:\n\t\tif self.view.custom.month \u003c 11:\n\t\t\tself.view.custom.month +\u003d1\n\t\telse: \n\t\t\tself.view.custom.month \u003d 0\n\t\t\tself.view.custom.year +\u003d 1"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Icon_0"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.month} !\u003d getMonth({view.custom.end})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "path": "material/chevron_right"
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "Month"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "sunday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Sun"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "monday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Mon"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "tuesday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Tue"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "wednesday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Wed"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "thursday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Thur"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "friday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Fri"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "saturday"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Sat"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Week"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Days"
+        },
+        "position": {
+          "basis": "185px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "expression": "isGood({view.custom.month})"
+              },
+              "transforms": [
+                {
+                  "code": "\tenabled \u003d self.view.params.enabled\n\tstart \u003d system.date.getDayOfYear(self.view.custom.start)\n\tend \u003d system.date.getDayOfYear(self.view.custom.end)\n\tparams \u003d {\n\t  \"dayOfYear\": 0,\n\t  \"label\": \"\",\n\t  \"blocked\": False,\n\t  \"important\": False,\n\t  \"selected\": False,\n\t  \"enabled\":enabled\n\t}\n\tdaysHosting \u003d list(self.view.params.daysHosting)\n\timportantDays \u003d list(self.view.params.importantDays)\n\tmonthStart \u003d system.date.getDate(self.view.custom.year,self.view.custom.month,1)\n\tmonthEnd \u003d system.date.addMonths(monthStart,1)\n\tdayOfYear \u003d system.date.getDayOfYear(monthStart)\n\tdayOfWeek \u003d system.date.getDayOfWeek(monthStart)\n\tdays \u003d system.date.daysBetween(monthStart, monthEnd)\n\tinstances \u003d []\n\t#Insert blanks until reach first day of month\n\tfor i in range(1, dayOfWeek): \t\t\n\t\tinst \u003d dict(params)\n\t\tinst[\u0027label\u0027] \u003d \u0027\u0027\n\t\tinst[\u0027dayOfYear\u0027] \u003d 0\n\t\tinstances.append(inst)\n\t#Add month days\n\tfor i in range(1,days+1):\n\t\tinst \u003d dict(params)\n\t\tinst[\u0027label\u0027] \u003d i\n\t\tinst[\u0027dayOfYear\u0027] \u003d dayOfYear\n\t\tif dayOfYear \u003c start and dayOfYear \u003e end: inst[\u0027blocked\u0027] \u003d True\n\t\tif dayOfYear in daysHosting: inst[\u0027selected\u0027] \u003d True\n\t\tif dayOfYear in importantDays: inst[\u0027important\u0027] \u003d True\n\t\tinstances.append(inst)\n\t\tdayOfYear +\u003d 1\n\treturn instances",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "14.28%",
+            "grow": 0,
+            "shrink": 0
+          },
+          "path": "WinterShelterGlobal/Registration/Calendar/Day",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false,
+          "wrap": "wrap"
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#FFFFFF",
+        "color": "#9db8d1"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "hostDay",
+          "pageScope": true,
+          "script": "\tif payload[\u0027add\u0027]:\n\t\tself.view.params.daysHosting.append(payload[\u0027dayOfYear\u0027])\n\telse:\n\t\ttry: self.view.params.daysHosting.remove(payload[\u0027dayOfYear\u0027])\n\t\texcept: pass",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

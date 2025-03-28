@@ -1,0 +1,279 @@
+{
+  "custom": {},
+  "params": {
+    "emergencyContact": {
+      "altPhone": "",
+      "firstName": "",
+      "lastName": "",
+      "phone": "",
+      "relationship": null
+    }
+  },
+  "propConfig": {
+    "params.emergencyContact": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "path": "/root.custom.emergencyContact"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 199
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Text": "Emergency Contact"
+          },
+          "path": "Volunteers/Templates/Header",
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FirstName"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "/root.custom.emergencyContact.firstName"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "enabled": false,
+                    "text": "First Name*"
+                  },
+                  "path": "Volunteers/Templates/Application/TextInput",
+                  "style": {
+                    "marginTop": "5px"
+                  },
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "LastName"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "/root.custom.emergencyContact.lastName"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "enabled": false,
+                    "text": "Last Name*"
+                  },
+                  "path": "Volunteers/Templates/Application/TextInput",
+                  "style": {
+                    "marginTop": "5px"
+                  },
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "CommunicationMethod"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.Options": {
+                    "binding": {
+                      "config": {
+                        "queryPath": "Participants/Registration/GetCommunicationType"
+                      },
+                      "type": "query"
+                    }
+                  },
+                  "props.params.SelectedValue": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "/root.custom.emergencyContact.relationship"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "Text": "Relationship",
+                    "enabled": false
+                  },
+                  "path": "Volunteers/Templates/Application/SelectionInput",
+                  "style": {
+                    "marginTop": "5px"
+                  },
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer Left"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "paddingLeft": "25px",
+                "paddingRight": "20px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Phone"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "/root.custom.emergencyContact.phone"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "enabled": false,
+                    "text": "Phone"
+                  },
+                  "path": "Volunteers/Templates/Application/TextInput",
+                  "style": {
+                    "marginTop": "5px"
+                  },
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Alt_Phone"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "/root.custom.emergencyContact.altPhone"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "enabled": false,
+                    "text": "Alternate Phone"
+                  },
+                  "path": "Volunteers/Templates/Application/TextInput",
+                  "style": {
+                    "marginTop": "5px"
+                  },
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer Right"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "paddingLeft": "15px",
+                "paddingRight": "30px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "custom": {
+      "emergencyContact": {
+        "altPhone": "",
+        "firstName": "",
+        "lastName": "",
+        "phone": "",
+        "relationship": null
+      },
+      "personalInfo": null
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

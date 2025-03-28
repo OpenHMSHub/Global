@@ -1,0 +1,41 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#16a5bd",
+      "borderStyle": "none",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "color": "#FFFFFF",
+      "cursor": "pointer",
+      "fontFamily": "Gibson",
+      "fontSize": "12px",
+      "fontWeight": "normal",
+      "outlineStyle": "none",
+      "paddingRight": "5px",
+      "textAlign": "end"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#16a5bd",
+        "borderStyle": "none",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "color": "#FFFFFF",
+        "cursor": "pointer",
+        "fontFamily": "Gibson",
+        "fontSize": "12px",
+        "fontWeight": "normal",
+        "outlineStyle": "none",
+        "paddingRight": "5px",
+        "textAlign": "end"
+      }
+    }
+  ]
+}

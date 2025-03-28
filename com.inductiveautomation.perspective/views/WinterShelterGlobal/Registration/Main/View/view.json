@@ -1,0 +1,49 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CongregationInformation"
+        },
+        "position": {
+          "height": 0.955,
+          "width": 0.3175
+        },
+        "props": {
+          "params": {
+            "locationID": 162
+          },
+          "path": "WinterShelter/Registration/Steps/Confirmation"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "RegistrationDetail"
+        },
+        "position": {
+          "height": 0.9712,
+          "width": 0.6813,
+          "x": 0.3175
+        },
+        "props": {
+          "params": {
+            "locationID": 160
+          },
+          "path": "WinterShelter/Registration/Detail/RegistrationDetail"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

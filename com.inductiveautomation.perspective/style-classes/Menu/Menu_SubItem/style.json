@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "#64aded",
+      "fontFamily": "Proxima Nova",
+      "fontSize": "20px",
+      "fontWeight": "bold"
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "custom": {},
+  "params": {
+    "funcAddVolunteer": false
+  },
+  "propConfig": {
+    "params.funcAddVolunteer": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 47,
+      "width": 1100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_Placeholder_3"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.view.params.funcAddVolunteer \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_save"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Main",
+            "marginBottom": "5px",
+            "marginTop": "5px"
+          },
+          "text": "Save"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder_1"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tpopupId \u003d \u0027NewCoordinator\u0027\n\tsystem.perspective.closePopup(popupId)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "button_cancel"
+        },
+        "position": {
+          "basis": "140px"
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Secondary_Orange",
+            "marginBottom": "5px",
+            "marginTop": "5px"
+          },
+          "text": "Cancel"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "50px",
+          "display": false,
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Error_Message"
+          },
+          "text": "coordinator saved successfully."
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "showError",
+              "pageScope": false,
+              "script": "\timport time\n\tsystem.perspective.print(payload[\u0027message\u0027])\n\tself.props.text \u003d payload[\u0027message\u0027]\n\tself.position.display \u003d True\n\ttime.sleep(5)\n\tself.position.display \u003d False",
+              "sessionScope": true,
+              "viewScope": true
+            }
+          ]
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder_2"
+        },
+        "position": {
+          "basis": "450px",
+          "display": false,
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

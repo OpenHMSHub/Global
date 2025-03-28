@@ -1,0 +1,101 @@
+{
+  "custom": {},
+  "params": {
+    "Partial": true,
+    "case_manager_id": "",
+    "full": false
+  },
+  "propConfig": {
+    "params.case_manager_id": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.full": {
+      "binding": {
+        "config": {
+          "expression": "If({/root/ToggleSwitch.props.selected},False,True)"
+        },
+        "transforms": [
+          {
+            "code": "\treturn False",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "120px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "color": "#0c4e8b",
+            "paddingLeft": "30px"
+          },
+          "text": "Full Registration"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "props": {
+          "color": {
+            "selected": "#3EC3D9",
+            "unselected": "#3EC3D9"
+          },
+          "selected": true
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "130px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "color": "#0c4e8b"
+          },
+          "text": "Partial Registration"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

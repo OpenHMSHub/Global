@@ -1,0 +1,15 @@
+{
+  "base": {
+    "style": {
+      "color": "#1CBFBB",
+      "fontFamily": "Gibson",
+      "fontSize": "18px"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "checked",
+      "style": {}
+    }
+  ]
+}

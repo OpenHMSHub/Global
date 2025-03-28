@@ -1,0 +1,216 @@
+{
+  "custom": {},
+  "params": {
+    "tab_id": "Registrations"
+  },
+  "propConfig": {
+    "params.tab_id": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 985
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Tabstrip"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.tab_id": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.tab_id"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "path": "WinterShelter/Dashboard/Components/TabStrip/TabStrip"
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "winter-shelter-navigation-tabs-old",
+                  "pageScope": true,
+                  "script": "\tselectedTab \u003d payload[\u0027selectedTab\u0027]\n\t\n\tsystem.perspective.print(\"messageHandler\")\n\t\n\tif selectedTab \u003d\u003d \"Overview\":\n\t\ttabId \u003d 1\n\telif selectedTab \u003d\u003d \"Schedule\":\n\t\ttabId \u003d 2\n\telif selectedTab \u003d\u003d \"Registrations\":\n\t\ttabId \u003d 3\n\telif selectedTab \u003d\u003d \"Congregations\":\n\t\ttabId \u003d 4\n\telif selectedTab \u003d\u003d \"Tasks\":\n\t\ttabId \u003d 5\n\telif selectedTab \u003d\u003d \"Support\":\n\t\ttabId \u003d 6\n\telse:\n\t\ttabId \u003d 1\n\t\t\n\tlogger \u003d system.util.getLogger(\"WinterShelterNav\")\n\tlogger.info(selectedTab + \": \" + str(tabId))\n\t\n\tself.view.params.tab_id \u003d tabId",
+                  "sessionScope": true,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "EmbeddedView_2"
+                },
+                "position": {
+                  "basis": "51px"
+                },
+                "propConfig": {
+                  "props.params.Text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.tab_id} \u003d \"Registrations\",\u0027NEW REGISTRATION\u0027,\r\nif({view.params.tab_id} \u003d \"Congregations\", \u0027NEW CONGREGATION\u0027,\u0027\u0027))"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.tab_id} \u003d \"Registrations\",\u0027WinterShelter/Dashboard/Components/Buttons/New_Registration\u0027,\r\nif({view.params.tab_id} \u003d \"Congregations\", \u0027WinterShelter/Dashboard/Components/Buttons/New_Congregation\u0027,0))"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "paddingLeft": 4
+                  },
+                  "useDefaultViewHeight": true,
+                  "useDefaultViewWidth": true
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Controls"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.tab_id} \u003d \"Registrations\" ,True,\r\nif({view.params.tab_id} \u003d \"Congregations\", True,False))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "flex-end",
+              "direction": "column",
+              "justify": "flex-end",
+              "style": {
+                "classes": "Background/Default",
+                "marginRight": "40px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Tabs_Header"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "classes": "Background/Default",
+            "overflow": "hidden"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "100%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.tab_id"
+              },
+              "transforms": [
+                {
+                  "fallback": null,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Overview",
+                      "output": "WinterShelter/Dashboard/Tabs/Dashboard_Overview"
+                    },
+                    {
+                      "input": "Registrations",
+                      "output": "WinterShelter/Dashboard/Tabs/Dashboard_Registrations"
+                    },
+                    {
+                      "input": "Congregations",
+                      "output": "WinterShelter/Dashboard/Tabs/Dashboard_Congregations"
+                    },
+                    {
+                      "input": "Schedule",
+                      "output": "WinterShelter/Dashboard/Tabs/Dashboard_Schedule"
+                    },
+                    {
+                      "input": "Tasks",
+                      "output": "WinterShelter/Dashboard/Tabs/Dashboard_Tasks"
+                    },
+                    {
+                      "input": "Support",
+                      "output": "WinterShelter/Dashboard/Tabs/Dashboard_Support"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "winter-shelter-navigation-old",
+          "pageScope": true,
+          "script": "\tselectedTab \u003d payload[\u0027selectedTab\u0027]\n\t\t\n\tsystem.perspective.print(selectedTab)\n\t\n\tif selectedTab \u003d\u003d \"Overview\":\n\t\ttabId \u003d 1\n\telif selectedTab \u003d\u003d \"Schedule\":\n\t\ttabId \u003d 2\n\telif selectedTab \u003d\u003d \"Registrations\":\n\t\ttabId \u003d 3\n\telif selectedTab \u003d\u003d \"Congregations\":\n\t\ttabId \u003d 4\n\telif selectedTab \u003d\u003d \"Tasks\":\n\t\ttabId \u003d 5\n\telif selectedTab \u003d\u003d \"Support\":\n\t\ttabId \u003d 6\n\telse:\n\t\ttabId \u003d 1\n\t\t\n\tsystem.perspective.print(tabId)\n\t\n\tself.view.params.tab_id \u003d tabId",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

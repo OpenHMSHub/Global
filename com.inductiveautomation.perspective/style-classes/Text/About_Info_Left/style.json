@@ -1,0 +1,15 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "color": "#0C4E8B",
+      "fontFamily": "Proxima NovaC",
+      "fontSize": "15px",
+      "overflowWrap": "normal",
+      "paddingLeft": "2px",
+      "textAlign": "left",
+      "textOverflow": "clip",
+      "whiteSpace": "nowrap"
+    }
+  }
+}

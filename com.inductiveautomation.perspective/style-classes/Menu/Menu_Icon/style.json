@@ -1,0 +1,12 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#0c4e8b",
+      "color": "#64aded",
+      "fontFamily": "sans-serif",
+      "fontSize": "20px",
+      "fontWeight": "bold",
+      "opacity": "0.70"
+    }
+  }
+}

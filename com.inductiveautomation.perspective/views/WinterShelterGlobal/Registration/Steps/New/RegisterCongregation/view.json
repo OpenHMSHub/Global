@@ -1,0 +1,994 @@
+{
+  "custom": {
+    "createNew": false,
+    "existingCongregations": {
+      "$": [
+        "ds",
+        192,
+        1742455743097
+      ],
+      "$columns": [
+        {
+          "data": [
+            0
+          ],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "ASDF"
+          ],
+          "name": "providerName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "asdf"
+          ],
+          "name": "street",
+          "type": "String"
+        }
+      ]
+    },
+    "navURL": "/WinterShelter/Congregations/Detail/0/Registrations/1",
+    "newRegistration": true,
+    "password2": ""
+  },
+  "params": {
+    "address": "",
+    "congregationName": "",
+    "create": false,
+    "email": "",
+    "password": "",
+    "register": false
+  },
+  "propConfig": {
+    "custom.createNew": {
+      "binding": {
+        "config": {
+          "expression": "false"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.existingCongregations": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "congregationName": "\"LIKE \u0027%\" + {view.params.congregationName} + \"%\u0027\"",
+            "street": "\"LIKE \u0027%\" + {view.params.address} + \"%\u0027\""
+          },
+          "queryPath": "WinterShelterGlobal/Registration/matchCongregationName"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.navURL": {
+      "binding": {
+        "config": {
+          "expression": "\u0027/WinterShelter/Congregations/Detail/\u0027 + try({view.custom.existingCongregations}[0,\u0027id\u0027],0) + \u0027/Registrations/1\u0027"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.newRegistration": {
+      "binding": {
+        "config": {
+          "path": "view.custom.existingCongregations"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getRowCount()\u003d\u003d1",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.password2": {
+      "persistent": true
+    },
+    "params.address": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.create": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.email": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.password": {
+      "paramDirection": "inout"
+    },
+    "params.register": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "text": "Winter Shelter New Registration"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/RegistrationHeader",
+          "style": {
+            "marginLeft": "-50px",
+            "marginRight": "-50px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CongregationName"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.congregationName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "Organization Name",
+            "requiredField": true,
+            "text": "Congregation Name"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TextInput",
+          "tooltip": {
+            "style": {
+              "color": "#2B2B2B"
+            }
+          }
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.address"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "Line 1",
+            "requiredField": true,
+            "text": "Address"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TextInput_0"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.email"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "email@email.com",
+            "requiredField": true,
+            "text": "Primary Coordinator Email"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Password"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Password"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "PasswordField"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.password"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_TextFieldWhite",
+            "marginBottom": "0px"
+          }
+        },
+        "type": "ia.input.password-field"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Confirm Password"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if ({view.custom.password2}\u003d\u0027\u0027\r\n\t, \u0027*\u0027\r\n\t,if({view.params.password} \u003d {view.custom.password2}, \u0027*\u0027, \u0027* Passwords must match\u0027))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#D80000",
+                "fontSize": "14px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Password_0"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "PasswordField_0"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.password2"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_TextFieldWhite",
+            "marginBottom": "0px"
+          }
+        },
+        "type": "ia.input.password-field"
+      },
+      {
+        "meta": {
+          "name": "Checkbox"
+        },
+        "position": {
+          "basis": "36px",
+          "display": false
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{this.props.text} !\u003d \u0027\u0027 \u0026\u0026 !{view.custom.createNew}"
+              },
+              "enabled": false,
+              "type": "expr"
+            }
+          },
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationMatch"
+              },
+              "enabled": false,
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.existingCongregations"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,\u0027providerName\u0027) \u003d\u003d self.view.params.congregationName and value.getValueAt(0,\u0027street\u0027) \u003d\u003d self.view.params.address:\n\t\t\treturn \u0027\u0027\n\t\telif self.view.params.congregationName \u003d\u003d \u0027\u0027 and self.view.params.address \u003d\u003d \u0027\u0027:\n\t\t\treturn \u0027\u0027\n\t\treturn \"Use \" + value.getValueAt(0,\u0027providerName\u0027) + \" at \" + value.getValueAt(0,\u0027street\u0027)\n\treturn \u0027\u0027 ",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "checkedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          },
+          "style": {
+            "color": "#9db8d1",
+            "fontFamily": "Proxima NovaC Medium",
+            "fontSize": "14px",
+            "marginTop": "10px"
+          },
+          "text": "",
+          "uncheckedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          }
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tfrom com.inductiveautomation.ignition.common.user import ContactInfo\n\t#Check valid entries.\n\tcongregationName \u003d self.view.params.congregationName\n\tstreetAddress \u003d self.view.params.address\n\temail \u003d self.view.params.email\n\tpassword \u003d self.view.params.password\n\tif congregationName \u003d\u003d \u0027\u0027 or streetAddress \u003d\u003d \u0027\u0027 or email \u003d\u003d \u0027\u0027 or password \u003d\u003d \u0027\u0027:\n\t\treturn\n\tif \u0027@\u0027 not in email:\n\t\treturn\n\t\n\t#Add congregation name, street and email to the provider table\n\tproviderID \u003d system.db.runNamedQuery(path \u003d \u0027WinterShelterGlobal/Registration/NewProviderBasic\u0027\n\t\t, parameters \u003d {\u0027congregation\u0027:congregationName, \u0027line1\u0027: streetAddress, \u0027state\u0027: \u0027TN\u0027, \u0027email\u0027:email, \u0027typeId\u0027:8}\n\t\t, getKey\u003dTrue)\n\t\t\n\t#Add congregation to Breeze\n#\tIntegrations.breeze.helper.addNewTag(\"Congregations\", congregationName)\n#\tbreezeId \u003d Integrations.breeze.helper.getTagID(congregationName)\n\t\n\t#Create a new user and credentials for the congregation.\n\tusername \u003d congregationName.replace(\u0027 \u0027,\u0027\u0027)\n\tusername \u003d username.lower()\n\tif len(username)\u003e10: username \u003d username[:10]\n\ttestUsername \u003d username\n\tfor i in range(1,100):\n\t\texistingUser \u003d system.user.getUser(\u0027congregation\u0027, testUsername)\n\t\tif existingUser is None:\n\t\t\tusername \u003d testUsername\n\t\t\tbreak\n\t\telse: testUsername \u003d username + str(i)\n\tnewUser \u003d system.user.getNewUser(\u0027congregation\u0027, username)\n\tnewUser.set(\"password\", password)\n\tnewUser.set(\"firstname\",congregationName)\n\tnewEmail \u003d ContactInfo(\u0027email\u0027,email)\n\tnewUser.setContactInfo([newEmail])\n\ttry: newUser.addRole(\u0027User\u0027)\t\t#If role becomes important, handle here.\n\texcept: pass\t\n\taddUserResult \u003d system.user.addUser(\u0027congregation\u0027, newUser)\n\n\tcongregationID \u003d system.db.runNamedQuery(path \u003d \"WinterShelterGlobal/Registration/NewCongregationBasic\"\n\t\t, parameters \u003d {\u0027breezeId\u0027:1, \u0027username\u0027:username, \u0027providerId\u0027: providerID}\n\t\t, getKey\u003dTrue)\n\t\n\t#Add information to the Location table including congregationId\n\tlocationId \u003d system.db.runNamedQuery(path \u003d \"WinterShelterGlobal/Registration/NewLocationBasic\"\n\t\t, parameters \u003d {\u0027line1\u0027:streetAddress , \u0027congregationId\u0027:congregationID , \u0027locationName\u0027:congregationName}\n\t\t, getKey \u003d True)\n\t\t\n\t#Add information to the LocationSeasonal table including locationId and seasonsId\n\tseasonId \u003d calendar.getCurrentSeasonId()\n\tlocationSeasId \u003d system.db.runNamedQuery(path \u003d \"WinterShelterGlobal/Registration/NewLocationSeasonalBasic\"\n\t\t, parameters \u003d {\u0027locationId\u0027: locationId, \u0027seasonId\u0027: seasonId}\n\t\t, getKey \u003d True)\n\t\n\t#Email Winter Shelter link, username and passwords to coordinator\n\t#This will need to be updated once email profile is worked out.\n\tlink \u003d \"link to winter shelter portal project\"\n\tfromAddress \u003d project.GetEmails.getRitiMainEmail()\n\ttoAddress \u003d [email]\n\tsubject \u003d \u0027Room in the Inn: Winter Shelter Registration Username and Link\u0027\n\tbody \u003d \"Room in the Inn has invited you to create your own Winter Shelter account.\"\n\tbody +\u003d \"The username for \" + congregationName + \" is \u0027\" + username + \"\u0027 and the password is \u0027\" + password + \"\u0027. \"\n\tbody +\u003d \"The following link will take you to the Discovery page to complete your registration: \" + link\n\tbody +\u003d \"\\n\\n\"\n\tbody +\u003d \"Winter Shelter Team\\nRoom in the Inn\\n\"+ toAddress +\"\\n111-222-3333\"\n\tsmtpProfile \u003d project.GetEmails.getsmptProfile()\n#\tsmtp \u003d \u0027smtp.mail.yahoo.com\u0027\n#\tsystem.net.sendEmail(smtp, fromAddress, subject, body, to\u003dtoAddress,smtpProfile \u003d smtpProfile)\n\tsystem.net.sendEmail(smtpProfile \u003d smtpProfile, fromAddr \u003d fromAddress, subject \u003d subject, body \u003d body, to \u003d toAddress)\n\n\tlogger \u003d system.util.getLogger(\u0027EmailLogs\u0027)\n\tlogger.info(\u0027Subject: \u0027 + subject + \u0027 \\nBody: \u0027 + body + \u0027 \\nTo: \u0027 + email)\n\t\n\tsystem.perspective.sendMessage(\u0027resetWinterRegistration\u0027,{},\u0027session\u0027)\n\tbackID \u003d \"Registrations\"\n\ttabId \u003d 1\n\t\n\t## Insert Activity log record for congregation created\n\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n\tsystem.db.runPrepUpdate(insertLogQuery, [locationId, \"congregation_created\", congregationName])\n\t## Insert Activity log record for new registration\n#\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n#\tsystem.db.runPrepUpdate(insertLogQuery, [locationId, \"new_registration\", congregationName])\n\t\n#\tpage \u003d \u0027/WinterShelter/Congregations/Detail/\u0027 + str(locationId) + \u0027/\u0027  + str(backID) + \"/1\"\n\tsystem.perspective.navigate(view \u003d\"WinterShelter/Detail/Congregation_Detail\", params \u003d {\"locationId\":locationId,\"tab_id\":tabId,\"backID\":backID})\n\tsystem.perspective.sendMessage(\"wintershelter_detail_tab_select\",payload\u003d{\u0027tab_id\u0027:\u0027Registration\u0027}, scope\u003d\"session\")\n\tself.view.params.congregationName \u003d \u0027\u0027\n\tself.view.params.address \u003d \u0027\u0027\n\tself.view.params.password \u003d \u0027\u0027\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.createNew \u003d False\n\tself.view.params.email \u003d \u0027\u0027\n\tsystem.perspective.closeDock(\u0027NewCongregation\u0027)\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "CreateButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.createNew} \u0026\u0026 {view.custom.password2} \u003d {view.params.password}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Main",
+                "marginRight": "30px"
+              },
+              "text": "Create"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tif self.view.params.congregationName !\u003d \u0027\u0027 and self.view.params.address !\u003d \u0027\u0027:\n\t\tself.view.custom.createNew \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "CreateNewButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.congregationName} !\u003d \u0027\u0027 \u0026\u0026 {view.params.address} !\u003d \u0027\u0027 \u0026\u0026 !{view.custom.createNew}"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value:\n\t\tif self.view.custom.existingCongregations.getRowCount()\u003e0:\n\t\t\tFalse\n\t\telse:\n\t\t\treturn True\n\treturn False",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Main",
+                "marginRight": "30px"
+              },
+              "text": "Create",
+              "textStyle": {
+                "color": "#FFFFFF"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": [
+                  {
+                    "config": {
+                      "page": "{view.custom.navURL}"
+                    },
+                    "enabled": false,
+                    "scope": "C",
+                    "type": "nav"
+                  },
+                  {
+                    "config": {
+                      "script": "\tlocationId \u003d 0\n\tif self.view.custom.existingCongregations is not None and self.view.custom.existingCongregations.getRowCount() \u003e 0:\n\t\tlocationId \u003d self.view.custom.existingCongregations.getValueAt(0,\u0027id\u0027)\n\t\tcongregationName \u003d self.view.custom.existingCongregations.getValueAt(0,\u0027providerName\u0027)\n\t\t## Insert Activity log record\n#\t\tinsertLogQuery \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription,timeCreated) VALUES (?,?,?,CURRENT_TIMESTAMP)\"\n#\t\tsystem.db.runPrepUpdate(insertLogQuery, [locationId, \"new_registration\", congregationName])\n\tsystem.perspective.navigate(view \u003d\"WinterShelter/Detail/Congregation_Detail\", params \u003d {\"locationId\":locationId,\"tab_id\":1})\n\tsystem.perspective.sendMessage(\"wintershelter_detail_tab_select\",payload\u003d{\u0027tab_id\u0027:\u0027Registration\u0027}, scope\u003d\"session\")\n\tself.view.params.congregationName \u003d \u0027\u0027\n\tself.view.params.address \u003d \u0027\u0027\n\tself.view.params.password \u003d \u0027\u0027\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.createNew \u003d False\n\tself.view.params.email \u003d \u0027\u0027\n\tsystem.perspective.closeDock(\u0027NewCongregation\u0027)"
+                    },
+                    "scope": "G",
+                    "type": "script"
+                  }
+                ]
+              }
+            },
+            "meta": {
+              "name": "RegisterButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.newRegistration"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Main",
+                "marginRight": "30px"
+              },
+              "text": "Register"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.params.congregationName \u003d \u0027\u0027\n\tself.view.params.address \u003d \u0027\u0027\n\tself.view.params.password \u003d \u0027\u0027\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.createNew \u003d False\n\tself.view.params.email \u003d \u0027\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "ClearButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{../CreateButton.position.display}\r\n\u0026\u0026 !{../CreateNewButton.position.display}\r\n\u0026\u0026 !{../RegisterButton.position.display}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#AAAAAA"
+                }
+              },
+              "style": {
+                "classes": "Buttons/Delete",
+                "marginRight": "30px"
+              },
+              "text": "Clear"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.params.congregationName \u003d \u0027\u0027\n\tself.view.params.address \u003d \u0027\u0027\n\tself.view.params.password \u003d \u0027\u0027\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.createNew \u003d False\n\tself.view.params.email \u003d \u0027\u0027\n\tsystem.perspective.sendMessage(\u0027resetWinterRegistration\u0027,{},\u0027session\u0027)\n\tsystem.perspective.closeDock(\u0027NewCongregation\u0027)\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Cancel Button"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{../ClearButton.position.display}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#AAAAAA"
+                }
+              },
+              "style": {
+                "classes": "Buttons/Secondary_Orange",
+                "marginRight": "30px"
+              },
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "35px"
+        },
+        "props": {
+          "style": {
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "component": {
+            "onRowClick": {
+              "config": {
+                "script": "\tif len(self.props.selection.data) \u003e 0:\n\t\tproviderName \u003d self.props.selection.data[0].providerName\n\t\tif providerName !\u003d \u0027No Match\u0027:\n\t\t\tself.view.params.congregationName \u003d providerName\n\t\t\tself.view.params.address \u003d self.props.selection.data[0].street\n\t\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.existingCongregations"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,\u0027providerName\u0027) \u003d\u003d self.view.params.congregationName and value.getValueAt(0,\u0027street\u0027) \u003d\u003d self.view.params.address:\n\t\t\treturn False\n\t\telif self.view.params.congregationName \u003d\u003d \u0027\u0027 and self.view.params.address \u003d\u003d \u0027\u0027:\n\t\t\treturn False\n\t\treturn True\n\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.existingCongregations"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount()\u003d\u003d0:\n\t\tvalue \u003d  system.dataset.addRow(value, [0, \u0027No Match\u0027, \u0027\u0027])\n\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "classes": "Table/Cell_Dashboard_NoBG"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "providerName",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail Background/Default"
+                },
+                "title": "Congregation"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Background/Default Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "street",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail Background/Default"
+                },
+                "title": "Address"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Background/Default Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "dragOrderable": false,
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "highlight": {
+              "color": "#ccffff"
+            }
+          },
+          "selection": {
+            "style": {
+              "backgroundColor": "#9af4eb4d"
+            }
+          },
+          "style": {
+            "classes": "Background/Default Table/Column_Normal",
+            "marginLeft": "-50px",
+            "marginRight": "-50px"
+          }
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "resetWinterRegistration",
+          "pageScope": true,
+          "script": "\tself.view.custom.createNew \u003d False\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.newRegistration \u003d False\n\t",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

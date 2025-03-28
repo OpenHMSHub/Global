@@ -1,0 +1,183 @@
+{
+  "custom": {},
+  "params": {
+    "options": {
+      "$": [
+        "ds",
+        192,
+        1632318613245
+      ],
+      "$columns": [
+        {
+          "data": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "name": "ID",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Once",
+            "Twice",
+            "Three Times",
+            "A LAdy",
+            "And",
+            "that\u0027s all"
+          ],
+          "name": "Value",
+          "type": "String"
+        }
+      ]
+    },
+    "selectedId": "",
+    "text": "Congregation"
+  },
+  "propConfig": {
+    "params.options": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectedId": {
+      "binding": {
+        "config": {
+          "path": "/root/FlexContainer/Dropdown.props.value"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.selectedId[0]": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 258,
+      "width": 598
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_Space"
+        },
+        "position": {
+          "basis": "2px"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "custom": {
+              "selectedID": ""
+            },
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "100%"
+            },
+            "propConfig": {
+              "props.options": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.options"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.props.value}\u003d\u0027\u0027,\u0027Text/Add_InfoText_With_Border_Lt\u0027,\u0027Text/Add_TextArea_With_Border\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "Text/Add_InfoText"
+              },
+              "placeholder": {
+                "icon": {
+                  "color": "#0d80e3"
+                },
+                "text": "Select"
+              },
+              "search": {
+                "matching": "start"
+              },
+              "style": {}
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "props": {
+          "alignContent": "space-between",
+          "justify": "center",
+          "style": {
+            "marginBottom": 0,
+            "marginLeft": 5,
+            "marginTop": 0,
+            "overflow": "visible",
+            "paddingBottom": 0,
+            "paddingTop": 0
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

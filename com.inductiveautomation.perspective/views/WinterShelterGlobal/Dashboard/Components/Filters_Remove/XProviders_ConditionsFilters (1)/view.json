@@ -1,0 +1,499 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\ttry:\n\t\troot \u003d self.getChild(\"root\")\n\t\troot.setPropsDropdowns()\n\t\t#emvSearch \u003d root.getChild(\"emvSearch\")\n\t\t#emvSearch.props.params.keyUpPulse \u003d False\n\texcept:\n\t\timport traceback\n\t\tlogger \u003d system.util.getLogger(\"Providers\")\n\t\tmsg \u003d self.name + \u0027:\\n\u0027\n\t\tmsg +\u003d traceback.format_exc()\n\t\tlogger.error(msg)\t\t\t"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 1820
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "emvActivityRange"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.actionPerformedPulse": {
+            "onChange": {
+              "enabled": null,
+              "script": "\troot \u003d self.parent\n\troot.sendMsgCondition()\t"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "actionPerformedPulse": true,
+            "clear": false,
+            "multiSelect": false,
+            "options": [
+              {
+                "label": "Yesterday",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1622937600000
+                }
+              },
+              {
+                "label": "7 Days",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1622419200000
+                }
+              },
+              {
+                "label": "14 Days",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1621814400000
+                }
+              },
+              {
+                "label": "30 Days",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1620432000000
+                }
+              },
+              {
+                "label": "60 Days",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1617840000000
+                }
+              },
+              {
+                "label": "90 Days",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1615248000000
+                }
+              },
+              {
+                "label": "180 Days",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1607472000000
+                }
+              },
+              {
+                "label": "1 Year",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1591488000000
+                }
+              },
+              {
+                "label": "2 Years",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1559865600000
+                }
+              },
+              {
+                "label": "3 Years",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1528329600000
+                }
+              },
+              {
+                "label": "4 Years",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1496793600000
+                }
+              },
+              {
+                "label": "5 Years",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": 1465257600000
+                }
+              },
+              {
+                "label": "All Time",
+                "value": {
+                  "$": [
+                    "ts",
+                    192,
+                    1623084426494
+                  ],
+                  "$ts": -1532736000000
+                }
+              }
+            ],
+            "placeholder": "Activity Range",
+            "selection": null
+          },
+          "path": "Providers/Dashboard/Components/Filters/Conditional_DropDown",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "marginLeft": "40px"
+          }
+        },
+        "scripts": {
+          "customMethods": [
+            {
+              "name": "setOptions",
+              "params": [],
+              "script": "\tmidnight \u003d system.date.midnight(system.date.now())\n\t\n\tlstDateFrom \u003d \t[\n\t[system.date.addDays(midnight, -1), \u0027Yesterday\u0027],\n\t[system.date.addDays(midnight,-7), \u00277 Days\u0027],\n\t[system.date.addDays(midnight, -14), \u002714 Days\u0027],\n\t[system.date.addDays(midnight, -30), \u002730 Days\u0027],\n\t[system.date.addDays(midnight,-60), \u002760 Days\u0027],\n\t[system.date.addDays(midnight,-90), \u002790 Days\u0027],\n\t[system.date.addDays(midnight,-180), \u0027180 Days\u0027],\n\t[system.date.addYears(midnight, -1), \u00271 Year\u0027],\n\t[system.date.addYears(midnight, -2), \u00272 Years\u0027],\n\t[system.date.addYears(midnight, -3), \u00273 Years\u0027],\n\t[system.date.addYears(midnight, -4), \u00274 Years\u0027],\n\t[system.date.addYears(midnight, -5), \u00275 Years\u0027],\n\t[system.date.addYears(midnight, -100), \u0027All Time\u0027]\t\n\t]\n\t\t\n\tself.props.params.options \u003d [ dict(value \u003d x[0],label \u003d x[1]) for x in lstDateFrom]\n"
+            }
+          ],
+          "extensionFunctions": null,
+          "messageHandlers": []
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "emvProviderType"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "props.params.actionPerformedPulse": {
+            "onChange": {
+              "enabled": null,
+              "script": "\troot \u003d self.parent\n\troot.sendMsgCondition()\n"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "actionPerformedPulse": false,
+            "clear": false,
+            "multiSelect": true,
+            "options": [
+              {
+                "label": "Community Partner",
+                "value": 0
+              },
+              {
+                "label": "Law Enforcement",
+                "value": 3
+              },
+              {
+                "label": "Medical Facility",
+                "value": 2
+              }
+            ],
+            "placeholder": "Provider Type",
+            "selection": null
+          },
+          "path": "Providers/Dashboard/Components/Filters/Conditional_DropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "scripts": {
+          "customMethods": [
+            {
+              "name": "setOptions",
+              "params": [],
+              "script": "\tquery \u003d \"\"\"\nSELECT [id]\n\t,[providerTypeName]\nFROM [RITIOps].[organization].[ProviderType]\nWHERE [providerTypeName] in (\u0027Community Partner\u0027, \u0027Medical Facility\u0027, \u0027Law Enforcement\u0027)\nORDER BY [providerTypeName]\n\t\"\"\"\n\t\n\tresult \u003d system.db.runPrepQuery(query,[],\u0027RITIOps\u0027)\n\t\n\t# Version 1 set options as list of dictionaries\n\tself.props.params.options \u003d [ dict(value \u003d x[0],label \u003d x[1]) for x in result]\n\t\n\t# Version 2 set options as dataset\n\t#self.props.params.options \u003d result\n\t\n\t"
+            }
+          ],
+          "extensionFunctions": null,
+          "messageHandlers": []
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "emvReferrals"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "props.params.actionPerformedPulse": {
+            "onChange": {
+              "enabled": null,
+              "script": "\troot \u003d self.parent\n\troot.sendMsgCondition()\n"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "actionPerformedPulse": false,
+            "clear": false,
+            "multiSelect": false,
+            "options": [
+              {
+                "label": "0 - 1",
+                "value": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "label": "2 - 10",
+                "value": [
+                  2,
+                  10
+                ]
+              },
+              {
+                "label": "11 - 25",
+                "value": [
+                  11,
+                  25
+                ]
+              },
+              {
+                "label": "26 - 50",
+                "value": [
+                  26,
+                  50
+                ]
+              },
+              {
+                "label": " \u003e 50",
+                "value": [
+                  50,
+                  null
+                ]
+              }
+            ],
+            "placeholder": "(Referrals)",
+            "selection": null
+          },
+          "path": "Providers/Dashboard/Components/Filters/Conditional_DropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "scripts": {
+          "customMethods": [
+            {
+              "name": "setOptions",
+              "params": [],
+              "script": "\tlstValues \u003d [[0,1], [2,10], [11,25], [26,50], [50, None]]\n\t_options \u003d []\n\t\n\tfor _val in lstValues:\n\t\tif _val[0] is None:\n\t\t\t_lab \u003d \u0027 \u003c {}\u0027.format(_val[1])\n\t\telif _val[1] is None:\n\t\t\t_lab \u003d \u0027 \u003e {}\u0027.format(_val[0])\n\t\telse:\n\t\t\t_lab \u003d \u0027{} - {}\u0027.format(_val[0],_val[1])\n\t\t\t\n\t\t_options.append(dict(value \u003d _val, label \u003d _lab))\n\t\t\n\tself.props.params.options \u003d _options\n\n\t"
+            }
+          ],
+          "extensionFunctions": null,
+          "messageHandlers": []
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Placeholder"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_TEMPLATES/Filtering/Filter_Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "lblSearch"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header",
+            "textAlign": "end"
+          },
+          "text": "Search:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "emvSearch"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.keyUpPulse": {
+            "onChange": {
+              "enabled": null,
+              "script": "\troot \u003d self.parent\n\troot.sendMsgCondition()\t"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "clear": false,
+            "keyUpPulse": false,
+            "searchText": ""
+          },
+          "path": "Providers/Dashboard/Components/Filters/Search_Bar",
+          "style": {
+            "classes": "Table/Search_Bar"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\troot \u003d self.parent\n\t\n\temvActivityRange \u003d self.getSibling(\"emvActivityRange\")\n\temvProviderType \u003d self.getSibling(\"emvProviderType\")\n\temvReferral \u003d self.getSibling(\"emvReferrals\")\n\temvSearch \u003d self.getSibling(\"emvSearch\")\n\t\n\temvActivityRange.props.params.clear \u003d True\n\temvProviderType.props.params.clear \u003d True\n\temvReferral.props.params.clear \u003d True\n\temvSearch.props.params.clear \u003d True\n\n\tpayload \u003d {}\n\tpayload[\u0027providerTypeId\u0027] \u003d None\n\tpayload[\u0027activityRangeDate\u0027] \u003d None\n\tpayload[\u0027countReferralFromTo\u0027] \u003d None\n\tpayload[\u0027searchText\u0027] \u003d None\n\troot.sendMsgCondition(payload)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "clearConditions"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "height": 16,
+            "icon": {
+              "color": "#0C4E8B",
+              "path": "material/close"
+            },
+            "position": "center",
+            "width": 16
+          },
+          "style": {
+            "classes": "Filter/Filter_Border_Default Filter/Filter_Container",
+            "marginRight": "37px"
+          },
+          "text": "",
+          "textStyle": {
+            "classes": "GreyColor"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "custom": {
+      "_devClean": false,
+      "_devPulse": false,
+      "_isDev": false
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom._devClean": {
+        "onChange": {
+          "enabled": null,
+          "script": "\t\n\temvProviderType \u003d self.getChild(\"emvProviderType\")\n\temvActivityRange \u003d self.getChild(\"emvActivityRange\")\n\temvSearch \u003d self.getChild(\"emvSearch\")\n\t\n\temvProviderType.props.params.clear \u003d True\n\temvActivityRange.props.params.clear \u003d True\n\temvSearch.props.params.clear \u003d True\n\t\n\n\t\n\tif self.custom._devClean:\n\t\tself.custom._devClean \u003d False"
+        }
+      },
+      "custom._devPulse": {
+        "onChange": {
+          "enabled": null,
+          "script": "\t\n\temvProviderType \u003d self.getChild(\"emvProviderType\")\n\temvActivityRange \u003d self.getChild(\"emvActivityRange\")\n\temvSearch \u003d self.getChild(\"emvSearch\")\n\t\n\t\n\tif self.custom._isDev:\n\t\tif currentValue.value is True:\n\t\t\tself.setPropsDropdowns()\n\t\telse:\n\t\t\temvProviderType.props.params.options \u003d []\n\t\t\temvActivityRange.props.params.options \u003d []\n\t\n\temvProviderType.props.params.actionPerformedPulse \u003d False\n\temvActivityRange.props.params.actionPerformedPulse \u003d False\n\temvSearch.props.params.keyUpPulse \u003d False"
+        }
+      }
+    },
+    "props": {
+      "style": {
+        "classes": "Filter/Header_Text"
+      }
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "setPropsDropdowns",
+          "params": [],
+          "script": "\temvType \u003d self.getChild(\"emvProviderType\")\n\temvActivityRange \u003d self.getChild(\"emvActivityRange\")\n\temvReferrals \u003d self.getChild(\"emvReferrals\")\n\t\n\temvType.setOptions()\n\temvActivityRange.setOptions()\n\temvReferrals.setOptions()"
+        },
+        {
+          "name": "sendMsgCondition",
+          "params": [
+            "payload\u003dNone"
+          ],
+          "script": "\t\n\temvProviderType \u003d self.getChild(\"emvProviderType\")\n\temvActivityRange \u003d self.getChild(\"emvActivityRange\")\n\temvReferrals \u003d self.getChild(\"emvReferrals\")\n\temvSearch \u003d self.getChild(\"emvSearch\")\n\t\n\tif payload is None:\n\t\tpayload \u003d {}\n\t\tpayload[\u0027providerTypeId\u0027] \u003d emvProviderType.props.params.selection\n\t\tpayload[\u0027activityRange\u0027] \u003d emvActivityRange.props.params.selection\n\t\tpayload[\u0027countReferralFromTo\u0027] \u003d emvReferrals.props.params.selection\n\t\tpayload[\u0027searchText\u0027] \u003d emvSearch.props.params.searchText\n\t\n\tsystem.perspective.print((\u0027mhByCondition\u0027,payload)) \n\t\n\tsystem.perspective.sendMessage(\u0027mhByCondition\u0027, payload \u003d payload)\n\t\n"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "refreshProviderTableFromFilter",
+          "pageScope": true,
+          "script": "\tself.sendMsgCondition()",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

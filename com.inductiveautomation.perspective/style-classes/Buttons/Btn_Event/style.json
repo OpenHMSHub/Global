@@ -1,0 +1,18 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF00",
+      "borderColor": "#FFFFFF00"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#FFFFFF00",
+        "borderColor": "#FFFFFF00",
+        "boxShadow": "#FFFFFF00"
+      }
+    }
+  ]
+}

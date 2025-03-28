@@ -1,0 +1,190 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "324758bdf9657e60604bcbc5a22707bcdb6844295cfaff099e56fbd55f4b9f1a",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "locationSeasonId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "beds",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "genderId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "families",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "extraShortNotice",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "showers",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "clothing",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "laundry",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "sackLunches",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "breakfast",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dinner",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "haircuts",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "hygieneItems",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "otherService",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "otherServiceList",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "accessible",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "stairs",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "smoking",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "partners",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "serviceNotes",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "notes",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "scheduleComments",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "reminderCall",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "otherHostMore",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "nights",
+        "sqlType": 0
+      },
+      {
+        "type": "Parameter",
+        "identifier": "hostLocationTypeId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "transportId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "frequencyId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dateSelectionPattern",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dateSelectionDays",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "pickupTime",
+        "sqlType": 7
+      }
+    ]
+  }
+}

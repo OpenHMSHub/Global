@@ -1,0 +1,117 @@
+{
+  "custom": {},
+  "params": {
+    "Name": "Overview",
+    "Selected": true,
+    "SelectedTab": "Overview"
+  },
+  "propConfig": {
+    "params.Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Selected": {
+      "binding": {
+        "config": {
+          "expression": "if({view.params.SelectedTab} \u003d {view.params.Name},true,false)"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.SelectedTab": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 62,
+      "width": 820
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.view.params.SelectedTab \u003d self.view.params.Name"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Name"
+        },
+        "position": {
+          "basis": "45px"
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.Selected},\u0027Tabs/Tab_Selected\u0027,\u0027Tabs/Tab_UnSelected\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Name"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {}
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "underline"
+        },
+        "position": {
+          "basis": "4px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.Selected"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "backgroundColor": "#FF7a59",
+            "borderStyle": "none",
+            "color": "#FF7a59",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-between"
+    },
+    "type": "ia.container.flex"
+  }
+}

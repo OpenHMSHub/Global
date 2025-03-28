@@ -1,0 +1,333 @@
+{
+  "custom": {},
+  "params": {
+    "Row_Data": {
+      "RITINotes": "",
+      "Status": "",
+      "completed": null,
+      "congregationNotes": "",
+      "contact": "",
+      "dueDate": "None",
+      "id": -1,
+      "locationId": -1,
+      "locationName": "",
+      "priorityId": -1,
+      "staffId": -1,
+      "staffName": "",
+      "statusId": -1,
+      "ticketPriority": "",
+      "ticketTypeId": -1,
+      "timeCreated": "",
+      "title": "",
+      "type": ""
+    },
+    "locationId": 160,
+    "view_height": "270px"
+  },
+  "propConfig": {
+    "custom.edit_data": {
+      "persistent": true
+    },
+    "params.Row_Data": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.view_height": {
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 286,
+      "width": 1440
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Row_Data.id"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003d -1,\u0027New Ticket\u0027,concat(\u0027Edit Ticket #\u0027, toStr({value})))",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Header/Header"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView Row1"
+        },
+        "position": {
+          "basis": "160px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Row_Data": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.Row_Data"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationId"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "func_add_task": false,
+            "func_remove_task": false,
+            "locationName": "",
+            "type": ""
+          },
+          "path": "WinterShelterGlobal/Support/Detail/Edit/Row",
+          "style": {
+            "marginLeft": 25,
+            "marginRight": 25
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tnewTicketData \u003d {\n\t  \"RITINotes\": \"\",\n\t  \"Status\": \"\",\n\t  \"completed\": None,\n\t  \"congregationNotes\": \"\",\n\t  \"contact\": \"\",\n\t  \"dueDate\": None,\n\t  \"id\": -1,\n\t  \"locationId\": -1,\n\t  \"locationName\": \"\",\n\t  \"priorityId\": -1,\n\t  \"staffId\": -1,\n\t  \"staffName\": \"\",\n\t  \"statusId\": -1,\n\t  \"ticketPriority\": \"\",\n\t  \"ticketTypeId\": -1,\n\t  \"timeCreated\": None,\n\t  \"title\": \"\",\n\t  \"type\": \"\"\n\t}\n\tnewTicketData[\u0027timeCreated\u0027] \u003d system.date.format(system.date.now(),\u0027MM/dd/YYYY hh:mm a\u0027)\n\tself.view.params.Row_Data \u003d newTicketData\n\t\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "button_new"
+            },
+            "position": {
+              "basis": "120px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Secondary",
+                "marginBottom": "5px",
+                "marginLeft": "20px",
+                "marginTop": "5px"
+              },
+              "text": "New Ticket"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tdataToUpdate \u003d self.parent.parent.getChild(\"EmbeddedView Row1\").props.params.Row_Data\n#\tsystem.perspective.print(\"dataToUpdate\")\n#\tsystem.perspective.print(dataToUpdate)\n\tlocationId \u003d self.view.params.locationId\n\tmissingFields \u003d \"\"\n\t## check that you have all mandetaory fields entered\n\tif dataToUpdate[\u0027title\u0027] \u003d\u003d None or dataToUpdate[\u0027title\u0027] \u003d\u003d \"\":\n\t\tmissingFields \u003d missingFields + \", Subject\"  \n\tif dataToUpdate[\u0027ticketTypeId\u0027] \u003d\u003d None or dataToUpdate[\u0027ticketTypeId\u0027] \u003d\u003d \"\" or dataToUpdate[\u0027ticketTypeId\u0027] \u003d\u003d -1:\n\t\tmissingFields \u003d missingFields + \", Ticket Type\"\n\tif dataToUpdate[\u0027priorityId\u0027] \u003d\u003d None or dataToUpdate[\u0027priorityId\u0027] \u003d\u003d \"\" or dataToUpdate[\u0027priorityId\u0027] \u003d\u003d -1:\n\t\tmissingFields \u003d missingFields + \", Priority\"\n\tif dataToUpdate[\u0027staffId\u0027] \u003d\u003d None or dataToUpdate[\u0027staffId\u0027] \u003d\u003d \"\" or dataToUpdate[\u0027staffId\u0027] \u003d\u003d -1:\n\t\tmissingFields \u003d missingFields + \", Staff\"\t\n\tif dataToUpdate[\u0027statusId\u0027] \u003d\u003d None or dataToUpdate[\u0027statusId\u0027] \u003d\u003d \"\" or dataToUpdate[\u0027statusId\u0027] \u003d\u003d -1:\n\t\tmissingFields \u003d missingFields + \", Status\"\t\t\n\tif dataToUpdate[\u0027dueDate\u0027] \u003d\u003d None or dataToUpdate[\u0027dueDate\u0027] \u003d\u003d \"\" :\n\t\tmissingFields \u003d missingFields + \", Due Date\"\n\t\n\tif missingFields !\u003d \"\":\n\t\terrorMessage \u003d \"Ensure \" + missingFields[1:] + \" value(s) are selected\"\n\t\tself.getSibling(\"Label\").showMessage(errorMessage)\n\telse:\n\t\ttry:\n\t\t\tactivityType \u003d \"\"\n\t\t\tsendMail \u003d False\n\t\t\temailMessage \u003d \"\"\n\t\t\temailSubject \u003d \"\"\n\t\t\tfromAddress \u003d project.GetEmails.getRitiMainEmail()\n\t\t\ttoAddress \u003d [self.view.getChild(\"root\").custom.notificationEmail]\n\t\t\t\n\t\t\tcreatedDate \u003d self.parent.parent.getChild(\"EmbeddedView Row1\").props.params.Row_Data.timeCreated\n\t\t\tif createdDate \u003d\u003d None or createdDate \u003d\u003d \u0027\u0027:\n\t\t\t\tcreatedDate \u003d system.date.now()\n\t\t\tcompletedDate \u003d self.parent.parent.getChild(\"EmbeddedView Row1\").props.params.Row_Data.completed\n\t\t\tnewTaskId \u003d 0\n\t\t\tif dataToUpdate[\u0027id\u0027] \u003d\u003d -1:\n\t\t\t\tactivityType \u003d \"support_ticket_added\"\n\t\t\t\tinsertQ \u003d \"INSERT INTO shelter.Support (locationId, ticketTypeId, title, dueDate, staffId, priority, statusId, congregationNotes, RITINotes, contact, timeCreated, completedDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)\"\n\t\t\t\tnewTaskId \u003d system.db.runPrepUpdate(insertQ, [locationId, dataToUpdate[\u0027ticketTypeId\u0027], dataToUpdate[\u0027title\u0027],dataToUpdate[\u0027dueDate\u0027], dataToUpdate[\u0027staffId\u0027], dataToUpdate[\u0027priorityId\u0027], dataToUpdate[\u0027statusId\u0027] ,dataToUpdate[\u0027congregationNotes\u0027],dataToUpdate[\u0027RITINotes\u0027] ,dataToUpdate[\u0027contact\u0027],createdDate,completedDate ], getKey \u003d 1)\n\t\t\t\tself.getSibling(\"Label\").showMessage(\"New ticket created successfully.\")\n\t\t\t\tself.view.params.Row_Data.id \u003d newTaskId\n\t\t\t\t## check if we need to send email\n\t\t\t\tif self.view.getChild(\"root\").custom.alertOnNewTicket \u003d\u003d \"true\":\n\t\t\t\t\tsendMail \u003d True\n\t\t\t\t\temailSubject \u003d \"New Support Ticket #\" + str(newTaskId)\n\t\t\t\t\temailMessage \u003d \"New Support Ticket is generated. Please review details below : \\n\"\n\t\t\telse:\n\t\t\t\tactivityType \u003d \"support_ticket_modified\"\n\t\t\t\tupdateQ \u003d \"UPDATE shelter.Support SET locationId \u003d ?, ticketTypeId \u003d ?, title \u003d ?, dueDate \u003d ?, staffId \u003d ?, priority \u003d ?, statusId \u003d ?, congregationNotes \u003d ?, RITINotes \u003d ?, contact \u003d ?, completedDate \u003d ? WHERE id \u003d ?\"\n\t\t\t\tnewTaskId \u003d dataToUpdate[\u0027id\u0027] \n#\t\t\t\tsystem.perspective.print(updateQ)\n\t\t\t\tsystem.db.runPrepUpdate(updateQ, [locationId, dataToUpdate[\u0027ticketTypeId\u0027], dataToUpdate[\u0027title\u0027],dataToUpdate[\u0027dueDate\u0027], dataToUpdate[\u0027staffId\u0027], dataToUpdate[\u0027priorityId\u0027], dataToUpdate[\u0027statusId\u0027] , dataToUpdate[\u0027congregationNotes\u0027],dataToUpdate[\u0027RITINotes\u0027] ,dataToUpdate[\u0027contact\u0027],completedDate, dataToUpdate[\u0027id\u0027]])\n\t\t\t\tself.getSibling(\"Label\").showMessage(\"Ticket updated successfully.\")\n\t\t\t\tif self.view.getChild(\"root\").custom.alertOnTicketUpdates \u003d\u003d \"true\":\n\t\t\t\t\tsendMail \u003d True\n\t\t\t\t\temailSubject \u003d \"Updates to Support Ticket #\" + str(newTaskId)\n\t\t\t\t\temailMessage \u003d \"Support Ticket is updated. Please review details below : \\n\"\n\t\t\t\n\t\t\tsystem.perspective.sendMessage(messageType\u003d\"refreshTicketsDashboardData\", payload\u003d{}, scope\u003d\"session\")\n\t\t\t## Log to activity Log\n\t\t\tinsertLogQ \u003d \"INSERT INTO shelter.ActivityLog (locationId, activityType, activityDescription, timeCreated, referenceId) VALUES (?,?,?,CURRENT_TIMESTAMP, ?)\"\n\t\t\tsystem.db.runPrepUpdate(insertLogQ, [self.view.params.locationId,activityType,dataToUpdate[\u0027title\u0027],newTaskId])\n\t\t\t## send email\n\t\t\tif sendMail \u003d\u003d True:\n\t\t\t\tlocationName \u003d self.parent.parent.getChild(\"EmbeddedView Row1\").props.params.locationName\n\t\t\t\ttype \u003d self.parent.parent.getChild(\"EmbeddedView Row1\").props.params.type\n\t\t\t\temailMessage \u003d emailMessage + \"Ticket # - \" + str(newTaskId) + \"\\n\"\n\t\t\t\temailMessage \u003d emailMessage + \"Congregation - \" + str(locationName) + \"\\n\" \n\t\t\t\temailMessage \u003d emailMessage + \"Subject - \" + str(dataToUpdate[\u0027title\u0027]) + \"\\n\"\n\t\t\t\temailMessage \u003d emailMessage + \"Type - \" + str(type) + \"\\n\"\n\t\t\t\tsystem.net.sendEmail(smtpProfile \u003d project.GetEmails.getsmptProfile() , fromAddr \u003d fromAddress, subject \u003d emailSubject, body \u003d emailMessage, to \u003d toAddress)\n\t\texcept Exception as e:\n\t\t\tsystem.perspective.print(\"exception : \" + str(e))\n\t\t\tself.getSibling(\"Label\").showMessage(\"Something went wrong. Please try again.\")\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "button_update"
+            },
+            "position": {
+              "basis": "120px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.Row_Data.id} \u003d -1, \"SAVE TICKET\", \"UPDATE TICKET\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Main",
+                "marginBottom": "5px",
+                "marginLeft": "10px",
+                "marginTop": "5px"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t### Declare parameters\n\tproject \u003d \"RITI\" \n\tid \u003d self.view.params.Row_Data.id\n\t\t\t\n\ttry:\n\t\tupdateQ \u003d \"UPDATE shelter.Support SET timeRetired \u003d CURRENT_TIMESTAMP WHERE id \u003d ?\"\n\t\tsystem.db.runPrepUpdate(updateQ, [id])\n\t\t##### Refresh the table\n\t\tsystem.perspective.sendMessage(messageType\u003d\"refreshTicketsDashboardData\", payload\u003d{}, scope\u003d\"session\")\n\t\t\n\t\t### Let the user know that the record was deleted\n\t\tself.getSibling(\"Label\").showMessage(\"Ticket Deleted.\")\t\n\t\tnewTicketData \u003d {\n\t\t\t  \"RITINotes\": \"\",\n\t\t\t  \"Status\": \"\",\n\t\t\t  \"completed\": None,\n\t\t\t  \"congregationNotes\": \"\",\n\t\t\t  \"contact\": \"\",\n\t\t\t  \"dueDate\": None,\n\t\t\t  \"id\": -1,\n\t\t\t  \"locationId\": -1,\n\t\t\t  \"locationName\": \"\",\n\t\t\t  \"priorityId\": -1,\n\t\t\t  \"staffId\": -1,\n\t\t\t  \"staffName\": \"\",\n\t\t\t  \"statusId\": -1,\n\t\t\t  \"ticketPriority\": \"\",\n\t\t\t  \"ticketTypeId\": -1,\n\t\t\t  \"timeCreated\": None,\n\t\t\t  \"title\": \"\",\n\t\t\t  \"type\": \"\"\n\t\t\t}\n\t\tself.view.params.Row_Data \u003d newTicketData\n\t\t\n\texcept:\n\t\tself.getSibling(\"Label\").showMessage(\"Something went wrong while deleting data. Please try again.\")\t\n\n\t\t\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "button_delete"
+            },
+            "position": {
+              "basis": "120px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.Row_Data.id} \u003e -1 \u0026\u0026 {session.custom.isAdministrator}, True, False)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Delete",
+                "marginBottom": "5px",
+                "marginLeft": "10px",
+                "marginTop": "5px"
+              },
+              "text": "Delete Ticket"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label",
+              "visible": false
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Error_Message"
+              },
+              "text": "Please fill in all the fields correctly before saving."
+            },
+            "scripts": {
+              "customMethods": [
+                {
+                  "name": "showMessage",
+                  "params": [
+                    "message"
+                  ],
+                  "script": "\timport time\n\tself.props.text \u003d message\n\tself.meta.visible \u003d True\n\ttime.sleep(5)\n\tself.meta.visible \u003d False\n\t"
+                }
+              ],
+              "extensionFunctions": null,
+              "messageHandlers": []
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "root Actions"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderTopColor": "#9db8d1",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "classes": "Background/Default",
+            "marginTop": "5px",
+            "paddingTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "custom": {
+      "smtpProfileName": "test.org"
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom.alertOnNewTicket": {
+        "binding": {
+          "config": {
+            "expression": "lookup({this.custom.settingsData},\u0027support_ticket_notifications_new_ticket\u0027,\u0027true\u0027,\u0027settingName\u0027,\u0027settingValue\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "custom.alertOnTicketUpdates": {
+        "binding": {
+          "config": {
+            "expression": "lookup({this.custom.settingsData},\u0027support_ticket_notifications_ticket_updates\u0027,\u0027true\u0027,\u0027settingName\u0027,\u0027settingValue\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "custom.notificationEmail": {
+        "binding": {
+          "config": {
+            "expression": "lookup({this.custom.settingsData},\u0027support_ticket_notifications_email\u0027,\u0027\u0027,\u0027settingName\u0027,\u0027settingValue\u0027)"
+          },
+          "type": "expr"
+        }
+      },
+      "custom.settingsData": {
+        "binding": {
+          "config": {
+            "queryPath": "WinterShelterGlobal/Settings/GetAllSettings"
+          },
+          "type": "query"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

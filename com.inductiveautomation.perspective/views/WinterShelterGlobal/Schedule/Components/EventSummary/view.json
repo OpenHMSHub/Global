@@ -1,0 +1,191 @@
+{
+  "custom": {
+    "Data": null
+  },
+  "params": {
+    "Date": "Apr. 19, 2020 at 11:32 AM",
+    "ID": 58,
+    "Size": 150
+  },
+  "propConfig": {
+    "custom.Data": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "ServiceID": "{view.params.ID}"
+          },
+          "queryPath": "Participants/Activities/SelectSingleServices",
+          "returnFormat": "json"
+        },
+        "transforms": [
+          {
+            "code": "\tif len(value):\n\t\treturn value\n\telse:\n\t\treturn [{\n\t  \"LeaderID\": -1,\n\t  \"Leader\": \"\",\n\t  \"Program\": \"\",\n\t  \"Service\": \"\",\n\t  \"Comment\": \"\",\n\t}]",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.Date": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.ID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Size": {
+      "binding": {
+        "config": {
+          "path": "view.props.defaultSize.height"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 150
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Date": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.Date}"
+              },
+              "transforms": [
+                {
+                  "expression": "dateFormat({value},\"MMM. d, YYYY\") +\" at \"+ dateFormat({value},\"hh:mm a\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Icon": "material/room_service",
+            "Title": "Service"
+          },
+          "path": "Participants/Activity/ActivityHeader"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Leader": {
+            "binding": {
+              "config": {
+                "path": "view.custom.Data[0].Leader"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.LeaderID": {
+            "binding": {
+              "config": {
+                "path": "view.custom.Data[0].LeaderID"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Program": {
+            "binding": {
+              "config": {
+                "path": "view.custom.Data[0].Program"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Service": {
+            "binding": {
+              "config": {
+                "path": "view.custom.Data[0].Service"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Participants/Activity/Services/InformationTop",
+          "style": {
+            "borderTopColor": "#e6e6e6",
+            "borderTopStyle": "solid",
+            "borderTopWidth": 1,
+            "marginLeft": "50px",
+            "marginRight": "50px",
+            "paddingBottom": "5px",
+            "paddingTop": "5px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_2"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Comment": {
+            "binding": {
+              "config": {
+                "path": "view.custom.Data[0].Comment"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Participants/Activity/Services/InformationBottom",
+          "style": {
+            "borderTopColor": "#e6e6e6",
+            "borderTopStyle": "solid",
+            "borderTopWidth": 1,
+            "marginBottom": "10px",
+            "marginLeft": "50px",
+            "marginRight": "50px",
+            "paddingBottom": "5px",
+            "paddingTop": "5px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

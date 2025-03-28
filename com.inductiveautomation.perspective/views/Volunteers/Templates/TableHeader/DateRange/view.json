@@ -1,0 +1,153 @@
+{
+  "custom": {},
+  "params": {
+    "header": "Dates:",
+    "max": null,
+    "min": null,
+    "return_message": ""
+  },
+  "propConfig": {
+    "params.header": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.max": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.min": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.return_message": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 25,
+      "width": 304
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\t#print \"Icon click\"\n\tself.view.params.min \u003d system.date.addYears(system.date.now(),-150)\n\tself.view.params.max \u003d system.date.now()\n\t#Send a message to the requesting view\n\tpayload \u003d {\"min\":self.view.params.min,\"max\":self.view.params.max}\n\tmessageiD \u003d self.view.params.return_message\n\tsystem.perspective.sendMessage(messageiD,payload,scope \u003d \"page\")\n\tsystem.perspective.closePopup(\u0027date_range_popup\u0027)"
+                },
+                "enabled": false,
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tself.view.params.min \u003d None\n\tself.view.params.max \u003d None\n\tpayload \u003d {\"min\":None,\"max\":None}\n\tmessageiD \u003d self.view.params.return_message\n\tsystem.perspective.sendMessage(messageiD,payload,scope \u003d \"page\")\n\tsystem.perspective.closePopup(\u0027date_range_popup\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "16px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#0C4E8B",
+          "path": "material/close",
+          "style": {
+            "classes": "Table/Filter_Clear_Icon",
+            "marginTop": "3px"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": true,
+                "id": "sM9htpBg",
+                "modal": true,
+                "overlayDismiss": true,
+                "position": {
+                  "relativeLocation": "center"
+                },
+                "positionType": "relative",
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "header": "{view.params.header}",
+                  "max": "{view.params.max}",
+                  "min": "{view.params.min}",
+                  "return_message": "{view.params.return_message}"
+                },
+                "viewPath": "Volunteers/Templates/TableHeader/DateRangeSelection"
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "275px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.header} + \" \"+ if(isNull({view.params.min}) | isNull({view.params.max}),\"\", dateFormat({view.params.min},\u0027yyyy-MM-dd\u0027) + \" to \" + dateFormat({view.params.max},\u0027yyyy-MM-dd\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Text",
+            "marginLeft": "5px",
+            "marginTop": "3px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tself.getChild(\"Label\").props.text \u003d self.view.params.header"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "flex-start",
+      "style": {
+        "classes": "Table/Filter_Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

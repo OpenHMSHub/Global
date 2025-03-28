@@ -1,0 +1,12 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#0c4e8b",
+      "color": "#FFFFFF",
+      "fontFamily": "Proxima Nova",
+      "fontSize": "20px",
+      "fontWeight": "bold",
+      "opacity": "1"
+    }
+  }
+}

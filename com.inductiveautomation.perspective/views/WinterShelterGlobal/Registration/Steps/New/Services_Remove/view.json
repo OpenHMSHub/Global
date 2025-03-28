@@ -1,0 +1,2017 @@
+{
+  "custom": {
+    "keyFields": {}
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tlastYearCount \u003d self.getChild(\"root\").getChild(\"GuestNumberSlider\").custom.lastSeason\n\tthisYearCount \u003d self.params.guestCount\n\tif thisYearCount \u003d\u003d \u0027\u0027:\n\t\tif lastYearCount \u003c 8:\n\t\t\tthisYearStart \u003d 8\n\t\telif lastYearCount \u003c 12:\n\t\t\tthisYearStart \u003d 12\n\t\telse:\n\t\t\tthisYearStart \u003d lastYearCount + 1\n\t\tself.params.guestCount \u003d thisYearStart\n\t\tself.params.startGuestCount \u003d thisYearStart"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "comments": "",
+    "families": false,
+    "guestCount": 5,
+    "guestType": 1,
+    "lastSeasonExists": true,
+    "neededToProceed": "",
+    "partners": "",
+    "proceed": true,
+    "services": "",
+    "smoking": false,
+    "stairs": true,
+    "startGuestCount": 8,
+    "weather": 1,
+    "wheelchair": false
+  },
+  "propConfig": {
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#Script to determine if we can proceed to the next page of registration\n\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.GuestTypes": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.guestType} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.guestType})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.NumberOfGuests": {
+      "binding": {
+        "config": {
+          "expression": "{/root/GuestNumberSlider.custom.currentSelection} !\u003d 0"
+        },
+        "type": "expr"
+      }
+    },
+    "params.comments": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.families": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.guestCount": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.guestType": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.lastSeasonExists": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.lastYearCount": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.partners": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.proceed": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.services": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.smoking": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.stairs": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.startGuestCount": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.weather": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.wheelchair": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Text/Add_HeaderText",
+            "paddingLeft": "0px"
+          },
+          "text": "The services your congregation will offer this season"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "LastSeasonAutofill"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.lastSeasonExists"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "checkedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            },
+            "path": "material/radio_button_checked"
+          },
+          "indeterminateIcon": {
+            "path": "material/radio_button_checked"
+          },
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "auto"
+          },
+          "text": "Auto-fill from last season",
+          "uncheckedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            },
+            "path": "material/radio_button_unchecked",
+            "style": {
+              "fontSize": "20px"
+            }
+          }
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Number of Guests"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_6"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px"
+          },
+          "text": "Typical maximum we will send you, unless prior arrangements have been made."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Slider"
+            },
+            "position": {
+              "height": 0.8,
+              "width": 1,
+              "y": 0.2
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "parent.custom.currentSelection"
+                  },
+                  "type": "property"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tlastYear \u003d str(self.parent.custom.lastSeason)\n\tstartCount \u003d self.view.params.startGuestCount\n\tif currentValue.value \u003c startCount:\n\t\tmessage \u003d \"Will you please consider \" + lastYear + \" guests this season? What will you need from Room In The Inn to make this possible?\"\n\t\tsystem.perspective.openPopup(\u0027popupMessage\u0027, \u0027WinterShelter/Registration/Cards/PopupMessage\u0027,params \u003d {\u0027message\u0027:message})"
+                }
+              }
+            },
+            "props": {
+              "handleColor": "#FF0000",
+              "max": 50,
+              "railColor": "#CCCCCC",
+              "trackColor": "#0066FF"
+            },
+            "type": "ia.input.slider"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.4,
+              "width": 0.1014
+            },
+            "propConfig": {
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "expression": "{../Slider.props.value}/({../Slider.props.max}-{../Slider.props.min})-(0.5*{this.position.width})"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "../Slider.props.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "color": "#0066FF",
+                "fontSize": "20px",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Vertical Line"
+            },
+            "position": {
+              "height": 0.25,
+              "width": 0.1,
+              "y": 0.475
+            },
+            "propConfig": {
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.lastSeason}/({../Slider.props.max}-{../Slider.props.min})-(0.5*{this.position.width})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "elements": [
+                {
+                  "fill": {
+                    "paint": "#b2b3b2"
+                  },
+                  "name": "line",
+                  "stroke": {
+                    "miterlimit": "10",
+                    "paint": "#b2b3b2",
+                    "width": "0.3px"
+                  },
+                  "style": {},
+                  "type": "line",
+                  "x1": 5,
+                  "x2": 5,
+                  "y2": 5
+                }
+              ],
+              "preserveAspectRatio": "none",
+              "viewBox": "0 0 10 5"
+            },
+            "type": "ia.shapes.svg"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 0.4,
+              "width": 0.15,
+              "y": 0.7125
+            },
+            "propConfig": {
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.lastSeason}/({../Slider.props.max}-{../Slider.props.min})-(0.5*{this.position.width})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "color": "#CCCCCC",
+                "fontSize": "12px",
+                "textAlign": "center"
+              },
+              "text": "(last season)"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "height": 0.4,
+              "width": 0.15,
+              "y": 0.6125
+            },
+            "propConfig": {
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.lastSeason}/({../Slider.props.max}-{../Slider.props.min})-(0.5*{this.position.width})"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "parent.custom.lastSeason"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#CCCCCC",
+                "fontSize": "12px",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "height": 0.4,
+              "width": 0.06,
+              "y": 0.4
+            },
+            "propConfig": {
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "expression": "{../Slider.props.value}/({../Slider.props.max}-{../Slider.props.min})-(0.5*{this.position.width})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "color": "#0066FF",
+              "path": "material/radio_button_checked",
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderBottomLeftRadius": "20px",
+                "borderBottomRightRadius": "20px",
+                "borderTopLeftRadius": "20px",
+                "borderTopRightRadius": "20px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "InvisibleSlider"
+            },
+            "position": {
+              "height": 0.8,
+              "width": 1,
+              "y": 0.2
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "parent.custom.currentSelection"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "handleColor": "#FF000000",
+              "max": 50,
+              "railColor": "#CCCCCC00",
+              "trackColor": "#0066FF00"
+            },
+            "type": "ia.input.slider"
+          }
+        ],
+        "custom": {
+          "lastSeason": 5
+        },
+        "meta": {
+          "name": "GuestNumberSlider"
+        },
+        "position": {
+          "basis": "80px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.currentSelection": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.guestCount"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Guest Type"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_HeaderText"
+              },
+              "text": "(check all that apply)"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "custom": {
+              "genderId": 1
+            },
+            "meta": {
+              "name": "Men"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.selected": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.genderId} \u003d {this.custom.genderId}"
+                  },
+                  "type": "expr"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tif origin !\u003d \u0027Binding\u0027:\n\t\tself.parent.custom.genderId \u003d self.custom.genderId"
+                }
+              }
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Men Only",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "custom": {
+              "genderId": 2
+            },
+            "meta": {
+              "name": "Women"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.selected": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.genderId} \u003d {this.custom.genderId}"
+                  },
+                  "type": "expr"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tif origin !\u003d \u0027Binding\u0027:\n\t\tself.parent.custom.genderId \u003d self.custom.genderId"
+                }
+              }
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Women Only",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "custom": {
+              "genderId": 3
+            },
+            "meta": {
+              "name": "Either"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.selected": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.genderId} \u003d {this.custom.genderId}"
+                  },
+                  "type": "expr"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tif origin !\u003d \u0027Binding\u0027:\n\t\tself.parent.custom.genderId \u003d self.custom.genderId"
+                }
+              }
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Men or Women Separately",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "custom": {
+              "genderId": 4
+            },
+            "meta": {
+              "name": "Both"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.selected": {
+                "binding": {
+                  "config": {
+                    "expression": "{parent.custom.genderId} \u003d {this.custom.genderId}"
+                  },
+                  "type": "expr"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tif origin !\u003d \u0027Binding\u0027:\n\t\tself.parent.custom.genderId \u003d self.custom.genderId"
+                }
+              }
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Men \u0026 Women Together",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          }
+        ],
+        "custom": {
+          "genderId": 1
+        },
+        "meta": {
+          "name": "GuestTypes"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.genderId": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.guestType"
+              },
+              "type": "property"
+            },
+            "persistent": true
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px",
+            "overflow": "hidden"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "CheckboxFamilies"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.families"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "checkedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            },
+            "path": "material/radio_button_checked"
+          },
+          "indeterminateIcon": {
+            "path": "material/radio_button_checked"
+          },
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px",
+            "paddingRight": "20px"
+          },
+          "text": "Families with Children",
+          "uncheckedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            },
+            "path": "material/radio_button_unchecked"
+          }
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Extreme Weather"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "display": false,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px"
+          },
+          "text": "Your congregation can host extra night on short notice during extreme weather."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ExtremeWeather"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.weather"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "index": 1,
+          "radios": [
+            {
+              "selected": false,
+              "text": "Yes",
+              "value": true
+            },
+            {
+              "selected": true,
+              "text": "No",
+              "value": false
+            }
+          ],
+          "selectedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          },
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-15px"
+          },
+          "unselectedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            }
+          }
+        },
+        "type": "ia.input.radio-group"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Special Services"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "display": false,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_HeaderText"
+              },
+              "text": "(check all that apply)"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "None"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.selected": {
+                "binding": {
+                  "config": {
+                    "expression": "!{../Showers.props.selected}\r\n\u0026\u0026 !{../Clothing.props.selected}\r\n\u0026\u0026 !{../Laundry.props.selected}\r\n\u0026\u0026 !{../Lunches.props.selected}\r\n\u0026\u0026 !{../Other/Other.props.selected}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "None",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "meta": {
+              "name": "Showers"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Showers",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "meta": {
+              "name": "Clothing"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Clothing",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "meta": {
+              "name": "Laundry"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Laundry",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "meta": {
+              "name": "Lunches"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "checkedIcon": {
+                "color": {
+                  "enabled": "#0066FF"
+                },
+                "path": "material/radio_button_checked"
+              },
+              "indeterminateIcon": {
+                "path": "material/radio_button_checked"
+              },
+              "style": {
+                "paddingRight": "20px"
+              },
+              "text": "Lunches",
+              "uncheckedIcon": {
+                "color": {
+                  "enabled": "#9db8d1"
+                },
+                "path": "material/radio_button_unchecked"
+              }
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Other"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\tif currentValue.value \u003d\u003d False:\n\t\tself.getSibling(\"OtherTextField\").props.text \u003d \u0027\u0027\n\t\tself.getSibling(\"OtherServicesList\").props.text \u003d \u0027\u0027"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    },
+                    "path": "material/radio_button_checked"
+                  },
+                  "indeterminateIcon": {
+                    "path": "material/radio_button_checked"
+                  },
+                  "style": {
+                    "paddingRight": "20px"
+                  },
+                  "text": "Other",
+                  "uncheckedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    },
+                    "path": "material/radio_button_unchecked"
+                  }
+                },
+                "type": "ia.input.checkbox"
+              },
+              {
+                "meta": {
+                  "name": "OtherTextField"
+                },
+                "position": {
+                  "basis": "150px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "path": "../Other.props.selected"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/Add_TextFieldWhite",
+                    "margin": "5px"
+                  }
+                },
+                "type": "ia.input.text-field"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tif self.getSibling(\"OtherServicesList\").props.text \u003d\u003d \u0027\u0027 or self.getSibling(\"OtherServicesList\").props.text is None:\n\t\tself.getSibling(\"OtherServicesList\").props.text \u003d self.getSibling(\"OtherTextField\").props.text\n\telse:\n\t\tself.getSibling(\"OtherServicesList\").props.text +\u003d \u0027, \u0027 + self.getSibling(\"OtherTextField\").props.text\n\tself.getSibling(\"OtherTextField\").props.text \u003d \u0027\u0027"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Add"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#9db8d1",
+                  "path": "material/add_circle_outline",
+                  "style": {
+                    "cursor": "pointer"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "OtherServicesList"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#0066FF",
+                    "paddingLeft": "10px"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Other"
+            },
+            "position": {
+              "basis": "300px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "SpecialServices"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.services": {
+            "binding": {
+              "config": {
+                "expression": "if({./Showers.props.selected}, \u0027Showers,\u0027,\u0027\u0027)\r\n+ if({./Clothing.props.selected}, \u0027Clothing,\u0027,\u0027\u0027)\r\n+ if({./Laundry.props.selected}, \u0027Laundry,\u0027,\u0027\u0027)\r\n+ if({./Lunches.props.selected}, \u0027Lunches,\u0027,\u0027\u0027)\r\n+ if({./Other/Other.props.selected}, {./Other/OtherTextField.props.text} + \u0027, \u0027 + {./Other/OtherServicesList.props.text},\u0027\u0027)"
+              },
+              "transforms": [
+                {
+                  "expression": "if(len({value})\u003e0\r\n\t,if(substring({value},len({value})-1) \u003d \u0027, \u0027\r\n\t\t,substring({value}, 0, lastIndexOf({value}, \u0027, \u0027))\r\n\t\t,if(substring({value},0,1) \u003d \u0027, \u0027, substring({value}, 1),{value}))\r\n\t, \u0027\u0027\r\n)",
+                  "type": "expression"
+                },
+                {
+                  "expression": "replace({value}, \u0027,,\u0027, \u0027,\u0027)",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\tself.view.params.services \u003d currentValue.value"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px",
+            "overflow": "visible"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Wheelchair Accessible"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "10px",
+                      "display": false,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#D80000"
+                      },
+                      "text": "*"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_4"
+                },
+                "position": {
+                  "basis": "25px"
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Wheelchair"
+                },
+                "position": {
+                  "basis": "35px"
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.wheelchair"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "index": 1,
+                  "radios": [
+                    {
+                      "selected": false,
+                      "text": "Yes",
+                      "value": true
+                    },
+                    {
+                      "selected": true,
+                      "text": "No",
+                      "value": false
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    }
+                  },
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "marginLeft": "-15px"
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "50%",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px",
+                        "fontWeight": "normal"
+                      },
+                      "text": "Designated Smoking Area"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "10px",
+                      "display": false,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#D80000"
+                      },
+                      "text": "*"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_3"
+                },
+                "position": {
+                  "basis": "25px"
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "RadioGroup_2"
+                },
+                "position": {
+                  "basis": "35px"
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.smoking"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "index": 1,
+                  "radios": [
+                    {
+                      "selected": false,
+                      "text": "Yes",
+                      "value": true
+                    },
+                    {
+                      "selected": true,
+                      "text": "No",
+                      "value": false
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    }
+                  },
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "marginLeft": "-15px"
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "50%"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Are guests required to use stairs?"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "display": false,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_5"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "RadioGroup_0"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.stairs"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "radios": [
+            {
+              "selected": true,
+              "text": "Yes",
+              "value": true
+            },
+            {
+              "selected": false,
+              "text": "No",
+              "value": false
+            }
+          ],
+          "selectedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          },
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-15px"
+          },
+          "unselectedIcon": {
+            "color": {
+              "enabled": "#9db8d1"
+            }
+          }
+        },
+        "type": "ia.input.radio-group"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#9db8d1",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Partners"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_7"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "basis": "8%",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px"
+          },
+          "text": "Please list any other organization that work with your group to host Room in the Inn. This could include other congregations, scout troops, student groups or service organizations."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "PartnersTextField"
+            },
+            "position": {
+              "basis": "150px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_TextFieldWhite",
+                "margin": "5px"
+              }
+            },
+            "type": "ia.input.text-field"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.getSibling(\"PartnersTextField\").props.text \u003d\u003d \u0027\u0027 or self.getSibling(\"PartnersTextField\").props.text is None:\n\t\treturn\n\tif self.getSibling(\"PartnersList\").props.text \u003d\u003d \u0027\u0027 or self.getSibling(\"PartnersList\").props.text is None:\n\t\tself.getSibling(\"PartnersList\").props.text \u003d self.getSibling(\"PartnersTextField\").props.text\n\telse:\n\t\tself.getSibling(\"PartnersList\").props.text +\u003d \u0027; \u0027 + self.getSibling(\"PartnersTextField\").props.text\n\t\n\tself.getSibling(\"PartnersTextField\").props.text \u003d \u0027\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Add"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "props": {
+              "color": "#9db8d1",
+              "path": "material/add_circle_outline",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "PartnersList"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#0066FF",
+                "paddingLeft": "10px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tcommaString \u003d self.getSibling(\"PartnersList\").props.text\n\ttry:\n\t\tpartnerRemoved \u003d commaString[0: commaString.rindex(\u0027;\u0027)]\n\t\tself.getSibling(\"PartnersList\").props.text \u003d partnerRemoved\n\texcept: self.getSibling(\"PartnersList\").props.text \u003d \u0027\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Remove"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{../PartnersList.props.text} !\u003d \u0027\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "color": "#9db8d1",
+              "path": "material/remove_circle_outline",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "Partners"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.partnersList": {
+            "binding": {
+              "config": {
+                "expression": "{./PartnersTextField.props.text} + \u0027;\u0027 + {./PartnersList.props.text}"
+              },
+              "transforms": [
+                {
+                  "expression": "if(len({value})\u003e0\r\n\t,if(substring({value},len({value})-1) \u003d \u0027;\u0027\r\n\t\t,substring({value}, 0, lastIndexOf({value}, \u0027;\u0027))\r\n\t\t,if(substring({value},0) \u003d \u0027;\u0027, substring({value}, 1),{value}))\r\n\t, \u0027\u0027\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\tself.view.params.partners \u003d currentValue.value"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Comments"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_8"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Comments"
+        },
+        "position": {
+          "basis": "160px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.comments"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_TextFieldWhite",
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.input.text-area"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "UseDefaultNumber",
+          "params": [],
+          "script": "\tself.view.params.guestCount \u003d self.view.params.startGuestCount"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

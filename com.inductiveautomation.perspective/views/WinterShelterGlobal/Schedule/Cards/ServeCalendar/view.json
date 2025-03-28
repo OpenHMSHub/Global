@@ -1,0 +1,122 @@
+{
+  "custom": {
+    "data": [],
+    "function": 0
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.custom.function \u003d 0\n\tself.params.reservationId \u003d -1\n\tself.session.custom.dateRangeFromDate \u003d system.date.now()\n\tself.session.custom.dateRangeToDate \u003d system.date.now()"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "facilityID": 0,
+    "reservationId": -1
+  },
+  "propConfig": {
+    "custom.data": {
+      "persistent": true
+    },
+    "custom.function": {
+      "persistent": true
+    },
+    "params.facilityID": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif origin \u003d\u003d \"Browser\":\n\t\tif currentValue.value \u003e\u003d 0:\n\t\t\tself.custom.function \u003d 1"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.reservationId": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 450,
+      "width": 1020
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Text": "Serve Calendar",
+            "buttonDisplay": true,
+            "buttonIcon": "material/arrow_drop_up",
+            "buttonText": "Check-in"
+          },
+          "path": "1_globalTEMPLATES/Header/HeaderWithButton",
+          "style": {
+            "borderTopLeftRadius": "8px",
+            "borderTopRightRadius": "8px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CalenderView"
+        },
+        "position": {
+          "basis": "900px",
+          "grow": 1
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Schedule/Components/CalenderView"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "borderBottomLeftRadius": "8px",
+        "borderBottomRightRadius": "8px",
+        "classes": "Background/Alternative"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "reservationselected",
+          "pageScope": false,
+          "script": "\t# implement your handler here\n\t\n\tself.view.params.reservationId \u003d payload[\u0027reservationId\u0027]\n\tself.getChild(\"DatesAndNotes\").getChild(\"EmbeddedView Notes\").props.params.CaseNote \u003d payload[\u0027notes\u0027]\n\t#system.perspective.print(system.date.parse(payload[\u0027checkInDate\u0027]))\n\t#self.getChild(\"EmbeddedView Dates Input\").props.params.beginDate \u003d system.date.parse(payload[\u0027checkInDate\u0027],\"yyyy-MM-dd hh:mm:ss\")\n\t#self.getChild(\"EmbeddedView Dates Input\").props.params.endDate \u003d payload[\u0027checkOutDate\u0027]\n\tself.session.custom.dateRangeFromDate \u003d payload[\u0027checkInDate\u0027]\n\tself.session.custom.dateRangeToDate \u003d payload[\u0027checkOutDate\u0027]",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "refreshReservations",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.params.reservationId \u003d -1",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

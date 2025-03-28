@@ -1,0 +1,2494 @@
+{
+  "custom": {
+    "calendarFiller": [],
+    "currentSeasonId": 12,
+    "info": {
+      "$": [
+        "ds",
+        192,
+        1692165973632
+      ],
+      "$columns": [
+        {
+          "data": [
+            160
+          ],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            160
+          ],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Holy Rosary Catholic Church"
+          ],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "1989-1990"
+          ],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2022-2023"
+          ],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [
+            "192 Graylynn Dr"
+          ],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37214
+          ],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "(419)215-7512"
+          ],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Our Location"
+          ],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [
+            160
+          ],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Holy Rosary Catholic Church"
+          ],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "192 Graylynn Dr"
+          ],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37214
+          ],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1666997459840
+          ],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [
+            967
+          ],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            432421
+          ],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Margaret"
+          ],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Aton"
+          ],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Margaret Aton"
+          ],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [
+            "\"2351 Revere Pl\r\n\""
+          ],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37214
+          ],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "(419) 215-7512"
+          ],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "miaton08@aol.com"
+          ],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [
+            "\"Call\nEmail\nText\""
+          ],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            968
+          ],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            432643
+          ],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "EMILY"
+          ],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "CARR"
+          ],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "EMILY CARR"
+          ],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2744 WINDEMERE"
+          ],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [
+            "NASHVILLE"
+          ],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37214
+          ],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "(615) 883-7481"
+          ],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            "ecgc13@gmail.com"
+          ],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Call; Email"
+          ],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            296
+          ],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            12
+          ],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            10
+          ],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            10
+          ],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            32
+          ],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            1
+          ],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Men Only"
+          ],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            "\"Showers\nClothing\nLaundry\nSack Lunches\""
+          ],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            1666997459840
+          ],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [
+            180
+          ],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Innkeepers  are the hardest positions to fill.  Donelson First Baptist Church is providing their bus with our driver.  "
+          ],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "bedsActualLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Pickup Time: 5:30 to 6:00 pm.  .  "
+          ],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            "More volunteers"
+          ],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [
+            4
+          ],
+          "name": "transportId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Congregation Van"
+          ],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Specific Dates"
+          ],
+          "name": "Frequency",
+          "type": "String"
+        },
+        {
+          "data": [
+            3
+          ],
+          "name": "frequencyId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            -1
+          ],
+          "name": "dateSelectionPattern",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "[]"
+          ],
+          "name": "dateSelectionDays",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "pickupTime",
+          "type": "String"
+        }
+      ]
+    },
+    "keyFields": {
+      "HostDates": true,
+      "HostDays": true,
+      "Support": true
+    },
+    "pattern": 1,
+    "weekdays": []
+  },
+  "params": {
+    "comments": "",
+    "hostMoreFinances": true,
+    "hostMoreMeals": false,
+    "hostMoreOther": false,
+    "hostMoreOtherDetail": "",
+    "hostMoreSpace": true,
+    "hostMoreTransportation": true,
+    "hostMoreVolunteers": true,
+    "locationID": 160,
+    "neededToProceed": "",
+    "nights": 0,
+    "pattern": "every",
+    "pickupTime": "",
+    "proceed": true,
+    "reminder": true,
+    "schedule": [
+      320,
+      321,
+      322,
+      323
+    ],
+    "schedulePrev": [
+      320,
+      321,
+      322,
+      323
+    ],
+    "selectedSeasonId": 11
+  },
+  "propConfig": {
+    "custom.calendarFiller": {
+      "binding": {
+        "config": {
+          "struct": {
+            "seasonEnd": "{[default]RITI/Winter Shelter/Season End}",
+            "seasonStart": "{[default]RITI/Winter Shelter/Season Start}",
+            "weekdays": "{view.custom.weekdays}"
+          },
+          "waitOnAll": false
+        },
+        "transforms": [
+          {
+            "code": "\t#Returns the next date that is that weekday\n\t#date: the datetime to start from\n\t#weekday: the weekday as a number\n\tdef nextDayOfWeek(date, weekday):\n\t\tdayOfWeek \u003d system.date.getDayOfWeek(date)\n\t\tdaysApart \u003d weekday - dayOfWeek\n\t\tif daysApart \u003c 0: daysApart \u003d 7 + daysApart\n\t\treturn system.date.addDays(date, daysApart)\n\t\n\t\n\tschedule \u003d self.params.schedule\n\tseasonStart \u003d value[\u0027seasonStart\u0027]\n\tstartDayOfWeek \u003d system.date.getDayOfWeek(seasonStart)\n\tseasonEnd \u003d value[\u0027seasonEnd\u0027]\n\tif system.date.isBefore(seasonEnd, seasonStart): return \u0027ERROR: Season End before Start!!!\u0027\n\t#Pattern Key: 1 \u003d Every, 2 \u003d Every Other, 3 \u003d Every 1st ...7 \u003d Every 5th\n\tpattern \u003d self.custom.pattern\n\t#Weekdays Key: 1 \u003d Sunday ... 7 \u003d Saturday\n\tweekdays \u003d value[\u0027weekdays\u0027]\n\tdates \u003d []\n\t\n\t#Every\n\tif pattern \u003d\u003d 1:\n\t\tfor weekday in weekdays:\n\t\t\tschedDay \u003d nextDayOfWeek(seasonStart,weekday)\n\t\t\twhile system.date.isBefore(schedDay, seasonEnd):\n\t\t\t\tdates.append(schedDay)\n\t\t\t\tschedDay \u003d system.date.addDays(schedDay, 7)\n\tif pattern \u003d\u003d 2:\n\t\tfor weekday in weekdays:\n\t\t\tschedDay \u003d nextDayOfWeek(seasonStart,weekday)\n\t\t\twhile system.date.isBefore(schedDay, seasonEnd):\n\t\t\t\tdates.append(schedDay)\n\t\t\t\tschedDay \u003d system.date.addDays(schedDay, 14)\n\tif pattern \u003e 2:\n\t\tfor weekday in weekdays:\n\t\t\tmonthStart \u003d system.date.getDate(system.date.getYear(seasonStart), system.date.getMonth(seasonStart), 1)\n\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\t\t\twhile system.date.isBefore(dayOfWeek, seasonEnd):\n\t\t\t\tif system.date.isAfter(dayOfWeek, seasonStart) and system.date.getMonth(dayOfWeek)\u003d\u003dsystem.date.getMonth(monthStart):\n\t\t\t\t\tdates.append(dayOfWeek)\n\t\t\t\tmonthStart \u003d system.date.addMonths(monthStart,1)\n\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\t\t\t\n\tfor date in dates:\n\t\tday \u003d system.date.getDayOfYear(date)\n\t\tif day not in schedule: schedule.append(day)\n\t\t\n\treturn dates",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}"
+          },
+          "queryPath": "WinterShelterGlobal/Filters/getSeasonsByLocation"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount():\n\t\treturn value.getValueAt(value.getRowCount()-1,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.info": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/RegistrationDetail",
+          "returnFormat": "dataset"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#Script to determine if we can proceed to the next page of registration\n\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.Reminder": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.reminder} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.reminder})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.pattern": {
+      "persistent": true
+    },
+    "custom.weekdays": {
+      "persistent": true
+    },
+    "params.comments": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreFinances": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreMeals": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreOther": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreOtherDetail": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreSpace": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreTransportation": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreVolunteers": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "inout"
+    },
+    "params.nights": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.pattern": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.pickupTime": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.proceed": {
+      "paramDirection": "inout"
+    },
+    "params.reminder": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.schedule": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tvalue \u003d self.custom.info\n\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n\tAdditionalNights \u003d len(self.params.schedule)\n\tNewBedsProjected \u003d AdditionalNights * guestCount\n\tself.getChild(\"root\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.schedulePrev": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectedSeasonId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 598,
+      "width": 1227
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "180px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_InfoText"
+              },
+              "text": "Our nights of greatest need are "
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_InfoText",
+                "fontWeight": "bold"
+              },
+              "text": "Sunday, Monday and Wednesday."
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "20px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "alignItems": "flex-start",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "97px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Date Selection"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#D80000"
+                      },
+                      "text": "*"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Date Selection FlexContainer"
+                },
+                "position": {
+                  "basis": "25px",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Our Organization Label"
+                },
+                "position": {
+                  "basis": "25px",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "borderBottomWidth": "1px",
+                    "classes": "Text/Add_HeaderText",
+                    "paddingLeft": "0px"
+                  },
+                  "text": "Our organization is able to host..."
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "SelectionInput"
+                    },
+                    "position": {
+                      "basis": "167px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.SelectedValue": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.custom.pattern"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tself.view.custom.weekdays \u003d []"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "Options": [
+                          {
+                            "label": "Every...",
+                            "value": 1
+                          },
+                          {
+                            "label": "Every other...",
+                            "value": 2
+                          },
+                          {
+                            "label": "Every 1st...",
+                            "value": 3
+                          },
+                          {
+                            "label": "Every 2nd...",
+                            "value": 4
+                          },
+                          {
+                            "label": "Every 3rd...",
+                            "value": 5
+                          },
+                          {
+                            "label": "Every 4th...",
+                            "value": 6
+                          },
+                          {
+                            "label": "Every 5th...",
+                            "value": 7
+                          }
+                        ],
+                        "Text": "Date Select",
+                        "hasHeader": false,
+                        "placeholder": "Every..."
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/SelectionInput",
+                      "style": {
+                        "marginRight": "20px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tself.view.params.schedule \u003d []\n\tself.view.custom.weekdays \u003d []\n\tself.view.custom.pattern \u003d 1"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "primary": false,
+                      "style": {
+                        "classes": "Buttons/Secondary"
+                      },
+                      "text": "Reset"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "DateSelect"
+                },
+                "position": {
+                  "basis": "25px",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "value": 1
+                    },
+                    "meta": {
+                      "name": "Sun"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Sun",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "custom": {
+                      "value": 2
+                    },
+                    "meta": {
+                      "name": "Mon"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Mon",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "custom": {
+                      "value": 3
+                    },
+                    "meta": {
+                      "name": "Tue"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Tue",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "custom": {
+                      "value": 4
+                    },
+                    "meta": {
+                      "name": "Wed"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Wed",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "custom": {
+                      "value": 5
+                    },
+                    "meta": {
+                      "name": "Thur"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Thur",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "custom": {
+                      "value": 6
+                    },
+                    "meta": {
+                      "name": "Fri"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Fri",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "custom": {
+                      "value": 7
+                    },
+                    "meta": {
+                      "name": "Sat"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "expression": "indexOf({view.custom.weekdays},{this.custom.value})\u003e-1"
+                          },
+                          "type": "expr"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "\tif currentValue.value:\n\t\tif self.custom.value not in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.append(self.custom.value)\n\telse:\n\t\tif self.custom.value in self.view.custom.weekdays:\n\t\t\tself.view.custom.weekdays.remove(self.custom.value)"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Sat",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  }
+                ],
+                "meta": {
+                  "name": "Weeknights"
+                },
+                "position": {
+                  "basis": "40px",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Serve Calendar"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Serve Calendar FlexContainer"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Click Once Label"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "borderBottomWidth": "1px",
+                    "classes": "Text/Add_HeaderText",
+                    "paddingLeft": "0px"
+                  },
+                  "text": "Modify your selection by choosing additional days or removing days you cannot host."
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Table"
+                    },
+                    "position": {
+                      "basis": "300px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.daysHosting": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.schedule"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.selectedSeasonId": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.selectedSeasonId"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "enabled": false,
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1692165972228
+                          ],
+                          "$ts": 1648746000000
+                        },
+                        "importantDays": [
+                          329,
+                          330,
+                          365,
+                          359,
+                          358,
+                          1
+                        ],
+                        "nights": 120,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1692165972228
+                          ],
+                          "$ts": 1635786000000
+                        }
+                      },
+                      "path": "WinterShelterGlobal/Registration/Calendar/Table_winterShelter"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Checkbox_0"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "path": "material/circle"
+                          },
+                          "enabled": false,
+                          "style": {
+                            "classes": "Text/Add_HeaderText"
+                          },
+                          "text": "hosting",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#0066FF",
+                              "enabled": "#0066FF"
+                            },
+                            "path": "material/fiber_manual_record",
+                            "style": {
+                              "fontSize": "16px"
+                            }
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      },
+                      {
+                        "meta": {
+                          "name": "Checkbox_2"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "path": "material/circle"
+                          },
+                          "enabled": false,
+                          "style": {
+                            "classes": "Text/Add_HeaderText"
+                          },
+                          "text": "most needed",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#00FF66",
+                              "enabled": "#00FF66"
+                            },
+                            "path": "material/radio_button_unchecked",
+                            "style": {
+                              "fontSize": "16px"
+                            }
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      },
+                      {
+                        "meta": {
+                          "name": "Checkbox"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "path": "material/circle_filled"
+                          },
+                          "enabled": false,
+                          "style": {
+                            "classes": "Text/Add_HeaderText",
+                            "overflow": "visible"
+                          },
+                          "text": "not in season",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#dddddd",
+                              "enabled": "#dddddd"
+                            },
+                            "path": "material/fiber_manual_record",
+                            "style": {
+                              "fontSize": "16px"
+                            }
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Calendar"
+                },
+                "position": {
+                  "basis": "220px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "CoordComments"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.comments"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "enabled": false,
+                    "hasHeader": true,
+                    "placeHolder": "comment",
+                    "requiredField": false,
+                    "text": "Comments About Dates Selected"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+                  "style": {
+                    "marginBottom": "10px",
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "leftPane"
+            },
+            "position": {
+              "basis": "50%",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView"
+            },
+            "position": {
+              "basis": "5%",
+              "shrink": 0
+            },
+            "props": {
+              "path": "1_globalTEMPLATES/Placeholder"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Pickup Time"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#D80000"
+                      },
+                      "text": "*"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "PickupTime"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "CoordComments"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.pickupTime"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "enabled": false,
+                    "hasHeader": true,
+                    "placeHolder": "Not set",
+                    "requiredField": false,
+                    "text": "What time would you like to pick up your guests?"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+                  "style": {
+                    "marginBottom": "10px",
+                    "marginTop": "0px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Reminder Call"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "ReminderCall"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "A call Label"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "borderBottomWidth": "1px",
+                    "classes": "Text/Add_HeaderText",
+                    "paddingLeft": "0px"
+                  },
+                  "text": "A call in the week before your scheduled date(s) to host"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Yes No RadioGroup"
+                },
+                "position": {
+                  "basis": "35px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.reminder"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "enabled": false,
+                  "radios": [
+                    {
+                      "selected": true,
+                      "text": "Yes",
+                      "value": true
+                    },
+                    {
+                      "selected": false,
+                      "text": "No",
+                      "value": false
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "disabled": "#0066FF",
+                      "enabled": "#0066FF"
+                    }
+                  },
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "fontSize": "12px",
+                    "marginLeft": "-15px"
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "disabled": "#9db8d1",
+                      "enabled": "#9db8d1"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Our congregation might be able to host more if we had:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_3"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "borderBottomWidth": "1px",
+                        "classes": "Text/Add_HeaderText",
+                        "paddingLeft": "5px"
+                      },
+                      "text": "(check all that apply)"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Potential"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Space"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreSpace"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "disabled": "#0066FF",
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "enabled": false,
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "More space",
+                      "uncheckedIcon": {
+                        "color": {
+                          "disabled": "#9db8d1",
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "meta": {
+                      "name": "Meals"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreMeals"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "disabled": "#0066FF",
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "enabled": false,
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Help with meals",
+                      "uncheckedIcon": {
+                        "color": {
+                          "disabled": "#9db8d1",
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "meta": {
+                      "name": "Transportation"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreTransportation"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "disabled": "#0066FF",
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "enabled": false,
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Different transportation",
+                      "uncheckedIcon": {
+                        "color": {
+                          "disabled": "#9db8d1",
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "meta": {
+                      "name": "Finances"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreFinances"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "disabled": "#0066FF",
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "enabled": false,
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "More financial resources",
+                      "uncheckedIcon": {
+                        "color": {
+                          "disabled": "#9db8d1",
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "meta": {
+                      "name": "Volunteers"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreVolunteers"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "disabled": "#0066FF",
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "enabled": false,
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "More volunteers",
+                      "uncheckedIcon": {
+                        "color": {
+                          "disabled": "#9db8d1",
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Other"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.selected": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.params.hostMoreOther"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "color": {
+                              "disabled": "#0066FF",
+                              "enabled": "#0066FF"
+                            },
+                            "path": "material/radio_button_checked"
+                          },
+                          "enabled": false,
+                          "indeterminateIcon": {
+                            "path": "material/radio_button_checked"
+                          },
+                          "style": {
+                            "paddingRight": "20px"
+                          },
+                          "text": "Other",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#9db8d1",
+                              "enabled": "#9db8d1"
+                            },
+                            "path": "material/radio_button_unchecked"
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      },
+                      {
+                        "meta": {
+                          "name": "OtherTextField"
+                        },
+                        "position": {
+                          "basis": "190px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "path": "../Other.props.selected"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "../Other.props.selected"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.params.hostMoreOtherDetail"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "deferUpdates": false,
+                          "style": {
+                            "classes": "Text/Add_TextFieldWhite",
+                            "margin": "5px"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Other"
+                    },
+                    "position": {
+                      "basis": "400px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Support"
+                },
+                "position": {
+                  "basis": "120px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/Add_HeaderText",
+                    "marginLeft": "-5px"
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "rightPane"
+            },
+            "position": {
+              "basis": "45%",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "480px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Bottom Line Label"
+        },
+        "position": {
+          "basis": "10px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Text/Add_HeaderText",
+            "paddingLeft": "0px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "History Small_Double_Flex"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.LeftValue": {
+            "binding": {
+              "config": {
+                "path": "view.custom.info"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"bedsActualLastSeason\")\n\t\t#return \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.RightValue": {
+            "binding": {
+              "config": {
+                "path": "view.custom.info"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tbedsProjected \u003d value.getValueAt(0, \"bedsProjected\")\n\t\tif bedsProjected \u003d\u003d None:\n\t\t\tbedsProjected \u003d 0\n\t\t# if GuestCount/Nights change then bedsProjected value will change\n\t\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n##\t\tif len(self.view.params.schedulePrev)!\u003d len(self.view.params.schedule):\n\t\tAdditionalNights \u003d len(self.view.params.schedule)\n\t\tbedsProjected \u003d AdditionalNights * guestCount\n#\t\telse:\n#\t\t\tNewBedsProjected \u003d \u0027Null\u0027\n\t\treturn bedsProjected",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "LeftPath": "WinterShelter/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "LeftTitle": "Beds Last Season",
+            "RightPath": "WinterShelter/Dashboard/Cards/KPI/Metric_Flex_Small",
+            "RightTitle": "Bed This Season"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/Small_Double_Flex",
+          "style": {
+            "marginTop": "10px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

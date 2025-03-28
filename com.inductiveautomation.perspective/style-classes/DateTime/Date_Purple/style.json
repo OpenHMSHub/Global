@@ -1,0 +1,18 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#0c4e8b",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "borderTopLeftRadius": "5px",
+      "borderTopRightRadius": "5px",
+      "borderBottomLeftRadius": "5px",
+      "borderBottomRightRadius": "5px",
+      "color": "#0c4e8b",
+      "fontFamily": "Proxima NovaC Medium",
+      "fontSize": "15px",
+      "paddingRight": "10px"
+    }
+  }
+}

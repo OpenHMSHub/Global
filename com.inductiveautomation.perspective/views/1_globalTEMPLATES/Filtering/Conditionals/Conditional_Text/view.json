@@ -1,0 +1,151 @@
+{
+  "custom": {},
+  "params": {
+    "placeholder": "",
+    "text": ""
+  },
+  "propConfig": {
+    "params.placeholder": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 291
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "TextField"
+        },
+        "position": {
+          "basis": "120px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.placeholder": {
+            "binding": {
+              "config": {
+                "path": "view.params.placeholder"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "this.props.text"
+              },
+              "transforms": [
+                {
+                  "code": "\ttext \u003d \"Filter/Filter_Text_Default\"\n\tif value !\u003d \u0027\u0027 and value !\u003d None:\n\t\ttext \u003d \"Filter/Filter_Text_Orange\"\n\treturn text",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.text"
+              },
+              "type": "property"
+            },
+            "persistent": false
+          }
+        },
+        "props": {
+          "deferUpdates": false,
+          "style": {
+            "marginLeft": "5px",
+            "marginTop": "-1px",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tprint \"Icon click\"\n\tself.view.params.text \u003d \"\""
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "16px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "../TextField.props.text"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \u0027\u0027 or value \u003d\u003d None:\n\t\treturn False\n\telse:\n\t\treturn True",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "color": "#0C4E8B",
+          "path": "material/clear",
+          "style": {
+            "classes": "Table/Filter_Clear_Icon",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "path": "./TextField.props.text"
+          },
+          "transforms": [
+            {
+              "code": "\tborder \u003d \"Filter/Filter_Border_Default\"\n\tif value !\u003d None:\n\t\tif value !\u003d \"\":\n\t\t\tborder \u003d \"Filter/Filter_Border_Orange\"\n\treturn border",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "alignItems": "flex-start",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

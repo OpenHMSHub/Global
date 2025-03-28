@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "color": "#0d80e3",
+      "fontFamily": "Gibson",
+      "fontSize": "14px",
+      "textAlign": "start"
+    }
+  }
+}

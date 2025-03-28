@@ -1,0 +1,74 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 30
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t#Clear the filter components\n\tsystem.perspective.sendMessage(\"clearFilter\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "clearFilters"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "path": "session.custom.filters"
+              },
+              "transforms": [
+                {
+                  "code": "\tfilter \u003d filters.retrievePageFilters(value, self.page.props.pageId)\n\tif len(filter):\n\t\treturn \u0027#3ECED9\u0027\n\telse:\n\t\treturn \u0027#0C4E8B\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": 16,
+            "icon": {
+              "path": "material/clear"
+            },
+            "position": "center",
+            "width": 16
+          },
+          "style": {
+            "classes": "Filter/Filter_Border_Default Filter/Filter_Container"
+          },
+          "text": "",
+          "textStyle": {
+            "classes": "GreyColor"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

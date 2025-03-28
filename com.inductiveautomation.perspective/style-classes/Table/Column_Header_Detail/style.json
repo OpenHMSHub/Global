@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#f3f4f8",
+      "borderBottomColor": "#0d80e3",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "color": "#9db8d1",
+      "fontFamily": "Gibson",
+      "fontSize": "15px"
+    }
+  }
+}

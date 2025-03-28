@@ -1,0 +1,1151 @@
+{
+  "custom": {},
+  "params": {
+    "endDOB": "2100-01-01",
+    "gender": "%",
+    "selPage": 8,
+    "startDOB": "1900-01-01"
+  },
+  "propConfig": {
+    "params.endDOB": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.gender": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selPage": {
+      "onChange": {
+        "enabled": null,
+        "script": "\timport traceback\n\ttry:\n\t\tsystem.perspective.print(\"selPage OnChange\")\n\t\trawData \u003d self.getChild(\"root\").getChild(\"Table\").custom.filteredData\n\t\tif rawData !\u003d None:\n\t\t\tmaxRow \u003d rawData.rowCount\n\t\t\trows \u003d self.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"RowsDropdown\").props.value\n\t\t\tpage \u003d int(currentValue.value)\n\t\t\tstartRow \u003d rows * (page-1)\n\t\t\tendRow \u003d rows * page\n\t\t\tif startRow \u003e 0:\n\t\t\t\tdelList \u003d range(0,startRow)\n\t\t\telse:\n\t\t\t\tdelList \u003d []\n\t\t\tif endRow \u003c maxRow:\n\t\t\t\tdelList.extend(range(endRow,maxRow))\n\t\t\t\t\n\t\t\tself.getChild(\"root\").getChild(\"Table\").custom.pagedData \u003d system.dataset.deleteRows(rawData,delList)\n\t\t\t\n\t\t\t#Moves the \"view window\" on the pagination tab container\n\t\t\tiCurTab \u003d self.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex\n\t\t\tmaxPage \u003d maxRow / rows\n\t\t\tif iCurTab !\u003d 4 and page \u003e 2 and page \u003c maxPage - 2:\t\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[2] \u003d str(page - 2)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[3] \u003d str(page - 1)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[4] \u003d str(page)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[5] \u003d str(page + 1)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[6] \u003d str(page + 2)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 4\n\t\t\t#First\n\t\t\telif iCurTab \u003d\u003d 0:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[2] \u003d \"1\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[3] \u003d \"2\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[4] \u003d \"3\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[5] \u003d \"4\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[6] \u003d \"5\"\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 2\n\t\t\t#Last\n\t\t\telif iCurTab \u003d\u003d 8:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[2] \u003d str(maxPage - 4)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[3] \u003d str(maxPage - 3)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[4] \u003d str(maxPage - 2)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[5] \u003d str(maxPage - 1)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.tabs[6] \u003d str(maxPage)\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 6\n\t\t\t#Prev for tabs 1 and 2\n\t\t\telif iCurTab \u003d\u003d 1 and page \u003c\u003d2:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d page + 1\n\t\t\t#Next for tab 1\n\t\t\telif iCurTab \u003d\u003d 7 and page \u003c\u003d2:\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d page + 1\n\t\t\t#Next for last 2 tabs\n\t\t\telif iCurTab \u003d\u003d 7 and page \u003e\u003d maxPage - 2:\n\t\t\t\tdiff \u003d maxPage - page\n\t\t\t\tself.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"TabContainer\").props.currentTabIndex \u003d 8 - diff\n\texcept:\n\t\tlogger \u003d system.util.getLogger(\"Congregations_Table view.params.selPage OnChange\")\n\t\tmsg \u003d traceback.format_exc()\n\t\tlogger.error(msg)"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.startDOB": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 620,
+      "width": 1200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "DockID": 3
+        },
+        "events": {
+          "component": {
+            "onRowClick": {
+              "config": {
+                "script": "\tselectedColumn \u003d self.props.selection.selectedColumn\n\tif selectedColumn \u003d\u003d \"Congregation_Name\": \n\t\t#Display the detail screen\n\t\tcongregationID \u003d self.props.data.getValueAt(event.row,\u0027id\u0027)\n\t\tpage \u003d \u0027/WinterShelter/Congregations/Detail/\u0027 + str(congregationID)\n\t\tsystem.perspective.navigate(page)\n\telif selectedColumn \u003d\u003d \"options\":\n\t\t#Display the popout preview\n\t\tcongregationID \u003d self.props.data.getValueAt(event.row,\u0027id\u0027)\n\t\tid \u003d \"PreviewCongregation\" \n\t\tparams \u003d {\"CongregationID\":congregationID}\n\t\tif self.custom.DockID !\u003d congregationID:\n\t\t\tsystem.perspective.openDock(id\u003did,params\u003dparams)\n\t\t\tpayload \u003d {\"CongregationID\":congregationID}\n\t\t\tsystem.perspective.sendMessage(\"DockUpdate\", payload, scope \u003d \u0027view\u0027 )\n\t\telse:\n\t\t\tsystem.perspective.toggleDock(id\u003did,params\u003dparams)\n\t\tself.custom.DockID \u003d congregationID\n\telse:\n\t\tpass"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onRowDoubleClick": [
+              {
+                "config": {
+                  "script": "\t#2020-12-21 By Ethan Strike\n\t#This enables a popout on double click to display the full value of a filtered cell\n\t#This code allows comparison between two tables, as each page of the table uses a row index\n\t#that may not necesarily be the same as the unique ID key for the row.\n\t\n\t\n\t#CHANGE THIS TO SOMETHING UNIQUE\n\t#This is a unique popup ID to easily add open and close\n\t#Functionality for multiple popup template instances\n#\tUniquePopupId \u003d \"8Ej1tV/U\"\n#\n##\tmouseCoords \u003d system.gui.convertPointToScreen(event.x,event.y,event)\n#\t\n#\t#If the popup is already open and swaping to new cell, close it\n#\ttry:\n#\t\tsystem.perspective.closePopup(UniquePopupId)\n#\texcept:\n#\t\tpass\n#\t\n#\tselectedDict \u003d self.props.selection.data[0]\n#\tcellValue \u003d selectedDict[self.props.selection.selectedColumn]\n#\tsystem.perspective.openPopup(UniquePopupId, \"Winter_Shelter/Dashboard/Components/Tables/Popups/Cell Popup\", params \u003d {\"selectionValue\":cellValue, \"UniquePopupId\":UniquePopupId,\"x\": event.screenX,\"y\":event.screenY}, showCloseIcon \u003d False, draggable \u003d False, overlayDismiss \u003d True)\t\n#\t#Gets the ID key value of the selected row on the table\n#\tselectedID \u003d self.props.data[self.props.selection.selectedRow][\"id\"]\n#\t#Creates a python dataset from the dataset that contains the unfiltered data\n#\tpyData \u003d system.dataset.toPyDataSet(self.custom.sqlFullStrings)\n#\t#Loops through the full data, and compares the ID of each table.\n#\t#This is effectively the same as a join where ID \u003d ID sql query\n#\tfor row in range(pyData.getRowCount()):\n#\t\t#If the ID is a match, get the row of the unfiltered data, \n#\t\t#and get the value for the selected column\n#\t\tif pyData[row][\"id\"] \u003d\u003d selectedID:\n#\t\t\t#Store the value to display in the popup\n#\t\t\tcellValue \u003d pyData.getValueAt(row, self.props.selection.selectedColumn)\n#\t\t\t#Pass the value to the popup\n#\t\t\tsystem.perspective.openPopup(UniquePopupId, \"Winter_Shelter/Dashboard/Components/Tables/Popups/Cell Popup\", params \u003d {\"selectionValue\":cellValue, \"UniquePopupId\":UniquePopupId}, showCloseIcon \u003d False, draggable \u003d False)\n#\t\t\t\n#\t\t\t\n#\t\t\t#Testing Popup at cursor location\n#\t\t\t#self.custom.selectionValue \u003d cellValue\n"
+                },
+                "enabled": false,
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": true,
+                  "id": "8Ej1tV/U",
+                  "modal": false,
+                  "overlayDismiss": false,
+                  "position": {
+                    "relativeLocation": "top-right"
+                  },
+                  "positionType": "relative",
+                  "resizable": true,
+                  "showCloseIcon": true,
+                  "type": "open",
+                  "viewParams": {
+                    "selectionValue": "{/root/Table.custom.selectionValue}"
+                  },
+                  "viewPath": "Winter_Shelter/Dashboard/Components/Tables/Popups/Cell Popup"
+                },
+                "enabled": false,
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          },
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tprint event.shiftKey\n\tUniquePopupId \u003d \"8Ej1tV/U\"\n\n#\tmouseCoords \u003d system.gui.convertPointToScreen(event.x,event.y,event)\n\t\n\t#If the popup is already open and swaping to new cell, close it\n\ttry:\n\t\tsystem.perspective.closePopup(UniquePopupId)\n\texcept:\n\t\tpass\n\n\tselectedDict \u003d self.props.selection.data[0]\n\tcellValue \u003d selectedDict[self.props.selection.selectedColumn]\n\tsystem.perspective.openPopup(UniquePopupId, \"Winter_Shelter/Dashboard/Components/Tables/Popups/Cell Popup\", params \u003d {\"selectionValue\":cellValue, \"UniquePopupId\":UniquePopupId, \"x\": int(event.clientX), \"y\":int(event.clientY)}, showCloseIcon \u003d False, draggable \u003d False, overlayDismiss \u003d True)"
+              },
+              "enabled": false,
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "100%"
+        },
+        "propConfig": {
+          "custom.filteredData": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "filters": "{this.custom.filters}",
+                  "source": "hasChanged({this.custom.sqlData})"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\treturn self.custom.sqlData\n\t\n\t#return filters.applyFiltersOnDataset(self.custom.sqlData, self.custom.filters)\n",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "custom.filters": {
+            "binding": {
+              "config": {
+                "path": "session.custom.filters"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn filters.retrievePageFilters(value, self.page.props.pageId)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "custom.pagedData": {
+            "binding": {
+              "config": {
+                "path": "this.custom.filteredData"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n\treducedDataset \u003d system.dataset.deleteRows(self.custom.filteredData,range(self.parent.getChild(\"FlexContainer\").getChild(\"RowsDropdown\").props.value,self.custom.filteredData.rowCount))\n\treturn reducedDataset",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "custom.selectionValue": {
+            "persistent": false
+          },
+          "custom.sqlData": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "current_year": "\"_\"+dateFormat(now(), \u0027yyyy\u0027)+\"_Projected\"",
+                  "previous_year": "dateFormat(addYears(now(), -1), \u0027yyyy\u0027)",
+                  "registered": "\"Yes\""
+                },
+                "queryPath": "WinterShelter/Dashboard/Congregations"
+              },
+              "type": "query"
+            }
+          },
+          "custom.sqlFullStrings": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelter/Dashboard/RegistrationsFormattedFull"
+              },
+              "type": "query"
+            },
+            "persistent": false
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "this.custom.pagedData"
+              },
+              "transforms": [
+                {
+                  "code": "\t#\timport math\n\t#table_data is the data object to return\n\ttable_data \u003d []\n\t#Iterate over the results of the query\n\tfor row in range(value.getRowCount()):\n\t\trow_data \u003d {}\n\t\tstyle \u003d {}\n\t\tstyle[\u0027classes\u0027] \u003d \"Table/Cell_Dashboard\"\n\t\t#Map query results into correct attributes\n\t\trow_data[\u0027id\u0027] \u003d value.getValueAt(row, \"id\")\n\t\trow_data[\u0027options\u0027] \u003d \u0027\u0027\n\t\trow_data[\u0027Congregation_Name\u0027] \u003d value.getValueAt(row, \"Congregation Name\")\n\t\trow_data[\u0027Night\u0027] \u003d value.getValueAt(row, \"Night\")\n\t\trow_data[\u0027Gender\u0027] \u003d value.getValueAt(row, \"Gender\")\n\t\trow_data[\u0027Number_of_Guests\u0027] \u003d value.getValueAt(row, \"Number of Guests\")\n\t\trow_data[\u0027This_Season_Projection\u0027] \u003d value.getValueAt(row, \"This Season Projection\")\n\t\trow_data[\u0027Last_Year_Total\u0027] \u003d value.getValueAt(row, \"Last Year Total\")\n\t\trow_data[\u0027Registered\u0027] \u003d value.getValueAt(row, \"Registered\")\n\n\t\t#Append the individual row date to the table data object\n\t\ttable_data.append(row_data)\n\t\t\n\treturn table_data\n#\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "classes": "Table/Cell_Dashboard"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "options",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": " "
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "view",
+              "resizable": false,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal",
+                "cursor": "pointer"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {
+                "rowData": {
+                  "ID": "value"
+                }
+              },
+              "viewPath": "WinterShelter/Dashboard/Components/Tables/Templates/TableOptions",
+              "visible": true,
+              "width": 40
+            },
+            {
+              "align": "center",
+              "boolean": "value",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Congregation_Name",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Congregation Name"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": true,
+              "style": {
+                "classes": "",
+                "color": "#0c4e85",
+                "cursor": "pointer",
+                "fontFamily": "Proxima Nova ExCn Medium",
+                "fontWeight": "bolder",
+                "text-align": "left"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "WinterShelter/Dashboard/Components/Tables/Templates/Name",
+              "visible": true,
+              "width": 275
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Night",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Night"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 120
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Gender",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Gender"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Number_of_Guests",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Number of Guests"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "This_Season_Projection",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "This Season Projection"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Last_Year_Total",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Last Year Total"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": true,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 200
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Registered",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "Registered"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "string",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "id",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "background-origin": "content-box",
+                  "classes": "Table/Column_Header",
+                  "cursor": "pointer",
+                  "wordWrap": "break-word"
+                },
+                "title": "id"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            }
+          ],
+          "headerGroups": [
+            [
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Name"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "ID"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Birth Date"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Gender"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Intake Date"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Last Action"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Suspension"
+              },
+              {
+                "align": "center",
+                "justify": "left",
+                "span": 1,
+                "style": {
+                  "background-origin": "content-box",
+                  "background-size": "15px",
+                  "backgroundImage": "url(\"/system/images/SVGs/Arrow (Menu).svg\")",
+                  "backgroundPosition": "right center",
+                  "backgroundRepeat": "no-repeat",
+                  "classes": "",
+                  "color": "#0d80e3",
+                  "wordWrap": "break-word"
+                },
+                "title": "Shelter"
+              }
+            ]
+          ],
+          "pager": {
+            "bottom": false,
+            "options": [
+              5,
+              15,
+              25,
+              50,
+              100
+            ]
+          },
+          "rows": {
+            "striped": {
+              "enabled": false
+            },
+            "subviewExpansionMode": "single"
+          },
+          "selection": {
+            "enableColumnSelection": true
+          },
+          "virtualized": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "filterHandler",
+              "pageScope": true,
+              "script": "\t\n\t\u0027\u0027\u0027\n\treturn\n\t\n\tfrom datetime import datetime, date\n\t\n\tif(payload[\u0027key\u0027] \u003d\u003d \u0027gender\u0027):\n\t\tcurFilter \u003d str(self.view.params.gender)\n\t\t#If checkbox is checked, we\u0027re adding the payload\n\t\tif(payload[\u0027state\u0027]):\n\t\t\t#If not default, need to do on-purpose SQL injection\n\t\t\tif(curFilter !\u003d \u0027%\u0027):\n\t\t\t\tself.view.params.gender \u003d curFilter + \"%\u0027 OR [humans].[Human].[gender] LIKE \u0027\" + str(payload[\u0027val\u0027]) \n\t\t\t#Else, it\u0027s default, just set the value\n\t\t\telse:\n\t\t\t\tself.view.params.gender \u003d str(payload[\u0027val\u0027])\n\t\t#If checkbox isn\u0027t checked, we\u0027re removing the payload\n\t\telse:\n\t\t\t#If we already have a SQL injection, we need to remove the selected query\n\t\t\tif(\u0027LIKE\u0027 in curFilter):\n\t\t\t\tself.view.params.gender \u003d curFilter.replace(\"%\u0027 OR [humans].[Human].[gender] LIKE \u0027\" + str(payload[\u0027val\u0027]), \u0027\u0027)\n\t\t\t#If no SQL injection, set to default\n\t\t\telse:\n\t\t\t\tself.view.params.gender \u003d \u0027%\u0027\n\telif(payload[\u0027key\u0027] \u003d\u003d \u0027dobRange\u0027):\n\t\tcurStartDate \u003d str(self.view.params.startDOB)\n\t\tcurEndDate \u003d str(self.view.params.endDOB)\n\t\t\n\t\ttoday \u003d datetime.now()\n\t\t#If 55+ is selected, force it to 55-120\n\t\tageRange \u003d payload[\u0027val\u0027].replace(\u0027+\u0027,\u0027-120\u0027)\n\t\tdashPtr \u003d str(ageRange).find(\u0027-\u0027)\n\t\t\n\t\tstartAge \u003d int(ageRange[0:dashPtr])\n\t\tendAge \u003d int(ageRange[dashPtr + 1:])\n\t\t#Start date is now minus end age. End date is now minus start age\n\t\t#I would like to confess I spent 3 entire minutes remembering how dates worked on this part\n\t\tnewStartDOB \u003d today.replace(year \u003d datetime.now().year - endAge)\n\t\tnewEndDOB \u003d today.replace(year \u003d datetime.now().year - startAge)\n\t\t\n\t\t#If checkbox is checked, we\u0027re adding the payload\n\t\tif(payload[\u0027state\u0027]):\n\t\t\t#If not default, need to do on-purpose SQL injection\n\t\t\t#Note, added if not self check because saw weird instance where this happened from clicking too fast\n\t\t\tif(curEndDate !\u003d \"2110-01-01\" and  curEndDate !\u003d newEndDOB.strftime(\"%Y-%m-%d\")):\n\t\t\t\tnewEndQueryStr \u003d curEndDate + \"\u0027 OR [humans].[Human].[dob] BETWEEN \u0027\" + newStartDOB.strftime(\"%Y-%m-%d\") + \"\u0027 AND \u0027\" + newEndDOB.strftime(\"%Y-%m-%d\")\n\t\t\t\tself.view.params.startDOB \u003d curStartDate\n\t\t\t\tself.view.params.endDOB \u003d newEndQueryStr\n\t\t\t#Else, it\u0027s default, just add the range\n\t\t\telse:\n\t\t\t\tself.view.params.startDOB \u003d newStartDOB.strftime(\"%Y-%m-%d\")\n\t\t\t\tself.view.params.endDOB \u003d newEndDOB.strftime(\"%Y-%m-%d\")\n\t\t#If checkbox isn\u0027t checked, we\u0027re removing the payload\n\t\telse:\n\t\t\t#If we already have a SQL injection, we need to remove the selected query\n\t\t\tif(\u0027OR [humans]\u0027 in curEndDate):\n\t\t\t\tself.view.params.endDOB \u003d curEndDate.replace(\"\u0027 OR [humans].[Human].[dob] BETWEEN \u0027\" + newStartDOB.strftime(\"%Y-%m-%d\") + \"\u0027 AND \u0027\" + newEndDOB.strftime(\"%Y-%m-%d\"), \u0027\u0027)\n\t\t\t#If no SQL injection, set to default\n\t\t\telse:\n\t\t\t\tself.view.params.startDOB \u003d \u00271910-01-01\u0027\n\t\t\t\tself.view.params.endDOB \u003d \u00272110-01-01\u0027\n\t#Have to refresh the binding for the query to run again with the new query strings in the view params\n\tself.refreshBinding(\"props.data\")\n\t\n\t\u0027\u0027\u0027\n\t",
+              "sessionScope": true,
+              "viewScope": true
+            },
+            {
+              "messageType": "refreshCongregations",
+              "pageScope": false,
+              "script": "\t\u0027\u0027\u0027\n\tself.refreshBinding(\"props.data\")\n\t\u0027\u0027\u0027",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "update-filters",
+              "pageScope": true,
+              "script": "\t\n\t#Commented Out unitl Filters are fixed\n\t\n\t\u0027\u0027\u0027\n\tself.custom.filters \u003d filters.messageHandler_UpdateFilter(payload, self.custom.filters)\n\t\u0027\u0027\u0027",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "active-filters",
+              "pageScope": true,
+              "script": "\t\n\t\u0027\u0027\u0027\n\tfilters.messageHandler_respondWithActiveFilters(payload, self.custom.filters)\n\t\u0027\u0027\u0027",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "RowsDropdown"
+            },
+            "position": {
+              "basis": "105px"
+            },
+            "propConfig": {
+              "props.value": {
+                "onChange": {
+                  "enabled": null,
+                  "script": "\t#   #OLD LOGIC\n\tcurPage \u003d int(self.view.params.selPage)\n\tif previousValue \u003e currentValue:\n\t\tself.view.params.selPage \u003d curPage - 1\n\telse:\n\t\tself.view.params.selPage \u003d curPage + 1\t\n\n#\tself.view.params.selPage \u003d 3 #Page 1"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "Dropdowns/DDL_TablePagerItems",
+                "marginBottom": "0px",
+                "marginTop": "0px",
+                "paddingBottom": "6px",
+                "paddingTop": "6px"
+              },
+              "options": [
+                {
+                  "label": "5 rows",
+                  "value": 5
+                },
+                {
+                  "label": "15 rows",
+                  "value": 15
+                },
+                {
+                  "label": "25 rows",
+                  "value": 25
+                },
+                {
+                  "label": "50 rows",
+                  "value": 50
+                },
+                {
+                  "label": "100 rows",
+                  "value": 100
+                }
+              ],
+              "style": {
+                "classes": "Dropdowns/DDL_TablePagerBuiltIn"
+              },
+              "value": 5
+            },
+            "type": "ia.input.dropdown"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "path": "../Label_0.custom.basisMinusRows"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TabContainer"
+            },
+            "position": {
+              "basis": "351px"
+            },
+            "propConfig": {
+              "props.currentTabIndex": {
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tsystem.perspective.print(\"TabContainer.props.currentTabIndex OnChange\")\n\trawData \u003d self.parent.parent.getChild(\"Table\").custom.filteredData\n\tprevTab \u003d int(self.view.params.selPage)\n\tmaxTab \u003d rawData.rowCount / self.getSibling(\"RowsDropdown\").props.value\n\tselTab \u003d self.props.currentTabIndex\n\tif selTab \u003d\u003d 0:\n\t\t#\"First\"\n\t\tself.view.params.selPage \u003d 1\n\telif selTab \u003d\u003d 1 and prevTab \u003e 1:\n\t\t#\"Prev\"\n\t\tself.view.params.selPage \u003d prevTab - 1\n\telif selTab \u003d\u003d 7 and prevTab \u003c maxTab:\n\t\t#\"Next\"\n\t\tself.view.params.selPage \u003d prevTab + 1\n\telif selTab \u003d\u003d 8:\n\t\t#\"Last\"\n\t\tself.view.params.selPage \u003d maxTab\n\telse:\n\t\tself.view.params.selPage \u003d self.props.tabs[selTab]\n\t\t\n\t"
+                }
+              }
+            },
+            "props": {
+              "currentTabIndex": 4,
+              "menuStyle": {
+                "classes": "Table/Pager_Aqua"
+              },
+              "tabStyle": {
+                "active": {
+                  "fontWeight": "bold"
+                }
+              },
+              "tabs": [
+                "First",
+                "\u003c",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "\u003e",
+                "Last"
+              ]
+            },
+            "type": "ia.container.tab"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "custom.basisMinusRows": {
+                "binding": {
+                  "config": {
+                    "expression": "numberformat({this.position.basis} - {../RowsDropdown.position.basis},\"#\")+\"px\""
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "numberformat(({view.props.defaultSize.width}-{../TabContainer.position.basis})/2,\"#\")+\"px\""
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "alignItems": "center",
+          "style": {
+            "classes": "Background/Default"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

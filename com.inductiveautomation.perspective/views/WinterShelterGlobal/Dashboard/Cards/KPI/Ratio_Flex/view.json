@@ -1,0 +1,106 @@
+{
+  "custom": {
+    "Title": "\"Title\"",
+    "Value": 100000
+  },
+  "params": {
+    "Title": "\"Title\"",
+    "Value1": 10,
+    "Value2": 100
+  },
+  "propConfig": {
+    "custom.Title": {
+      "persistent": true
+    },
+    "custom.Value": {
+      "persistent": true
+    },
+    "params.Title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Value1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Value2": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 140,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Value"
+        },
+        "position": {
+          "basis": "50%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "concat(numberFormat({view.params.Value1}, \u0027###,###\u0027), \"/\",numberFormat({view.params.Value2}, \u0027###,###\u0027))\r\n"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "classes": "KPIs/KPI_Value"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "20%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "KPIs/KPI_Title",
+            "textAlign": "start"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#FFFFFF",
+        "paddingLeft": 5
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

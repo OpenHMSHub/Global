@@ -1,0 +1,582 @@
+{
+  "custom": {
+    "searchPayload": "value"
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.session.custom.selectedDateRange \u003d \"currentCalendar\"\n\tself.session.custom.dateRangeFromDate \u003d system.date.format(system.date.now(),\u0027MM/dd/yyyy\u0027)\n\tself.session.custom.dateRangeToDate \u003d system.date.format(system.date.now(),\u0027MM/dd/yyyy\u0027)\t\n\tself.session.custom.isClearFilter \u003d 0\n\tself.getChild(\"root\").getChild(\"shelter\").props.params.selectedValues \u003d -1 \n\tself.getChild(\"root\").getChild(\"gender\").props.params.selectedValues \u003d -1\t\n\tself.getChild(\"root\").getChild(\"race\").props.params.selectedValues \u003d -1\t\n\tself.getChild(\"root\").getChild(\"age\").props.params.selectedValues \u003d -1\t\n\tself.getChild(\"root\").getChild(\"program\").props.params.selectedValues \u003d -1\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+        },
+        "enabled": false,
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "city": -1,
+    "endDateTime": "04/17/2021",
+    "families": -1,
+    "services": -1,
+    "startDateTime": "04/17/2021",
+    "wheelchair": -1
+  },
+  "propConfig": {
+    "custom.searchPayload": {
+      "persistent": true
+    },
+    "params.city": {
+      "binding": {
+        "config": {
+          "path": "/root/city.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\t#\tvalue \u003d value[1:(len(value) - 1)]\n#\tvalue \u003d value.lstrip(\u0027[\"\u0027)\n#\tvalue \u003d value.rstrip(\u0027\"]\u0027)\n#\tvalue \u003d value.replace(\u0027\\\"\u0027,\"\")\n#\t#value \u003d value.replace(\u0027\\\u0027\u0027,\u0027\\\"\u0027)\n#\tnewValue \u003d \u0027 \u0027.join(\"\u0027{}\u0027,\".format(word.strip()) for word in value.split(\u0027,\u0027))\n#\tnewValue \u003d \"(\" + newValue[0:(len(newValue) - 1)] + \")\"\n#\t#print (\"Output binding\")\n#\t#print newValue\n#\treturn newValue\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.endDateTime": {
+      "binding": {
+        "config": {
+          "path": "session.custom.dateRangeToDate"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.families": {
+      "binding": {
+        "config": {
+          "path": "/root/families.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\t#\tvalue \u003d value[1:(len(value) - 1)]\n#\tvalue \u003d value.lstrip(\u0027[\"\u0027)\n#\tvalue \u003d value.rstrip(\u0027\"]\u0027)\n#\tvalue \u003d value.replace(\u0027\\\"\u0027,\"\")\n#\t#value \u003d value.replace(\u0027\\\u0027\u0027,\u0027\\\"\u0027)\n#\tnewValue \u003d \u0027 \u0027.join(\"\u0027{}\u0027,\".format(word.strip()) for word in value.split(\u0027,\u0027))\n#\tnewValue \u003d \"(\" + newValue[0:(len(newValue) - 1)] + \")\"\n#\t#print (\"Output binding\")\n#\t#print newValue\n#\treturn newValue\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.gender": {
+      "binding": {
+        "config": {
+          "path": "/root/gender.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\t#\tvalue \u003d value[1:(len(value) - 1)]\n#\tvalue \u003d value.lstrip(\u0027[\"\u0027)\n#\tvalue \u003d value.rstrip(\u0027\"]\u0027)\n#\tvalue \u003d value.replace(\u0027\\\"\u0027,\"\")\n#\t#value \u003d value.replace(\u0027\\\u0027\u0027,\u0027\\\"\u0027)\n#\tnewValue \u003d \u0027 \u0027.join(\"\u0027{}\u0027,\".format(word.strip()) for word in value.split(\u0027,\u0027))\n#\tnewValue \u003d \"(\" + newValue[0:(len(newValue) - 1)] + \")\"\n#\t#print (\"Output binding\")\n#\t#print newValue\n#\treturn newValue\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output"
+    },
+    "params.guests": {
+      "binding": {
+        "config": {
+          "path": "/root/guests.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\t#\tvalue \u003d value[1:(len(value) - 1)]\n#\tvalue \u003d value.lstrip(\u0027[\"\u0027)\n#\tvalue \u003d value.rstrip(\u0027\"]\u0027)\n#\tvalue \u003d value.replace(\u0027\\\"\u0027,\"\")\n#\t#value \u003d value.replace(\u0027\\\u0027\u0027,\u0027\\\"\u0027)\n#\tnewValue \u003d \u0027 \u0027.join(\"\u0027{}\u0027,\".format(word.strip()) for word in value.split(\u0027,\u0027))\n#\tnewValue \u003d \"(\" + newValue[0:(len(newValue) - 1)] + \")\"\n#\t#print (\"Output binding\")\n#\t#print newValue\n#\treturn newValue\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output"
+    },
+    "params.nights": {
+      "binding": {
+        "config": {
+          "path": "/root/nights.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\t#\tvalue \u003d value[1:(len(value) - 1)]\n#\tvalue \u003d value.lstrip(\u0027[\"\u0027)\n#\tvalue \u003d value.rstrip(\u0027\"]\u0027)\n#\tvalue \u003d value.replace(\u0027\\\"\u0027,\"\")\n#\t#value \u003d value.replace(\u0027\\\u0027\u0027,\u0027\\\"\u0027)\n#\tnewValue \u003d \u0027 \u0027.join(\"\u0027{}\u0027,\".format(word.strip()) for word in value.split(\u0027,\u0027))\n#\tnewValue \u003d \"(\" + newValue[0:(len(newValue) - 1)] + \")\"\n#\t#print (\"Output binding\")\n#\t#print newValue\n#\treturn newValue\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output"
+    },
+    "params.services": {
+      "binding": {
+        "config": {
+          "path": "/root/services.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.startDateTime": {
+      "binding": {
+        "config": {
+          "path": "session.custom.dateRangeFromDate"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.wheelchair": {
+      "binding": {
+        "config": {
+          "path": "/root/wheelchair.props.params.selectedValues"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 52,
+      "width": 879
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header_Detail"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "gender"
+        },
+        "position": {
+          "basis": "16%"
+        },
+        "props": {
+          "params": {
+            "filterData": [
+              {
+                "label": "Men Only",
+                "value": "Men Only"
+              },
+              {
+                "label": "Women Only",
+                "value": "Women Only"
+              },
+              {
+                "label": "Men and Women",
+                "value": "Men and Women"
+              }
+            ],
+            "filterName": "Gender of Guests",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "guests"
+        },
+        "position": {
+          "basis": "15.4%"
+        },
+        "props": {
+          "params": {
+            "filterData": [
+              {
+                "label": "\u003c10",
+                "value": "\u003c10"
+              },
+              {
+                "label": "10-30",
+                "value": "10-30"
+              },
+              {
+                "label": "30-50",
+                "value": "30-50"
+              },
+              {
+                "label": "50-70",
+                "value": "50-70"
+              },
+              {
+                "label": "\u003e70",
+                "value": "\u003e70"
+              }
+            ],
+            "filterName": "Number of Guests",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "nights"
+        },
+        "position": {
+          "basis": "13.7%"
+        },
+        "props": {
+          "params": {
+            "filterData": [
+              {
+                "label": "Monday",
+                "value": "Monday"
+              },
+              {
+                "label": "Tuesday",
+                "value": "Tuesday"
+              },
+              {
+                "label": "Wednesday",
+                "value": "Wednesday"
+              },
+              {
+                "label": "Thursday",
+                "value": "Thursday"
+              },
+              {
+                "label": "Friday",
+                "value": "Friday"
+              },
+              {
+                "label": "Saturday",
+                "value": "Saturday"
+              },
+              {
+                "label": "Sunday",
+                "value": "Sunday"
+              }
+            ],
+            "filterName": "Nights",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "families"
+        },
+        "position": {
+          "basis": "12%"
+        },
+        "props": {
+          "params": {
+            "filterData": [
+              {
+                "label": "Yes",
+                "value": "Yes"
+              },
+              {
+                "label": "No",
+                "value": "No"
+              },
+              {
+                "label": "Maybe",
+                "value": "Maybe"
+              }
+            ],
+            "filterName": "Families",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "city"
+        },
+        "position": {
+          "basis": "13.4%"
+        },
+        "propConfig": {
+          "props.params.filterData": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelter/Dashboard/FiltersGetCity"
+              },
+              "transforms": [
+                {
+                  "code": "\tlist \u003d []\n\toneValue \u003d {}\n\tfor i in range (value.getRowCount()):\n\t\t\t\toneValue \u003d {}\n\t\t\t\toneValue[\u0027label\u0027] \u003d value.getValueAt(i,0)\n\t\t\t\toneValue[\u0027value\u0027] \u003d value.getValueAt(i,0)\n\t\t\t\tlist.append(oneValue)\n\treturn list",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "filterName": "City",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "services"
+        },
+        "position": {
+          "basis": "12%"
+        },
+        "props": {
+          "params": {
+            "filterData": [
+              {
+                "label": "Showers",
+                "value": "Showers"
+              },
+              {
+                "label": "Clothing",
+                "value": "Clothing"
+              },
+              {
+                "label": "Laundry",
+                "value": "Laundry"
+              },
+              {
+                "label": "Sack Lunches",
+                "value": "Sack Lunches"
+              },
+              {
+                "label": "hygene items",
+                "value": "hygene items"
+              }
+            ],
+            "filterName": "Services",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "wheelchair"
+        },
+        "position": {
+          "basis": "15%"
+        },
+        "props": {
+          "params": {
+            "filterData": [
+              {
+                "label": "Yes",
+                "value": 1
+              },
+              {
+                "label": "No",
+                "value": 0
+              }
+            ],
+            "filterName": "Wheelchair",
+            "selectedValues": -1
+          },
+          "path": "Shelter/Templates/MultiselectFilter",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\n\tself.getSibling(\"guests\").props.params.selectedValues \u003d -1\n\n\tself.getSibling(\"gender\").props.params.selectedValues \u003d -1\t\n\t\t\n\tself.getSibling(\"nights\").props.params.selectedValues \u003d -1\n\t\n\tself.getSibling(\"families\").props.params.selectedValues \u003d -1\t\t\t\t\n\n\tself.getSibling(\"city\").props.params.selectedValues \u003d -1\n\t\n\tself.getSibling(\"services\").props.params.selectedValues \u003d -1\n\t\t\n\tself.getSibling(\"wheelchair\").props.params.selectedValues \u003d -1\n\t\n\tself.session.custom.isClearFilter \u003d True\n\t\n\tself.session.custom.dateRangeFromDate \u003d system.date.format(system.date.now(),\u0027MM/dd/yyyy\u0027)\n\tself.session.custom.dateRangeToDate \u003d system.date.format(system.date.now(),\u0027MM/dd/yyyy\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "clearFilters"
+        },
+        "position": {
+          "basis": "2%"
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            },
+            "style": {
+              "backgroundColor": "#181818"
+            }
+          },
+          "style": {
+            "backgroundColor": "#0C4E8B",
+            "borderBottomLeftRadius": 5,
+            "borderBottomRightRadius": 5,
+            "borderColor": "#4D4D4D",
+            "borderStyle": "solid",
+            "borderTopLeftRadius": 5,
+            "borderTopRightRadius": 5,
+            "borderWidth": 1,
+            "margin": 8
+          },
+          "text": "",
+          "textStyle": {
+            "classes": "GreyColor"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "system": {
+            "onStartup": {
+              "config": {
+                "script": "\t#system.perspective.print(\"In on Startup dateRange view\")\n\t#system.perspective.print(self.session.custom.dateRangeFromDate)"
+              },
+              "enabled": false,
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "dateRange"
+        },
+        "position": {
+          "basis": "18%"
+        },
+        "props": {
+          "path": "Shelter/Templates/DateRange/DateInput",
+          "style": {
+            "marginBottom": 8,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 8
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "searchBar"
+        },
+        "position": {
+          "basis": "12%",
+          "grow": 1
+        },
+        "props": {
+          "path": "Shelter/Templates/Search_Bar",
+          "style": {
+            "marginBottom": 7,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginTop": 7
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header_Detail"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Table/Filter_Header"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

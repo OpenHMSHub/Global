@@ -1,0 +1,1261 @@
+{
+  "custom": {
+    "Host": [],
+    "NightsLastSeason": 6,
+    "currentSeasonId": 13,
+    "dateExtraction": [
+      "05/17",
+      "05/18",
+      "09/14",
+      "09/20",
+      "10/18",
+      "10/19"
+    ],
+    "info": {
+      "$": [
+        "ds",
+        192,
+        1715771548696
+      ],
+      "$columns": [
+        {
+          "data": [
+            195
+          ],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            195
+          ],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Acklen Avenue Church of Christ"
+          ],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2023-2024"
+          ],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [
+            "900 Acklen Ave."
+          ],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37203
+          ],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "(615)292-5549"
+          ],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Our Location"
+          ],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [
+            195
+          ],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Acklen Avenue Church of Christ"
+          ],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "900 Acklen Ave."
+          ],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Nashville"
+          ],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            "TN"
+          ],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [
+            37203
+          ],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1666997510770
+          ],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [
+            1578
+          ],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1442926
+          ],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Donnie"
+          ],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "P"
+          ],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Donnie P"
+          ],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Donnie"
+          ],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [
+            12345
+          ],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Primary coordinator comment. How long can they get before it starts to get cramped on space?"
+          ],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            1579
+          ],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            2
+          ],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Donnie"
+          ],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Akins"
+          ],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Donnie Akins"
+          ],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Donnie"
+          ],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [
+            12345
+          ],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Email"
+          ],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Secondary coordinator comment."
+          ],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            668
+          ],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            13
+          ],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            20
+          ],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            6
+          ],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            125
+          ],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            1
+          ],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Men Only"
+          ],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            null
+          ],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            false
+          ],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Test service comment. What if there are long comments on a lot of these? How much space is in the box to view all the comments?"
+          ],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            1688979466490
+          ],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [
+            1000
+          ],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Test if registration data is saved correctly for the report and comment is updated."
+          ],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [
+            36
+          ],
+          "name": "bedsActualLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            8
+          ],
+          "name": "bedsActualThisSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1000
+          ],
+          "name": "originalRegistration",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            128
+          ],
+          "name": "scheduledBeds",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Date Registration comment. And even more comments about dates."
+          ],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [
+            true
+          ],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [
+            ""
+          ],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [
+            0
+          ],
+          "name": "transportId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "15 Passenger Van"
+          ],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Specific Dates"
+          ],
+          "name": "Frequency",
+          "type": "String"
+        },
+        {
+          "data": [
+            3
+          ],
+          "name": "frequencyId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            8
+          ],
+          "name": "dateSelectionPattern",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "[6,5]"
+          ],
+          "name": "dateSelectionDays",
+          "type": "String"
+        },
+        {
+          "data": [
+            "5:30pm"
+          ],
+          "name": "pickupTime",
+          "type": "String"
+        }
+      ]
+    },
+    "lastHost": [
+      "05/09"
+    ],
+    "nextHost": [
+      "05/17"
+    ],
+    "previousSeasonId": 12,
+    "todayDayOfTheYear": 136
+  },
+  "params": {
+    "Year1": "2023",
+    "Year2": "2024",
+    "locationID": 195
+  },
+  "propConfig": {
+    "custom.NightsLastSeason": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.previousSeasonId}",
+            "status": "\"schedule.status \u003d\u0027Completed\u0027\"",
+            "todayDayOfTheYear": "{view.custom.todayDayOfTheYear}"
+          },
+          "queryPath": "WinterShelterGlobal/Schedule/GetScheduleCountPerStatus_ScheduleDetail"
+        },
+        "transforms": [
+          {
+            "code": "\tdata \u003d value\n\tNightsThisSeason \u003d 0\n\tif data !\u003d None and data.getRowCount()\u003e0:\n\t\tNightsThisSeasonCompleted \u003d data.getValueAt(0,0)\n\treturn NightsThisSeasonCompleted",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.NightsThisSeason": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}",
+            "status": "\"schedule.status \u003d\u0027Completed\u0027 or schedule.status \u003d\u0027Scheduled\u0027\"",
+            "todayDayOfTheYear": "{view.custom.todayDayOfTheYear}"
+          },
+          "queryPath": "WinterShelterGlobal/Schedule/GetScheduleCountPerStatus_ScheduleDetail"
+        },
+        "transforms": [
+          {
+            "code": "\tdata \u003d value\n\tNightsThisSeason \u003d 0\n\tif data !\u003d None and data.getRowCount()\u003e0:\n\t\tNightsThisSeasonCompleted \u003d data.getValueAt(0,0)\n\treturn NightsThisSeasonCompleted",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      }
+    },
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount():\n\t\treturn value.getValueAt(value.getRowCount()-1,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.dateExtraction": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/getCurrentSchedule"
+        },
+        "transforms": [
+          {
+            "code": "\tself.custom.lastHost \u003d []\n\tself.custom.nextHost \u003d []\n\tdate \u003d []\n\tdaysBefore \u003d []\n\tdaysAfter \u003d []\n\tdata \u003d system.dataset.toPyDataSet(value)\n\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(self.params.Year1), 10, 1))\n\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(self.params.Year1), 12, 31))\n\tfor row in data:\n\t\tdayOfYear\u003drow[1]\n\t\t## calclulate date and day based on day of year\n\t\tif dayOfYear \u003e\u003d startDayOfSeason: # and dayOfYear \u003c\u003d endDayOfCurrentYear:\n\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.params.Year1))\n\t\telse:\n\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.params.Year2))\n\t\t\t\n#\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear\u003drow[1])\n\t\tdate.append(dates)\n\t\tdate.sort()\n\t\t\n\tfor days in date:\n\t\t\n\t\tdateNow \u003d system.date.now()\n\t\tdateNowFormat \u003d system.date.format(dateNow,\"MM/dd/YYYY\")\n\t\tisBefore \u003d system.date.isBefore(days,dateNow)\n\t\t\n\t\t\n\t\tif isBefore:\n\t\t\t\n\t\t\tisBeforeFormat \u003d system.date.format(days,\"MM/dd\")\n\t\t\tdaysBefore.append(isBeforeFormat)\n#\t\t\tdaysBefore.sort()\n\t\t\tself.custom.lastHost \u003d daysBefore[-1:]\n\t\t\t\n\t\telse:\n\t\t\t\n\t\t\tisAfterFormat \u003d system.date.format(days,\"MM/dd\")\n\t\t\tdaysAfter.append(isAfterFormat)\n#\t\t\tdaysAfter.sort()\n\n\t\t\tif daysAfter[0:1] \u003d\u003d dateNowFormat:\n\t\t\t\n\t\t\t\tself.custom.nextHost \u003d daysAfter[0:1]\n\t\t\t\t\n\t\t\telse:\n\t\t\t\tself.custom.nextHost \u003d daysAfter[0:1]#system.date.format(days,\"YYYY-MM-dd\")\n\tif len(self.custom.lastHost) \u003d\u003d 0:\n\t\t## get the schedule for last year\n\t\tnamedQ \u003d \"WinterShelterGlobal/getCurrentSchedule\"\n\t\tparams \u003d {\u0027locationId\u0027:self.params.locationID, \u0027seasonId\u0027:self.custom.previousSeasonId}\n\t\t\n\t\tprevScheduleData \u003d system.db.runNamedQuery(namedQ ,parameters \u003dparams)\n\t\t\n\t\tif prevScheduleData is not None:\n\t\t\t\n\t\t\tdate \u003d []\n\t\t\tdaysBefore \u003d []\n\t\t\tdaysAfter \u003d []\n\t\t\tdata \u003d system.dataset.toPyDataSet(prevScheduleData)\n\t\t\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(self.params.Year1) - 1, 10, 1))\n\t\t\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(self.params.Year1) - 1, 12, 31))\n\t\t\tfor row in data:\n\t\t\t\t\n\t\t\t\tdayOfYear\u003drow[1]\n\t\t\t\t\n\t\t\t\t## calclulate date and day based on day of year\n\t\t\t\tif dayOfYear \u003e\u003d startDayOfSeason: # and dayOfYear \u003c\u003d endDayOfCurrentYear:\n\t\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.params.Year1) -1)\n\t\t\t\telse:\n\t\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.params.Year2) -1)\n\t\t\t\t\t\n\t\t#\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear\u003drow[1])\n\t\t\t\tdate.append(dates)\n\t\t\t\tdate.sort()\n\t\t\t\t\n\t\t\tfor days in date:\t\t\n\t\t\t\tisBeforeFormat \u003d system.date.format(days,\"MM/dd\")\n\t\t\t\tsystem.perspective.print(isBeforeFormat)\n\t\t\t\tdaysBefore.append(isBeforeFormat)\n\t\t#\t\t\tdaysBefore.sort()\n\t\t\t\tself.custom.lastHost \u003d daysBefore[-1:]\n\treturn daysAfter",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif len(currentValue.getValue())\u003c1:\n\t\t\n\t\tself.custom.nextHost \u003d[]\n\n\t\t"
+      },
+      "persistent": true
+    },
+    "custom.info": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.custom.currentSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/PreviewRegistration"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.previousSeasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "currentSeasonId": "{view.custom.currentSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/GetLastSeason_FromCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None and value.getRowCount() \u003e 0:\n\t\treturn value.getValueAt(0,\u0027id\u0027)\n\telse:\n\t\treturn -1",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.todayDayOfTheYear": {
+      "binding": {
+        "config": {
+          "expression": "getDayOfYear(now(0))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.Year1": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tyear \u003d (value.getValueAt(0,1)).split(\u0027-\u0027)[0]\n\treturn year",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.Year2": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tyear \u003d (value.getValueAt(0,1)).split(\u0027-\u0027)[1]\n\treturn year",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 536,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BedsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tBedsActualLastSeason \u003d value.getValueAt(0, \"bedsActualLastSeason\")\n\t\tif BedsActualLastSeason \u003d\u003d None:\n\t\t\tBedsActualLastSeason \u003d 0\n\t\treturn BedsActualLastSeason\n\t\t#return \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Beds Last Season"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "OriginalRegistration"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\toriginalRegistration \u003d value.getValueAt(0, \"originalRegistration\")\n\t\tif originalRegistration \u003d\u003d None:\n\t\t\toriginalRegistration \u003d 0\n\t\treturn originalRegistration\n#\t\treturn \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Original Registration"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiA"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "ThisSeasonActual"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tbedsActualThisSeason \u003d value.getValueAt(0, \"bedsActualThisSeason\")\n\t\tif bedsActualThisSeason \u003d\u003d None:\n\t\t\tbedsActualThisSeason \u003d 0\n\t\treturn bedsActualThisSeason\n\t\t#return \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "This Season Actual"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "ProjectedThisSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tbedsProjected \u003d value.getValueAt(0, \"scheduledBeds\")\n\t\tif bedsProjected \u003d\u003d None:\n\t\t\tbedsProjected \u003d 0\n\t\treturn bedsProjected\n#\t\treturn \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Projected This Season"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiB"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "NightsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.NightsLastSeason"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Nights Last Season "
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "NightsThisSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.NightsThisSeason"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Nights This Season"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiC"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BedsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.lastHost"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif len(value)\u003e0:\n\t\tlastHost \u003d value[0]\n\telse:\n\t\tlastHost \u003d\u0027None\u0027\n\treturn lastHost",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Last Hosting"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiD"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BedsLastSeason"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.Value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.nextHost"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif len(value)\u003e0:\n\t\tnextHost \u003d value[0]\n\telse:\n\t\tnextHost \u003d\u0027None\u0027\n\treturn nextHost",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "Title": "Next Hosting"
+              },
+              "path": "WinterShelterGlobal/Detail/Cards/Summary/KPI/Metric_Flex",
+              "style": {
+                "marginLeft": "15px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "kpiE"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "RefreshAboutPanel",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.refreshBinding(\"custom.info\")",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

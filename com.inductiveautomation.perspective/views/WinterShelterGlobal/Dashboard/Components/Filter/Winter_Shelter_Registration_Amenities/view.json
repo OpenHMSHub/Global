@@ -1,0 +1,541 @@
+{
+  "custom": {},
+  "params": {
+    "maxGuests": [],
+    "minGuests": []
+  },
+  "propConfig": {
+    "params.maxGuests": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minGuests": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1470,
+      "width": 168
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "monday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "monday",
+            "label": "Monday",
+            "maskValue": 2,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "tuesday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "tuesday",
+            "label": "Tuesday",
+            "maskValue": 4,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "wednesday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "wednesday",
+            "label": "Wednesday",
+            "maskValue": 8,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "thursday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "thursday",
+            "label": "Thursday",
+            "maskValue": 16,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "friday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "friday",
+            "label": "Friday",
+            "maskValue": 32,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "saturday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "saturday",
+            "label": "Saturday",
+            "maskValue": 64,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "sunday"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "ls.nights",
+            "filter": "winterShelterRegistrations",
+            "key": "sunday",
+            "label": "Sunday",
+            "maskValue": 1,
+            "searchType": "mask"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/CheckboxMask",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "HDCP"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "accessible",
+            "filter": "winterShelterRegistrations",
+            "key": "HDCP",
+            "label": "Wheelchair",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "families"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "families",
+            "filter": "winterShelterRegistrations",
+            "key": "families",
+            "label": "Families",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "shortNotice"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "extraShortNotice",
+            "filter": "winterShelterRegistrations",
+            "key": "shortNotice",
+            "label": "Short Notice",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "stairs"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "stairs",
+            "filter": "winterShelterRegistrations",
+            "key": "stairs",
+            "label": "Stairs",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "smoking"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "smoking",
+            "filter": "winterShelterRegistrations",
+            "key": "smoking",
+            "label": "Smoking",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "reminderCall"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "reminderCall",
+            "filter": "winterShelterRegistrations",
+            "key": "reminderCall",
+            "label": "Reminder Call",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "showers"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "showers",
+            "filter": "winterShelterRegistrations",
+            "key": "showers",
+            "label": "Showers",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "clothing"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "clothing",
+            "filter": "winterShelterRegistrations",
+            "key": "clothing",
+            "label": "Clothing",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "laundry"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "laundry",
+            "filter": "winterShelterRegistrations",
+            "key": "laundry",
+            "label": "Laundry",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "sackLunches"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "sackLunches",
+            "filter": "winterShelterRegistrations",
+            "key": "sackLunches",
+            "label": "Sack Lunches",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "breakfast"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "breakfast",
+            "filter": "winterShelterRegistrations",
+            "key": "breakfast",
+            "label": "Breakfast",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "dinner"
+        },
+        "position": {
+          "basis": "26px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "dinner",
+            "filter": "winterShelterRegistrations",
+            "key": "dinner",
+            "label": "Dinner",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "haircuts"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "haircuts",
+            "filter": "winterShelterRegistrations",
+            "key": "haircuts",
+            "label": "Haircuts",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "hygieneItems"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "hygieneItems",
+            "filter": "winterShelterRegistrations",
+            "key": "hygieneItems",
+            "label": "Hygiene Items",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Checkbox",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Filtering/Filter_Placeholder"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Filter/Header_Text"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

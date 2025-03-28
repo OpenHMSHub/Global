@@ -1,0 +1,230 @@
+{
+  "custom": {},
+  "params": {
+    "column_name": "",
+    "filter": "",
+    "key": "",
+    "placeholder": "",
+    "searchType": ""
+  },
+  "propConfig": {
+    "params.column_name": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filter": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.key": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.placeholder": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.searchType": {
+      "access": "PUBLIC",
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 218
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "value": ""
+        },
+        "meta": {
+          "name": "TextField"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "propConfig": {
+          "custom.timeDiff": {
+            "binding": {
+              "config": {
+                "expression": "if({this.custom.updating}, dateDiff(now(1000), {this.custom.updateTime}, \"seconds\"), 0)"
+              },
+              "type": "expr"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\tif currentValue.value \u003c 0:\n\t\tself.custom.updating \u003d False\n\t\tself.custom.value \u003d self.props.text"
+            }
+          },
+          "custom.updateTime": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "type": "expr"
+            }
+          },
+          "custom.updating": {
+            "binding": {
+              "config": {
+                "expression": "false"
+              },
+              "type": "expr"
+            }
+          },
+          "custom.value": {
+            "onChange": {
+              "enabled": null,
+              "script": "\t# Update the session\u0027s filter listing for this page\n\tfilter \u003d self.view.params.filter\t\n\tkey \u003d self.view.params.key\n\tcolumnName \u003d self.view.params.column_name\n\tsearchType \u003d self.view.params.searchType\n\tselection \u003d currentValue.value\n\t\n\tif selection \u003d\u003d \u0027\u0027:\n\t\tselection \u003d None\n\t\t\n\tfilters.updateFilterList(\n\t\tself.session,\n\t\tfilter,\n\t\tsearchType,\n\t\tkey,\n\t\tcolumnName,\n\t\tselection\n\t\t)"
+            }
+          },
+          "props.placeholder": {
+            "binding": {
+              "config": {
+                "path": "view.params.placeholder"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "this.props.text"
+              },
+              "transforms": [
+                {
+                  "code": "\ttext \u003d \"Filter/Filter_Text_Default\"\n\tif value !\u003d \u0027\u0027 and value !\u003d None:\n\t\ttext \u003d \"Filter/Filter_Text_TeelBlue\"\n\treturn text",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "session.custom.filters"
+              },
+              "transforms": [
+                {
+                  "code": "\tnewValue \u003d None\n\ttry:\n\t\tnewValue \u003d value[self.view.params.filter][self.view.params.key][\"value\"]\n\texcept:\n\t\tpass\n\t\t\n\tif newValue \u003d\u003d None:\n\t\tnewValue \u003d \"\"\n\t\t\n\treturn newValue",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\tif origin in (\"Browser\", \"Script\"):\n\t\tupdating \u003d self.custom.updating\n\t\t\n\t\tif not updating:\n\t\t\tself.custom.updating \u003d True\n\t\t\tself.custom.updateTime \u003d system.date.addMillis(system.date.now(), 250)\n\t\telse:\n\t\t\tself.custom.updateTime \u003d system.date.addMillis(system.date.now(), 250)"
+            },
+            "persistent": false
+          }
+        },
+        "props": {
+          "deferUpdates": false,
+          "rejectUpdatesWhileFocused": false,
+          "style": {
+            "marginLeft": "5px",
+            "marginTop": "-1px",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"TextField\").props.text \u003d \"\""
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "16px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "../TextField.props.text"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value !\u003d None and value !\u003d \u0027\u0027:\n\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "color": "#0C4E8B",
+          "path": "material/clear",
+          "style": {
+            "classes": "Table/Filter_Clear_Icon",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "config": {
+            "path": "./TextField.props.text"
+          },
+          "transforms": [
+            {
+              "code": "\tif value \u003d\u003d \u0027\u0027 or value \u003d\u003d None:\n\t\treturn \"Filter/Filter_Border_Default\"\n\telse:\n\t\treturn \"Filter/Filter_Border_TeelBlue\"",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "alignItems": "flex-start",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "clearFilter",
+          "pageScope": true,
+          "script": "\tself.getChild(\"TextField\").props.text \u003d \"\"",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

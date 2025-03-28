@@ -1,0 +1,1 @@
+SELECT id, Status FROM shelter.SupportStatus

@@ -1,0 +1,337 @@
+{
+  "custom": {
+    "data": [],
+    "dayOfYear": 312,
+    "function": 1,
+    "seasonId": "13",
+    "selectedDate": {
+      "$": [
+        "ts",
+        192,
+        1689137434133
+      ],
+      "$ts": 1699508318000
+    }
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.custom.selectedDate \u003d system.date.now()\n\t"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.data": {
+      "persistent": true
+    },
+    "custom.dayOfYear": {
+      "binding": {
+        "config": {
+          "path": "view.custom.selectedDate"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None:\n\t\treturn system.date.getDayOfYear(value)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.function": {
+      "persistent": true
+    },
+    "custom.seasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "selectedDate": "{view.custom.selectedDate}"
+          },
+          "queryPath": "WinterShelterGlobal/getSeasonFromDate"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027id\u0027)",
+            "type": "script"
+          },
+          {
+            "formatType": "numeric",
+            "formatValue": "integer",
+            "type": "format"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.selectedDate": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 500
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Text": "Congregation Selection"
+          },
+          "path": "1_globalTEMPLATES/Header/Header",
+          "style": {
+            "borderTopLeftRadius": "8px",
+            "borderTopRightRadius": "8px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "selectedDate"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "dateFormat({view.custom.selectedDate},\u0027EEEEE MM/dd/YY\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "textStyle": {
+                    "classes": "Table/Column_Medium",
+                    "textIndent": 20
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "checkedInTotal"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "parameters": {
+                          "dayOfYear": "{view.custom.dayOfYear}",
+                          "seasonId": "{view.custom.seasonId}"
+                        },
+                        "queryPath": "WinterShelterGlobal/Schedule/GetCheckedInDetailsForADay"
+                      },
+                      "type": "query"
+                    }
+                  }
+                },
+                "props": {
+                  "textStyle": {
+                    "classes": "Table/Column_Medium",
+                    "textIndent": 20
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "LeftColLabels"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\timport time\n\tif system.date.midnight(self.view.custom.selectedDate) !\u003d system.date.midnight(system.date.now()):\n\t\terrorMessage \u003d \"You can add congregation for Current night only.\"\n\t\tself.parent.parent.parent.getChild(\"Error\").props.text \u003d errorMessage\n\t\tself.parent.parent.parent.getChild(\"Error\").position.display \u003d True\n\t\ttime.sleep(2)\n\t\tself.parent.parent.parent.getChild(\"Error\").props.text \u003d \"\"\n\t\tself.parent.parent.parent.getChild(\"Error\").position.display \u003d False\n\telse:\n\t\tid \u003d \"AddCongregationToSchedule\"\n\t\tsystem.perspective.openDock(id\u003did,params\u003d{})\n\t\t\t\n\t\t\t\n\t\t\n\t\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "AddCongregation"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Buttons/Secondary",
+                    "margin": 10
+                  },
+                  "text": "Add Congregation"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "RightColButton"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "props": {
+              "justify": "flex-end"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Labels"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "props": {
+          "style": {
+            "classes": "Background/Default",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Error"
+        },
+        "position": {
+          "basis": "25px",
+          "display": false
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Error_Message"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Congregations_Table"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.dayOfYear": {
+            "binding": {
+              "config": {
+                "path": "view.custom.dayOfYear"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.seasonId": {
+            "binding": {
+              "config": {
+                "path": "view.custom.seasonId"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Schedule/Table/Congregations_Table"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Alternative"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "ServeDateSelected",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tselectedDate \u003d payload[\u0027selectedDate\u0027]\n\tif selectedDate !\u003d None:\n\t\tself.view.custom.dayOfYear \u003d system.date.getDayOfYear(selectedDate)\n\t\tself.view.custom.selectedDate \u003d selectedDate\n\t\t",
+          "sessionScope": false,
+          "viewScope": false
+        },
+        {
+          "messageType": "participantCheckedIn",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"Labels\").getChild(\"LeftColLabels\").getChild(\"checkedInTotal\").refreshBinding(\"props.text\")",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "errorAddingCongregation",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\timport time\n\tsystem.perspective.print(\"error message recvd\")\n\terrorMessage \u003d payload[\u0027message\u0027]\n\tsystem.perspective.print(errorMessage)\n\tself.getChild(\"Error\").position.display \u003d True\n\tself.getChild(\"Error\").props.text \u003d errorMessage\n\ttime.sleep(2)\n\tself.getChild(\"Error\").props.text \u003d \"\"\n\tself.getChild(\"Error\").position.display \u003d False",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "newCongregationAdded",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"Labels\").getChild(\"LeftColLabels\").getChild(\"checkedInTotal\").refreshBinding(\"props.text\")",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

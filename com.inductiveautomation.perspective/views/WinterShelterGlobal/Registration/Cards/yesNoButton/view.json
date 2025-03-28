@@ -1,0 +1,100 @@
+{
+  "custom": {},
+  "params": {
+    "Text": "YES"
+  },
+  "propConfig": {
+    "params.Dock": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Text": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.key": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 36,
+      "width": 74
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": [
+              {
+                "config": {
+                  "script": "\tbuttonType \u003d self.view.params.Text\n\tif buttonType \u003d\u003d \"YES\":\n\t\tsystem.perspective.sendMessage(\"UseDefaultNumber\", scope \u003d \"page\")\n\t\t"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": true,
+                  "id": "9rQNrqfI",
+                  "modal": false,
+                  "overlayDismiss": false,
+                  "resizable": true,
+                  "showCloseIcon": true,
+                  "type": "close",
+                  "viewPath": "WinterShelter/Registration/Cards/yesNoButton",
+                  "viewportBound": false
+                },
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Button_3"
+        },
+        "position": {
+          "basis": "100%",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/New_Item",
+            "paddingBottom": "3px",
+            "paddingLeft": "10px",
+            "paddingRight": "10px",
+            "paddingTop": "3px"
+          },
+          "textStyle": {
+            "fontSize": "90%"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Buttons/New_Item"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

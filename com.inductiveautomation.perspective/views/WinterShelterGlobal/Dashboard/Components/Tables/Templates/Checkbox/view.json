@@ -1,0 +1,73 @@
+{
+  "custom": {},
+  "params": {
+    "value": false
+  },
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 24,
+      "width": 24
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 24,
+          "width": 24
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "!toBoolean({view.params.value})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "—"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 24,
+          "width": 24
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "toBoolean({view.params.value})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#0c4e8b",
+          "path": "material/check"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

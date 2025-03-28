@@ -1,0 +1,25 @@
+{
+  "base": {
+    "style": {
+      "backgroundClip": "border-box",
+      "backgroundColor": "#d1e6f7",
+      "borderColor": "#d1e6f7",
+      "borderStyle": "solid",
+      "borderWidth": "2px",
+      "outlineStyle": "none"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundClip": "border-box",
+        "backgroundColor": "#0d80e3",
+        "borderColor": "d1e6f7",
+        "borderStyle": "solid",
+        "borderWidth": "2px",
+        "outlineStyle": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "custom": {},
+  "params": {
+    "Icon": "check",
+    "NavigateTo": "",
+    "Text": "Check-in"
+  },
+  "propConfig": {
+    "params.Icon": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.NavigateTo": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 75,
+      "width": 50
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "34px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.image.icon.path": {
+            "binding": {
+              "config": {
+                "expression": "\"material/\"+{view.params.Icon}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "color": "#0C4E8B"
+            }
+          },
+          "style": {
+            "classes": "Buttons/Detail_Action",
+            "marginBottom": "5px",
+            "marginLeft": 8,
+            "marginRight": 8,
+            "marginTop": "5px"
+          },
+          "text": ""
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "41px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Detail_Action"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Text/Personal_Header"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

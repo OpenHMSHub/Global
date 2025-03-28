@@ -1,0 +1,97 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 28,
+      "width": 120
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "basis": "256px"
+        },
+        "props": {
+          "dropdownOptionStyle": {
+            "classes": "Dropdowns/DDL_Blue"
+          },
+          "options": [
+            {
+              "label": "Group",
+              "value": 0
+            },
+            {
+              "label": "Gender",
+              "value": 1
+            },
+            {
+              "label": "Age",
+              "value": 2
+            },
+            {
+              "label": "Name",
+              "value": 3
+            },
+            {
+              "label": "Status",
+              "value": 4
+            },
+            {
+              "label": "Last Service Date",
+              "value": 5
+            },
+            {
+              "label": "Created Date",
+              "value": 6
+            },
+            {
+              "label": "Next Service Date",
+              "value": 7
+            },
+            {
+              "label": "Assignment",
+              "value": 8
+            },
+            {
+              "label": "No-Show",
+              "value": 9
+            },
+            {
+              "label": "Coordinator",
+              "value": 10
+            },
+            {
+              "label": "Availability Day",
+              "value": 11
+            },
+            {
+              "label": "Availability Hours",
+              "value": 12
+            }
+          ],
+          "placeholder": {
+            "text": ""
+          },
+          "style": {
+            "classes": "Dropdowns/DDL_Blue"
+          }
+        },
+        "type": "ia.input.dropdown"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

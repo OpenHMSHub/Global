@@ -1,0 +1,15 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "borderTopLeftRadius": "4px",
+      "borderTopRightRadius": "4px",
+      "borderBottomLeftRadius": "4px",
+      "borderBottomRightRadius": "4px",
+      "marginLeft": "20px",
+      "marginRight": "20px",
+      "paddingLeft": "20px",
+      "paddingRight": "20px"
+    }
+  }
+}

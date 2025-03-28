@@ -1,0 +1,147 @@
+{
+  "custom": {},
+  "params": {
+    "blocked": true,
+    "dayOfYear": 135,
+    "enabled": true,
+    "important": false,
+    "label": 0,
+    "selected": false
+  },
+  "propConfig": {
+    "params.blocked": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#if blocked remove from schedule\n\tif origin \u003d\u003d \u0027Script\u0027:\n\t\tadd \u003d False\n\t\tdayOfYear \u003d self.params.dayOfYear\n\t\tpayload \u003d {\u0027add\u0027:add,\u0027dayOfYear\u0027:dayOfYear}\n\t\tmessageType \u003d \u0027hostDay\u0027\n\t\tsystem.perspective.sendMessage(messageType, payload, scope \u003d \u0027page\u0027)"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.dayOfYear": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.enabled": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.important": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selected": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif origin \u003d\u003d \u0027Script\u0027 and not self.params.blocked:\n\t\tadd \u003d currentValue.value\n\t\tdayOfYear \u003d self.params.dayOfYear\n\t\tpayload \u003d {\u0027add\u0027:add,\u0027dayOfYear\u0027:dayOfYear}\n\t\tmessageType \u003d \u0027hostDay\u0027\n\t\tsystem.perspective.sendMessage(messageType, payload, scope \u003d \u0027page\u0027)"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 50
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.label} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.label})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.blocked},\"#DDDDDD\",\r\n\tif({view.params.selected}, \"#0066FF\",\r\n\t\t\"#FFFFFF00\"))"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.borderColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.blocked} \u0026\u0026 {view.params.selected}, \"#0066FF\",\"#00FF66\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.borderStyle": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.important} || ({view.params.blocked} \u0026\u0026 {view.params.selected}), \u0027solid\u0027, \u0027none\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.blocked} || {view.params.selected},\"#FFFFFF\", \u0027#9db8d1\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.label"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": "50px",
+            "borderBottomRightRadius": "50px",
+            "borderTopLeftRadius": "50px",
+            "borderTopRightRadius": "50px",
+            "borderWidth": "2px",
+            "marginLeft": "10px",
+            "marginRight": 10,
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tif self.view.params.enabled:\n\t\tif self.view.params.selected:\n\t\t\tself.view.params.selected \u003d False\n\t\telif not self.view.params.blocked:\n\t\t\tself.view.params.selected \u003d True\n\t\t"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "center",
+      "direction": "column",
+      "justify": "center"
+    },
+    "type": "ia.container.flex"
+  }
+}

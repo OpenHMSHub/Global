@@ -1,0 +1,110 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "528eb77128d8d6e0901e78575723dcd538c3aa3d15ad33311d636331a187c021",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "firstName",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "middleName",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "lastName",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dob",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dob_quality",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "gender",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "address",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "city",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "zipcode",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "primaryPhone",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "eveningPhone",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "email",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "preferredCommunicationMethod",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "preferredCommunication",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "human_id",
+        "sqlType": 2
+      }
+    ]
+  }
+}

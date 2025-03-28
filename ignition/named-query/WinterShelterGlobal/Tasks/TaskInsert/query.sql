@@ -1,0 +1,24 @@
+INSERT INTO shelter.tasks
+	(
+	congregationId,
+	typeId,
+	title,
+	dueDate,
+	staffId,
+	priority,
+	statusId,
+	notes,
+	timeCreated
+	)
+VALUES
+	(
+	 :congregationId,
+	 :typeId,
+	 :title,
+	 :dueDate,
+	 :staffId,
+	 :priority,
+	 :statusId,
+	 :notes,
+	  :timeCreated
+	  )

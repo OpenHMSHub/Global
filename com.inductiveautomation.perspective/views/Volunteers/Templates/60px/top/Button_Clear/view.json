@@ -1,0 +1,66 @@
+{
+  "custom": {},
+  "params": {
+    "func_clear": false
+  },
+  "propConfig": {
+    "params.func_clear": {
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 60,
+      "width": 30
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.params.func_clear \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "basis": "24px"
+        },
+        "props": {
+          "image": {
+            "height": 16,
+            "icon": {
+              "color": "#0c4e8b",
+              "path": "material/close"
+            },
+            "position": "center",
+            "width": 20
+          },
+          "style": {
+            "classes": "Buttons/Detail_Action"
+          },
+          "text": ""
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "direction": "column",
+      "justify": "center"
+    },
+    "type": "ia.container.flex"
+  }
+}

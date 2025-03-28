@@ -1,0 +1,85 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 793,
+      "width": 1061
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "infoCards": [
+              {
+                "body": "You may email shelter@roomintheinn.org or call 615-251-7019. Please, give as much notice as possible so that other arrangements can be made.",
+                "title": "Who do I contact if I am sick or unable to host?"
+              },
+              {
+                "body": "If a situation is life-threatening or dangerous, congregations should call 911 immediately. For all other concerns or questions, Room In The Inn has an emergency number that is answered 24/7 at 615-251-7064.\u003cul\u003e\u003cli\u003eFighting\u003c/li\u003e\u003cli\u003eIntoxicated guest\u003c/li\u003e\u003cli\u003eIncident at a congregation\u003c/li\u003e\u003cli\u003eCOVID or sick\u003c/li\u003e\u003cli\u003eLost guest\u003c/li\u003e\u003c/ul\u003e",
+                "title": "What if there is an emergency?"
+              },
+              {
+                "body": "Room In The Inn guests often share their personal stories with volunteers at each congregation, and their experiences can inspire generosity and kindle a desire to become more deeply involved with a particular individual. This might include offering special assistance with employment, housing, medical needs, or some other request.\u003cbr\u003eBefore providing help to a guest, volunteers should consider consulting with a member of the Room In The Inn team. Staff members may not know about the difficulties a guest is experiencing and can provide additional support and guidance. They can serve as liasons between the congregation and guest in order to protect confidentiality and fairness.",
+                "title": "Helping individual guests"
+              },
+              {
+                "body": "Working with individuals struggling with homelessness is a unique experience. Accordingly, it is important that unique considerations be made by all participating volunteers. Here are some best practices.\u003cul\u003e\u003cli\u003eBe respectful to all guests and volunteers and consider each guest as an individual.\u003c/li\u003e\u003cli\u003eDo not share personal information such as your telephone number, address, or email.\u003c/li\u003e\u003c/ul\u003e",
+                "title": "Healthy boundaries"
+              }
+            ]
+          },
+          "path": "WinterShelterGlobal/Detail/Components/FAQ/ContentColumn"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "infoCards": [
+              {
+                "body": "Please arrive between 5:45 and 6:30 pm to pick up your guests from Room In The Inn. (705 Drexel Street, Nashville, TN 37203)\u003cbr\u003ePlease drop guests off at Room In The Inn between 6:00 and 7:00 am the next morning.",
+                "title": "Driving instructions"
+              },
+              {
+                "body": "?? What does RITI say?",
+                "title": "Can 1 person be left alone with the group of guests?"
+              },
+              {
+                "body": "Additional answers",
+                "title": "Additional questions by RITI"
+              }
+            ]
+          },
+          "path": "WinterShelterGlobal/Detail/Components/FAQ/ContentColumn"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

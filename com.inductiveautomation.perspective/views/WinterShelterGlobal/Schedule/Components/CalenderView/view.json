@@ -1,0 +1,447 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "#\timport time\n#\ttime.sleep(0.1)\n\tcurrentDate \u003d system.date.now()\n\tmonthStartDate \u003d system.date.getDate(system.date.getYear(currentDate),system.date.getMonth(currentDate),\t1)\n\tself.getChild(\"root\").getChild(\"Month\").getChild(\"DateTimeInput\").props.value \u003d monthStartDate\n#\tself.getChild(\"root\").getChild(\"Month\").getChild(\"DateTimeInput\").props.formattedValue \u003d system.date.format(monthStartDate,\u0027MMMM YYYY\u0027)\n\tsystem.perspective.print(system.date.format(monthStartDate,\u0027MMMM YYYY\u0027))"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 400,
+      "width": 980
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "35%"
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tCurrentDate \u003d self.getSibling(\"DateTimeInput\").props.value\n\tnewDate \u003d system.date.addMonths(CurrentDate, -1)\n\tself.getSibling(\"DateTimeInput\").props.value \u003d newDate\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "image": {
+                "height": 30,
+                "icon": {
+                  "color": "#3EC3D9",
+                  "path": "material/chevron_left"
+                },
+                "position": "right",
+                "style": {
+                  "backgroundColor": "#FFFFFF"
+                },
+                "width": 30
+              },
+              "primary": false,
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none"
+              },
+              "text": "",
+              "textStyle": {
+                "color": "#3EC3D9"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "DateTimeInput_lable"
+            },
+            "position": {
+              "basis": "175px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "../DateTimeInput.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tmonthStartDate \u003d system.date.getDate(system.date.getYear(value),system.date.getMonth(value),\t1)\n\tformattedDate \u003d system.date.format(monthStartDate,\u0027MMMM YYYY\u0027)\n\treturn formattedDate",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "backgroundColor": "#FFFFFF",
+                "borderColor": "#3EC3D9",
+                "borderStyle": "none",
+                "color": "#3EC3D9",
+                "fontFamily": "Proxima NovaC",
+                "fontSize": "24px",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "DateTimeInput"
+            },
+            "position": {
+              "basis": "175px",
+              "display": false
+            },
+            "props": {
+              "format": "MMMM YYYY",
+              "formattedValue": "January 2025",
+              "inputProps": {
+                "style": {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "#3EC3D9",
+                  "borderStyle": "none",
+                  "color": "#3EC3D9",
+                  "fontFamily": "Proxima NovaC",
+                  "fontSize": "24px",
+                  "textAlign": "center"
+                }
+              },
+              "modalStyle": {
+                "style": {
+                  "backgroundColor": "#FFFFFF",
+                  "borderStyle": "none"
+                }
+              },
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1738212541870
+                ],
+                "$ts": 1735711200000
+              }
+            },
+            "type": "ia.input.date-time-input"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tCurrentDate \u003d self.getSibling(\"DateTimeInput\").props.value\n\tnewDate \u003d system.date.addMonths(CurrentDate, +1)\n\tself.getSibling(\"DateTimeInput\").props.value \u003d newDate\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "image": {
+                "height": 30,
+                "icon": {
+                  "color": "#3EC3D9",
+                  "path": "material/chevron_right"
+                },
+                "width": 30
+              },
+              "primary": false,
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none",
+                "color": "#3EC3D9"
+              },
+              "text": ""
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Month"
+        },
+        "position": {
+          "basis": "45px"
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#FFFFFF",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "FlexRepeater"
+            },
+            "position": {
+              "basis": "980px",
+              "shrink": 0
+            },
+            "props": {
+              "elementStyle": {
+                "borderColor": "#AAAAAA",
+                "borderStyle": "none",
+                "borderWidth": 0.1
+              },
+              "instances": [
+                {
+                  "Day": "Sun",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "Day": "Mon",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "Day": "Tue",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "Day": "Wed",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "Day": "Thur",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "Day": "Fri",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "Day": "Sat",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                }
+              ],
+              "path": "WinterShelterGlobal/Schedule/Components/DaysInWeek",
+              "style": {
+                "overflow": "hidden"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "Days"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "alignItems": "flex-start",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView"
+            },
+            "position": {
+              "basis": "300px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.dateRange.endDate": {
+                "binding": {
+                  "config": {
+                    "path": ".../Month/DateTimeInput.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t#\treturn value\n\treturn system.date.addDays(system.date.getDate(system.date.getYear(value),system.date.getMonth(value) +1,1),-1)",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.params.dateRange.startDate": {
+                "binding": {
+                  "config": {
+                    "path": ".../Month/DateTimeInput.props.value"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.useDefaultViewHeight": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.params.instanceCount"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003e 35:\n\t\treturn True\n\telse:\n\t\treturn False\n",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "dateRange": {},
+                "instanceCount": 34
+              },
+              "path": "WinterShelterGlobal/Schedule/Components/DateRange",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "custom": {
+          "dateRange": {
+            "endDate": {
+              "$": [
+                "ts",
+                192,
+                1653906867146
+              ],
+              "$ts": 1653935400000
+            },
+            "endDate1": {
+              "$": [
+                "ts",
+                192,
+                1653906867146
+              ],
+              "$ts": 1653935400000
+            },
+            "startDate": {
+              "$": [
+                "ts",
+                192,
+                1653906867146
+              ],
+              "$ts": 1651343400000
+            }
+          }
+        },
+        "meta": {
+          "name": "Calender"
+        },
+        "position": {
+          "basis": "300px"
+        },
+        "propConfig": {
+          "props.style.overflow": {
+            "binding": {
+              "config": {
+                "path": "./EmbeddedView.props.params.instanceCount"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003e 35:\n\t\treturn \u0027auto\u0027\n\telse:\n\t\treturn \u0027hidden\u0027\n",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignItems": "flex-start",
+          "justify": "center",
+          "style": {}
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

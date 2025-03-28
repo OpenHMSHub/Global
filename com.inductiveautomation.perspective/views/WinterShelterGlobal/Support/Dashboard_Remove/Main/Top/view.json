@@ -1,0 +1,87 @@
+{
+  "custom": {},
+  "params": {
+    "congregation_search": false,
+    "row_data": {
+      "RITINotes": "",
+      "Status": "",
+      "completed": "None",
+      "congregationNotes": "",
+      "contact": "",
+      "dueDate": "None",
+      "id": -1,
+      "locationId": -1,
+      "locationName": "",
+      "priorityId": -1,
+      "staffId": -1,
+      "staffName": "",
+      "statusId": -1,
+      "ticketPriority": "",
+      "ticketTypeId": -1,
+      "timeCreated": "None",
+      "title": "",
+      "type": ""
+    },
+    "view_height": "270px"
+  },
+  "propConfig": {
+    "params.congregation_search": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.row_data": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.view_height": {
+      "binding": {
+        "config": {
+          "path": "/root/Edit.props.params.view_height"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1556
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Edit"
+        },
+        "position": {
+          "basis": "30%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.Row_Data": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.row_data"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "view_height": "270px"
+          },
+          "path": "WinterShelter/Support/Dashboard/Main/Edit/SupportDashboardEdit"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

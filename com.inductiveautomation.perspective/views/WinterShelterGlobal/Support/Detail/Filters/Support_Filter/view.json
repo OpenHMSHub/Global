@@ -1,0 +1,487 @@
+{
+  "custom": {
+    "currentSeasonId": null
+  },
+  "params": {
+    "activeInActive": null,
+    "congregationId": -1,
+    "dateRangeEnd": null,
+    "dateRangeStart": null,
+    "priorityId": -1,
+    "searchText": "",
+    "staffId": -1,
+    "startDateFilter": {
+      "$": [
+        "ts",
+        192,
+        1665450350943
+      ],
+      "$ts": 2678400000
+    },
+    "statusId": -1,
+    "ticketTypeId": -1
+  },
+  "propConfig": {
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelter/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.activeInActive": {
+      "binding": {
+        "config": {
+          "expression": "lookup({/root/ActiveInactive.props.params.options},{/root/ActiveInactive.props.params.selection},None,\u0027ID\u0027,\u0027day\u0027)"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationId": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.dateRangeEnd": {
+      "binding": {
+        "config": {
+          "path": "session.custom.filters.WinterShelterTasks.DueDate.value[1]"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None:\n\t\treturn system.date.format(value, \"yyyy-MM-dd 23:59:59\")\n\telse:\n\t\treturn None",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.dateRangeStart": {
+      "binding": {
+        "config": {
+          "path": "session.custom.filters.WinterShelterTasks.DueDate.value[0]"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None:\n\t\treturn system.date.format(value, \"yyyy-MM-dd 00:00:00\")\n\telse:\n\t\treturn None",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.priorityId": {
+      "binding": {
+        "config": {
+          "path": "/root/Priority.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.searchText": {
+      "binding": {
+        "config": {
+          "path": "/root/Search.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.staffId": {
+      "binding": {
+        "config": {
+          "path": "/root/Staff.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.startDateFilter": {
+      "binding": {
+        "config": {
+          "expression": "getDate(1970,1,1)"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.statusId": {
+      "binding": {
+        "config": {
+          "path": "/root/Status.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.ticketTypeId": {
+      "binding": {
+        "config": {
+          "path": "/root/Type.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 1817
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "lblFilter"
+        },
+        "position": {
+          "basis": "70px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.sqlData": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "accessible": "{session.custom.filters.winterShelterRegistrations.HDCP.where}",
+                  "amenities": "{session.custom.filters.winterShelterRegistrations.amenities.where}",
+                  "city": "{session.custom.filters.winterShelterRegistrations.city.where}",
+                  "families": "{session.custom.filters.winterShelterRegistrations.families.where}",
+                  "friday": "{session.custom.filters.winterShelterRegistrations.friday.where}",
+                  "genders": "{session.custom.filters.winterShelterRegistrations.genders.where}",
+                  "locationName": "{session.custom.filters.winterShelterRegistrations.locationName.where}",
+                  "maxGuests": "{session.custom.filters.winterShelterRegistrations.maxGuests.where}",
+                  "minGuests": "{session.custom.filters.winterShelterRegistrations.minGuests.where}",
+                  "monday": "{session.custom.filters.winterShelterRegistrations.monday.where}",
+                  "reminderCall": "{session.custom.filters.winterShelterRegistrations.reminderCall.where}",
+                  "saturday": "{session.custom.filters.winterShelterRegistrations.saturday.where}",
+                  "season": "{session.custom.filters.winterShelterRegistrations.season.where}",
+                  "shortNotice": "{session.custom.filters.winterShelterRegistrations.shortNotice.where}",
+                  "smoking": "{session.custom.filters.winterShelterRegistrations.smoking.where}",
+                  "stairs": "{session.custom.filters.winterShelterRegistrations.stairs.where}",
+                  "sunday": "{session.custom.filters.winterShelterRegistrations.sunday.where}",
+                  "thursday": "{session.custom.filters.winterShelterRegistrations.thursday.where}",
+                  "tuesday": "{session.custom.filters.winterShelterRegistrations.tuesday.where}",
+                  "wednesday": "{session.custom.filters.winterShelterRegistrations.wednesday.where}",
+                  "zipCode": "{session.custom.filters.winterShelterRegistrations.zipCode.where}"
+                },
+                "queryPath": "WinterShelter/Dashboard/Registrations",
+                "returnFormat": "dataset"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Filter/Header_Text"
+          },
+          "text": "Filters:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ActiveInactive"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "options": {
+              "$": [
+                "ds",
+                192,
+                1655375368509
+              ],
+              "$columns": [
+                {
+                  "data": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "name": "ID",
+                  "type": "Integer"
+                },
+                {
+                  "data": [
+                    "Active",
+                    "Inactive",
+                    "Active \u0026 Inactive"
+                  ],
+                  "name": "day",
+                  "type": "String"
+                }
+              ]
+            },
+            "placeholder": "Active \u0026 Inactive",
+            "selection": -1
+          },
+          "path": "1_globalTEMPLATES/Filtering/Conditionals/Conditional_SingleDropDown_NoClear",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "dateRange"
+        },
+        "position": {
+          "basis": "275px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "timeCreated",
+            "filter": "WinterShelterTasks",
+            "key": "DueDate",
+            "placeholder": "Created Date Range",
+            "searchType": "dateRange",
+            "text": ""
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/DateRangePicker",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Type"
+        },
+        "position": {
+          "basis": "130px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Support/GetTicketTypes"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "placeholder": "Type",
+            "selection": -1
+          },
+          "path": "1_globalTEMPLATES/Filtering/Conditionals/Conditional_SingleDropDown_NoClear",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "basis": "100px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Support/GetStatus"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "placeholder": "Status",
+            "selection": -1
+          },
+          "path": "1_globalTEMPLATES/Filtering/Conditionals/Conditional_SingleDropDown_NoClear",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Priority"
+        },
+        "position": {
+          "basis": "100px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Tasks/Priority"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "placeholder": "Priority",
+            "selection": -1
+          },
+          "path": "1_globalTEMPLATES/Filtering/Conditionals/Conditional_SingleDropDown_NoClear",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Staff"
+        },
+        "position": {
+          "basis": "180px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Tasks/GetStaff"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "placeholder": "Staff",
+            "selection": -1
+          },
+          "path": "1_globalTEMPLATES/Filtering/Conditionals/Conditional_SingleDropDown_NoClear",
+          "style": {
+            "classes": "Filter/Filter_Container",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Filtering/Filter_Placeholder"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "lblSearch"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Table/Filter_Header",
+            "textAlign": "end"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Search"
+        },
+        "position": {
+          "basis": "180px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "placeholder": "Search",
+            "text": ""
+          },
+          "path": "1_globalTEMPLATES/Filtering/Conditionals/Conditional_Text",
+          "style": {
+            "classes": "Table/Search_Bar"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t#Clear the filter components\n\tself.getSibling(\"ActiveInactive\").props.params.selection \u003d -1\n\tself.getSibling(\"dateRange\").props.params.text \u003d \u0027\u0027\n\tself.getSibling(\"Type\").props.params.selection \u003d -1\n\tself.getSibling(\"Status\").props.params.selection \u003d -1\n\tself.getSibling(\"Priority\").props.params.selection \u003d -1\n\tself.getSibling(\"Staff\").props.params.selection \u003d -1\n\tself.getSibling(\"Search\").props.params.text \u003d \"\""
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "ClearFilters"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Filtering/Filters/ClearFilters"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Filter/Header_Text",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

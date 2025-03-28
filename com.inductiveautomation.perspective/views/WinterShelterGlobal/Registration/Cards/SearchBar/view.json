@@ -1,0 +1,109 @@
+{
+  "custom": {},
+  "params": {
+    "Search": ""
+  },
+  "propConfig": {
+    "params.Search": {
+      "binding": {
+        "config": {
+          "path": "/root/TextField.props.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 25,
+      "width": 116
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onBlur": {
+              "config": {
+                "script": "\tself.props.style.borderColor \u003d \"#D5D5D5\""
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onFocus": {
+              "config": {
+                "script": "\tself.props.style.borderColor \u003d \"#3EC3D9\""
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "TextField"
+        },
+        "position": {
+          "height": 1,
+          "width": 1
+        },
+        "props": {
+          "deferUpdates": false,
+          "style": {
+            "classes": "Text/Add_TextField"
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tpass"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.96,
+          "width": 0.2414,
+          "x": 0.7593,
+          "y": 0.0413
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "len({../TextField.props.text}) \u003d 0"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#AAAAAA",
+          "path": "material/search"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

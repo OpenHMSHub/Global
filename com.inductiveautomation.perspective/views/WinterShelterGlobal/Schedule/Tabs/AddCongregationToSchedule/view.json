@@ -1,0 +1,2151 @@
+{
+  "custom": {
+    "createNew": false,
+    "currentSeasonID": "12",
+    "existingCongregations": {
+      "$": [
+        "ds",
+        192,
+        1665450665084
+      ],
+      "$columns": [
+        {
+          "data": [
+            144,
+            150,
+            240,
+            241,
+            242,
+            239,
+            243,
+            151,
+            152,
+            153,
+            42,
+            154,
+            133,
+            43,
+            155,
+            45,
+            46,
+            156,
+            157,
+            48,
+            49,
+            50,
+            158,
+            159,
+            51,
+            160,
+            161,
+            162,
+            147,
+            53,
+            163,
+            54,
+            55,
+            164,
+            56,
+            165,
+            166,
+            235,
+            57,
+            58,
+            59,
+            167,
+            168,
+            60,
+            61,
+            169,
+            62,
+            170,
+            171,
+            63,
+            172,
+            173,
+            174,
+            175,
+            68,
+            95,
+            41,
+            64,
+            236,
+            65,
+            176,
+            66,
+            136,
+            177,
+            178,
+            67,
+            69,
+            179,
+            137,
+            70,
+            180,
+            142,
+            181,
+            182,
+            72,
+            183,
+            73,
+            74,
+            184,
+            75,
+            185,
+            186,
+            76,
+            77,
+            78,
+            79,
+            80,
+            187,
+            81,
+            83,
+            188,
+            189,
+            190,
+            84,
+            85,
+            138,
+            86,
+            191,
+            87,
+            88,
+            193,
+            192,
+            89,
+            90,
+            194,
+            92,
+            195,
+            196,
+            93,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            141,
+            97,
+            203,
+            234,
+            204,
+            143,
+            134,
+            132,
+            115,
+            126,
+            107,
+            110,
+            118,
+            94,
+            96,
+            71,
+            99,
+            100,
+            91,
+            82,
+            52,
+            47,
+            44,
+            149,
+            98,
+            205,
+            206,
+            207,
+            208,
+            209,
+            101,
+            210,
+            211,
+            212,
+            213,
+            214,
+            102,
+            103,
+            237,
+            104,
+            105,
+            215,
+            106,
+            216,
+            217,
+            108,
+            218,
+            219,
+            109,
+            145,
+            112,
+            222,
+            223,
+            113,
+            146,
+            220,
+            116,
+            221,
+            117,
+            148,
+            224,
+            111,
+            114,
+            119,
+            225,
+            120,
+            135,
+            139,
+            226,
+            227,
+            121,
+            122,
+            228,
+            123,
+            229,
+            124,
+            230,
+            125,
+            238,
+            231,
+            232,
+            127,
+            140,
+            233,
+            128,
+            129,
+            130,
+            131
+          ],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "",
+            "Acklen Avenue Church of Christ",
+            "AndrewTest2",
+            "AndrewTest2",
+            "AndrewTest3",
+            "AndrewTestC",
+            "AndrewTheFourth",
+            "Antioch United Methodist Church",
+            "Belle Meade United Methodist Church",
+            "Bellevue Baptist Church",
+            "Bellevue Church of Christ",
+            "Bellevue Presbyterian Church",
+            "Bellevue United Methodist Church",
+            "Belmont United Methodist Church",
+            "Belmont University",
+            "Bethel Church of the Nazarene",
+            "Bethlehem United Methodist Church",
+            "Blakemore Church of the Nazarene",
+            "Blakemore United Methodist Church",
+            "Brentwood Baptist",
+            "Brentwood Hills Church Of Christ",
+            "Brentwood United Methodist",
+            "Brook Hollow Baptist Church",
+            "Brookemeade Congregational UCC",
+            "Brush Hill Cumberland Presbyterian Church",
+            "Calvary Chapel Long Hollow",
+            "Calvary United Methodist Church",
+            "Cathedral of the Incarnation",
+            "Catholic Central",
+            "Christ Church Cathedral",
+            "Christ Community Church",
+            "Christ Presbyterian Church",
+            "Christ the King Catholic Church",
+            "Christ United Methodist Church",
+            "Church of the Advent",
+            "Church of the Redeemer",
+            "Clark Memorial United Methodist Church",
+            "Clearview Baptist",
+            "Clearview Baptist Church",
+            "Community Baptist Church",
+            "Community Church of Hendersonville",
+            "Concord Community Church of the Nazarene",
+            "congregation micah",
+            "Congregation Sherith Israel",
+            "Connell Memorial United Methodist Church",
+            "Covenant Presbyterian Church",
+            "Crieve Hall Church of Christ",
+            "Crievewood Baptist Church",
+            "Crievewood United Methodist",
+            "Dalewood Baptist Church",
+            "Dalewood United Methodist Church",
+            "Donelson Church of Christ",
+            "Donelson Heights United Methodist Church",
+            "Donelson Presbyterian Church",
+            "Donelson View Baptist",
+            "Drexel House",
+            "Drexel House",
+            "East Brentwood Presbyterian Church",
+            "Eastwood Christian",
+            "Eastwood Christian Church",
+            "Edgehill United Methodist Church",
+            "Episcopal Church of the Resurrection",
+            "Epworth United Methodist Church",
+            "Ethos @ Acklen Avenue",
+            "Faith Baptist Church",
+            "Father Ryan High School",
+            "First Apostolic Church",
+            "First Baptist Church Capitol Hill",
+            "First Baptist Church Donelson",
+            "First Baptist Church Hendersonville",
+            "First Baptist Goodlettsville",
+            "First Church of the Nazarene",
+            "First Lutheran",
+            "First Presbyterian Church Franklin",
+            "First Presbyterian Church Nashville",
+            "First Unitarian Universalist Church of Nashville",
+            "Forest Hills Baptist Church",
+            "Forest Hills United Methodist Church",
+            "Fourteenth Avenue Missionary Baptist Church",
+            "Franklin First United Methodist Church",
+            "Gateway Community Church",
+            "Glendale Baptist Church",
+            "Glendale United Methodist Church",
+            "Godwhy",
+            "Good Shepherd United Methodist Church",
+            "Goodlettsville Nazarene",
+            "Grace Baptist Church",
+            "Grace Chapel",
+            "Grace Place",
+            "Grassland Heights Baptist Church",
+            "Greater Bethel AME",
+            "Greater Nashville Unitarian Universalist Congregat",
+            "Green Hill Church",
+            "Harpeth Hills Church of Christ",
+            "Hendersonville Church of Christ",
+            "Hendersonville First United Methodist",
+            "Hendersonville First United Methodist Church",
+            "Hermitage Church of the Nazarene",
+            "Hermitage Hills Baptist Church",
+            "Hermitage United Methodist Church",
+            "Hillcrest SDA",
+            "Hillcrest United Methodist Church",
+            "Hillsboro Church of Christ",
+            "Hillsboro Presbyterian Church",
+            "Holy Family Catholic Church",
+            "HOLY ROSARY CATHOLIC CHURCH",
+            "Holy Trinity Community Church",
+            "Holy Trinity Episcopal Church",
+            "Immanuel Baptist Church",
+            "Jackson Park Church of Christ",
+            "John Wesley United Methodist Church",
+            "Kings lane Church of Christ",
+            "Lake Providence Missionary Baptist",
+            "Lee Chapel AME Church",
+            "Liberty United Methodist Church",
+            "Lifepoint Church",
+            "Lifepoint Church Smyrna",
+            "Long Hollow Baptist Church",
+            "Lucky Rooster Lake Church",
+            "Madison Church of Christ",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Matthews Memorial United Methodist Church",
+            "McFerrin Missionary Baptist Church",
+            "Mt. Nebo Baptist Church",
+            "Mt. Vernon Missionary Baptist Church",
+            "Mt. Zion Baptist Church",
+            "Nashville First Baptist",
+            "Nashville First Church of the Nazarene",
+            "New Covenant Christian Church",
+            "New Hope Missionary Baptist Church",
+            "Nolensville First United Methodist Church",
+            "NorthField Church",
+            "Northside Church of Christ",
+            "Oak Valley Baptist Church",
+            "Otter Creek Church",
+            "Our Lady of the Lake",
+            "Our Lady of the Lake Catholic Church",
+            "Our Savior Lutheran Church",
+            "Parkway Baptist",
+            "Pegram Church of Christ",
+            "Pennington United Methodist Church",
+            "Pleasant Green Missionary Baptist Church",
+            "Riverwood Church of Christ",
+            "Rural Hill Church of Christ",
+            "Second Presbyterian Church",
+            "South End United Methodist Church",
+            "St Vincent De Paul",
+            "St. Andrew Lutheran Church",
+            "St. Anns Episcopal Church",
+            "St. Augustines Chapel",
+            "St. Bartholomews Episcopal Church",
+            "St. Davids Episcopal Church",
+            "St. Edward",
+            "St. Georges Episcopal Church",
+            "St. Henry Catholic Church",
+            "St. Ignatius of Antioch Catholic Church",
+            "St. John African Methodist Episcopal Church",
+            "St. Johns Lutheran Church",
+            "St. Joseph Catholic Church",
+            "St. Lukes Community House",
+            "St. Matthew Catholic Church",
+            "St. Stephen Catholic Community",
+            "St. Verena American Coptic Orthodox Church",
+            "St. Vincent DePaul",
+            "St. Vincent DePaul",
+            "Stateland Missionary Baptist Church",
+            "The Temple",
+            "Trevecca Community Church of the Nazarene",
+            "Tulip Grove Baptist Church",
+            "Tusculum Church of Christ",
+            "Una Baptist Church",
+            "Unity of Nashville",
+            "Vine Street Christian Church",
+            "Walker Memorial Baptist Church",
+            "West End Synagogue",
+            "West End United Methodist",
+            "West End United Methodist Church",
+            "Western Hills Church of Christ",
+            "Westminster Presbyterian Church",
+            "Woodbine United Methodist Church",
+            "Woodland Presbyterian Church",
+            "Woodmont Baptist Church",
+            "Woodmont Christian Church",
+            "Woodmont Hills Church of Christ",
+            "Woodson Chapel Church of Christ"
+          ],
+          "name": "providerName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "",
+            "900 Acklen Ave.",
+            "Maybe this time",
+            "Maybe this time",
+            "Lets try again",
+            "323423 Test Wallaby",
+            "MayTheFourthBewithus",
+            "41 Tusculum Road",
+            "121 Davidson Road",
+            "7400 US-70S",
+            "7401 Hwy 70 South",
+            "100 Cross Timbers Drive",
+            "7501 Old Harding Pike",
+            "2007 Acklen Ave",
+            "1900 Belmont Blvd",
+            "455 Broadmoor Drive",
+            "2419 Bethlehem Loop Rd",
+            "2800 Belcourt Ave",
+            "3601 West End Ave.",
+            "7777 Concord Rd",
+            "5120 Franklin Road",
+            "309 Franklin Road",
+            "678 Brook Hollow Road",
+            "700 Bresslyn Road",
+            "3705 Brush Hill Road",
+            "1001 Willis Branch Road",
+            "3701 Hillsboro Pike",
+            "2015 West End Avenue",
+            "Catholic Central",
+            "900 Broadway",
+            "1215 Hillsboro Road",
+            "2323 Old Hickory Blvd",
+            "3001 Belmont Blvd.",
+            "508 Franklin Road",
+            "5501 Franklin Rd",
+            "\"920 Caldwell Lane\n\"",
+            "\"1014 14th Avenue North\n\"",
+            "537 Franklin Road",
+            "537 Franklin Rd.",
+            "3838 Dickerson Pike",
+            "381 West Main Street",
+            "9826 Concord Road",
+            "\"2001 Old Hickory Blvd\n\"",
+            "3600 West End Avenue",
+            "113 Church Street",
+            "33 Burton Hills Blvd",
+            "4806 Trousdale Drive",
+            "480 Hogan Road",
+            "451 Hogan Rd",
+            "1586 McGavock Pike",
+            "512 Rosebank Ave.",
+            "\"2706 Old Lebanon Road \n\"",
+            "64 Fairway Drive",
+            "2305 Lebanon Road",
+            "Donelson View Baptist",
+            "Drexel House",
+            "Drexel House",
+            "9000 Concord rd",
+            "1601 Eastland Ave",
+            "1601 Eastland Avenue",
+            "1502 Edgehill Avenue",
+            "1216 Sneed Road W.",
+            "4241 Arno Rd.",
+            "OFFICE: 2301 8th Ave S.",
+            "1602 N Gallatin Road",
+            "700 Norwood Dr.",
+            "265 Broadmoor Drive",
+            "625 Rosa L Parks Blvd",
+            "2526 Lebanon Road",
+            "106 Bluegrass Commons Blvd",
+            "613 S Dickerson Rd",
+            "510 Woodland St.",
+            "113 8th Ave S",
+            "101 Legends Club Lane",
+            "4815 Franklin Pike",
+            "1808 Woodmont Blvd.",
+            "2101 Old Hickory BLVD",
+            "1250 Old Hickory Blvd",
+            "2501 Buchanan St",
+            "120 Aldersgate Way",
+            "584 Franklin Road",
+            "\"1021 Glendale Lane\n\"",
+            "900 Glendale Lane",
+            "100 Godwhy Court",
+            "525 New Shackle Island Rd",
+            "400 Loretta drive",
+            "1510 Old Hickory Blvd",
+            "3279 Southall Road",
+            "4316 Central Pike",
+            "2316 Hillsboro Rd",
+            "1300 South Street",
+            "374 Hicks Rd",
+            "13251 Lebanon Road",
+            "1949 Old Hickory Blvd",
+            "107 Rockland Rd",
+            "217 East Main Street",
+            "217 East Main Street",
+            "4151 Saundersville Road",
+            "3475 Lebanon Pike",
+            "205 Belinda Dr.",
+            "2010 - 25th Avenue North",
+            "5112 Raywood Lane",
+            "5800 Hillsboro Pk",
+            "5820 Hillsboro Road",
+            "9100 Crockett Road",
+            "192 Graylynn Dr",
+            "6727 Charlotte Pike",
+            "615 6th Ave.South",
+            "222 Belle Meade Blvd",
+            "4103 Gallatin Pike",
+            "901 Benton Ave",
+            "3274 Kings Lane",
+            "5891 Nolensville Pike",
+            "\"1200 Dr. D.B. Todd Jr. Blvd.\n\"",
+            "9587 Liberty Church Road",
+            "506 Legacy Dr.",
+            "506 Legacy Drive",
+            "3031 Long Hollow Pike",
+            "1234 Saundersville Rd",
+            "106 Gallatin Pike North",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "Main Building",
+            "300 Anderson Lane",
+            "431 W. Old Hickory Blvd",
+            "2416 Clifton Road",
+            "1022 New Providence Pass",
+            "7594 Old Hickory BLVD",
+            "108 7th Ave South",
+            "510 Woodland Street",
+            "2201 Osage Street",
+            "1303 Hawkins Street",
+            "7316 Nolensville Road",
+            "2100 Nashville Pike",
+            "1375 Old Hickory Pike",
+            "1161 Lewisburg Pk",
+            "409 Franklin Rd",
+            "1729 Stop 30 Road",
+            "1729 Stop 30 Road",
+            "5110 Franklin Pike",
+            "505 Cunniff Pkwy",
+            "5019 Walkup Road",
+            "2745 Pennington Bend Road",
+            "1410 Jefferson St",
+            "1904 McGavock Pike",
+            "564 Bell Road",
+            "3511 Belmont Blvd",
+            "5042 Edmondson Pike",
+            "St Vincent De Paul",
+            "908 Murfreesboro Rd",
+            "419 Woodland Street",
+            "200 24th Ave S",
+            "4800 Belmont Park Terrace",
+            "6501 Pennywell Dr.",
+            "188 Thompson Ln",
+            "4715 Harding Road",
+            "Harding Drive",
+            "601 Bell Road",
+            "P.O. Box 280646",
+            "3259 McGavock Pike",
+            "1225 Gallatin Rd S",
+            "St. Lukes Community House",
+            "535 Sneed Rd",
+            "14544 Lebanon Road",
+            "5240 Edmondson Pike",
+            "St. Vincent DePaul",
+            "St. Vincent DePaul",
+            "4650 Wright Ave",
+            "5015 Harding Road",
+            "335 Murfreesboro Road",
+            "563 Shute Lane",
+            "6117 Nolensville Pike",
+            "1931 Murfeesboro PK",
+            "\"5125 Franklin Pike\n \"",
+            "4101 Harding Pike",
+            "1350 W. Main St",
+            "3810 West End Ave.",
+            "2200 West End Avenue",
+            "2200 West End Ave",
+            "7565 Charlotte Pike",
+            "3900 Westend Ave",
+            "Woodbine United Methodist Church",
+            "211 N 11th St",
+            "2100 Woodmont Blvd",
+            "3601 Hillsboro Road",
+            "3710 Franklin Road",
+            "5800 Edmondson Pike"
+          ],
+          "name": "street",
+          "type": "String"
+        }
+      ]
+    },
+    "existingExactCongregation": {
+      "$": [
+        "ds",
+        192,
+        1665450665084
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "id",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "providerName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "street",
+          "type": "String"
+        }
+      ]
+    },
+    "navURL": "/WinterShelter/Congregations/Detail/144/Registrations",
+    "newRegistration": false,
+    "password2": "",
+    "sqlData": {
+      "$": [
+        "ds",
+        192,
+        1665450665086
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "bedsActualLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "transportId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Frequency",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "frequencyId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionPattern",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionDays",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.params.congregationId \u003d \u0027\u0027\n\tself.params.congregationName \u003d \u0027\u0027"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "address": null,
+    "congregationId": "",
+    "congregationName": "",
+    "email": null
+  },
+  "propConfig": {
+    "custom.createNew": {
+      "binding": {
+        "config": {
+          "expression": "false"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.currentSeasonID": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027id\u0027)",
+            "type": "script"
+          },
+          {
+            "formatType": "numeric",
+            "formatValue": "integer",
+            "type": "format"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.existingCongregations": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "congregationName": "\"LIKE \u0027%\" + {view.params.congregationName} + \"%\u0027\"",
+            "street": "\"LIKE \u0027%\" + {view.params.address} + \"%\u0027\""
+          },
+          "queryPath": "WinterShelterGlobal/Registration/matchCongregationName"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.existingExactCongregation": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "congregationName": "\"\u003d \u0027\" + {view.params.congregationName} + \"\u0027\"",
+            "street": "\"LIKE \u0027%\" + {view.params.address} + \"%\u0027\""
+          },
+          "queryPath": "WinterShelterGlobal/Registration/matchCongregationName"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount()!\u003d 0:\n\t\tif value.getValueAt(0,\u0027providerName\u0027)\u003d\u003d\u0027\u0027 and value.getRowCount()\u003d\u003d1:\n\t\t\tdataset \u003d system.dataset.deleteRow(value, 0)\n\t\telse:\n\t\t\tdataset \u003d value\n\telse:\n\t\tdataset \u003d value\n\treturn dataset",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.navURL": {
+      "binding": {
+        "config": {
+          "expression": "\u0027/WinterShelter/Congregations/Detail/\u0027 + try({view.custom.existingCongregations}[0,\u0027id\u0027],0) + \u0027/Registrations\u0027"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.newRegistration": {
+      "binding": {
+        "config": {
+          "path": "view.custom.existingCongregations"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount()\u003d\u003d1 or (self.custom.existingExactCongregation).getRowCount()\u003d\u003d1:\n\t\treturn True\n\telse:\n\t\treturn False",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.password2": {
+      "persistent": true
+    },
+    "custom.sqlData": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.congregationId}",
+            "seasonId": "{view.custom.currentSeasonID}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/RegistrationDetail"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.address": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.congregationId": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationName": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "text": "Winter Shelter New Registration"
+          },
+          "path": "WinterShelterGlobal/Schedule/Components/RegistrationHeader",
+          "style": {
+            "marginLeft": "-50px",
+            "marginRight": "-50px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CongregationName"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.congregationName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "Organization Name",
+            "requiredField": true,
+            "text": "Congregation Name"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TextInput",
+          "tooltip": {
+            "style": {
+              "color": "#2B2B2B"
+            }
+          }
+        },
+        "position": {
+          "basis": "55px",
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.address"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "Line 1",
+            "requiredField": true,
+            "text": "Address"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TextInput_0"
+        },
+        "position": {
+          "basis": "55px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.inputText": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.email"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hasHeader": true,
+            "placeHolder": "email@email.com",
+            "requiredField": true,
+            "text": "Primary Coordinator Email"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Password"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Password"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "PasswordField"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.password"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_TextFieldWhite",
+            "marginBottom": "0px"
+          }
+        },
+        "type": "ia.input.password-field"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Confirm Password"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if ({view.custom.password2}\u003d\u0027\u0027\r\n\t, \u0027*\u0027\r\n\t,if({view.params.password} \u003d {view.custom.password2}, \u0027*\u0027, \u0027* Passwords must match\u0027))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#D80000",
+                "fontSize": "14px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Password_0"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "PasswordField_0"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.createNew"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.password2"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_TextFieldWhite",
+            "marginBottom": "0px"
+          }
+        },
+        "type": "ia.input.password-field"
+      },
+      {
+        "meta": {
+          "name": "Checkbox"
+        },
+        "position": {
+          "basis": "36px",
+          "display": false
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{this.props.text} !\u003d \u0027\u0027 \u0026\u0026 !{view.custom.createNew}"
+              },
+              "enabled": false,
+              "type": "expr"
+            }
+          },
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.congregationMatch"
+              },
+              "enabled": false,
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.existingCongregations"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,\u0027providerName\u0027) \u003d\u003d self.view.params.congregationName and value.getValueAt(0,\u0027street\u0027) \u003d\u003d self.view.params.address:\n\t\t\treturn \u0027\u0027\n\t\telif self.view.params.congregationName \u003d\u003d \u0027\u0027 and self.view.params.address \u003d\u003d \u0027\u0027:\n\t\t\treturn \u0027\u0027\n\t\treturn \"Use \" + value.getValueAt(0,\u0027providerName\u0027) + \" at \" + value.getValueAt(0,\u0027street\u0027)\n\treturn \u0027\u0027 ",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "checkedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          },
+          "style": {
+            "color": "#9db8d1",
+            "fontFamily": "Proxima NovaC Medium",
+            "fontSize": "14px",
+            "marginTop": "10px"
+          },
+          "text": "",
+          "uncheckedIcon": {
+            "color": {
+              "enabled": "#0066FF"
+            }
+          }
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t\n\tnewSchedule \u003d []\n\tnotes \u003d [\u0027\u0027]\n\ttodayDayOfYear \u003d system.date.getDayOfYear(system.date.now())\n\tsystem.perspective.print(\"todayDayOfYear\")\n\tsystem.perspective.print(todayDayOfYear)\n\n\tnewSchedule.append(todayDayOfYear)\n\tlocationId \u003d self.view.params.congregationId\n\tif self.view.custom.sqlData is not None and self.view.custom.sqlData.getRowCount() \u003e 0:\n\t\tgenderIdValue \u003d self.view.custom.sqlData.getValueAt(0,\u0027genderId\u0027)\n\t\tgenderId \u003d int(genderIdValue)\n\t\tcapacityValue \u003d self.view.custom.sqlData.getValueAt(0,\u0027capacity\u0027)\n\t\ttotalBeds \u003d int(capacityValue)\n\t\t## check if this shelter is already added in the current night\n\t\tcurrentNightAlreadyAdded \u003d False\n\t\tcurrentSavedSchedule \u003d winterShelter.getLocationCurrentSchedule(locationId,self.view.custom.currentSeasonID)\n\t\tfor i in range(0,currentSavedSchedule.getRowCount()):\n\t\t\toldDate \u003d currentSavedSchedule.getValueAt(i,\u0027dayOfYear\u0027)\n\t\t\tsystem.perspective.print(\"oldDate\")\n\t\t\tsystem.perspective.print(oldDate)\n\t\t\tif oldDate \u003d\u003d todayDayOfYear:\n\t\t\t\tcurrentNightAlreadyAdded \u003d True\n\t\tif currentNightAlreadyAdded \u003d\u003d False:\n\t\t\twinterShelter.insertScheduleDates(locationId,newSchedule,genderId,totalBeds,notes)\n\t\t\tsystem.perspective.sendMessage(\"newCongregationAdded\", payload \u003d {}, scope\u003d\"page\")\n\t\telse:\n\t\t\tsystem.perspective.sendMessage(\"errorAddingCongregation\", payload \u003d {\"message\":\"Congregation already added for current night\"}, scope\u003d\"session\")\n\t\n\telse:\n\t\tsystem.perspective.sendMessage(\"errorAddingCongregation\", payload \u003d {\"message\":\"Congregation does not have current season Registration\"}, scope\u003d\"session\")\n\tsystem.perspective.closeDock(\u0027AddCongregationToSchedule\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "RegisterButton"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.newRegistration"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Main",
+                "marginRight": "30px"
+              },
+              "text": "Register"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.params.congregationName \u003d \u0027\u0027\n\tself.view.params.address \u003d \u0027\u0027\n\tself.view.params.password \u003d \u0027\u0027\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.createNew \u003d False\n\tself.view.params.email \u003d \u0027\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "ClearButton"
+            },
+            "position": {
+              "basis": "100px",
+              "display": false
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#AAAAAA"
+                }
+              },
+              "style": {
+                "classes": "Buttons/Delete",
+                "marginRight": "30px"
+              },
+              "text": "Clear"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t\n\tsystem.perspective.closeDock(\u0027AddCongregationToSchedule\u0027)\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Cancel Button"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!{../ClearButton.position.display}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "#AAAAAA"
+                }
+              },
+              "style": {
+                "classes": "Buttons/Secondary_Orange",
+                "marginRight": "30px"
+              },
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "35px"
+        },
+        "props": {
+          "style": {
+            "marginBottom": "20px",
+            "marginTop": "20px",
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "component": {
+            "onRowClick": {
+              "config": {
+                "script": "\tif len(self.props.selection.data) \u003e 0:\n\t\tproviderName \u003d self.props.selection.data[0].providerName\n\t\tif providerName !\u003d \u0027No Match\u0027:\n\t\t\tself.view.params.congregationName \u003d providerName\n\t\t\tself.view.params.congregationId \u003d self.props.selection.data[0].id\n\t\t\t\n\t\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "400px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.existingCongregations"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount() \u003e 0:\n\t\tif value.getValueAt(0,\u0027providerName\u0027) \u003d\u003d self.view.params.congregationName :\n\t\t\treturn False\n\t\telif self.view.params.congregationName \u003d\u003d \u0027\u0027:\n\t\t\treturn False\n\t\treturn True\n\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.existingCongregations"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value.getRowCount()\u003d\u003d0:\n\t\tvalue \u003d  system.dataset.addRow(value, [0, \u0027No Match\u0027, \u0027\u0027])\n\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "classes": "Table/Cell_Dashboard_NoBG"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "providerName",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail Background/Default"
+                },
+                "title": "Congregation"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Background/Default Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "street",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail Background/Default"
+                },
+                "title": "Address"
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Background/Default Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "id",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header_Detail Background/Default"
+                },
+                "title": " "
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "Background/Default Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": ""
+            }
+          ],
+          "dragOrderable": false,
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "highlight": {
+              "color": "#ccffff"
+            }
+          },
+          "selection": {
+            "style": {
+              "backgroundColor": "#9af4eb4d"
+            }
+          },
+          "style": {
+            "classes": "Background/Default Table/Column_Normal",
+            "marginLeft": "-50px",
+            "marginRight": "-50px"
+          }
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "resetWinterRegistration",
+          "pageScope": true,
+          "script": "\tself.view.custom.createNew \u003d False\n\tself.view.custom.password2 \u003d \u0027\u0027\n\tself.view.custom.newRegistration \u003d False\n\t",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

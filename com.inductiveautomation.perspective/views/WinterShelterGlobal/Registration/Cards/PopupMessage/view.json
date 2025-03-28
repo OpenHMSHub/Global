@@ -1,0 +1,93 @@
+{
+  "custom": {},
+  "params": {
+    "message": "Will you please consider 8 Guests this season? What will you need from Room In The Inn to make this possible?"
+  },
+  "propConfig": {
+    "params.message": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 157,
+      "width": 309
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 90,
+          "width": 249,
+          "x": 30,
+          "y": 7
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.message"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Add_InfoText"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Yes Button"
+        },
+        "position": {
+          "height": 43,
+          "width": 80,
+          "x": 198,
+          "y": 105
+        },
+        "props": {
+          "params": {
+            "Dock": "",
+            "Text": "YES",
+            "key": ""
+          },
+          "path": "WinterShelter/Registration/Cards/yesNoButton"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "No Button"
+        },
+        "position": {
+          "height": 43,
+          "width": 80,
+          "x": 30,
+          "y": 105
+        },
+        "props": {
+          "params": {
+            "Dock": "",
+            "Text": "NO",
+            "key": ""
+          },
+          "path": "WinterShelter/Registration/Cards/yesNoButton"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

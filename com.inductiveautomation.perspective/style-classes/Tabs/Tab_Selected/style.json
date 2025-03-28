@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "color": "#0c4e8b",
+      "cursor": "pointer",
+      "fontFamily": "Gibsonsemibold",
+      "fontSize": "14px",
+      "textAlign": "center",
+      "textTransform": "uppercase"
+    }
+  }
+}

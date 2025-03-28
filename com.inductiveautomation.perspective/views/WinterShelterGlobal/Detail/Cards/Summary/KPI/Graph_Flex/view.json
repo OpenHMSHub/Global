@@ -1,0 +1,314 @@
+{
+  "custom": {
+    "Title": "\"Title\"",
+    "Value": [
+      {
+        "Enrollment": 52,
+        "time": 1560469431423
+      },
+      {
+        "Enrollment": 18,
+        "time": 1560469432423
+      },
+      {
+        "Enrollment": 26,
+        "time": 1560469433423
+      },
+      {
+        "Enrollment": 63,
+        "time": 1560469434423
+      },
+      {
+        "Enrollment": 65,
+        "time": 1560469435423
+      },
+      {
+        "Enrollment": 12,
+        "time": 1560469436423
+      },
+      {
+        "Enrollment": 61,
+        "time": 1560469437423
+      },
+      {
+        "Enrollment": 60,
+        "time": 1560469438423
+      },
+      {
+        "Enrollment": 58,
+        "time": 1560469439423
+      },
+      {
+        "Enrollment": 1,
+        "time": 1560469440423
+      }
+    ]
+  },
+  "params": {
+    "Title": "\"Title\"",
+    "Value": [
+      {
+        "Enrollment": 52,
+        "time": 1560469431423
+      },
+      {
+        "Enrollment": 18,
+        "time": 1560469432423
+      },
+      {
+        "Enrollment": 26,
+        "time": 1560469433423
+      },
+      {
+        "Enrollment": 63,
+        "time": 1560469434423
+      },
+      {
+        "Enrollment": 65,
+        "time": 1560469435423
+      },
+      {
+        "Enrollment": 12,
+        "time": 1560469436423
+      },
+      {
+        "Enrollment": 61,
+        "time": 1560469437423
+      },
+      {
+        "Enrollment": 60,
+        "time": 1560469438423
+      },
+      {
+        "Enrollment": 58,
+        "time": 1560469439423
+      },
+      {
+        "Enrollment": 1,
+        "time": 1560469440423
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.Title": {
+      "persistent": true
+    },
+    "custom.Value": {
+      "persistent": true
+    },
+    "params.Title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 140,
+      "width": 653
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "20%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "classes": "KPIs/KPI_Title",
+            "textAlign": "start"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TimeSeriesChart_0"
+        },
+        "position": {
+          "basis": "80%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "path": "view.params.Value"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "defaultStyles": {
+            "colorScheme": "Paired"
+          },
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "label": {
+                    "font": {
+                      "color": "",
+                      "size": 10
+                    },
+                    "offset": 0,
+                    "style": {
+                      "classes": ""
+                    },
+                    "text": "",
+                    "visible": true
+                  },
+                  "max": "",
+                  "min": "",
+                  "name": "Enrollments",
+                  "style": {
+                    "classes": "",
+                    "opacity": "0"
+                  },
+                  "tick": {
+                    "color": "#BFBFBF00",
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "style": {
+                      "classes": ""
+                    }
+                  },
+                  "width": 0
+                }
+              ],
+              "markers": [
+                {
+                  "axis": "Enrollment",
+                  "line": {
+                    "color": "",
+                    "dashArray": 0,
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "position": "right",
+                      "style": {
+                        "classes": ""
+                      },
+                      "text": ""
+                    },
+                    "opacity": 0.5,
+                    "style": {
+                      "classes": ""
+                    },
+                    "width": 0.1
+                  },
+                  "type": "line",
+                  "value": 20,
+                  "visible": true
+                }
+              ],
+              "trends": [
+                {
+                  "axis": "Enrollments",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Participants",
+                  "stack": true,
+                  "type": "bar",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {
+              "name": "Participants"
+            }
+          ],
+          "style": {
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingTop": 0
+          },
+          "timeAxis": {
+            "color": "#BFBFBF00",
+            "height": 20,
+            "tick": {
+              "color": "#BFBFBF00",
+              "label": {
+                "font": {
+                  "color": "#3F94EB"
+                },
+                "format": "MMM",
+                "style": {
+                  "padding": 0,
+                  "textAlign": "start",
+                  "textTransform": "uppercase",
+                  "whiteSpace": "normal"
+                }
+              }
+            },
+            "tickCount": 6
+          },
+          "timeRange": {
+            "timeFormat": "HH:mm:ss",
+            "visible": false
+          },
+          "title": {
+            "font": {
+              "size": 13
+            },
+            "height": 20,
+            "style": {
+              "paddingBottom": 10,
+              "textAlign": "start",
+              "whiteSpace": "pre"
+            },
+            "text": "Title"
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#FFFFFF",
+        "paddingLeft": 5
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

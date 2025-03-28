@@ -1,0 +1,961 @@
+{
+  "custom": {
+    "month1SeasonHostingType": "Congregation"
+  },
+  "params": {
+    "locationId": 286,
+    "seasonId": 14,
+    "year1": 2024,
+    "year2": 2025
+  },
+  "propConfig": {
+    "custom.month1SeasonHostingType": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationId}",
+            "seasonId": "{view.params.seasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Schedule/GetHostingLocationPerLocationAndSeason"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.todayDayOfTheYear": {
+      "binding": {
+        "config": {
+          "expression": "getDayOfYear(now(0))"
+        },
+        "type": "expr"
+      }
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.seasonId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.year1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.year2": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 620,
+      "width": 500
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "DockID": -1,
+          "_devPulse": false,
+          "_devTxt": "",
+          "_isDev": false,
+          "jsonLastPayload": null,
+          "lastPayload": {
+            "activeInactive": "All",
+            "expiredCheckedIn": null,
+            "gender": null,
+            "race": null,
+            "searchText": "",
+            "waitingList": null
+          }
+        },
+        "events": {
+          "component": {
+            "onEditCellCommit": {
+              "config": {
+                "script": "\tr \u003d event[\u0027row\u0027]\n\tc \u003d event[\u0027column\u0027]\n\ttotalBeds \u003d event[\u0027value\u0027]\n\tdata \u003d self.props.data\n\tlocationId \u003d data[r][\u0027locationId\u0027] \n\tseasonId \u003d data[r][\u0027seasonId\u0027] \n\tdate \u003d data[r][\u0027date\u0027]\n\tdayOfYear \u003d system.date.getDayOfYear(date)\n\tsystem.perspective.print(\"dayOfYear\u003d\"+str(dayOfYear))\n\tquery \u003d \"UPDATE shelter.Schedule SET totalBeds \u003d ?,timeUpdated\u003d? where locationId \u003d ? and seasonId \u003d ? and dayOfYear \u003d ? and timeCancelled IS NULL\"\n\targs \u003d [totalBeds,system.date.now(),locationId,seasonId,dayOfYear]\n\tsystem.db.runPrepUpdate(query, args)\n\tself.refreshBinding(\"props.data\")\n\tsystem.perspective.sendMessage(\"RefreshAboutPanel\", payload\u003d{}, scope\u003d\"session\")"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onRowClick": {
+              "config": {
+                "script": "\t#system.perspective.print(\"Hi\")\n\tselectedColumn \u003d self.props.selection.selectedColumn\n\tlocationId \u003d self.view.params.locationId\n\tscheduleId \u003d event.value[\"scheduleId\"]\n\ttotalBeds \u003d event.value[\"totalBeds\"]\n\tgender \u003d event.value[\"gender\"]\n\tstatus \u003d event.value[\"status\"]\n\tdayOfYear \u003d event.value[\"dayOfYear\"]\n\tdate \u003d str(event.value[\"date\"])\n#\tsystem.perspective.print(\"in schedule detail table click , date \u003d \" )\n#\tsystem.perspective.print(date )\n\tseasonId \u003d event.value[\"seasonId\"]\n\tsystem.perspective.sendMessage(\"scheduledDateSelected\",payload \u003d {\u0027date\u0027:date,\u0027seasonId\u0027:seasonId, \u0027locationId\u0027:locationId,\u0027scheduleId\u0027:scheduleId, \u0027totalBeds\u0027:totalBeds, \u0027gender\u0027:gender , \u0027status\u0027:status, \u0027dayOfYear\u0027:dayOfYear},scope\u003d\u0027session\u0027)\n\t\n#\tfor item in range(len(self.props.data)):\n#\t\tif item \u003d\u003d event.row:\n#\t\t\tself.props.data[item].locationId.style.classes \u003d \u0027Table/Row_Select\u0027\n#\t\t\tself.props.data[item].scheduleId.style.classes \u003d \u0027Table/Row_Select\u0027\n#\t\t\tself.props.data[item].locationName.style.classes \u003d \u0027Table/Row_Select\u0027\n#\t\t\tself.props.data[item].totalBeds.style.classes \u003d \u0027Table/Row_Select\u0027\n#\t\t\tself.props.data[item].gender.style.classes \u003d \u0027Table/Row_Select\u0027\n#\t\t\tself.props.data[item].status.style.classes \u003d \u0027Table/Row_Select\u0027\n#\t\t\t\n#\t\telse:\n#\t\t\tself.props.data[item].locationId.style.classes \u003d \u0027Table/Column_Normal\u0027\n#\t\t\tself.props.data[item].scheduleId.style.classes \u003d \u0027Table/Column_Normal\u0027\n#\t\t\tself.props.data[item].locationName.style.classes \u003d \u0027Table/Column_Normal\u0027\n#\t\t\tself.props.data[item].totalBeds.style.classes \u003d \u0027Table/Column_Normal\u0027\n#\t\t\tself.props.data[item].gender.style.classes \u003d \u0027Table/Column_Normal\u0027\n#\t\t\tself.props.data[item].status.style.classes \u003d \u0027Table/Column_Normal\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "100%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom._devPulse": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tif self.custom._isDev:\n\t\tif currentValue.value is True:\n\t\t\tpayload \u003d {}\n\t\t\t\n#\t\t\tpayload[\u0027countReferralFromTo\u0027] \u003d [1,5]\n#\t\t\tpayload[\u0027providerTypeId\u0027] \u003d [0,2]\n\t\t\t\n\t\t\tpayload[\u0027gender\u0027] \u003d None\n\t\t\tpayload[\u0027race\u0027] \u003d None\n\t\t\tpayload[\u0027waitingList\u0027] \u003d None\n\t\t\tpayload[\u0027activeInactive\u0027] \u003d \u0027All\u0027\n\t\t\tpayload[\u0027expiredCheckedIn\u0027] \u003d None\n\t\t\tpayload[\u0027searchText\u0027] \u003d self.custom._devTxt\n\t\t\t#payload[\u0027fetch\u0027] \u003d 12\n\t\t\t\n\t\t\tsystem.perspective.sendMessage(\u0027mhByCondition\u0027, payload \u003d payload)\n\t\t\tself.custom.jsonLastPayload \u003d system.util.jsonEncode(payload)\n\n\t\telse:\n\t\t\t#payload \u003d {}\n\t\t\t#payload[\u0027providerTypeId\u0027] \u003d [-1]\n\t\t\t#payload[\u0027searchText\u0027] \u003d self.custom._devTxt\n\t\t\t#payload[\u0027fetch\u0027] \u003d 12\n\t\t\t\n\t\t\t#system.perspective.sendMessage(\u0027mhByCondition\u0027, payload \u003d payload)\n\t\t\t#self.custom.jsonLastPayload \u003d system.util.jsonEncode(payload)\n\n\t\t\t#self.props.data \u003d [{key: \u0027\u0027 if key \u003d\u003d \u0027providerName\u0027 else None for key in self.props.data[0]}]\n\t\t\tself.props.data \u003d [{key: None for key in self.props.data[0]}]\n\t\t\tself.custom.jsonLastPayload \u003d None\n\n\n"
+            }
+          },
+          "props.columns[5].viewParams.seasonId": {
+            "binding": {
+              "config": {
+                "path": "view.params.seasonId"
+              },
+              "type": "property"
+            }
+          },
+          "props.columns[6].editable": {
+            "binding": {
+              "config": {
+                "expression": "{session.custom.isWSSupportCoordinator} || {session.custom.isManager} || {session.custom.isWSManager} || {session.custom.isAdministrator}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.columns[7].editable": {
+            "binding": {
+              "config": {
+                "expression": "{session.custom.isWSSupportCoordinator} || {session.custom.isManager} || {session.custom.isWSManager} || {session.custom.isAdministrator}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "locationId": "{view.params.locationId}",
+                  "seasonId": "{view.params.seasonId}",
+                  "todayDayOfTheYear": "{view.custom.todayDayOfTheYear}"
+                },
+                "queryPath": "WinterShelterGlobal/Schedule/GetSchedulePerLocation_ScheduleDetail"
+              },
+              "transforms": [
+                {
+                  "code": "\tlogger \u003d system.util.getLogger(\"Schedule Detail\")\n\tinstances \u003d []\n\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.params.year1), 5, 1))\n\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.params.year1), 11, 31))\n\tendDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(self.view.params.year2, 2, 31))\n\tif value is not None and value.getRowCount() \u003e 0:\n\t\t#check if any of the date has status added\n\t\tparameters\u003d{\u0027locationId\u0027:self.view.params.locationId ,\u0027todayDayOfTheYear\u0027:self.view.custom.todayDayOfTheYear,\u0027seasonId\u0027:self.view.params.seasonId,\u0027status\u0027:\"status \u003d \u0027Addition\u0027\"}\n\t\tresult \u003d system.db.runNamedQuery(\"WinterShelterGlobal/Schedule/GetScheduleCountPerStatus_ScheduleDetail\",parameters\u003dparameters)\n\t\tIsAddedDates \u003d False\n\t\tif result.getRowCount()\u003e0:\n\t\t\tif result.getValueAt(0,0)\u003e0:\n\t\t\t\tIsAddedDates \u003d True\n#\t\treturn IsAddedDates\n\t\tfor i in range(value.getRowCount()):\n\t\t\toneInstance \u003d {}\n\t\t\tseasonId \u003d value.getValueAt(i,\u0027seasonId\u0027)\n\t\t\tdayOfYear \u003d value.getValueAt(i,\u0027dayOfYear\u0027)\n\t\t\toneInstance[\u0027locationId\u0027] \u003d value.getValueAt(i,\u0027locationId\u0027)\n\t\t\toneInstance[\u0027scheduleId\u0027] \u003d value.getValueAt(i,\u0027scheduleId\u0027)\n\t\t\toneInstance[\u0027seasonId\u0027] \u003d seasonId\n\t\t\toneInstance[\u0027totalBeds\u0027] \u003d value.getValueAt(i,\u0027totalBeds\u0027)\n\t\t\toneInstance[\u0027gender\u0027] \u003d value.getValueAt(i,\u0027gender\u0027)\n\t\t\toneInstance[\u0027genderId\u0027] \u003d value.getValueAt(i,\u0027genderId\u0027)\n\t\t\toneInstance[\u0027dayOfYear\u0027] \u003d dayOfYear\n\t\t\toneInstance[\u0027status\u0027] \u003d value.getValueAt(i,\u0027status\u0027)\n\t\t\tif IsAddedDates:\n\t\t\t\tif value.getValueAt(i,\u0027status\u0027) \u003d\u003d \u0027Completed\u0027 or value.getValueAt(i,\u0027status\u0027) \u003d\u003d \u0027Scheduled\u0027:\n\t\t\t\t\toneInstance[\u0027status\u0027] \u003d {\u0027value\u0027:value.getValueAt(i,\u0027status\u0027),\u0027style\u0027:{\u0027color\u0027:\u0027#19F708\u0027}}\n\t\t\tif value.getValueAt(i,\u0027status\u0027) \u003d\u003d \u0027Canceled\u0027:\n\t\t\t\toneInstance[\u0027status\u0027] \u003d {\u0027value\u0027:value.getValueAt(i,\u0027status\u0027),\u0027style\u0027:{\u0027color\u0027:\u0027#E71D36\u0027}}\n\t\t\t\n\t\t\t## calclulate date and day based on day of year\n\t\t\t\n#\t\t\tif dayOfYear \u003e\u003d startDayOfSeason and dayOfYear \u003c\u003d endDayOfCurrentYear:\n#\t\t\t\tcalendarDate \u003d calendar.dayOfYearToDate(dayOfYear,self.view.params.year1)\n#\t\t\telse:\n#\t\t\t\tcalendarDate \u003d calendar.dayOfYearToDate(dayOfYear,self.view.params.year2)\n\t\t\tcalendarDate \u003d value.getValueAt(i,\u0027DateFromDayOfYear\u0027)\n\n\t\t\toneInstance[\u0027date\u0027] \u003d calendarDate\n\t\t\tday \u003d system.date.format(calendarDate, \u0027EEEE\u0027)\n\t\t\toneInstance[\u0027day\u0027] \u003d day \n\t\t\toneInstance[\u0027location\u0027] \u003d value.getValueAt(i,\u0027HostLocationType\u0027) if value.getValueAt(i,\u0027HostLocationType\u0027)!\u003dNone and value.getValueAt(i,\u0027HostLocationType\u0027)!\u003d\u0027\u0027 else self.view.custom.month1SeasonHostingType\n\t\t\t\n\t\t\tinstances.append(oneInstance)\n\tinstances.sort(key\u003dlambda x: x[\u0027date\u0027] or False, reverse\u003dFalse)\n#\tlogger.error(\"instances data from schedule detail table : \")\n#\tlogger.error(str(instances))\n\treturn instances\n\t",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.filter.text": {
+            "access": "PUBLIC"
+          },
+          "props.selection.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "this.props.selection.selectedRow"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn \"#FFFFFF00\" if value is None or value \u003d\u003d -1 else \"#9AF4EB4D\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "classes": "Table/Cell_Dashboard_NoBG"
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "locationId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": " "
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "view",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": true,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "1_TEMPLATES/Tables/TableOptions",
+              "visible": false,
+              "width": 40
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "seasonId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": " "
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": true,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 40
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YY",
+              "editable": false,
+              "field": "date",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Date"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "date",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail",
+                "paddingLeft": "25px"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "1_TEMPLATES/Tables/TableOptions",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "day",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Day"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "date",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "1_TEMPLATES/Tables/TableOptions",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "location",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Location"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "view",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {
+                "Column": "location"
+              },
+              "viewPath": "WinterShelterGlobal/Schedule/Cards/Location_dropdown",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "status",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Status"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "view",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "WinterShelterGlobal/Schedule/Cards/Status_dropdown",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "field": "totalBeds",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Guests"
+              },
+              "justify": "center",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail",
+                "cursor": "text"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 80
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "field": "genderId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Gender"
+              },
+              "justify": "center",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "view",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {
+                "Column": "gender"
+              },
+              "viewPath": "WinterShelterGlobal/Schedule/Cards/Gender_dropdown",
+              "visible": true,
+              "width": 100
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "gender",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Gender"
+              },
+              "justify": "center",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal_Detail"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewPath": "",
+              "visible": false,
+              "width": 80
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "scheduleId",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": "Schedule ID"
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 70
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "dayOfYear",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": "Table/Column_Header"
+                },
+                "title": " "
+              },
+              "justify": "left",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": "Table/Column_Normal"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": false,
+              "width": 70
+            }
+          ],
+          "headerStyle": {
+            "classes": "Table/Column_Normal"
+          },
+          "pager": {
+            "bottom": false,
+            "initialOption": 100
+          },
+          "rows": {
+            "highlight": {
+              "color": "#ccffff"
+            },
+            "striped": {
+              "enabled": false
+            },
+            "style": {
+              "cursor": "pointer"
+            }
+          },
+          "style": {
+            "classes": "Background/Default",
+            "cursor": "pointer",
+            "overflowX": "hidden"
+          }
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "updateGender",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tr \u003d payload[\u0027row\u0027]\n\tc \u003d payload[\u0027col\u0027]\n\tgenderId \u003d payload[\u0027genderId\u0027]\n\tdata \u003d self.props.data\n\tlocationId \u003d data[r][\u0027locationId\u0027] \n\tseasonId \u003d data[r][\u0027seasonId\u0027] \n\tdate \u003d data[r][\u0027date\u0027]\n\tdayOfYear \u003d system.date.getDayOfYear(date)\n\tsystem.perspective.print(\"dayOfYear\u003d\"+str(dayOfYear))\n\t# update genderId in shelter.Schedule table\n\tquery \u003d \"UPDATE shelter.Schedule SET genderId \u003d ?,timeUpdated\u003d? where locationId \u003d ? and seasonId \u003d ? and dayOfYear \u003d ? and timeCancelled IS NULL\"\n\targs \u003d [genderId,system.date.now(),locationId,seasonId,dayOfYear]\n\tsystem.db.runPrepUpdate(query, args)\n\tself.refreshBinding(\"props.data\")",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "updateLocation",
+              "pageScope": true,
+              "script": "\tr \u003d payload[\u0027row\u0027]\n\tc \u003d payload[\u0027col\u0027]\n\tHostLocationType \u003d payload[\u0027HostLocationType\u0027]\n\tdata \u003d self.props.data\n\tlocationId \u003d data[r][\u0027locationId\u0027] \n\tseasonId \u003d data[r][\u0027seasonId\u0027] \n\tdate \u003d data[r][\u0027date\u0027]\n\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\n\t# update HostLocationType in shelter.Schedule table\n\tquery \u003d \"UPDATE shelter.Schedule SET HostLocationType \u003d ?,timeUpdated\u003d? where locationId \u003d ? and seasonId \u003d ? and dayOfYear \u003d ? and timeCancelled IS NULL\"\n\targs \u003d [HostLocationType,system.date.now(),locationId,seasonId,dayOfYear]\n\tsystem.db.runPrepUpdate(query, args)\n\tself.refreshBinding(\"props.data\")",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "updateStatus",
+              "pageScope": true,
+              "script": "\tr \u003d payload[\u0027row\u0027]\n\tc \u003d payload[\u0027col\u0027]\n\tstatus \u003d payload[\u0027status\u0027]\n\tdata \u003d self.props.data\n\tlocationId \u003d data[r][\u0027locationId\u0027] \n\tseasonId \u003d data[r][\u0027seasonId\u0027] \n\tdate \u003d data[r][\u0027date\u0027]\n\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\n\t# update status in shelter.Schedule table\n\tif status \u003d\u003d \u0027Scheduled\u0027 or status \u003d\u003d \u0027Addition\u0027:\n\t\tquery \u003d \"UPDATE shelter.Schedule SET timeCancelled\u003d?,timeUpdated\u003d? where locationId \u003d ? and seasonId \u003d ? and dayOfYear \u003d ?\"\n\t\targs \u003d [None,system.date.now(),locationId,seasonId,dayOfYear]\n\tif status \u003d\u003d \u0027Canceled\u0027:\n\t\tquery \u003d \"UPDATE shelter.Schedule SET timeCancelled\u003d?,timeUpdated\u003d? where locationId \u003d ? and seasonId \u003d ? and dayOfYear \u003d ?\"\n\t\targs \u003d [system.date.now(),system.date.now(),locationId,seasonId,dayOfYear]\n\tsystem.db.runPrepUpdate(query, args)\n\tself.refreshBinding(\"props.data\")\n\tsystem.perspective.sendMessage(\"scheduleUpdated\", payload \u003d payload, scope \u003d \u0027page\u0027)",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "custom": {
+      "_test": false
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom._test": {
+        "onChange": {
+          "enabled": null,
+          "script": "\tif previousValue is not None and currentValue is not None:\n\t\tif previousValue.value \u003d\u003d 0 and currentValue.value \u003d\u003d 1:\n\t\t\tself.getChild(\"Table\").doByCondition({})"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-around",
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "participantCheckedIn",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"Table\").refreshBinding(\"props.data\")",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "ServeDateSelected",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"Table\").props.selection.selectedRow \u003d -1\n\tself.getChild(\"Table\").props.selection.selectedColumn \u003d -1",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "newCongregationAdded",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"Table\").refreshBinding(\"props.data\")",
+          "sessionScope": true,
+          "viewScope": false
+        },
+        {
+          "messageType": "clearScheduleSelection",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"Table\").props.selection.selectedColumn \u003d -1\n\tself.getChild(\"Table\").props.selection.selectedRow \u003d -1",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

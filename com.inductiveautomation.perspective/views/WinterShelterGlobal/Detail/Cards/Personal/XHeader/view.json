@@ -1,0 +1,167 @@
+{
+  "custom": {},
+  "params": {
+    "Text": "Tyler George Adams",
+    "participantID": 0
+  },
+  "propConfig": {
+    "params.Text": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.participantID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 105,
+      "width": 250
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": true,
+                "id": "6MJZL2WB",
+                "modal": true,
+                "overlayDismiss": false,
+                "position": {
+                  "relativeLocation": "bottom-right"
+                },
+                "positionType": "relative",
+                "resizable": true,
+                "showCloseIcon": true,
+                "title": "Upload Image",
+                "type": "open",
+                "viewParams": {
+                  "participantID": "{view.params.participantID}"
+                },
+                "viewPath": "Participants/Detail/UploadImage"
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Image"
+        },
+        "position": {
+          "basis": "65px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.source": {
+            "binding": {
+              "config": {
+                "path": "view.params.participantID"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn \"/system/images/people/{}.jpg\".format(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "fit": {
+            "height": 65,
+            "mode": "absolute",
+            "width": 65
+          },
+          "style": {
+            "classes": "Rounded_Image",
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": "10px"
+          }
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "image-updated",
+              "pageScope": true,
+              "script": "\t_ \u003d self.props.source\n\tself.props.source \u003d \"\"\n\timport time\n\ttime.sleep(0.3)\n\tself.props.source \u003d _\n",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/Personal_Header",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "draggable": true,
+            "id": "6MJZL2WB",
+            "modal": true,
+            "overlayDismiss": false,
+            "position": {
+              "relativeLocation": "bottom-right"
+            },
+            "positionType": "relative",
+            "resizable": true,
+            "showCloseIcon": true,
+            "title": "Upload Image",
+            "type": "open",
+            "viewParams": {
+              "participantID": "{view.params.participantID}"
+            },
+            "viewPath": "Participants/Detail/UploadImage"
+          },
+          "scope": "C",
+          "type": "popup"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Text/Personal_Header",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

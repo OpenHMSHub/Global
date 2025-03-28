@@ -1,0 +1,134 @@
+{
+  "custom": {},
+  "params": {
+    "Leader": "value",
+    "LeaderID": "value",
+    "Program": "value",
+    "Service": "value"
+  },
+  "propConfig": {
+    "params.Leader": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.LeaderID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Program": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Service": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 35
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t#Display the detail screen\n\temployeeId \u003d self.view.params.LeaderID\n\ttab_id \u003d 1\n\tsystem.perspective.navigate(\"/Volunteers/Detail/\"+str(employeeId)+\"/\"+str(tab_id))"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_Leader"
+        },
+        "position": {
+          "basis": "33%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.params.Leader"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Entered By"
+          },
+          "path": "Participants/Activity/Services/ServicesLabelLink"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_Program"
+        },
+        "position": {
+          "basis": "33%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.params.Program"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Program"
+          },
+          "path": "Participants/Activity/Services/ServicesLabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_Service"
+        },
+        "position": {
+          "basis": "33%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.Value": {
+            "binding": {
+              "config": {
+                "path": "view.params.Service"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Service"
+          },
+          "path": "Participants/Activity/Services/ServicesLabel"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

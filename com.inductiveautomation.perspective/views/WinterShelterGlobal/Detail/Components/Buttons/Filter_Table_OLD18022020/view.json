@@ -1,0 +1,66 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 28,
+      "width": 120
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Button_10"
+        },
+        "position": {
+          "basis": "100%",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": 3,
+            "borderBottomRightRadius": 3,
+            "borderTopLeftRadius": 3,
+            "borderTopRightRadius": 3,
+            "classes": "Buttons/Btn_Blue_Smooth",
+            "paddingBottom": "3px",
+            "paddingRight": "30px",
+            "paddingTop": "3px"
+          },
+          "text": "Filter By:",
+          "textStyle": {
+            "fontSize": "90%"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#0D80E3",
+          "path": "material/expand_more",
+          "style": {
+            "marginLeft": "-30px"
+          }
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

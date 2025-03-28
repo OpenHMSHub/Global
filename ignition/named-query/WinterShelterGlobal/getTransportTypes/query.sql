@@ -1,0 +1,1 @@
+SELECT id,transportType FROM shelter.TransportType order by transportType Asc

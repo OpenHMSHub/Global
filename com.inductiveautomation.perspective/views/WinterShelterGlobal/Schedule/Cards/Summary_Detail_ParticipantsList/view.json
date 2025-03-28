@@ -1,0 +1,293 @@
+{
+  "custom": {
+    "noOfSelectedGuests": 0,
+    "participantToAdd": {
+      "id": -1,
+      "name": ""
+    },
+    "selectedCongregation": {
+      "date": "",
+      "dayOfYear": "",
+      "gender": "",
+      "id": "",
+      "name": "",
+      "scheduleId": "",
+      "seasonId": "",
+      "status": "",
+      "totalBeds": ""
+    }
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tsystem.perspective.sendMessage(\"ResetSearch\", payload\u003d{}, scope\u003d\"session\")\n\tsystem.perspective.sendMessage(\"ResetRegistration\", payload\u003d{}, scope\u003d\"session\")"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "selectedId": 0,
+    "selected_id": 0
+  },
+  "propConfig": {
+    "custom.noOfSelectedGuests": {
+      "binding": {
+        "config": {
+          "path": "/root/FlexContainer/participantsList.props.instances"
+        },
+        "transforms": [
+          {
+            "code": "\tcount \u003d 0\n\tif value is not None and len(value) \u003e 0:\n\t\tfor instance in value:\n\t\t\tcount \u003d count + 1\n\t\t\n\treturn count\t",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.participantToAdd": {
+      "persistent": true
+    },
+    "custom.selectedCongregation": {
+      "persistent": true
+    },
+    "params.dob_day": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.dob_month": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.dob_year": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.first_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.last_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.middle_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.nick_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.race_id": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.search_active": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.search_selection": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selectedId": {
+      "paramDirection": "output"
+    },
+    "params.selected_first_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selected_last_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selected_middle_name": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.ssn": {
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 500,
+      "width": 250
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "SelectedDate"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.selectedCongregation.date"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Table/Column_Medium"
+              },
+              "textStyle": {
+                "textAlign": "left"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "55px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "concat({view.custom.noOfSelectedGuests},\" - \",{view.custom.selectedCongregation.gender})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Table/Column_Medium"
+                  },
+                  "textStyle": {
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "NoOfGuests"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.selectedCongregation.id} !\u003d None \u0026\u0026 {view.custom.selectedCongregation.id} !\u003d \"\" "
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "participantsList"
+            },
+            "position": {
+              "basis": "340px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.instances": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "dayOfYear": "{view.custom.selectedCongregation.dayOfYear}",
+                      "locationId": "{view.custom.selectedCongregation.id}",
+                      "scheduleId": "{view.custom.selectedCongregation.scheduleId}",
+                      "seasonId": "{view.custom.selectedCongregation.seasonId}"
+                    },
+                    "queryPath": "WinterShelterGlobal/Schedule/GetParticipants"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\timport copy\n\tinstances \u003d []\n\tinstanceStruct \u003d {\n\t\t\t  \"instanceStyle\": {\n\t\t\t    \"classes\": \"\"\n\t\t\t  },\n\t\t\t  \"instancePosition\": {},\n\t\t\t  \"participantId\": -1,\n\t\t\t  \"locationId\":self.view.custom.selectedCongregation.id,\n\t\t\t  \"participantName\":\u0027\u0027,\n\t\t\t  \"scheduleId\":self.view.custom.selectedCongregation.scheduleId,\n\t\t\t  \"isActive\":True,\n\t\t\t  \"fromDB\": True,\n\t\t\t  \"markedForDelete\":False \n\t\t\t}\n\tif value is not None and value.getRowCount() \u003e 0:\n\t\tfor i in range(value.getRowCount()):\n\t\t\tthisStruct \u003d copy.deepcopy(instanceStruct)\n\t\t\tthisStruct[\u0027participantId\u0027] \u003d value.getValueAt(i,\u0027participantId\u0027)\n\t\t\tthisStruct[\u0027participantName\u0027] \u003d value.getValueAt(i,\u0027participantName\u0027)\n\t\t\tthisStruct[\u0027isActive\u0027] \u003d value.getValueAt(i,\u0027isActive\u0027)\n\t\t\tinstances.append(thisStruct)\n\treturn instances",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "alignContent": "flex-start",
+              "direction": "column",
+              "path": "WinterShelterGlobal/Schedule/Components/OneParticipant_Summary_Detail",
+              "style": {
+                "marginBottom": 5,
+                "marginRight": 15,
+                "marginTop": 5
+              },
+              "useDefaultViewWidth": false
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "Background/Default",
+            "marginLeft": 20
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "scheduledDateSelected",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tif payload is not None:\n\t\tself.view.custom.selectedCongregation.id \u003d payload[\u0027locationId\u0027]\n\t\tself.view.custom.selectedCongregation.scheduleId \u003d payload[\u0027scheduleId\u0027]\n\t\tself.view.custom.selectedCongregation.totalBeds \u003d payload[\u0027totalBeds\u0027]\n\t\tself.view.custom.selectedCongregation.gender \u003d payload[\u0027gender\u0027]\n\t\tself.view.custom.selectedCongregation.status \u003d payload[\u0027status\u0027]\n\t\tself.view.custom.selectedCongregation.dayOfYear \u003d payload[\u0027dayOfYear\u0027]\n\t\tself.view.custom.selectedCongregation.seasonId \u003d payload[\u0027seasonId\u0027]\n\t\tinputDate \u003d payload[\u0027date\u0027][:15].strip()\n#\t\tsystem.perspective.print(\"inputDate\")\n\t\tsystem.perspective.print(inputDate)\n\t\tparsedDate \u003d system.date.parse(inputDate, \u0027E MMM d yyyy\u0027)\n#\t\tsystem.perspective.print(\"parsedDate\")\n\t\tsystem.perspective.print(parsedDate)\n\t\tself.view.custom.selectedCongregation.date \u003d system.date.format(parsedDate, \u0027MM/dd/YY\u0027) ",
+          "sessionScope": true,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

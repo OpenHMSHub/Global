@@ -1,0 +1,429 @@
+{
+  "custom": {},
+  "params": {
+    "actionPerformedPulse": false,
+    "clear": false,
+    "multiSelect": false,
+    "options": [],
+    "placeholder": "",
+    "selection": null
+  },
+  "propConfig": {
+    "params.actionPerformedPulse": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.clear": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif self.params.clear:\n\t\tself.getChild(\"root\").getChild(\"Dropdown\").props.value \u003d None\n  \t\tself.params.clear \u003d False\n"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.multiSelect": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.options": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.placeholder": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selection": {
+      "binding": {
+        "config": {
+          "path": "/root/Dropdown.props.value"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 775
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "devOptions": [
+            {
+              "label": "Yesterday",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1616742119178
+              }
+            },
+            {
+              "label": "7 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1616223719178
+              }
+            },
+            {
+              "label": "14 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1615622519178
+              }
+            },
+            {
+              "label": "30 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1614240119178
+              }
+            },
+            {
+              "label": "60 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1611648119178
+              }
+            },
+            {
+              "label": "90 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1609056119178
+              }
+            },
+            {
+              "label": "180 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1601276519178
+              }
+            },
+            {
+              "label": "1 Year",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1585292519178
+              }
+            },
+            {
+              "label": "2 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1553670119178
+              }
+            },
+            {
+              "label": "3 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1522134119178
+              }
+            },
+            {
+              "label": "4 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1490598119178
+              }
+            },
+            {
+              "label": "5 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": 1459062119178
+              }
+            },
+            {
+              "label": "All Time",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1616829887068
+                ],
+                "$ts": -1538927880822
+              }
+            }
+          ]
+        },
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\t# Property actionPerformedPulse, help us to better control event. We can use on \n\t# embeded View script onValueChange and perform query execution, instead to use selection property on value change.\n\t# For example if we have button which clear few dropdown views, by selection it will execute query several times\n\t# against Database, with action Performed no execution during clear, and later we can add inside the button script \n\t# execute query script.\n\tself.view.params.actionPerformedPulse \u003d not(self.view.params.actionPerformedPulse)\n\t\n\tsystem.perspective.print((\u0027actionPerformedPulse\u0027))"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "basis": "100%"
+        },
+        "propConfig": {
+          "props.multiSelect": {
+            "binding": {
+              "config": {
+                "path": "view.params.multiSelect"
+              },
+              "type": "property"
+            }
+          },
+          "props.placeholder.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.placeholder"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "this.props.value"
+              },
+              "transforms": [
+                {
+                  "code": "\ttext \u003d \"Dropdowns/DD_Default\" #\"Filter/Filter_Text_Default\"\n\tif value !\u003d None:\n\t\tif value !\u003d \"\" and value \u003e -1:\n\t\t\ttext \u003d \"Dropdowns/DD_TeelBlue\" #\"Filter/Filter_Text_TeelBlue\"\n\treturn text",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tsystem.perspective.print((\u0027property changes\u0027))"
+            },
+            "persistent": false
+          }
+        },
+        "props": {
+          "dropdownOptionStyle": {
+            "classes": "Dropdowns/DD_Options"
+          },
+          "options": [
+            {
+              "label": "Yesterday",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1616742119178
+              }
+            },
+            {
+              "label": "7 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1616223719178
+              }
+            },
+            {
+              "label": "14 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1615622519178
+              }
+            },
+            {
+              "label": "30 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1614240119178
+              }
+            },
+            {
+              "label": "60 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1611648119178
+              }
+            },
+            {
+              "label": "90 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1609056119178
+              }
+            },
+            {
+              "label": "180 Days",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1601276519178
+              }
+            },
+            {
+              "label": "1 Year",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1585292519178
+              }
+            },
+            {
+              "label": "2 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1553670119178
+              }
+            },
+            {
+              "label": "3 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1522134119178
+              }
+            },
+            {
+              "label": "4 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1490598119178
+              }
+            },
+            {
+              "label": "5 Years",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": 1459062119178
+              }
+            },
+            {
+              "label": "All Time",
+              "value": {
+                "$": [
+                  "ts",
+                  192,
+                  1623084704585
+                ],
+                "$ts": -1538927880822
+              }
+            }
+          ],
+          "placeholder": {
+            "color": "#0c4e8b"
+          },
+          "search": {
+            "enabled": false
+          },
+          "showClearIcon": true,
+          "style": {},
+          "wrapMultiSelectValues": false
+        },
+        "type": "ia.input.dropdown"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

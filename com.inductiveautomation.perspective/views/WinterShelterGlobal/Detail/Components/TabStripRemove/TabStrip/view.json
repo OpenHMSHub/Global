@@ -1,0 +1,332 @@
+{
+  "custom": {},
+  "params": {
+    "selectedTab": "Activity"
+  },
+  "propConfig": {
+    "params.selectedTab": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 37,
+      "width": 1110
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Activity"
+        },
+        "position": {
+          "basis": "75px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Activity",
+            "Selected": true
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "5px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Registration"
+        },
+        "position": {
+          "basis": "120px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Registration",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "15px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Schedule"
+        },
+        "position": {
+          "basis": "81px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Schedule",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "15px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Volunteers"
+        },
+        "position": {
+          "basis": "108px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Volunteers",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "15px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Referrals"
+        },
+        "position": {
+          "basis": "90px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Referrals",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "5px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Support"
+        },
+        "position": {
+          "basis": "83px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Support",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "15px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tasks"
+        },
+        "position": {
+          "basis": "65px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Tasks",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "15px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Notes"
+        },
+        "position": {
+          "basis": "65px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "Notes",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "15px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FAQ"
+        },
+        "position": {
+          "basis": "86px"
+        },
+        "propConfig": {
+          "props.params.SelectedTab": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.selectedTab"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "FAQ",
+            "Selected": false
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip_Button",
+          "style": {
+            "marginLeft": "5px",
+            "marginRight": "15px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Spacer"
+        },
+        "position": {
+          "basis": "121px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "wintershelter_detail_tab_select",
+          "pageScope": true,
+          "script": "\tsystem.perspective.print(\u0027New Tab Message Recieved\u0027)\n\tself.view.params.selectedTab \u003d payload[\u0027tab_id\u0027]",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

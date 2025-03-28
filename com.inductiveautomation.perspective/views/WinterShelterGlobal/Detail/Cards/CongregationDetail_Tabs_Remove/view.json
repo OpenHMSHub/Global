@@ -1,0 +1,360 @@
+{
+  "custom": {},
+  "params": {
+    "data": "value",
+    "locationID": 160,
+    "tab_id": 0
+  },
+  "propConfig": {
+    "params.data": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tab_id": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 810,
+      "width": 1273
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Tabstrip"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "selectedTab": "Volunteers"
+          },
+          "path": "WinterShelter/Detail/Components/TabStrip/TabStrip",
+          "style": {
+            "marginLeft": "285px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "4px"
+        },
+        "props": {
+          "style": {
+            "classes": "Background/Alternative"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Content"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.data": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.data"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.locationID": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.locationID"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "path": ".../Tabstrip.props.params.selectedTab"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "null",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Activity",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Activity"
+                        },
+                        {
+                          "input": "Registration",
+                          "output": "WinterShelter/Registration/Detail/RegistrationDetail"
+                        },
+                        {
+                          "input": "Schedule",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Schedule"
+                        },
+                        {
+                          "input": "Volunteers",
+                          "output": "WinterShelter/Contacts/Detail/Tabs/ContactsDetail"
+                        },
+                        {
+                          "input": "Referrals",
+                          "output": "WinterShelter/Referrals/Detail/Main/Main"
+                        },
+                        {
+                          "input": "Tasks",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Tasks"
+                        },
+                        {
+                          "input": "Support",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Support"
+                        },
+                        {
+                          "input": "Notes",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Notes"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginRight": "-100%",
+                "paddingLeft": "264px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Info"
+            },
+            "position": {
+              "basis": "250px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{.../Tabstrip.props.params.selectedTab} !\u003d \u0027Registration\u0027"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              },
+              "props.params.data": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.data"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.locationID": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.locationID"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "path": "WinterShelter/Detail/Cards/CongregationInformation",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "700px",
+          "display": false,
+          "grow": 1,
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Info"
+            },
+            "position": {
+              "height": 1,
+              "width": 0.15
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "{.../Tabstrip.props.params.selectedTab} !\u003d \u0027Registration\u0027"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              },
+              "props.params.data": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.data"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.locationID": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.locationID"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "seasonId": 11
+              },
+              "path": "WinterShelter/Detail/Cards/CongregationInformation",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Content"
+            },
+            "position": {
+              "height": 1,
+              "width": 0.85,
+              "x": 0.15
+            },
+            "propConfig": {
+              "props.params.data": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.data"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.locationID": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.locationID"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "path": ".../Tabstrip.props.params.selectedTab"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "null",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Activity",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Activity"
+                        },
+                        {
+                          "input": "Registration",
+                          "output": "WinterShelter/Registration/Detail/RegistrationDetail"
+                        },
+                        {
+                          "input": "Schedule",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Schedule"
+                        },
+                        {
+                          "input": "Volunteers",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Volunteers"
+                        },
+                        {
+                          "input": "Referrals",
+                          "output": "WinterShelter/Referrals/Detail/Main/Main"
+                        },
+                        {
+                          "input": "Tasks",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Tasks"
+                        },
+                        {
+                          "input": "Support",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Support"
+                        },
+                        {
+                          "input": "Notes",
+                          "output": "WinterShelter/Detail/Tabs/Detail_Notes"
+                        },
+                        {
+                          "input": "FAQ",
+                          "output": "WinterShelter/Detail/Tabs/Detail_FAQ"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "mode": "percent"
+        },
+        "type": "ia.container.coord"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

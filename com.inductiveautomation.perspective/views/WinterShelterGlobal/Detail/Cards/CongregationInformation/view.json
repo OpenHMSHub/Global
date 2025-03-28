@@ -1,0 +1,1647 @@
+{
+  "custom": {
+    "Year1": "2024",
+    "Year2": "2025"
+  },
+  "params": {
+    "locationID": -1
+  },
+  "propConfig": {
+    "custom.Year1": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tyear \u003d (value.getValueAt(0,1)).split(\u0027-\u0027)[0]\n\treturn year",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.Year2": {
+      "binding": {
+        "config": {
+          "queryPath": "WinterShelterGlobal/getCurrentSeason"
+        },
+        "transforms": [
+          {
+            "code": "\tyear \u003d (value.getValueAt(0,1)).split(\u0027-\u0027)[1]\n\treturn year",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1560,
+      "width": 264
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CardHeader"
+        },
+        "position": {
+          "basis": "196px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "locationId": "{view.params.locationID}",
+                  "seasonId": "{parent.custom.seasonId}"
+                },
+                "queryPath": "WinterShelterGlobal/Registration/RegistrationDetail"
+              },
+              "type": "query"
+            }
+          },
+          "props.params.Text": {
+            "binding": {
+              "config": {
+                "expression": "{parent.custom.Information}"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value is not None and value.getRowCount() \u003e 0:\n\t\treturn value.getValueAt(0,\"congregationName\")\n\telse:\n\t\treturn \"\"",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.params.congregationID": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationID"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Preview/Cards/Information/Header",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t# Display   GUESTS - GENDER - NIGHTS\n\t\n\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"GUESTS - GENDER - NIGHTS\"\n\n\telse: #While running Session\n\t\tguests \u003d value.getValueAt(0, \"capacity\")\n\t\tgender \u003d value.getValueAt(0, \"genderAccepted\")\n\t\tnights \u003d self.parent.custom.nightsHosted\n\t\tif gender \u003d\u003d \u0027\u0027 or gender \u003d\u003d None:\n\t\t\tgender \u003d \u0027None\u0027\n\t\tstring \u003d str(guests) + \" - \" + str(gender)# + \" - \" + str(nights)\n\t\treturn string",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/About_info",
+            "paddingLeft": "0px",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Nights_Hosted"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.nightsHosted"
+              },
+              "transforms": [
+                {
+                  "code": "\tif len(value) \u003d\u003d 0:\n\t\tval \u003d\u0027\u0027\n\telif len(value) \u003d\u003d 1:\n\t\tval \u003d value[0]\n\telif len(value) \u003d\u003d 2:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]\n\telif len(value) \u003d\u003d 3:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]\n\telif len(value) \u003d\u003d 4:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]\n\telif len(value) \u003d\u003d 5:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]+\u0027, \u0027+value[4]\n\telif len(value) \u003d\u003d 6:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]+\u0027, \u0027+value[4]+\u0027, \u0027+value[5]\n\telse:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]+\u0027, \u0027+value[4]+\u0027, \u0027+value[5]+\u0027, \u0027+value[6]\n\treturn val",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Nights Hosted"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabelHeader"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tdays \u003d []\n\tinstances \u003d []\n\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telif value.getRowCount() \u003c 1:\n\t\tinstances \u003d []\n\t\treturn instances\n\telse: #While running Session\n\t\t\n\t\tmon \u003d value.getValueAt(0, \"Monday\")\n\t\tif mon:\n\t\t\tdays.append(\u0027Monday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Monday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\ttue \u003d value.getValueAt(0, \"Tuesday\")\n\t\t\n\t\tif tue:\n\t\t\tdays.append(\u0027Tuesday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t \tdays.remove(\u0027Tuesday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\twed \u003d value.getValueAt(0, \"Wednesday\")\n\t\tif wed:\n\t\t\tdays.append(\u0027Wednesday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Wednesday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tthu \u003d value.getValueAt(0, \"Thursday\")\n\t\tif thu:\n\t\t\tdays.append(\u0027Thursday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Thursday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tfri \u003d value.getValueAt(0, \"Friday\")\n\t\tif fri:\n\t\t\tdays.append(\u0027Friday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Friday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tsat \u003d value.getValueAt(0, \"Saturday\")\n\t\tif sat:\n\t\t\tdays.append(\u0027Saturday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Saturday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tsun \u003d value.getValueAt(0, \"Sunday\")\n\t\tif sun:\n\t\t\tdays.append(\u0027Sunday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Sunday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tfor day in days:\n\t\t\t\n\t\t\tobject \u003d {\u0027Info\u0027:day}\n\t\t\t\n\t\t\tinstances.append(object)\n\t\treturn instances\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "auto",
+            "grow": 0,
+            "shrink": 0
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabelFlex",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.lastHost"
+              },
+              "transforms": [
+                {
+                  "code": "\tif len(value)\u003c1:\n\t\tlastHost \u003d \u0027None\u0027\n\telse:\n\t\tlastHost \u003d value[0]\n\treturn lastHost",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Last Hosting"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "classes": "preview/lineBreak",
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.nextHost"
+              },
+              "transforms": [
+                {
+                  "code": "\tif len(value)\u003c1:\n\t\tnextHost \u003d \u0027None\u0027\n\telse:\n\t\tnextHost \u003d value[0]\n\treturn nextHost",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Next Hosting"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "visible"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Text": "About this Congregation"
+          },
+          "path": "WinterShelterGlobal/Detail/Cards/Information/AboutHeader",
+          "style": {
+            "classes": "preview/lineBreak",
+            "overflow": "hidden"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"Congregation Name\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"congregationName\")",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Congregation Name"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "visible"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tgetFirstSeason \u003d system.db.runNamedQuery(\"WinterShelterGlobal/Get_Congregation_FirstSeason\",{\u0027locationId\u0027:self.view.params.locationID})\n\tfirstSeason \u003d \u0027\u0027\n\tif getFirstSeason!\u003d None and getFirstSeason.getRowCount()\u003e0:\n\t\tfirstSeason \u003d getFirstSeason.getValueAt(0,\u0027Seasons\u0027)\n\t\t\t\n\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn firstSeason #\"None\"\n\telse: #While running Session\n\t\tHostingSince \u003d value.getValueAt(0, \"firstSeason\")\n\t\tif HostingSince \u003d\u003d None:\n\t\t\tHostingSince \u003d firstSeason #\u0027None\u0027\n\t\treturn HostingSince",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Hosting Since"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"Address\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"congregationAddressLine1\")",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Address"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tCity \u003d value.getValueAt(0, \"congregationCity\")\n\t\tif City \u003d\u003d None or City \u003d\u003d \u0027\u0027:\n\t\t\tCity \u003d \u0027None\u0027\n\t\treturn City",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "City"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "expression": "{/root.custom.Information}"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"11111\"\n\telse: #While running Session\n\t\tstate \u003d str(value.getValueAt(0,\u0027congregationState\u0027))\n\t\tzipCode \u003d str(value.getValueAt(0, \"congregationZipcode\"))\n\t\treturn state +\u0027 / \u0027+ zipCode\n\t\t",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "State - Zip code"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tphoneNumber \u003d value.getValueAt(0,\"congregationPhone\")\n\t\tif phoneNumber \u003d\u003d None or phoneNumber \u003d\u003d \u0027\u0027:\n\t\t\tphoneNumber \u003d \u0027None\u0027\n\t\treturn phoneNumber",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Phone Number"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "spacer"
+        },
+        "position": {
+          "basis": "2%",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Description": "",
+            "Info": ""
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tfirstName \u003d value.getValueAt(0, \"coordinatorFirstName\")\n\t\tlastName \u003d value.getValueAt(0, \"coordinatorLastName\")\n\t\tif firstName \u003d\u003d None:\n\t\t\tCoordinatorName \u003d \u0027None\u0027\n\t\telif (firstName!\u003dNone) and (lastName\u003d\u003dNone):\n\t\t\tCoordinatorName \u003d firstName\n\t\telse:\n\t\t\tCoordinatorName \u003d firstName +\u0027 \u0027+ lastName\n\t\treturn CoordinatorName\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Coordinator Name"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"coordinatorPhone\")\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Primary Phone Number"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"coordinatorAltPhone\")\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "After Hours Phone Number"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tEmail \u003d value.getValueAt(0, \"coordinatorEmail\")\n\t\tif Email \u003d\u003d None or Email \u003d\u003d \u0027\u0027:\n\t\t\tEmail \u003d \u0027None\u0027\n\t\treturn Email",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "E-mail"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tprefferedCommunication \u003d value.getValueAt(0, \"coordinatorPreferredCommunication\")\n\t\tif prefferedCommunication \u003d\u003d None or prefferedCommunication \u003d\u003d \u0027\u0027:\n\t\t\tprefferedCommunication \u003d\u0027None\u0027\n\t\treturn prefferedCommunication",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Preferred Contact Method"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "spacer_0"
+        },
+        "position": {
+          "basis": "2%",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Description": "",
+            "Info": ""
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\" or value.getValueAt(0,\u0027registered\u0027) \u003d\u003d False: # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn system.date.format(value.getValueAt(0, \"timeCreated\"),\u0027MMM dd, yyyy\u0027)\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Registration Date"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tbedsActual \u003d value.getValueAt(0, \"bedsActualLastSeason\")\n\t\tif bedsActual \u003d\u003d None:\n\t\t\tbedsActual \u003d 0\n\t\treturn bedsActual\n\t\t#return \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Last Season Total"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.info_Old": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\t\n\t\tmon \u003d value.getValueAt(0, \"Monday\")\n\t\ttue \u003d value.getValueAt(0, \"Tuesday\")\n\t\twed \u003d value.getValueAt(0, \"Wednesday\")\n\t\tthu \u003d value.getValueAt(0, \"Thursday\")\n\t\tfri \u003d value.getValueAt(0, \"Friday\")\n\t\tsat \u003d value.getValueAt(0, \"Saturday\")\n\t\tsun \u003d value.getValueAt(0, \"Sunday\")\n\t\t\n\t\tdays \u003d [mon,tue,wed,thu,fri,sat,sun]\n\t\t\n\t\tnights \u003d len([day for day in days if day \u003d\u003d True])\n\t\t\n\t\treturn nights\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\t\n\t\tmon \u003d value.getValueAt(0, \"Monday\")\n\t\ttue \u003d value.getValueAt(0, \"Tuesday\")\n\t\twed \u003d value.getValueAt(0, \"Wednesday\")\n\t\tthu \u003d value.getValueAt(0, \"Thursday\")\n\t\tfri \u003d value.getValueAt(0, \"Friday\")\n\t\tsat \u003d value.getValueAt(0, \"Saturday\")\n\t\tsun \u003d value.getValueAt(0, \"Sunday\")\n\t\t\n\t\tdays \u003d [mon,tue,wed,thu,fri,sat,sun]\n\t\t\n\t\tnights \u003d len([day for day in days if day \u003d\u003d True])\n\t\t\n\t\treturn nights\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Nights Hosted old"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"bedsProjected\")\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "This Season Registration"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "expression": "//toInt(max({parent.custom.Information},\u0027bedsProjected\u0027) - max({parent.custom.Information},\u0027bedsActualLastSeason\u0027))\r\n{parent.custom.Information}"
+              },
+              "transforms": [
+                {
+                  "code": "#\tif \u0027-\u0027 in str(value):\n#\t\treturn \u0027n/a\u0027\n#\telse:\n\tlen \u003d value.getRowCount()\n\tbedsProjected \u003d value.getValueAt(len-1,\u0027bedsProjected\u0027)\n\tbedsActualLastSeason \u003d value.getValueAt(len-1,\u0027bedsActualLastSeason\u0027)\n\tif bedsProjected \u003d\u003d None or bedsActualLastSeason \u003d\u003d None:\n\t\tgrowthCount \u003d 0\n\telse:\n\t\tgrowthCount \u003d bedsProjected - bedsActualLastSeason\n\treturn growthCount \n#return value",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Growth Count"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.bedGrowth": {
+            "binding": {
+              "config": {
+                "expression": "{this.custom.bedProj} - {this.custom.bedLast}"
+              },
+              "type": "expr"
+            }
+          },
+          "custom.bedLast": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tbedLast \u003d value.getValueAt(0, \"bedsActualLastSeason\")\n\t\tif bedLast \u003d\u003d None:\n\t\t\tbedLast \u003d 0\n\t\treturn bedLast\n\t\t#return \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "custom.bedProj": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"bedsProjected\")\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "expression": "//\u0027% \u0027 +round(({this.custom.bedGrowth} / {this.custom.bedLast}) * 100, 1)\r\nif({this.custom.bedLast}\u003d0 ,\u0027% \u0027+ {this.custom.bedGrowth}, \u0027% \u0027+ round(({this.custom.bedGrowth} / {this.custom.bedLast}) * 100, 1))"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn value\n#\tif \u0027-\u0027 in value:\n#\t\tval \u003d \u0027n/a\u0027\n#\telse:\n#\t\tval \u003d value\n#\treturn val",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Growth Percent"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n#\t\treturn value.getValueAt(0, \"Frequency\")\n\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Gender"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\t\n\t\t\n\t\treg \u003d  value.getValueAt(0, \"registered\")\n\t\t\n\t\tif reg:\n\t\t\treturn \"Registered\"\n\t\treturn \"Not Registered\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Status"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "spacer_2"
+        },
+        "position": {
+          "basis": "2%",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Description": "",
+            "Info": ""
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tfrequency \u003d value.getValueAt(0, \"Frequency\")\n\t\tif frequency \u003d\u003d None or frequency \u003d\u003d \u0027\u0027:\n\t\t\tfrequency \u003d \u0027None\u0027\n\t\treturn frequency\n\t\t#return \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Frequency"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\treturn value.getValueAt(0, \"Transport\")\n\t\t#return \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Transportation"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d None or value.getRowCount() \u003d\u003d 0 or value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\ttimeVal \u003d value.getValueAt(0, \"pickupTime\")\n\t\tif timeVal \u003d\u003d None:\n\t\t\treturn \"None\"\n\t\telse:\n\t\t\treturn timeVal\n\t\t#return \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Pickup Time"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "basis": "24px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.nightsHosted"
+              },
+              "transforms": [
+                {
+                  "code": "\tif len(value) \u003d\u003d 1:\n\t\tval \u003d value[0]\n\telif len(value) \u003d\u003d 2:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]\n\telif len(value) \u003d\u003d 3:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]\n\telif len(value) \u003d\u003d 4:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]\n\telif len(value) \u003d\u003d 5:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]+\u0027, \u0027+value[4]\n\telif len(value) \u003d\u003d 6:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]+\u0027, \u0027+value[4]+\u0027, \u0027+value[5]\n\telse:\n\t\tval \u003d value[0]+\u0027, \u0027+value[1]+\u0027, \u0027+value[2]+\u0027, \u0027+value[3]+\u0027, \u0027+value[4]+\u0027, \u0027+value[5]+\u0027, \u0027+value[6]\n\treturn val",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Special Services"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabelHeader"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater_nights_0"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tservices \u003d []\n\tinstances \u003d []\n\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\t\n\t\tshower \u003d value.getValueAt(0, \"showers\")\n\t\tif shower:\n\t\t\tservices.append(\u0027Showers\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Showers\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tlaundry \u003d value.getValueAt(0, \"laundry\")\n\t\t\n\t\tif laundry:\n\t\t\tservices.append(\u0027Laundry\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t \tservices.remove(\u0027Laundry\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tclothing \u003d value.getValueAt(0, \"clothing\")\n\t\tif clothing:\n\t\t\tservices.append(\u0027Clothing\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Clothing\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\thaircuts \u003d value.getValueAt(0, \"haircuts\")\n\t\tif haircuts:\n\t\t\tservices.append(\u0027Haircuts\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Haircuts\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\thygiene \u003d value.getValueAt(0, \"hygieneItems\")\n\t\tif hygiene:\n\t\t\tservices.append(\u0027Hygiene\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Hygiene\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tsackLunches \u003d value.getValueAt(0, \"sackLunches\")\n\t\tif sackLunches:\n\t\t\tservices.append(\u0027Sack Lunches\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Sack Lunches\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tdinner \u003d value.getValueAt(0, \"dinner\")\n\t\tif dinner:\n\t\t\tservices.append(\u0027Dinner\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Dinner\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tbreakfast \u003d value.getValueAt(0, \"breakfast\")\n\t\tif breakfast:\n\t\t\tservices.append(\u0027Breakfast\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(\u0027Breakfast\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tother \u003d value.getValueAt(0, \"otherServiceList\")\n\t\tif other !\u003d None:\n\t\t\tservices.append(other)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tservices.remove(other)\n\t\t\texcept:\n\t\t\t\tpass\t\t\n\t\tfor service in services:\n\t\t\t\n\t\t\tobject \u003d {\u0027Info\u0027:service}\n\t\t\t\n\t\t\tinstances.append(object)\n\t\treturn instances\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "elementPosition": {
+            "basis": "auto",
+            "grow": 0,
+            "shrink": 0
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabelFlex",
+          "style": {
+            "marginLeft": "10px"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\taccess \u003d value.getValueAt(0, \"accessible\")\n\t\tif access:\n\t\t\treturn \"Yes\"\n\t\treturn \"No\"\n\t\t",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Wheelchair Access"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tstairs \u003d value.getValueAt(0, \"Stairs\")\n\t\tif stairs:\n\t\t\treturn \"Yes\"\n\t\treturn \"No\"\n#\t\treturn \"None\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Guests Climb Stairs"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.Description"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.Info": {
+            "binding": {
+              "config": {
+                "path": "/root.custom.Information"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tsmoke \u003d value.getValueAt(0, \"Smoking\")\n\t\tif smoke:\n\t\t\treturn \"Yes\"\n\t\treturn \"No\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Description": "Smoking Area Provided"
+          },
+          "path": "WinterShelterGlobal/Preview/Cards/Congregation/PreviewLabel",
+          "style": {
+            "overflow": "hidden"
+          },
+          "useDefaultViewWidth": true
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "custom": {
+      "HostDates": "value",
+      "lastHost": [],
+      "nextHost": []
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom.Information": {
+        "binding": {
+          "config": {
+            "parameters": {
+              "locationId": "{view.params.locationID}",
+              "seasonId": "{this.custom.seasonId}"
+            },
+            "queryPath": "WinterShelterGlobal/Registration/PreviewRegistration"
+          },
+          "type": "query"
+        }
+      },
+      "custom.InformationOld": {
+        "binding": {
+          "config": {
+            "parameters": {
+              "ID": "{view.params.CongregationID}"
+            },
+            "queryPath": "WinterShelter/Details/Congregation_ID"
+          },
+          "type": "query"
+        }
+      },
+      "custom.bedsThisYear": {
+        "binding": {
+          "config": {
+            "parameters": {
+              "CongregationID": "{view.params.CongregationID}",
+              "SelectedYear": "dateExtract(now(0), \"year\")"
+            },
+            "queryPath": "WinterShelter/Details/TotalBedsbyYear"
+          },
+          "type": "query"
+        }
+      },
+      "custom.dateExtraction": {
+        "binding": {
+          "config": {
+            "parameters": {
+              "locationId": "{view.params.locationID}",
+              "seasonId": "{this.custom.seasonId}"
+            },
+            "queryPath": "WinterShelterGlobal/getCurrentSchedule"
+          },
+          "transforms": [
+            {
+              "code": "\tself.custom.nextHost \u003d[]\n\tself.custom.lastHost \u003d []\n\tdate \u003d []\n\tdaysBefore \u003d []\n\tdaysAfter \u003d []\n\tdata \u003d system.dataset.toPyDataSet(value)\n\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.custom.Year1), 10, 1))\n\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.custom.Year1), 12, 31))\n\tfor row in data:\n\t\tdayOfYear\u003drow[1]\n\t\t## calclulate date and day based on day of year\n\t\tif dayOfYear \u003e\u003d startDayOfSeason: # and dayOfYear \u003c\u003d endDayOfCurrentYear:\n\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.view.custom.Year1))\n\t\telse:\n\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.view.custom.Year2))\n#\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear\u003drow[1])\n\t\tdate.append(dates)\n\t\tdate.sort()\n\t\t\n\tfor days in date:\n\t\t\n\t\tdateNow \u003d system.date.now()\n\t\tdateNowFormat \u003d system.date.format(dateNow,\"MM/dd/YYYY\")\n\t\tisBefore \u003d system.date.isBefore(days,dateNow)\n\t\t\n\t\t\n\t\tif isBefore:\n\t\t\t\n\t\t\tisBeforeFormat \u003d system.date.format(days,\"MM/dd/YYYY\")\n\t\t\tdaysBefore.append(isBeforeFormat)\n#\t\t\tdaysBefore.sort()\n\t\t\tself.custom.lastHost \u003d daysBefore[-1:]\n\t\t\t\n\t\telse:\n\t\t\t\n\t\t\tisAfterFormat \u003d system.date.format(days,\"MM/dd/YYYY\")\n\t\t\tdaysAfter.append(isAfterFormat)\n#\t\t\tdaysAfter.sort()\n\n\t\t\tif daysAfter[0:1] \u003d\u003d dateNowFormat:\n\t\t\t\n\t\t\t\tself.custom.nextHost \u003d daysAfter[0:1]\n\t\t\t\t\n\t\t\telse:\n\t\t\t\tself.custom.nextHost \u003d daysAfter[0:1]#system.date.format(days,\"YYYY-MM-dd\")\n\t\n\tif len(self.custom.lastHost) \u003d\u003d 0:\n\t\t## get the schedule for last year\n\t\tnamedQ \u003d \"WinterShelterGlobal/getCurrentSchedule\"\n\t\tparams \u003d {\u0027locationId\u0027:self.view.params.locationID, \u0027seasonId\u0027:self.custom.previousSeasonId}\n\t\t\n\t\tprevScheduleData \u003d system.db.runNamedQuery(namedQ ,parameters \u003dparams)\n\t\t\n\t\tif prevScheduleData is not None:\n\t\t\t\n\t\t\tdate \u003d []\n\t\t\tdaysBefore \u003d []\n\t\t\tdaysAfter \u003d []\n\t\t\tdata \u003d system.dataset.toPyDataSet(prevScheduleData)\n\t\t\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.custom.Year1) - 1, 10, 1))\n\t\t\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.custom.Year1) - 1, 12, 31))\n\t\t\t\n\t\t\tsystem.perspective.print(\"startDayOfSeason : \" + str(startDayOfSeason))\n\t\t\tsystem.perspective.print(\"endDayOfCurrentYear : \" + str(endDayOfCurrentYear))\n\t\t\tfor row in data:\n\t\t\t\t\n\t\t\t\tdayOfYear\u003drow[1]\n\t\t\t\t\n\t\t\t\t## calclulate date and day based on day of year\n\t\t\t\tif dayOfYear \u003e\u003d startDayOfSeason: # and dayOfYear \u003c\u003d endDayOfCurrentYear:\n\t\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.view.custom.Year1) -1)\n\t\t\t\telse:\n\t\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.view.custom.Year2) - 1)\n\t\t\t\t\t\n\t\t#\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear\u003drow[1])\n\t\t\t\tdate.append(dates)\n\t\t\t\tdate.sort()\n\t\t\t\t\n\t\t\tfor days in date:\t\t\n\t\t\t\tisBeforeFormat \u003d system.date.format(days,\"MM/dd/YYYY\")\n\t\t\t\tsystem.perspective.print(isBeforeFormat)\n\t\t\t\tdaysBefore.append(isBeforeFormat)\n\t\t#\t\t\tdaysBefore.sort()\n\t\t\t\tself.custom.lastHost \u003d daysBefore[-1:]\n\treturn daysAfter",
+              "type": "script"
+            }
+          ],
+          "type": "query"
+        },
+        "onChange": {
+          "enabled": null,
+          "script": "\tif len(currentValue.getValue())\u003c1:\n\t\tself.custom.nextHost \u003d[]\n#\tif len(currentValue.getValue())\u003c1 or len(self.custom.lastHost) \u003d\u003d 0:\n#\t\t\n#\t\tself.custom.lastHost \u003d[]\n#\t\t## get the schedule for last year\n#\t\tnamedQ \u003d \"WinterShelterGlobal/getCurrentSchedule\"\n#\t\tparams \u003d {\u0027locationId\u0027:self.view.params.locationID, \u0027seasonId\u0027:self.custom.previousSeasonId}\n#\t\t\n#\t\tprevScheduleData \u003d system.db.runNamedQuery(namedQ ,parameters \u003dparams)\n#\t\t\n#\t\tif prevScheduleData is not None:\n#\t\t\t\n#\t\t\tdate \u003d []\n#\t\t\tdaysBefore \u003d []\n#\t\t\tdaysAfter \u003d []\n#\t\t\tdata \u003d system.dataset.toPyDataSet(prevScheduleData)\n#\t\t\tstartDayOfSeason \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.custom.Year1) - 1, 10, 1))\n#\t\t\tendDayOfCurrentYear \u003d system.date.getDayOfYear(system.date.getDate(int(self.view.custom.Year1) - 1, 12, 31))\n#\t\t\t\n#\t\t\tsystem.perspective.print(\"startDayOfSeason : \" + str(startDayOfSeason))\n#\t\t\tsystem.perspective.print(\"endDayOfCurrentYear : \" + str(endDayOfCurrentYear))\n#\t\t\tfor row in data:\n#\t\t\t\t\n#\t\t\t\tdayOfYear\u003drow[1]\n#\t\t\t\t\n#\t\t\t\t## calclulate date and day based on day of year\n#\t\t\t\tif dayOfYear \u003e\u003d startDayOfSeason: # and dayOfYear \u003c\u003d endDayOfCurrentYear:\n#\t\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.view.custom.Year1) -1)\n#\t\t\t\telse:\n#\t\t\t\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear,int(self.view.custom.Year2) - 1)\n#\t\t\t\t\t\n#\t\t#\t\tdates \u003d calendar.dayOfYearToDate(dayOfYear\u003drow[1])\n#\t\t\t\tdate.append(dates)\n#\t\t\t\tdate.sort()\n#\t\t\t\t\n#\t\t\tfor days in date:\t\t\n#\t\t\t\tisBeforeFormat \u003d system.date.format(days,\"MM/dd/YYYY\")\n#\t\t\t\tsystem.perspective.print(isBeforeFormat)\n#\t\t\t\tdaysBefore.append(isBeforeFormat)\n#\t\t#\t\t\tdaysBefore.sort()\n#\t\t\t\tself.custom.lastHost \u003d daysBefore[-1:]"
+        }
+      },
+      "custom.nightsHosted": {
+        "binding": {
+          "config": {
+            "path": "/root.custom.Information"
+          },
+          "transforms": [
+            {
+              "code": "\tdays \u003d []\n\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telif value.getRowCount() \u003c 1:\n\t\tday \u003d[]\n\t\treturn day\n\telse: #While running Session\n\t\t\n\t\tmon \u003d value.getValueAt(0, \"Monday\")\n\t\tif mon:\n\t\t\tdays.append(\u0027Monday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Monday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\ttue \u003d value.getValueAt(0, \"Tuesday\")\n\t\t\n\t\tif tue:\n\t\t\tdays.append(\u0027Tuesday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t \tdays.remove(\u0027Tuesday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\twed \u003d value.getValueAt(0, \"Wednesday\")\n\t\tif wed:\n\t\t\tdays.append(\u0027Wednesday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Wednesday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tthu \u003d value.getValueAt(0, \"Thursday\")\n\t\tif thu:\n\t\t\tdays.append(\u0027Thursday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Thursday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tfri \u003d value.getValueAt(0, \"Friday\")\n\t\tif fri:\n\t\t\tdays.append(\u0027Friday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Friday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tsat \u003d value.getValueAt(0, \"Saturday\")\n\t\tif sat:\n\t\t\tdays.append(\u0027Saturday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Saturday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tsun \u003d value.getValueAt(0, \"Sunday\")\n\t\tif sun:\n\t\t\tdays.append(\u0027Sunday\u0027)\n\t\telse:\n\t\t\ttry:\n\t\t\t\tdays.remove(\u0027Sunday\u0027)\n\t\t\texcept:\n\t\t\t\tpass\n\t\tday \u003d [day for day in days]\n\t\treturn day\n#\t\treturn \"None\"",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      },
+      "custom.previousSeasonId": {
+        "binding": {
+          "config": {
+            "queryPath": "WinterShelterGlobal/GetLastSeason"
+          },
+          "transforms": [
+            {
+              "code": "\tif value is not None and value.getRowCount() \u003e 0:\n\t\treturn value.getValueAt(0,\u0027id\u0027)\n\telse:\n\t\treturn -1",
+              "type": "script"
+            }
+          ],
+          "type": "query"
+        }
+      },
+      "custom.seasonId": {
+        "binding": {
+          "config": {
+            "queryPath": "WinterShelterGlobal/getCurrentSeason"
+          },
+          "transforms": [
+            {
+              "code": "\tif value.getRowCount():\n\t\treturn value.getValueAt(value.getRowCount()-1,\u0027id\u0027)",
+              "type": "script"
+            }
+          ],
+          "type": "query"
+        }
+      },
+      "custom.trackID": {
+        "binding": {
+          "config": {
+            "path": "view.params.locationID"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "overflow": "scroll",
+        "overflowX": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "RefreshAboutPanel",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.refreshBinding(\u0027custom.Information\u0027)",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

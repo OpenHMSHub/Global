@@ -1,0 +1,180 @@
+{
+  "custom": {
+    "data": [],
+    "function": 0
+  },
+  "params": {},
+  "propConfig": {
+    "custom.data": {
+      "persistent": true
+    },
+    "custom.function": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 170,
+      "width": 300
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Text": "Warning"
+          },
+          "path": "WinterShelterGlobal/Schedule/Components/ReservationHeader"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Error_Message"
+              },
+              "text": "Participant is suspended. Do you want to proceed with the check-in ?"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "custom": {
+          "ReservationSaved": false
+        },
+        "meta": {
+          "name": "Message"
+        },
+        "position": {
+          "basis": "70px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderTopColor": "#9db8d1",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "classes": "Background/Default",
+            "marginLeft": "10px",
+            "marginRight": "10px",
+            "marginTop": "5px",
+            "paddingTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.sendMessage(messageType\u003d\"AllowSuspendedParticipant\", payload\u003d{}, scope\u003d\"session\")\n\tsystem.perspective.closePopup(\"checkInWarning\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Main",
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginTop": "5px"
+              },
+              "text": "Yes"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\"checkInWarning\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Secondary",
+                "margin": "5px"
+              },
+              "text": "No"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "custom": {
+          "ReservationSaved": false
+        },
+        "meta": {
+          "name": "root Actions"
+        },
+        "position": {
+          "basis": "51px"
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "borderTopColor": "#9db8d1",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "classes": "Background/Default",
+            "marginLeft": "10px",
+            "marginRight": "10px",
+            "marginTop": "5px",
+            "paddingTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

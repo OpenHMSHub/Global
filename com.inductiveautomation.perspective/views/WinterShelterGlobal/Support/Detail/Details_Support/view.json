@@ -1,0 +1,365 @@
+{
+  "custom": {
+    "congregation_search": false,
+    "rowData": {
+      "RITINotes": "",
+      "Status": "",
+      "completed": "",
+      "congregationNotes": "",
+      "contact": "",
+      "dueDate": "",
+      "id": -1,
+      "locationId": "",
+      "locationName": "",
+      "priorityId": "",
+      "staffId": "",
+      "staffName": "",
+      "statusId": "",
+      "ticketHash": "",
+      "ticketPriority": "",
+      "ticketTypeId": "",
+      "timeCreated": "10/20/2022",
+      "title": "",
+      "type": ""
+    },
+    "selection_data": null,
+    "table_data": null
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tUTCOffset \u003d self.session.props.device.timezone.utcOffset\n\ttimeCreated \u003d system.date.addMinutes(system.date.now(),int(UTCOffset*60))\n\tself.custom.rowData.timeCreated \u003d system.date.format(timeCreated,\u0027MM/dd/YYYY\u0027)\n\tsystem.perspective.print(self.custom.rowData.timeCreated)"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "locationId": 386
+  },
+  "propConfig": {
+    "custom.congregation_search": {
+      "persistent": true
+    },
+    "custom.rowData": {
+      "binding": {
+        "config": {
+          "path": "/root/Table.props.params.selectedRowData"
+        },
+        "transforms": [
+          {
+            "code": "\tdataset \u003d value\n\tif dataset[\u0027id\u0027] \u003d\u003d -1:\n\t\tsystem.perspective.print(dataset[\u0027id\u0027])\n\t\tUTCOffset \u003d self.session.props.device.timezone.utcOffset\n\t\ttimeCreated \u003d system.date.addMinutes(system.date.now(),int(UTCOffset*60))\n\t\ttimeCreated \u003d system.date.format(timeCreated,\u0027MM/dd/YYYY\u0027)\n\t\tdataset \u003d {\n\t\t  \"RITINotes\": \"\",\n\t\t  \"Status\": \"\",\n\t\t  \"completed\": \"\",\n\t\t  \"congregationNotes\": \"\",\n\t\t  \"contact\": \"\",\n\t\t  \"dueDate\": \"\",\n\t\t  \"id\": -1,\n\t\t  \"locationId\": \"\",\n\t\t  \"locationName\": \"\",\n\t\t  \"priorityId\": \"\",\n\t\t  \"staffId\": \"\",\n\t\t  \"staffName\": \"\",\n\t\t  \"statusId\": \"\",\n\t\t  \"ticketHash\": \"\",\n\t\t  \"ticketPriority\": \"\",\n\t\t  \"ticketTypeId\": \"\",\n\t\t  \"timeCreated\": timeCreated,\n\t\t  \"title\": \"\",\n\t\t  \"type\": \"\"\n\t\t}\n\telse:\n\t\tdataset \u003d value\n\treturn dataset",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tsystem.perspective.print()"
+      },
+      "persistent": true
+    },
+    "custom.selection_data": {
+      "binding": {
+        "config": {
+          "path": "/root/Table.props.params.selection_data"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.table_data": {
+      "binding": {
+        "config": {
+          "path": "/root/Table.props.params.table_data"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.locationId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 827,
+      "width": 1261
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_Top"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.view_height"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.row_data": {
+            "binding": {
+              "config": {
+                "path": "../Table.props.params.selectedRowData"
+              },
+              "transforms": [
+                {
+                  "code": "\tdataset \u003d value\n\tif dataset[\u0027id\u0027] \u003d\u003d -1:\n\t\tsystem.perspective.print(dataset[\u0027id\u0027])\n\t\tUTCOffset \u003d self.session.props.device.timezone.utcOffset\n\t\ttimeCreated \u003d system.date.addMinutes(system.date.now(),int(UTCOffset*60))\n\t\ttimeCreated \u003d system.date.format(timeCreated,\u0027MM/dd/YYYY\u0027)\n\t\tdataset \u003d {\n\t\t  \"RITINotes\": \"\",\n\t\t  \"Status\": \"\",\n\t\t  \"completed\": \"\",\n\t\t  \"congregationNotes\": \"\",\n\t\t  \"contact\": \"\",\n\t\t  \"dueDate\": \"\",\n\t\t  \"id\": -1,\n\t\t  \"locationId\": \"\",\n\t\t  \"locationName\": \"\",\n\t\t  \"priorityId\": \"\",\n\t\t  \"staffId\": \"\",\n\t\t  \"staffName\": \"\",\n\t\t  \"statusId\": \"\",\n\t\t  \"ticketHash\": \"\",\n\t\t  \"ticketPriority\": \"\",\n\t\t  \"ticketTypeId\": \"\",\n\t\t  \"timeCreated\": timeCreated,\n\t\t  \"title\": \"\",\n\t\t  \"type\": \"\"\n\t\t}\n\telse:\n\t\tdataset \u003d value\n\treturn dataset",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "congregation_search": false,
+            "view_height": "270px"
+          },
+          "path": "WinterShelterGlobal/Support/Detail/Top",
+          "style": {
+            "classes": "ActivityCards/Card",
+            "marginLeft": "40px",
+            "marginRight": "40px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Filter"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.congregationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationId"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "activeInActive": null,
+            "dateRangeEnd": null,
+            "dateRangeStart": null,
+            "priorityId": -1,
+            "searchText": "",
+            "staffId": -1,
+            "startDateFilter": {
+              "$": [
+                "ts",
+                192,
+                1665450359670
+              ],
+              "$ts": 2678400000
+            },
+            "statusId": -1,
+            "ticketTypeId": -1
+          },
+          "path": "WinterShelterGlobal/Support/Detail/Filters/Support_Filter",
+          "style": {
+            "marginLeft": "40px",
+            "marginRight": "40px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px",
+          "display": false
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\" due date filter : \" + {session.custom.filters.winterShelterTasks.DueDate.where}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "color": "#FF0000",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "900px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.filter_activeInactive": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.activeInActive"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_congregationId": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.congregationId"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_dateRangeEnd": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.dateRangeEnd"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_dateRangeStart": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.dateRangeStart"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_priorityId": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.priorityId"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_searchText": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.searchText"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_staffId": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.staffId"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_startDate": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.startDateFilter"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_statusId": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.statusId"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.filter_ticketTypeId": {
+            "binding": {
+              "config": {
+                "path": "../Filter.props.params.ticketTypeId"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.locationId": {
+            "binding": {
+              "config": {
+                "path": "view.params.locationId"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "selectedRowData": {
+              "RITINotes": "",
+              "Status": "",
+              "completed": "",
+              "congregationNotes": "",
+              "contact": "",
+              "dueDate": "",
+              "id": -1,
+              "locationId": "",
+              "locationName": "",
+              "priorityId": "",
+              "staffId": "",
+              "staffName": "",
+              "statusId": "",
+              "ticketHash": "",
+              "ticketPriority": "",
+              "ticketTypeId": "",
+              "timeCreated": "",
+              "title": "",
+              "type": ""
+            },
+            "selection_data": null,
+            "table_data": null
+          },
+          "path": "WinterShelterGlobal/Support/Detail/Tables/SupportTableDetail",
+          "style": {
+            "marginLeft": "40px",
+            "marginRight": "40px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "flex-end",
+      "style": {
+        "classes": "Background/Alternative"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

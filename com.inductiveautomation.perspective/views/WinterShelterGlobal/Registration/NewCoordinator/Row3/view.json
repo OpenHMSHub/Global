@@ -1,0 +1,180 @@
+{
+  "custom": {},
+  "params": {
+    "email": "",
+    "eveningPhone": "",
+    "preferredCommunicationMethod": -1,
+    "primaryPhone": ""
+  },
+  "propConfig": {
+    "params.email": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_Email.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.eveningPhone": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_EveningPhone.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.preferredCommunicationMethod": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_PreferredCommunication.props.params.selection"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.primaryPhone": {
+      "binding": {
+        "config": {
+          "path": "/root/Embed_PrimaryPhone.props.params.text"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 60,
+      "width": 1209
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_PrimaryPhone"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Primary Phone",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text_Mandatory",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_EveningPhone"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Evening/After Hours Phone",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Email"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "label": "Email",
+            "placeholder": "",
+            "text": ""
+          },
+          "path": "WinterShelterGlobal/Templates/Input_Text_Mandatory",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_PreferredCommunication"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "queryPath": "WinterShelterGlobal/Registration/GetCommunicationTypes"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "selection": -1,
+            "text": "Preferred Method "
+          },
+          "path": "1_globalTEMPLATES/Input_DropDownSingle",
+          "style": {
+            "classes": "InputCards/InputCard",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder",
+          "style": {
+            "classes": "InputCards/InputCard"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

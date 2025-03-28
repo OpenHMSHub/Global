@@ -1,0 +1,1 @@
+SELECT id, type FROM shelter.ticketType

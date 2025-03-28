@@ -1,0 +1,176 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 1113
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Embed_Year"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "expression": "toInt(getYear(now(0)))"
+              },
+              "transforms": [
+                {
+                  "code": "\tyear \u003d value\n\t# Generate the Rows\n\trows \u003d []\n\tfor x in range(120):\n\t\toneRow \u003d [str(year), year]\n\t\trows.append(oneRow)\n\t\tyear -\u003d 1\n\t# Generate the DataSet\n\theaders \u003d [\"1\", \"2\"]\n\tdata \u003d system.dataset.toDataSet(headers, rows)\n\treturn data",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "dob",
+            "filter": "volunteerSearch",
+            "key": "dobYear",
+            "placeholder": "Year",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Month"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "expression": "toInt(getYear(now(0)))"
+              },
+              "transforms": [
+                {
+                  "code": "\t#import calendar\n\tmonth \u003d 0\n\t# Generate the Rows\n\trows \u003d []\n\tfor x in range(12):\n\t\t#oneRow \u003d [str(format(month,\u002702d\u0027)), calendar.month_name[x+1]]\n\t\toneRow \u003d [str(format(month+1,\u002702d\u0027)), system.date.format(system.date.getDate(2021,month,1),\u0027MMMM\u0027)]\n\t\trows.append(oneRow)\n\t\tmonth +\u003d 1\n\t# Generate the DataSet\n\theaders \u003d [\"1\", \"2\"]\n\tdata \u003d system.dataset.toDataSet(headers, rows)\n\treturn data",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "DATEPART(month,h.dob)",
+            "filter": "volunteerSearch",
+            "key": "dobMonth",
+            "placeholder": "Month",
+            "searchType": "equals"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Day"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.options": {
+            "binding": {
+              "config": {
+                "expression": "true"
+              },
+              "transforms": [
+                {
+                  "code": "\t# Generate the Rows\n\trows \u003d []\n\tfor x in range(1,32):\n\t\tif x \u003c 10:\n\t\t\toneRow \u003d [\u00270\u0027 + str(x), x]\n\t\telse:\n\t\t\toneRow \u003d [str(x), x]\n\t\trows.append(oneRow)\n\t# Generate the DataSet\n\theaders \u003d [\"1\", \"2\"]\n\tdata \u003d system.dataset.toDataSet(headers, rows)\n\treturn data",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "column_name": "DATEPART(day,h.dob)",
+            "filter": "volunteerSearch",
+            "key": "dobDay",
+            "placeholder": "Day",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/SingleDropDown",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Email"
+        },
+        "position": {
+          "basis": "140px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "column_name": "email",
+            "filter": "volunteerSearch",
+            "key": "email",
+            "placeholder": "Email",
+            "searchType": "match"
+          },
+          "path": "1_globalTEMPLATES/Filtering/Session/Text",
+          "style": {
+            "classes": "Filter/Filter_Container"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Embed_Placeholder"
+        },
+        "position": {
+          "basis": "1px",
+          "grow": 1
+        },
+        "props": {
+          "path": "1_globalTEMPLATES/Placeholder"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

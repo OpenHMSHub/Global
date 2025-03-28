@@ -1,0 +1,65 @@
+{
+  "custom": {},
+  "params": {
+    "Info": " Tyler"
+  },
+  "propConfig": {
+    "params.Description": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Info": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 45,
+      "width": 250
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "45%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Info"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Text/About_info",
+            "paddingLeft": "20px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "space-between",
+      "direction": "column",
+      "style": {
+        "classes": "Text/Personal_Header",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

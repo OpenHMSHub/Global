@@ -1,0 +1,21 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#f3f4f8",
+      "borderStyle": "none",
+      "color": "#0d80e3",
+      "fontFamily": "Proxima NovaC Medium",
+      "fontSize": "15px"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#f3f4f8",
+        "borderStyle": "none",
+        "textDecoration": "underline"
+      }
+    }
+  ]
+}

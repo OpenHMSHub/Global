@@ -1,0 +1,1547 @@
+{
+  "custom": {
+    "keyFields": {
+      "State": true
+    }
+  },
+  "params": {
+    "congregationId": 346,
+    "coordinatorAddress": "",
+    "coordinatorAltPhone": "",
+    "coordinatorCity": "",
+    "coordinatorEmail": "",
+    "coordinatorFirstName": "",
+    "coordinatorHumanId": 0,
+    "coordinatorLastName": "",
+    "coordinatorNotes": "",
+    "coordinatorPhone": "",
+    "coordinatorPreferredCommunication": "Call",
+    "coordinatorState": "",
+    "coordinatorZip": "",
+    "hasBackupCoordinator": true,
+    "neededToProceed": "Firstname",
+    "proceed": false,
+    "secondaryCoordinatorAddress": "",
+    "secondaryCoordinatorAltPhone": "",
+    "secondaryCoordinatorCity": "",
+    "secondaryCoordinatorEmail": "",
+    "secondaryCoordinatorFirstName": "",
+    "secondaryCoordinatorHumanId": 0,
+    "secondaryCoordinatorLastName": "",
+    "secondaryCoordinatorNotes": "",
+    "secondaryCoordinatorPhone": "",
+    "secondaryCoordinatorPreferredCommunication": "Call",
+    "secondaryCoordinatorZip": "",
+    "secondaryCoorindatorState": ""
+  },
+  "propConfig": {
+    "custom.Comments": {
+      "persistent": true
+    },
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#Script to determine if we can proceed to the next page of registration\n\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.Address": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorAddress} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorAddress})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.City": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorCity} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorCity})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.CommunicationMethod": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorPreferredCommunication} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorPreferredCommunication})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Email": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorEmail} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorEmail})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Firstname": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorFirstName} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorFirstName})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.LastName": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorLastName} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorLastName})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Phone": {
+      "binding": {
+        "config": {
+          "expression": "({view.params.coordinatorPhone} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorPhone})) || ({view.params.coordinatorAltPhone} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorAltPhone}))"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.keyFields.Zip": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.coordinatorZip} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.coordinatorZip})"
+        },
+        "type": "expr"
+      }
+    },
+    "params.addressLine12": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.addressLine22": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.afterHoursPhone1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.afterHoursPhone2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregationId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.coordinatorAddress": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorAltPhone": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorCity": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorEmail": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorFirstName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorHumanId": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorLastName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorNotes": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorPhone": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorPreferredCommunication": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorState": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.coordinatorZip": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hasBackupCoordinator": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.proceed": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.keyFields.Firstname} || {view.custom.keyFields.LastName}"
+        },
+        "enabled": false,
+        "type": "expr"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorAddress": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorAltPhone": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorCity": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorEmail": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorFirstName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorHumanId": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorLastName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorNotes": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorPhone": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorPreferredCommunication": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoordinatorZip": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.secondaryCoorindatorState": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 614,
+      "width": 1131
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Text/Add_HeaderText",
+            "paddingLeft": "0px"
+          },
+          "text": "The main contact for your congregation\u0027s Room In The Inn program"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "EmbeddedView"
+            },
+            "position": {
+              "basis": "50%",
+              "shrink": 0
+            },
+            "props": {
+              "path": "1_globalTEMPLATES/Placeholder"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "20px"
+                },
+                "propConfig": {
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({parent.custom.addBackupCoord}, \"material/remove_circle_outline\", \"material/add_circle_outline\")"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "color": "#9db8d1",
+                  "style": {
+                    "cursor": "pointer"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "paddingLeft": "20px"
+                  },
+                  "text": "Add a backup coordinator"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tif self.parent.custom.addBackupCoord:\n\t\tself.parent.custom.addBackupCoord \u003d False\n\telse:\n\t\tself.parent.custom.addBackupCoord \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Label_0"
+                },
+                "props": {
+                  "style": {
+                    "color": "#0066FF",
+                    "cursor": "pointer",
+                    "paddingLeft": "5px"
+                  },
+                  "text": "(recommended)"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "AddBackup"
+            },
+            "position": {
+              "basis": "50%",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.addBackupCoord": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.hasBackupCoordinator"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_HeaderText"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "options"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "TextInput"
+                    },
+                    "position": {
+                      "basis": "190px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.coordinatorFirstName} + \u0027 \u0027 + {view.params.coordinatorLastName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": true,
+                        "placeHolder": "First",
+                        "requiredField": false,
+                        "text": "Name"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tself.parent.parent.parent.getChild(\"leftPane\").custom.funcAddPrimaryCoordinator \u003d False\n\tself.parent.parent.parent.getChild(\"leftPane\").custom.newPrimaryCoordinator \u003d True\n\tcongregationId \u003d self.view.params.congregationId\n\tpopupId \u003d \u0027NewCoordinator\u0027\n\tpopupView \u003d \u0027WinterShelterGlobal/Registration/NewCoordinatorPrimary/NewCoordinator\u0027\n\tparams \u003d {\u0027congregationId\u0027:congregationId}\n\tsystem.perspective.openPopup(popupId,popupView,params\u003dparams, showCloseIcon \u003d False, draggable \u003d False, modal \u003d True, overlayDismiss \u003d True)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "AddButton"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "hasRole(\"Administrator\",{this.props.auth.user.userName},\"default\") || hasRole(\"WS Manager\",{this.props.auth.user.userName},\"default\")"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Buttons/Secondary_Orange",
+                        "marginLeft": "5px",
+                        "marginRight": "5px",
+                        "marginTop": "30px"
+                      },
+                      "text": "Add Primary Coordinator"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tself.parent.parent.parent.getChild(\"leftPane\").custom.funcAddPrimaryCoordinator \u003d False\n\tself.parent.parent.parent.getChild(\"leftPane\").custom.newPrimaryCoordinator \u003d True\n\tcongregationId \u003d self.view.params.congregationId\n\tpopupId \u003d \u0027coordinatorSearch\u0027\n\tpopupView \u003d \u0027WinterShelterGlobal/Registration/CoordinatorSearch/CoordinatorSearch\u0027\n\tparams \u003d {\u0027congregationId\u0027:congregationId}\n\tsystem.perspective.openPopup(popupId,popupView,params\u003dparams, showCloseIcon \u003d False, draggable \u003d False, modal \u003d True, overlayDismiss \u003d True)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "NewButton_0"
+                    },
+                    "position": {
+                      "basis": "190px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "hasRole(\"Administrator\",{this.props.auth.user.userName},\"default\") || hasRole(\"WS Manager\",{this.props.auth.user.userName},\"default\")"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Buttons/Btn_Orange_Active_12px",
+                        "marginTop": "30px"
+                      },
+                      "text": "Select Primary Coordinator"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "CoordName"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "space-between"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "CoordAddress"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.coordinatorAddress"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "Street",
+                    "requiredField": false,
+                    "text": "Address"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "TextInput_0"
+                    },
+                    "position": {
+                      "basis": "160px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.coordinatorCity"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": false,
+                        "placeHolder": "City",
+                        "requiredField": false,
+                        "text": "Time"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                      "style": {
+                        "marginRight": "20px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "TextInput_2"
+                    },
+                    "position": {
+                      "basis": "120px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.coordinatorZip"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": false,
+                        "placeHolder": "ZIP",
+                        "requiredField": false,
+                        "text": "Time"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "CoordCityZip"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "space-between",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "PrimaryPhone"
+                    },
+                    "position": {
+                      "basis": "45%",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.coordinatorPhone"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": true,
+                        "placeHolder": "888-888-8888",
+                        "requiredField": false,
+                        "text": "Primary Phone"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Placeholder"
+                    },
+                    "position": {
+                      "basis": "10%",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "1_globalTEMPLATES/Placeholder"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "SecondaryPhone"
+                    },
+                    "position": {
+                      "basis": "45%",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.coordinatorAltPhone"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": true,
+                        "placeHolder": "888-888-8888",
+                        "requiredField": false,
+                        "text": "Evening/After Hours Phone"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "CoordPhones"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "CoordEmail"
+                },
+                "position": {
+                  "basis": "55px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.coordinatorEmail"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "jdoe@email.com",
+                    "requiredField": false,
+                    "text": "Email"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#9db8d1",
+                        "fontFamily": "Proxima NovaC Medium",
+                        "fontSize": "17px"
+                      },
+                      "text": "Preferred Method of Communication"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "50px",
+                      "display": false
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#D80000"
+                      },
+                      "text": "*"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "CoordPerferredLabel"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "CoordPerferred"
+                },
+                "position": {
+                  "basis": "35px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.coordinatorPreferredCommunication"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "radios": [
+                    {
+                      "selected": true,
+                      "text": "Call",
+                      "value": "Call"
+                    },
+                    {
+                      "selected": false,
+                      "text": "Email",
+                      "value": "Email"
+                    },
+                    {
+                      "selected": false,
+                      "text": "Text",
+                      "value": "Text"
+                    }
+                  ],
+                  "selectedIcon": {
+                    "color": {
+                      "disabled": "#0066FF",
+                      "enabled": "#0066FF"
+                    }
+                  },
+                  "style": {
+                    "classes": "Text/Add_HeaderText"
+                  },
+                  "unselectedIcon": {
+                    "color": {
+                      "disabled": "#9db8d1",
+                      "enabled": "#9db8d1"
+                    }
+                  }
+                },
+                "type": "ia.input.radio-group"
+              },
+              {
+                "meta": {
+                  "name": "CoordComments"
+                },
+                "position": {
+                  "basis": "70px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.inputText": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.coordinatorNotes"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hasHeader": true,
+                    "placeHolder": "comments...",
+                    "requiredField": false,
+                    "text": "Comments"
+                  },
+                  "path": "WinterShelterGlobal/Registration/Cards/CommentTextWithNote",
+                  "style": {
+                    "marginTop": "10px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "custom": {
+              "humanId": 15124,
+              "newPrimaryCoordinator": false,
+              "volunteerId": 1224
+            },
+            "meta": {
+              "name": "leftPane"
+            },
+            "position": {
+              "basis": "45%",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.funcAddPrimaryCoordinator": {
+                "binding": {
+                  "config": {
+                    "path": "session.custom.filters.volunteerSearch.results.volunteerSelected"
+                  },
+                  "type": "property"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tif currentValue.value:\n\t\tif self.custom.newPrimaryCoordinator:\n\t\t\t#system.perspective.print(currentValue)\n\t\t\tvalid \u003d True\n\t\t\tvolunteerId \u003d self.session.custom.filters.volunteerSearch.results.volunteerId\n\t\t\thumanId \u003d self.session.custom.filters.volunteerSearch.results.humanId\n\t\t\t#Verify its greater then -1\n\t\t\tif volunteerId \u003c 0:\n\t\t\t\tvalid \u003d False\n\t\t\t\tsystem.perspective.print(\u0027Volunteer ID not valid\u0027)\n\t\t\tif humanId \u003c 0:\n\t\t\t\tvalid \u003d False\n\t\t\t\tsystem.perspective.print(\u0027Human ID not valid\u0027)\n\t\t\tif valid:\t\t\n\t\t\t\t#Query the ID\n\t\t\t\tproject \u003d \"RITI\"\n\t\t\t\tpath \u003d \"WinterShelter/Registration/getCoordinatorInfo\"\n\t\t\t\tparameters \u003d {\"humanId\":humanId}\n\t\t\t\thumanData \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\tself.view.params.coordinatorHumanId \u003d humanId\n\t\t\t\tself.view.params.coordinatorFirstName \u003d humanData.getValueAt(0,\u0027FirstName\u0027)\n\t\t\t\tself.view.params.coordinatorLastName \u003d humanData.getValueAt(0,\u0027LastName\u0027)\n\t\t\t\tself.view.params.coordinatorAddress \u003d humanData.getValueAt(0,\u0027Address\u0027)\n\t\t\t\tself.view.params.coordinatorCity \u003d humanData.getValueAt(0,\u0027City\u0027)\n\t\t\t\tself.view.params.coordinatorState \u003d humanData.getValueAt(0,\u0027State\u0027)\n\t\t\t\tself.view.params.coordinatorZip \u003d humanData.getValueAt(0,\u0027ZipCode\u0027)\n\t\t\t\tself.view.params.coordinatorPhone \u003d humanData.getValueAt(0,\u0027Phone\u0027)\n\t\t\t\tself.view.params.coordinatorAltPhone \u003d humanData.getValueAt(0,\u0027AltPhone\u0027)\n\t\t\t\tself.view.params.coordinatorEmail \u003d humanData.getValueAt(0,\u0027Email\u0027)\n\t\t\t\tself.view.params.coordinatorPreferredCommunication \u003d humanData.getValueAt(0,\u0027PreferredCommunication\u0027)\n\t\t\t\tself.view.params.coordinatorNotes \u003d \u0027\u0027\n\t\t\t\t\n\t\t\t#Reset the results\n\t\t\tself.session.custom.filters.volunteerSearch.results.volunteerId \u003d -1\n\t\t\tself.session.custom.filters.volunteerSearch.results.humanId \u003d -1\n\t\t\tself.session.custom.filters.volunteerSearch.results.volunteerSelected \u003d False\n\t\t\tself.custom.newPrimaryCoordinator \u003d False\n\t\t\t#Close the popup\n\t\t\tpopupId \u003d \u0027volunteerSearch\u0027\n\t\t\tsystem.perspective.closePopup(popupId)"
+                }
+              }
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView"
+            },
+            "position": {
+              "basis": "10%",
+              "shrink": 0
+            },
+            "props": {
+              "path": "1_globalTEMPLATES/Placeholder"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "TextInput"
+                        },
+                        "position": {
+                          "basis": "200px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.inputText": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.params.secondaryCoordinatorFirstName} + \u0027 \u0027 + {view.params.secondaryCoordinatorLastName}"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hasHeader": true,
+                            "placeHolder": "First",
+                            "requiredField": false,
+                            "text": "Name"
+                          },
+                          "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\tself.parent.parent.parent.parent.getChild(\"rightPane\").custom.funcAddSecondaryCoordinator \u003d False\n\tself.parent.parent.parent.parent.getChild(\"rightPane\").custom.newSecondaryCoordinator \u003d True\n\tcongregationId \u003d self.view.params.congregationId\n\tpopupId \u003d \u0027NewCoordinator\u0027\n\tpopupView \u003d \u0027WinterShelterGlobal/Registration/NewCoordinator/NewCoordinator\u0027\n\tparams \u003d {\u0027congregationId\u0027:congregationId}\n\tsystem.perspective.openPopup(popupId,popupView,params\u003dparams, showCloseIcon \u003d False, draggable \u003d False, modal \u003d True, overlayDismiss \u003d True)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "NewButton_0"
+                        },
+                        "position": {
+                          "basis": "180px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "hasRole(\"Administrator\",{this.props.auth.user.userName},\"default\") || hasRole(\"WS Manager\",{this.props.auth.user.userName},\"default\")"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "Buttons/Secondary_Orange",
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "marginTop": "30px"
+                          },
+                          "text": "Add Backup Coordinator"
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\tself.parent.parent.parent.parent.getChild(\"rightPane\").custom.funcAddSecondaryCoordinator \u003d False\n\tself.parent.parent.parent.parent.getChild(\"rightPane\").custom.newSecondaryCoordinator \u003d True\n\tcongregationId \u003d self.view.params.congregationId\n\tpopupId \u003d \u0027coordinatorSearch\u0027\n\tpopupView \u003d \u0027WinterShelterGlobal/Registration/CoordinatorSearch/CoordinatorSearch\u0027\n\tparams \u003d {\u0027congregationId\u0027:congregationId}\n\tsystem.perspective.openPopup(popupId,popupView,params\u003dparams, showCloseIcon \u003d False, draggable \u003d False, modal \u003d True, overlayDismiss \u003d True)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "NewButton"
+                        },
+                        "position": {
+                          "basis": "190px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "hasRole(\"Administrator\",{this.props.auth.user.userName},\"default\") || hasRole(\"WS Manager\",{this.props.auth.user.userName},\"default\")"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "Buttons/Btn_Orange_Active_12px",
+                            "marginTop": "30px"
+                          },
+                          "text": "Select Backup Coordinator",
+                          "textStyle": {
+                            "color": "#FFFFFF"
+                          }
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "CoordName"
+                    },
+                    "position": {
+                      "basis": "55px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "space-between"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "CoordAddress"
+                    },
+                    "position": {
+                      "basis": "55px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.secondaryCoordinatorAddress"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": true,
+                        "placeHolder": "Street",
+                        "requiredField": false,
+                        "text": "Address"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                      "style": {
+                        "marginTop": "10px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "TextInput_0"
+                        },
+                        "position": {
+                          "basis": "160px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.inputText": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.params.secondaryCoordinatorCity"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hasHeader": false,
+                            "placeHolder": "City",
+                            "requiredField": false,
+                            "text": "Time"
+                          },
+                          "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                          "style": {
+                            "marginRight": "20px"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "TextInput_2"
+                        },
+                        "position": {
+                          "basis": "120px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.inputText": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.params.secondaryCoordinatorZip"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hasHeader": false,
+                            "placeHolder": "ZIP",
+                            "requiredField": false,
+                            "text": "Time"
+                          },
+                          "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "CoordCityZip"
+                    },
+                    "position": {
+                      "basis": "30px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "space-between",
+                      "style": {
+                        "marginTop": "10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "PrimaryPhone"
+                        },
+                        "position": {
+                          "basis": "45%",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.inputText": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.params.secondaryCoordinatorPhone"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hasHeader": true,
+                            "placeHolder": "888-888-8888",
+                            "requiredField": false,
+                            "text": "Primary Phone"
+                          },
+                          "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Placeholder"
+                        },
+                        "position": {
+                          "basis": "10%",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "path": "1_globalTEMPLATES/Placeholder"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "SecondaryPhone"
+                        },
+                        "position": {
+                          "basis": "45%",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.inputText": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.params.secondaryCoordinatorAltPhone"
+                              },
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hasHeader": true,
+                            "placeHolder": "888-888-8888",
+                            "requiredField": false,
+                            "text": "Evening/After Hours Phone"
+                          },
+                          "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly"
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "CoordPhones"
+                    },
+                    "position": {
+                      "basis": "55px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "marginTop": "10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "CoordEmail"
+                    },
+                    "position": {
+                      "basis": "55px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.secondaryCoordinatorEmail"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": true,
+                        "placeHolder": "jdoe@email.com",
+                        "requiredField": false,
+                        "text": "Email"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/TextInputReadOnly",
+                      "style": {
+                        "marginTop": "10px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#9db8d1",
+                            "fontFamily": "Proxima NovaC Medium",
+                            "fontSize": "17px"
+                          },
+                          "text": "Preferred Method of Communication"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "display": false
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D80000"
+                          },
+                          "text": "*"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "CoorPerferredLabel"
+                    },
+                    "position": {
+                      "basis": "25px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "marginTop": "10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "CoordPerferred"
+                    },
+                    "position": {
+                      "basis": "35px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.value": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.secondaryCoordinatorPreferredCommunication"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "radios": [
+                        {
+                          "selected": true,
+                          "text": "Call",
+                          "value": "Call"
+                        },
+                        {
+                          "selected": false,
+                          "text": "Email",
+                          "value": "Email"
+                        },
+                        {
+                          "selected": false,
+                          "text": "Text",
+                          "value": "Text"
+                        }
+                      ],
+                      "selectedIcon": {
+                        "color": {
+                          "disabled": "#0066FF",
+                          "enabled": "#0066FF"
+                        }
+                      },
+                      "style": {
+                        "classes": "Text/Add_HeaderText"
+                      },
+                      "unselectedIcon": {
+                        "color": {
+                          "disabled": "#9db8d1",
+                          "enabled": "#9db8d1"
+                        }
+                      }
+                    },
+                    "type": "ia.input.radio-group"
+                  },
+                  {
+                    "meta": {
+                      "name": "CoordComments"
+                    },
+                    "position": {
+                      "basis": "70px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.inputText": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.secondaryCoordinatorNotes"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "hasHeader": true,
+                        "placeHolder": "comments...",
+                        "requiredField": false,
+                        "text": "Comments"
+                      },
+                      "path": "WinterShelterGlobal/Registration/Cards/CommentTextWithNote",
+                      "style": {
+                        "marginTop": "10px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "BackupCoord"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "..../options/AddBackup.custom.addBackupCoord"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "custom": {
+              "humanId": -1,
+              "newSecondaryCoordinator": false,
+              "volunteerId": -1
+            },
+            "meta": {
+              "name": "rightPane"
+            },
+            "position": {
+              "basis": "45%",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.funcAddSecondaryCoordinator": {
+                "binding": {
+                  "config": {
+                    "path": "session.custom.filters.volunteerSearch.results.volunteerSelected"
+                  },
+                  "type": "property"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\tif currentValue.value:\n\t\tif self.custom.newSecondaryCoordinator:\n\t\t\t#system.perspective.print(currentValue)\n\t\t\tvalid \u003d True\n\t\t\tvolunteerId \u003d self.session.custom.filters.volunteerSearch.results.volunteerId\n\t\t\thumanId \u003d self.session.custom.filters.volunteerSearch.results.humanId\n\t\t\t#Verify its greater then -1\n\t\t\tif volunteerId \u003c 0:\n\t\t\t\tvalid \u003d False\n\t\t\t\tsystem.perspective.print(\u0027Volunteer ID not valid\u0027)\n\t\t\tif humanId \u003c 0:\n\t\t\t\tvalid \u003d False\n\t\t\t\tsystem.perspective.print(\u0027Human ID not valid\u0027)\n\t\t\tif valid:\t\t\n\t\t\t\t#Query the ID\n\t\t\t\tproject \u003d \"RITI\"\n\t\t\t\tpath \u003d \"WinterShelter/Registration/getCoordinatorInfo\"\n\t\t\t\tparameters \u003d {\"humanId\":humanId}\n\t\t\t\thumanData \u003d system.db.runNamedQuery(project\u003dproject,path\u003dpath,parameters\u003dparameters)\n\t\t\t\tself.view.params.secondaryCoordinatorHumanId \u003d humanId\n\t\t\t\tself.view.params.secondaryCoordinatorFirstName \u003d humanData.getValueAt(0,\u0027FirstName\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorLastName \u003d humanData.getValueAt(0,\u0027LastName\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorAddress \u003d humanData.getValueAt(0,\u0027Address\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorCity \u003d humanData.getValueAt(0,\u0027City\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorState \u003d humanData.getValueAt(0,\u0027State\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorZip \u003d humanData.getValueAt(0,\u0027ZipCode\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorPhone \u003d humanData.getValueAt(0,\u0027Phone\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorAltPhone \u003d humanData.getValueAt(0,\u0027AltPhone\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorEmail \u003d humanData.getValueAt(0,\u0027Email\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorPreferredCommunication \u003d humanData.getValueAt(0,\u0027PreferredCommunication\u0027)\n\t\t\t\tself.view.params.secondaryCoordinatorNotes \u003d \u0027\u0027\n\t\t\t#Reset the results\n\t\t\tself.session.custom.filters.volunteerSearch.results.volunteerId \u003d -1\n\t\t\tself.session.custom.filters.volunteerSearch.results.humanId \u003d -1\n\t\t\tself.session.custom.filters.volunteerSearch.results.volunteerSelected \u003d False\n\t\t\tself.custom.newSecondaryCoordinator \u003d False\n\t\t\t#Close the popup\n\t\t\tpopupId \u003d \u0027volunteerSearch\u0027\n\t\t\tsystem.perspective.closePopup(popupId)"
+                }
+              }
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "500px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

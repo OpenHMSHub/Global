@@ -1,0 +1,17 @@
+{
+  "base": {
+    "style": {
+      "borderStyle": "none",
+      "color": "#0C4E8B",
+      "fontFamily": "Proxima NovaC",
+      "fontSize": "14px",
+      "outlineStyle": "none"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "checked",
+      "style": {}
+    }
+  ]
+}

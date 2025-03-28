@@ -1,0 +1,21 @@
+{
+  "base": {
+    "style": {
+      "color": "#000000",
+      "fontFamily": "Arial",
+      "fontSize": "14px",
+      "marginLeft": "6px",
+      "opacity": "1,00",
+      "whiteSpace": "nowrap",
+      "fill": "#FFFFFF00"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "cursor": "pointer"
+      }
+    }
+  ]
+}

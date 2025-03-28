@@ -1,0 +1,75 @@
+{
+  "custom": {},
+  "params": {
+    "name": "name"
+  },
+  "propConfig": {
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 150
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": true,
+                "id": "m+nL2ZFq",
+                "modal": true,
+                "overlayDismiss": true,
+                "resizable": false,
+                "showCloseIcon": false,
+                "title": "Date Range",
+                "type": "open",
+                "viewPath": "Shelter/Templates/DateRange/DateSelection"
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "100%"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\" \"+ {session.custom.dateRangeFromDate} + \" to \" + {session.custom.dateRangeToDate}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Dropdowns/DD_Default Table/Filter_Text"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

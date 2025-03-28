@@ -1,0 +1,2352 @@
+{
+  "custom": {
+    "calendarFiller": null,
+    "currentSeasonId": null,
+    "info": {
+      "$": [
+        "ds",
+        192,
+        1724330130018
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "accessible_original",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "stairs_original",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "smoking_original",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "bedsActualLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "transportId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Frequency",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "frequencyId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionPattern",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionDays",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "pickupTime",
+          "type": "String"
+        }
+      ]
+    },
+    "keyFields": {
+      "HostDates": true,
+      "HostDays": true,
+      "Support": true
+    },
+    "previewInfo": {
+      "$": [
+        "ds",
+        192,
+        1724330130060
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "congregationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "providerId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "firstSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "currentSeason",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "congregationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "congregationPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hostLocal",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hostLocationTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "hostLocationType",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine1",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationAddressLine2",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "locationDateCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "coordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "coordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "hasBackupCoordinator",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorHumanId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorFirstName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorLastName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNickname",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorAddress",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorCity",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorState",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorZipCode",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondarycoordinatorAltPhone",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorEmail",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorPreferredCommunication",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "secondaryCoordinatorNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "locationSeasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "seasonId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacity",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "capacityLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "nightsInt",
+          "type": "Short"
+        },
+        {
+          "data": [],
+          "name": "sunday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "monday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "tuesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "wednesday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "thursday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "friday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "saturday",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "registered",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "genderId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "genderAccepted",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "families",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "extraShortNotice",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "showers",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "clothing",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "laundry",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "sackLunches",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "breakfast",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "dinner",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "haircuts",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "hygieneItems",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherService",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherServiceList",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "accessible",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "stairs",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "smoking",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "partners",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "serviceNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "timeCreated",
+          "type": "Date"
+        },
+        {
+          "data": [],
+          "name": "bedsProjected",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "bedsActual",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "registrationNotes",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "bedsActualLastSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "bedsActualThisSeason",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "originalRegistration",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "scheduledBeds",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "scheduleComments",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "reminderCall",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "otherHostmore",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "options",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "transportId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "Transport",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "Frequency",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "frequencyId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionPattern",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dateSelectionDays",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "pickupTime",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  "params": {
+    "CanceledSchedule": [],
+    "addedDays": [],
+    "comments": "",
+    "frequencyId": 3,
+    "locationID": -1,
+    "neededToProceed": "",
+    "newCapacity": "",
+    "nights": 13,
+    "schedule": [
+      311,
+      318,
+      339,
+      346,
+      1,
+      8,
+      36,
+      43,
+      64,
+      71,
+      29,
+      324,
+      350
+    ],
+    "schedulePrev": [],
+    "selectedSeasonId": 14
+  },
+  "propConfig": {
+    "custom.calendarFiller": {
+      "binding": {
+        "config": {
+          "struct": {
+            "seasonEnd": "{/root/FlexContainer_0/leftPane/Calendar/Table.props.params.endDate}",
+            "seasonStart": "{/root/FlexContainer_0/leftPane/Calendar/Table.props.params.startDate}",
+            "weekdays": "{view.custom.weekdays}"
+          },
+          "waitOnAll": false
+        },
+        "transforms": [
+          {
+            "code": "\t#Returns the next date that is that weekday\n\t#date: the datetime to start from\n\t#weekday: the weekday as a number\n\tdef nextDayOfWeek(date, weekday):\n\t\tdayOfWeek \u003d system.date.getDayOfWeek(date)\n\t\tdaysApart \u003d weekday - dayOfWeek\n\t\tif daysApart \u003c 0: daysApart \u003d 7 + daysApart\n\t\treturn system.date.addDays(date, daysApart)\n\t\n\t\n\tschedule \u003d self.params.schedule\n\tseasonStart \u003d value[\u0027seasonStart\u0027]\n\tstartDayOfWeek \u003d system.date.getDayOfWeek(seasonStart)\n\tseasonEnd \u003d value[\u0027seasonEnd\u0027]\n\tif system.date.isBefore(seasonEnd, seasonStart): return \u0027ERROR: Season End before Start!!!\u0027\n\t#Pattern Key: 1 \u003d Every, 2 \u003d Every Other, 3 \u003d Every 1st ...7 \u003d Every 5th\n\tpattern \u003d self.custom.pattern\n\t#Weekdays Key: 1 \u003d Sunday ... 7 \u003d Saturday\n\tweekdays \u003d value[\u0027weekdays\u0027]\n\tweekdays_db \u003d self.params.dateSelectionPattern_db\n\tdates \u003d []\n\tsystem.perspective.print(\u0027CF binding: \u0027+str(weekdays))\n\tsystem.perspective.print(\u0027CF binding: \u0027+str(weekdays_db))\n\t\n\t#Every\n\tif pattern \u003d\u003d 1:\n\t\tfor weekday in weekdays:\n\t\t\tif weekday not in weekdays_db:\n\t\t\t\tschedDay \u003d nextDayOfWeek(seasonStart,weekday)\n\t\t\t\twhile system.date.isBefore(schedDay, seasonEnd):\n\t\t\t\t\tdates.append(schedDay)\n\t\t\t\t\tschedDay \u003d system.date.addDays(schedDay, 7)\n\tif pattern \u003d\u003d 2:\n\t\tfor weekday in weekdays:\n\t\t\tif weekday not in weekdays_db:\n\t\t\t\tschedDay \u003d nextDayOfWeek(seasonStart,weekday)\n\t\t\t\twhile system.date.isBefore(schedDay, seasonEnd):\n\t\t\t\t\tdates.append(schedDay)\n\t\t\t\t\tschedDay \u003d system.date.addDays(schedDay, 14)\n\tif pattern \u003e 2 and pattern \u003c 8:\n\t\tfor weekday in weekdays:\n\t\t\tif weekday not in weekdays_db:\n\t\t\t\tmonthStart \u003d system.date.getDate(system.date.getYear(seasonStart), system.date.getMonth(seasonStart), 1)\n\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\t\t\t\twhile system.date.isBefore(dayOfWeek, seasonEnd):\n\t\t\t\t\tif system.date.isAfter(dayOfWeek, seasonStart) and system.date.getMonth(dayOfWeek)\u003d\u003dsystem.date.getMonth(monthStart):\n\t\t\t\t\t\tdates.append(dayOfWeek)\n\t\t\t\t\tmonthStart \u003d system.date.addMonths(monthStart,1)\n\t\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\tif pattern \u003e 7:\n\t\tif pattern \u003d\u003d 8:\n\t\t\tinclude_patterns \u003d [3,5]\n\t\tif pattern \u003d\u003d 9:\n\t\t\tinclude_patterns \u003d [4,6]\n\t\tfor pattern in include_patterns:\n\t\t\tfor weekday in weekdays:\n\t\t\t\tif weekday not in weekdays_db:\n\t\t\t\t\tmonthStart \u003d system.date.getDate(system.date.getYear(seasonStart), system.date.getMonth(seasonStart), 1)\n\t\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\t\t\t\t\twhile system.date.isBefore(dayOfWeek, seasonEnd):\n\t\t\t\t\t\tif system.date.isAfter(dayOfWeek, seasonStart) and system.date.getMonth(dayOfWeek)\u003d\u003dsystem.date.getMonth(monthStart):\n\t\t\t\t\t\t\tdates.append(dayOfWeek)\n\t\t\t\t\t\tmonthStart \u003d system.date.addMonths(monthStart,1)\n\t\t\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\t\n\t\t\t\n\tsystem.perspective.print(\u0027schedule: \u0027+str(self.params.schedule))\n\tfor date in dates:\n\t\tday \u003d system.date.getDayOfYear(date)\n\t\tif day not in schedule: schedule.append(day)\n\tsystem.perspective.print(\u0027schedule1: \u0027+str(self.params.schedule))\t\n#\tif len(dates) \u003d\u003d 0:\n#\t\tfor one_schedule in self.params.schedule:\n#\t\t\tdates.append(one_schedule)\n\treturn dates",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "onChange": {
+        "enabled": false,
+        "script": "\tsystem.perspective.print(\u0027calendarFiller: \u0027+str(self.params.schedule))\n\tif not currentValue.getValue():\n\t\tselectedWeekDays \u003d []\n\t\tfor i in range(len(previousValue.getValue())):\n\t\t\tcanceledDate \u003d previousValue.getValue()[i].value\n\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\tselectedWeekDays.append(DayOfYear)\n\t\t\t\n\t\tschedule \u003d self.params.schedule\n\t\tprevSchedule \u003d self.params.schedulePrev\n\t\tif schedule !\u003d None:\n\t\t\tfor j in range(len(schedule)):\n\t\t\t\tvalueFromSchedule \u003d schedule[j]\n\t\t\t\tif valueFromSchedule not in selectedWeekDays:\n\t\t\t\t\tsystem.perspective.print(\"valueFromSchedule: \"+str(valueFromSchedule))\n\t\t\t\telif (valueFromSchedule in selectedWeekDays) and (valueFromSchedule not in prevSchedule):\n\t\t\t\t\t(self.params.schedule).remove(valueFromSchedule)\n\telse:\n\t\t#pass\n\t\tselectedWeekDays \u003d []\n\t\tif previousValue.getValue() !\u003d None:\n\t\t\tfor i in range(len(previousValue.getValue())):\n\t\t\t\tcanceledDate \u003d previousValue.getValue()[i].value\n\t\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\t\tselectedWeekDays.append(DayOfYear)\n\t\t\tcurrentSelectedWeekDays \u003d []\n\t\t\tfor i in range(len(currentValue.getValue())):\n\t\t\t\tcanceledDate \u003d currentValue.getValue()[i].value\n\t\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\t\tcurrentSelectedWeekDays.append(DayOfYear)\n\t\t\t\t\n\t\t\tschedule \u003d self.params.schedule\n\t\t\tprevSchedule \u003d self.params.schedulePrev\n\t\t\tif schedule !\u003d None:\n\t\t\t\tfor j in range(len(schedule)):\n\t\t\t\t\tvalueFromSchedule \u003d schedule[j]\n\t\t\t\t\tif valueFromSchedule not in selectedWeekDays:\n\t\t\t\t\t\tsystem.perspective.print(\"valueFromSchedule: \"+str(valueFromSchedule))\n\t\t\t\t\telif (valueFromSchedule in selectedWeekDays) and (valueFromSchedule not in currentSelectedWeekDays):\n\t\t\t\t\t\t(self.params.schedule).remove(valueFromSchedule)\n\tsystem.perspective.print(\u0027calendarFiller1: \u0027+str(self.params.schedule))"
+      },
+      "persistent": true
+    },
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}"
+          },
+          "queryPath": "WinterShelterGlobal/Filters/getSeasonsByLocation"
+        },
+        "transforms": [
+          {
+            "code": "\tif value.getRowCount():\n\t\treturn value.getValueAt(value.getRowCount()-1,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.info": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.params.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/RegistrationDetail"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#Script to determine if we can proceed to the next page of registration\n#\tif not self.params.schedule:\n#\t\tproceed \u003d False\n#\t\tneeded \u003d \u0027Schedule nights\u0027\n\t\t\t\n\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\n#\tproceed \u003d True\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed\n#\tself.refreshBinding(\"self.params.proceed\")"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.scheduleNights": {
+      "binding": {
+        "config": {
+          "expression": "!isNull({view.params.schedule}) \u0026\u0026 len({view.params.schedule})\u003e0"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.previewInfo": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "locationId": "{view.params.locationID}",
+            "seasonId": "{view.params.selectedSeasonId}"
+          },
+          "queryPath": "WinterShelterGlobal/Registration/PreviewRegistration"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.sqlData": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.refreshBinding(\"custom.scheduleData\")\n\t\n#\tcapacity \u003d (self.custom.sqlData).getValueAt(0,\u0027capacity\u0027)\n#\tgenderId \u003d (self.custom.sqlData).getValueAt(0,\u0027congregationCity\u0027)\n#\tif capacity \u003d\u003d 0 or genderId \u003d\u003d None:\n#\t\tself.custom.IsNewRegistration \u003d True\n#\telse:\n#\t\tself.custom.IsNewRegistration \u003d False\n\t#self.getChild(\"root\").getChild(\"FlexContainer\").getChild(\"season\").refreshBinding(\u0027props.options\u0027)\n\t#self.getChild(\"root\").getChild(\"RequireFields\").position.display \u003d False\n\t#self.custom.reset \u003d True"
+      }
+    },
+    "params.CanceledSchedule": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.addedDays": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.comments": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.frequencyId": {
+      "binding": {
+        "config": {
+          "path": "view.custom.pattern"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None:\n\t\tif value \u003d\u003d 1: ## weekly\n\t\t\treturn 0 \n\t\telif value \u003d\u003d 2: ## bi weekly\n\t\t\treturn 1\n\t\telif value in [3,4,5,6,7,8,9]: ## monthly\n\t\t\treturn 2\n\t\telse:\n\t\t\treturn 3 ## specific dates\n\telse:\n\t\treturn 3\t# specific dates",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.locationID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "inout"
+    },
+    "params.newCapacity": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.nights": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.proceed": {
+      "binding": {
+        "config": {
+          "struct": {
+            "schedule": "{view.params.schedule}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tproceed \u003d True\n\tif len(value[\u0027schedule\u0027]) \u003c 1:\n\t\tproceed \u003d False\n\tsystem.perspective.print(\u0027proceed: \u0027+str(proceed))\n\treturn proceed",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "paramDirection": "inout"
+    },
+    "params.schedule": {
+      "onChange": {
+        "enabled": null,
+        "script": "#\tvalue \u003d self.custom.info\n#\tself.getChild(\"root\").getChild(\"History Small_Double_Flex\").refreshBinding(\u0027params.RightValue\u0027)\n#\tself.refreshBinding(\u0027getChild(\"root\").getChild(\"History Small_Double_Flex\").props.params.RightValue\u0027)\n#\tsystem.perspective.print(self.getChild(\"root\").getChild(\"History Small_Double_Flex\").props.params.RightValue)\n#\tguestCount \u003d self.params.newCapacity #value.getValueAt(0,\u0027capacity\u0027)\n#\tAdditionalNights \u003d len(self.params.schedule)\n#\tNewBedsProjected \u003d AdditionalNights * guestCount\n#\tself.getChild(\"root\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected\n\n\tself.refreshBinding(\"params.proceed\")\n"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.schedulePrev": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectedSeasonId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1227
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "History Small_Double_Flex"
+            },
+            "position": {
+              "basis": "448px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.LeftValue": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.previewInfo"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n\t\tif value.getRowCount() \u003e 0:\n\t\t\tbedLast \u003d value.getValueAt(0, \"bedsActualLastSeason\")\n\t\t\tif bedLast \u003d\u003d None:\n\t\t\t\tbedLast \u003d 0\n\t\t\telse:\n\t\t\t\tbedLast \u003d bedLast\n\t\telse:\n\t\t\tbedLast \u003d 0 \n\t\treturn bedLast\n\t\t#return \"None\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.params.RightValue": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.newCapacity"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \"value\": # In designer (doesn\u0027t pass dataset)\n\t\treturn \"None\"\n\telse: #While running Session\n#\t\tbedsProjected \u003d value\n#\t\tif bedsProjected \u003d\u003d None:\n#\t\t\tbedsProjected \u003d 0\n\t\t# if GuestCount/Nights change then bedsProjected value will change\n#\t\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n##\t\tif len(self.view.params.schedulePrev)!\u003d len(self.view.params.schedule):\n\t\tguestCount \u003d value\n\t\tAdditionalNights \u003d len(self.view.params.schedule)\n\t\tif AdditionalNights \u003d\u003d None:\n\t\t\tbedsProjected \u003d 0\n\t\telse:\n\t\t\tbedsProjected \u003d AdditionalNights * guestCount\n#\t\telse:\n#\t\t\tNewBedsProjected \u003d \u0027Null\u0027\n\t\tsystem.perspective.print(\"AdditionalNights: \"+str(AdditionalNights)+\" guestCount: \"+str(guestCount))\n\t\tsystem.perspective.print(\"bedsProjected: \"+str(bedsProjected))\n\t\treturn bedsProjected",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "LeftPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+                "LeftTitle": "Beds Last Season",
+                "RightPath": "WinterShelterGlobal/Dashboard/Cards/KPI/Metric_Flex_Small",
+                "RightTitle": "Beds This Season"
+              },
+              "path": "WinterShelterGlobal/Registration/Cards/Small_Double_Flex_withoutMargin",
+              "useDefaultViewHeight": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "330px",
+              "grow": 1
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "215px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_InfoText"
+              },
+              "text": "Our nights of greatest need are ",
+              "textStyle": {
+                "fontSize": "18px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "235px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_InfoText_Orange",
+                "fontWeight": "bold"
+              },
+              "text": "Monday, Tuesday and Wednesday.",
+              "textStyle": {
+                "fontSize": "18px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "alignItems": "flex-start"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "#9db8d1",
+                    "fontFamily": "Proxima NovaC Medium",
+                    "fontSize": "17px"
+                  },
+                  "text": "Serve Calendar"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#D80000"
+                  },
+                  "text": "*"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Serve Calendar FlexContainer"
+            },
+            "position": {
+              "basis": "25px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Click Once Label"
+            },
+            "position": {
+              "basis": "25px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "borderBottomWidth": "1px",
+                "classes": "Text/Add_HeaderText",
+                "paddingLeft": "0px"
+              },
+              "text": "Modify your selection by choosing additional days or removing days you cannot host."
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Table"
+                    },
+                    "position": {
+                      "basis": "30%",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.CanceledSchedule": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.CanceledSchedule"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.PrevHostDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.schedulePrev"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.addedDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.addedDays"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.daysHosting": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.schedule"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "#\tvalue \u003d self.view.custom.info\n#\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n\tguestCount \u003d self.view.params.newCapacity\n\tAdditionalNights \u003d len(self.view.params.schedule)\n\tNewBedsProjected \u003d AdditionalNights * guestCount\n\tself.parent.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected"
+                        }
+                      },
+                      "props.params.holidaysDates": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027holidays_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.importantDays": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027most_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.nights": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.nights"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.selectedSeasonId": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.selectedSeasonId"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "enabled": true,
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152381
+                          ],
+                          "$ts": 1743440400000
+                        },
+                        "month": 11,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152381
+                          ],
+                          "$ts": 1730480400000
+                        },
+                        "startYear": 2024
+                      },
+                      "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Filler1"
+                    },
+                    "position": {
+                      "basis": "5%"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Table_0"
+                    },
+                    "position": {
+                      "basis": "30%",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.CanceledSchedule": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.CanceledSchedule"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.PrevHostDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.schedulePrev"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.addedDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.addedDays"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.daysHosting": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.schedule"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "#\tvalue \u003d self.view.custom.info\n#\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n\tguestCount \u003d self.view.params.newCapacity\n\tAdditionalNights \u003d len(self.view.params.schedule)\n\tNewBedsProjected \u003d AdditionalNights * guestCount\n\tself.parent.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected"
+                        }
+                      },
+                      "props.params.holidaysDates": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027holidays_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.importantDays": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027most_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.nights": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.nights"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.selectedSeasonId": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.selectedSeasonId"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "enabled": true,
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152373
+                          ],
+                          "$ts": 1743440400000
+                        },
+                        "month": 12,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152373
+                          ],
+                          "$ts": 1733076000000
+                        },
+                        "startYear": 2024
+                      },
+                      "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Filler2"
+                    },
+                    "position": {
+                      "basis": "5%"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Table_1"
+                    },
+                    "position": {
+                      "basis": "30%",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.CanceledSchedule": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.CanceledSchedule"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.PrevHostDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.schedulePrev"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.addedDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.addedDays"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.daysHosting": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.schedule"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "#\tvalue \u003d self.view.custom.info\n#\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n\tguestCount \u003d self.view.params.newCapacity\n\tAdditionalNights \u003d len(self.view.params.schedule)\n\tNewBedsProjected \u003d AdditionalNights * guestCount\n\tself.parent.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected"
+                        }
+                      },
+                      "props.params.holidaysDates": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027holidays_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.importantDays": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027most_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.nights": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.nights"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.selectedSeasonId": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.selectedSeasonId"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "enabled": true,
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152388
+                          ],
+                          "$ts": 1743440400000
+                        },
+                        "month": 1,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152388
+                          ],
+                          "$ts": 1735754400000
+                        },
+                        "startYear": 2025
+                      },
+                      "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "row1"
+                },
+                "position": {
+                  "basis": "50%"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Table"
+                    },
+                    "position": {
+                      "basis": "30%",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.CanceledSchedule": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.CanceledSchedule"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.PrevHostDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.schedulePrev"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.addedDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.addedDays"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.daysHosting": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.schedule"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "#\tvalue \u003d self.view.custom.info\n#\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n\tguestCount \u003d self.view.params.newCapacity\n\tAdditionalNights \u003d len(self.view.params.schedule)\n\tNewBedsProjected \u003d AdditionalNights * guestCount\n\tself.parent.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected"
+                        }
+                      },
+                      "props.params.holidaysDates": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027holidays_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.importantDays": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027most_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.nights": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.nights"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.selectedSeasonId": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.selectedSeasonId"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "enabled": true,
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152356
+                          ],
+                          "$ts": 1743440400000
+                        },
+                        "month": 2,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152357
+                          ],
+                          "$ts": 1738432800000
+                        },
+                        "startYear": 2025
+                      },
+                      "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Filler1"
+                    },
+                    "position": {
+                      "basis": "5%"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Table_0"
+                    },
+                    "position": {
+                      "basis": "30%",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.CanceledSchedule": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.CanceledSchedule"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.PrevHostDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.schedulePrev"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.addedDays": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.addedDays"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.daysHosting": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.schedule"
+                          },
+                          "type": "property"
+                        },
+                        "onChange": {
+                          "enabled": null,
+                          "script": "#\tvalue \u003d self.view.custom.info\n#\tguestCount \u003d value.getValueAt(0,\u0027capacity\u0027)\n\tguestCount \u003d self.view.params.newCapacity\n\tAdditionalNights \u003d len(self.view.params.schedule)\n\tNewBedsProjected \u003d AdditionalNights * guestCount\n\tself.parent.parent.parent.parent.getChild(\"FlexContainer\").getChild(\"History Small_Double_Flex\").props.params.RightValue \u003d NewBedsProjected"
+                        }
+                      },
+                      "props.params.holidaysDates": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027holidays_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.importantDays": {
+                        "binding": {
+                          "config": {
+                            "parameters": {
+                              "settingName": "\u0027most_needed_dates\u0027"
+                            },
+                            "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "query"
+                        }
+                      },
+                      "props.params.nights": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.nights"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.selectedSeasonId": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.selectedSeasonId"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "enabled": true,
+                        "endDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152356
+                          ],
+                          "$ts": 1743440400000
+                        },
+                        "month": 3,
+                        "startDate": {
+                          "$": [
+                            "ts",
+                            192,
+                            1724330152356
+                          ],
+                          "$ts": 1740852000000
+                        },
+                        "startYear": 2025
+                      },
+                      "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Filler2"
+                    },
+                    "position": {
+                      "basis": "5%"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Checkbox_0"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "path": "material/circle"
+                          },
+                          "enabled": false,
+                          "style": {
+                            "classes": "Text/Add_HeaderText"
+                          },
+                          "text": "hosting",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#0066FF",
+                              "enabled": "#0066FF"
+                            },
+                            "path": "material/fiber_manual_record",
+                            "style": {
+                              "fontSize": "16px"
+                            }
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      },
+                      {
+                        "meta": {
+                          "name": "Checkbox_2"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "path": "material/circle"
+                          },
+                          "enabled": false,
+                          "style": {
+                            "classes": "Text/Add_HeaderText"
+                          },
+                          "text": "most needed",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#00FF66",
+                              "enabled": "#00FF66"
+                            },
+                            "path": "material/radio_button_unchecked",
+                            "style": {
+                              "fontSize": "16px"
+                            }
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      },
+                      {
+                        "meta": {
+                          "name": "Checkbox"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "checkedIcon": {
+                            "path": "material/circle"
+                          },
+                          "enabled": false,
+                          "style": {
+                            "classes": "Text/Add_HeaderText"
+                          },
+                          "text": "holidays needed",
+                          "uncheckedIcon": {
+                            "color": {
+                              "disabled": "#bc13fe",
+                              "enabled": "#bc13fe"
+                            },
+                            "path": "material/radio_button_unchecked",
+                            "style": {
+                              "fontSize": "16px"
+                            }
+                          }
+                        },
+                        "type": "ia.input.checkbox"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "30%",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "justify": "center"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "row2"
+                },
+                "position": {
+                  "basis": "50%"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "All_Calendars"
+            },
+            "position": {
+              "basis": "50%",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "CoordComments"
+            },
+            "position": {
+              "basis": "55px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.inputText": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.comments"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "hasHeader": true,
+                "placeHolder": "comment",
+                "requiredField": false,
+                "text": "Comments About Dates Selected"
+              },
+              "path": "WinterShelterGlobal/Registration/Cards/TextInput",
+              "style": {
+                "marginBottom": "5px",
+                "marginRight": "400px",
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Bottom Line Label"
+        },
+        "position": {
+          "basis": "10px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Text/Add_HeaderText",
+            "marginBottom": "5px",
+            "paddingLeft": "0px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom.calendarFiller": {
+        "onChange": {
+          "enabled": null,
+          "script": "\tif not currentValue.getValue():\n\t\tscheduleNewValue \u003d []\n\t\tselectedWeekDays \u003d []\n\t\tfor i in range(len(previousValue.getValue())):\n\t\t\tcanceledDate \u003d previousValue.getValue()[i].value\n\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\tselectedWeekDays.append(DayOfYear)\n\t\t\t\n\t\tschedulePrevValue \u003d self.params.schedule\n\t\t\t\n#\t\tsystem.perspective.print(canceledDayOfYear)\n\t\tfor j in range(len(schedulePrevValue)):\n\t\t\tvalueFromSchedule \u003d schedulePrevValue[j]\n\t\t\tif valueFromSchedule not in selectedWeekDays:\n\t\t\t\tsystem.perspective.print(\"valueFromSchedule: \"+str(valueFromSchedule))\n\t\t\t\tscheduleNewValue.append(valueFromSchedule)\n\t\t\telse:\n\t\t\t\t(self.params.schedule).remove(valueFromSchedule)\n#\t\t\t\telse:\n#\t\t\t\t\tscheduleNewValue.append(canceledDayOfYear)\n#\t\tsystem.perspective.print(scheduleNewValue)\n#\t\t\tsystem.perspective.print(previousValue.getValue()[i].value)\n\telse:\n\t\tpass\n#\t\tsystem.perspective.print(previousValue.getValue()[0].value)"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

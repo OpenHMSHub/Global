@@ -1,0 +1,64 @@
+{
+  "custom": {},
+  "params": {
+    "Text": "ACTIONS"
+  },
+  "propConfig": {
+    "params.Text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 120
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "basis": "256px"
+        },
+        "propConfig": {
+          "props.placeholder.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "dropdownOptionStyle": {
+            "classes": "Buttons/Actions"
+          },
+          "placeholder": {
+            "color": "0d80e3",
+            "icon": {
+              "color": "#9F3490"
+            }
+          },
+          "style": {
+            "classes": "Buttons/Actions"
+          }
+        },
+        "type": "ia.input.dropdown"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

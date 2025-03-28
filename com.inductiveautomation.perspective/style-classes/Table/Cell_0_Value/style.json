@@ -1,0 +1,23 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#EFEFEF",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "borderLeftColor": "#EFEFEF",
+      "borderLeftStyle": "solid",
+      "borderLeftWidth": "1px",
+      "borderRightColor": "#EFEFEF",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "1px",
+      "borderTopColor": "#EFEFEF",
+      "borderTopStyle": "solid",
+      "borderTopWidth": "1px",
+      "color": "#000000",
+      "fontFamily": "Proxima Nova ExCn Light",
+      "fontSize": "17px",
+      "textOverflow": "clip"
+    }
+  }
+}

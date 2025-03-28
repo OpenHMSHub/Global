@@ -1,0 +1,242 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.session.custom.selectedServeDate \u003d system.date.now()\n\tself.session.custom.SelectedDayofMonth \u003d \u0027\u0027"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "facilityId": 1
+  },
+  "propConfig": {
+    "params.facilityId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1436
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "LeftFiller"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "CongregationSelection"
+        },
+        "position": {
+          "basis": "500px"
+        },
+        "props": {
+          "path": "WinterShelterGlobal/Schedule/Cards/CongregationSelection"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiddleFiller"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "ServeCalendar"
+            },
+            "position": {
+              "basis": "410px",
+              "grow": 1
+            },
+            "props": {
+              "path": "WinterShelterGlobal/Schedule/Cards/ServeCalendar"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "MiddleFiller"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "StorageBinParticipantSearch"
+                },
+                "position": {
+                  "basis": "70%"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "selectedId": 0,
+                    "selected_id": 0
+                  },
+                  "path": "WinterShelterGlobal/Schedule/Cards/ParticipantSearch"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tselectedParticipant \u003d self.parent.parent.getChild(\"StorageBinParticipantSearch\").props.params.selectedId\n\tif selectedParticipant !\u003d None and selectedParticipant \u003e\u003d 0:\n\t\tsystem.perspective.sendMessage(\"AddParticipant\",payload\u003d{\"participantId\":selectedParticipant}, scope\u003d\"session\")"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "select"
+                    },
+                    "position": {
+                      "basis": "34px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Buttons/Main",
+                        "margin": 10
+                      },
+                      "text": "\u003e\u003e\u003e"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "SelectButton"
+                },
+                "position": {
+                  "basis": "80px"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "({session.custom.isAdministrator} || {session.custom.isWSManager} || {session.custom.isWSSupportCoordinator})"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "SelectedParticipants"
+                },
+                "position": {
+                  "basis": "320px"
+                },
+                "props": {
+                  "params": {
+                    "pAdd": {
+                      "dateOfBirth": "",
+                      "id": -1,
+                      "name": ""
+                    },
+                    "selectedId": 0,
+                    "selected_id": 0
+                  },
+                  "path": "WinterShelterGlobal/Schedule/Cards/SelectedParticipants"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "BottomRow"
+            },
+            "position": {
+              "basis": "50%",
+              "grow": 1
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "RightColumn"
+        },
+        "position": {
+          "basis": "900px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "RightLeftFiller"
+        },
+        "position": {
+          "basis": "30px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Background/Alternative",
+        "marginTop": 5
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "scheduleScreenDisplay",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tcalendarDisplay \u003d payload[\u0027calendar\u0027]\n\tif calendarDisplay \u003d\u003d \u0027show\u0027:\n\t\tself.getChild(\"RightColumn\").getChild(\"ServeCalendar\").position.display \u003d True\n\t\tself.getChild(\"RightColumn\").getChild(\"MiddleFiller\").position.display \u003d True\n\telif calendarDisplay \u003d\u003d \u0027hide\u0027:\n\t\tself.getChild(\"RightColumn\").getChild(\"ServeCalendar\").position.display \u003d False\n\t\tself.getChild(\"RightColumn\").getChild(\"MiddleFiller\").position.display \u003d False",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

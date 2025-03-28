@@ -1,0 +1,507 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.getChild(\"root\").getChild(\"body\").getChild(\"DateTimePickerCurrent\").props.value \u003d system.date.parse(self.session.custom.dateRangeFromDate,  \"MM/dd/yyyy\")\n\tself.getChild(\"root\").getChild(\"body\").getChild(\"DateTimePickerNext\").props.value \u003d system.date.parse(self.session.custom.dateRangeToDate,  \"MM/dd/yyyy\")"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 330,
+      "width": 700
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tself.session.custom.selectedDateRange \u003d \"currentCalendar\"\n\tself.parent.parent.getChild(\"footer\").getChild(\"From\").props.text \u003d system.date.format(self.props.value, \u0027MM/dd/yyyy\u0027)\n\t#self.session.custom.dateRangeFromDate \u003d system.date.format(self.props.value, \u0027MM/dd/yyyy\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "DateTimePickerCurrent"
+            },
+            "position": {
+              "basis": "35%"
+            },
+            "propConfig": {
+              "props.maxDate": {
+                "binding": {
+                  "config": {
+                    "path": "../DateTimePickerNext.props.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "formattedValue": "Feb 12, 2016 12:00 PM",
+              "formattedValues": {
+                "date": "Aug 19, 2020"
+              },
+              "pickerType": "date",
+              "style": {
+                "classes": "Calendar",
+                "marginLeft": "5%"
+              },
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1614049850981
+                ],
+                "$ts": 1455300000000
+              }
+            },
+            "type": "ia.input.date-time-picker"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tself.session.custom.selectedDateRange \u003d \"NextCalendar\"\n\tself.parent.parent.getChild(\"footer\").getChild(\"To\").props.text \u003d system.date.format(self.props.value, \u0027MM/dd/yyyy\u0027)\n\t#self.session.custom.dateRangeToDate \u003d system.date.format(self.props.value, \u0027MM/dd/yyyy\u0027) "
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "DateTimePickerNext"
+            },
+            "position": {
+              "basis": "35%"
+            },
+            "propConfig": {
+              "props.minDate": {
+                "binding": {
+                  "config": {
+                    "path": "../DateTimePickerCurrent.props.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "formattedValue": "Feb 10, 2021 12:00 PM",
+              "formattedValues": {
+                "date": "Oct 15, 2020"
+              },
+              "pickerType": "date",
+              "style": {
+                "classes": "Calendar",
+                "marginLeft": "5%"
+              },
+              "value": {
+                "$": [
+                  "ts",
+                  0,
+                  1614049851375
+                ],
+                "$ts": 1612980000000
+              }
+            },
+            "type": "ia.input.date-time-picker"
+          },
+          {
+            "meta": {
+              "name": "DateRangeLabelsFlex"
+            },
+            "position": {
+              "basis": "15%"
+            },
+            "propConfig": {
+              "custom.allStartDay": {
+                "binding": {
+                  "config": {
+                    "queryPath": "Shelter/Filter/getMinCheckInDate"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn value.getValueAt(0,0)",
+                      "type": "script"
+                    },
+                    {
+                      "formatType": "datetime",
+                      "formatValue": "MM/dd/yyyy",
+                      "type": "format"
+                    }
+                  ],
+                  "type": "query"
+                }
+              },
+              "custom.firstDayOfLastMonth": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getFirstDayOfLastMonth()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.firstDayOfLastWeek": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getFirstDayOfLastWeek()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.firstDayOfLastYear": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getFirstDayOfLastYear()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.firstDayOfMonth": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getFirstDayOfCurrentMonth()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.firstDayOfWeek": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getFirstDayOfCurrentWeek()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.firstDayOfYear": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getFirstDayOfCurrentYear()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.lastDayOfLastMonth": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getLastDayOfLastMonth()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.lastDayOfLastWeek": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getLastDayOfLastWeek()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.lastDayOfLastYear": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\"GetDates.getLastDayOfLastYear()\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.today": {
+                "binding": {
+                  "config": {
+                    "expression": "dateFormat(now(10000),\"MM/dd/yyyy\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.yesterday": {
+                "binding": {
+                  "config": {
+                    "expression": "dateFormat(dateArithmetic(now(), -1, \"days\"),\"MM/dd/yyyy\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "instances": [
+                {
+                  "dateRangeLabel": "Yesterday",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "This Week",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Last Week",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Month to Date",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Last Month",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Year to Date",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "Last Year",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                },
+                {
+                  "dateRangeLabel": "All",
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  }
+                }
+              ],
+              "path": "Shelter/Templates/DateRange/DateRangeOptions",
+              "style": {
+                "marginLeft": "5%"
+              },
+              "useDefaultViewWidth": false,
+              "wrap": "wrap"
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "body"
+        },
+        "position": {
+          "basis": "88%"
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "backgroundColor": "#FFFFFF"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "From",
+              "visible": false
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.custom.selectedDateRange} \u003d \"Hour\", dateFormat(dateArithmetic(now(), -1, \"hour\"),\"MM/dd/yyyy hh\"),if({session.custom.selectedDateRange} \u003d \"Yesterday\",dateFormat(dateArithmetic(now(), -1, \"days\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Week\",dateFormat(dateArithmetic(now(), -1, \"weeks\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"4 Weeks\",dateFormat(dateArithmetic(now(), -4, \"weeks\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Month to Date\",dateFormat({.../body/DateRangeLabelsFlex.custom.firstDayOfMonth},\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"MM/dd/yyyy\",dateFormat(dateArithmetic(now(), -90, \"days\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"6 Months\",dateFormat(dateArithmetic(now(), -6, \"months\"),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"Year to Date\",dateFormat({.../body/DateRangeLabelsFlex.custom.firstDayOfYear},\"MM/dd/yyyy\"),dateformat({.../body/DateTimePickerCurrent.props.value},\"MM/dd/yyyy\")))))))))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#2B2B2B"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "To",
+              "visible": false
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.custom.selectedDateRange} \u003d \"Hour\", dateFormat(now(),\"MM/dd/yyyy hh\"),if({session.custom.selectedDateRange} \u003d \"Yesterday\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Week\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"4 Weeks\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"Month to Date\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange} \u003d \"90 Days\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"6 Months\",dateFormat(now(),\"MM/dd/yyyy\"),if({session.custom.selectedDateRange}\u003d \"Year to Date\",dateFormat(now(),\"MM/dd/yyyy\"), dateFormat({.../body/DateTimePickerNext.props.value},\"MM/dd/yyyy\")))))))))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "#2B2B2B"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u0027m+nL2ZFq\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnCancel"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "image": {
+                "style": {
+                  "backgroundColor": "#181818",
+                  "borderBottomLeftRadius": 5,
+                  "borderBottomRightRadius": 5,
+                  "borderColor": "#4D4D4D",
+                  "borderStyle": "solid",
+                  "borderTopLeftRadius": 5,
+                  "borderTopRightRadius": 5,
+                  "borderWidth": 1
+                },
+                "width": 50
+              },
+              "style": {
+                "classes": "Buttons/Secondary"
+              },
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "filler"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t#self.session.custom.dateRangeFromDate \u003d self.getSibling(\"From\").props.text\n\t#self.session.custom.dateRangeToDate \u003d self.getSibling(\"To\").props.text\n\t#system.perspective.print(\"Hello\")\n\tif self.session.custom.selectedDateRange \u003d\u003d \"Yesterday\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.yesterday\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.yesterday\n\t\t#system.perspective.print(\"Yesterday\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"This Week\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.firstDayOfWeek\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.today\n\t\t#system.perspective.print(\"This Week\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"Last Week\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.firstDayOfLastWeek\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.lastDayOfLastWeek\n\t\t#system.perspective.print(\"Last Week\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"Month to Date\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.firstDayOfMonth\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.today\n\t\t#system.perspective.print(\"MtoDate\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"Last Month\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.firstDayOfLastMonth\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.lastDayOfLastMonth\n\t\t#system.perspective.print(\"Last Month\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"Year to Date\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.firstDayOfYear\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.today\n\t\t#system.perspective.print(\"YtoDate\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"Last Year\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.firstDayOfLastYear\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.lastDayOfLastYear\n\t\t#system.perspective.print(\"Last Year\")\n\telif self.session.custom.selectedDateRange \u003d\u003d \"All\":\n\t\tself.session.custom.dateRangeFromDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.allStartDay\n\t\tself.session.custom.dateRangeToDate \u003d self.parent.parent.getChild(\"body\").getChild(\"DateRangeLabelsFlex\").custom.today\n\telse:\n\t\t#system.perspective.print(\"In else\")\n\t\tself.session.custom.dateRangeFromDate \u003d system.date.format(self.parent.parent.getChild(\"body\").getChild(\"DateTimePickerCurrent\").props.value, \"MM/dd/yyyy\")\n\t\tself.session.custom.dateRangeToDate \u003d system.date.format(self.parent.parent.getChild(\"body\").getChild(\"DateTimePickerNext\").props.value, \"MM/dd/yyyy\")\n\t#system.perspective.print(\"before close\")\n\tsystem.perspective.closePopup(\u0027m+nL2ZFq\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnApply"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "props": {
+              "image": {
+                "style": {
+                  "backgroundColor": "#181818",
+                  "borderBottomLeftRadius": 5,
+                  "borderBottomRightRadius": 5,
+                  "borderColor": "#4D4D4D",
+                  "borderStyle": "solid",
+                  "borderTopLeftRadius": 5,
+                  "borderTopRightRadius": 5,
+                  "borderWidth": 1
+                }
+              },
+              "style": {
+                "classes": "Buttons/Main"
+              },
+              "text": "Apply"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "filler1"
+            },
+            "position": {
+              "basis": "10%"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "footer"
+        },
+        "position": {
+          "basis": "12%"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FFFFFF",
+            "paddingBottom": 5,
+            "paddingTop": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "borderStyle": "solid"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

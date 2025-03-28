@@ -1,0 +1,224 @@
+{
+  "custom": {},
+  "params": {
+    "selected": false,
+    "text": "Send Email"
+  },
+  "propConfig": {
+    "params.selected": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "path": "/root/CoordinateContainer/Button.custom.selected"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 98,
+      "width": 84
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "custom": {
+              "selected": false
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.custom.selected \u003d not self.custom.selected"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "height": 0.9,
+              "width": 0.5795,
+              "x": 0.2262,
+              "y": 0.05
+            },
+            "propConfig": {
+              "props.image.source": {
+                "binding": {
+                  "config": {
+                    "path": ".../Label.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "/system/images/SVGs/Categories/Classes.svg",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Orientation",
+                          "output": "/system/images/SVGs/Categories/Fundraising.svg"
+                        },
+                        {
+                          "input": "Special Event",
+                          "output": "/system/images/SVGs/Categories/Faith Meeting.svg"
+                        },
+                        {
+                          "input": "Training",
+                          "output": "/system/images/SVGs/Categories/Seminar.svg"
+                        },
+                        {
+                          "input": "Classes",
+                          "output": "/system/images/SVGs/Categories/Classes.svg"
+                        },
+                        {
+                          "input": "Other",
+                          "output": "/system/images/SVGs/Categories/Personal Growth.svg"
+                        }
+                      ],
+                      "outputType": "document",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.image.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.selected"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "Event/Event_CategoryIcon",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": true,
+                          "output": "Event/Event_CategoryIconSelected"
+                        },
+                        {
+                          "input": false,
+                          "output": "Event/Event_CategoryIcon"
+                        }
+                      ],
+                      "outputType": "style-list",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.selected"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "Event/Event_CategoryButton",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": true,
+                          "output": "Event/Event_CategoryButtonSelected"
+                        },
+                        {
+                          "input": false,
+                          "output": "Event/Event_CategoryButton"
+                        }
+                      ],
+                      "outputType": "style-list",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "height": 25,
+                "position": "center",
+                "style": {},
+                "width": 25
+              },
+              "style": {
+                "backgroundClip": "border-box",
+                "borderBottomLeftRadius": 100,
+                "borderBottomRightRadius": 100,
+                "borderTopLeftRadius": 100,
+                "borderTopRightRadius": 100,
+                "overflow": "visible"
+              },
+              "text": ""
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "70px"
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "backgroundColor": ""
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "52px"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.text"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FFFFFFFC",
+            "classes": "Text/Add_HeaderText",
+            "color": "#858584",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-between",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

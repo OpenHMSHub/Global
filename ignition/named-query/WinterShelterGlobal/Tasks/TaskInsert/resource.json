@@ -1,0 +1,85 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "0e93bb1994db53548d0d0e886305481b4321fa1eb072a6d7a274fa63a958bede",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "congregationId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "typeId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dueDate",
+        "sqlType": 8
+      },
+      {
+        "type": "Parameter",
+        "identifier": "staffId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "priority",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "statusId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "notes",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "title",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "row_id",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "timeCreated",
+        "sqlType": 8
+      }
+    ]
+  }
+}

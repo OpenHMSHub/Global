@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "color": "#0C4E85",
+      "fontFamily": "Proxima Nova ExCn Light",
+      "fontSize": "20px",
+      "fontWeight": "normal",
+      "textAlign": "left",
+      "whiteSpace": "nowrap"
+    }
+  }
+}

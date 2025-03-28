@@ -1,0 +1,181 @@
+{
+  "custom": {},
+  "params": {
+    "SelectedValue": "once"
+  },
+  "propConfig": {
+    "params.SelectedValue": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "path": "/root/FlexContainer/Dropdown.props.value"
+        },
+        "type": "property"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 73,
+      "width": 561
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "((len({this.props.text}) * 6.5))  + \"px\" "
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Text/Add_HeaderText",
+                "fontWeight": "bold"
+              },
+              "text": "Time "
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "9px"
+            },
+            "props": {
+              "style": {
+                "color": "#FF0000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "28px"
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "style": {
+            "overflow": "hidden"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "140px"
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "expression": "\"once\""
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "Text/Add_InfoText"
+              },
+              "options": {
+                "$": [
+                  "ds",
+                  192,
+                  1610831058060
+                ],
+                "$columns": [
+                  {
+                    "data": [
+                      "once",
+                      "hourly",
+                      "daily",
+                      "weekly",
+                      "monthly",
+                      "yearly"
+                    ],
+                    "name": "value",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      "Once",
+                      "Hourly",
+                      "Daily",
+                      "Weekly",
+                      "Monthly",
+                      "Yearly"
+                    ],
+                    "name": "label",
+                    "type": "String"
+                  }
+                ]
+              },
+              "placeholder": {
+                "icon": {
+                  "color": "#0d80e3"
+                },
+                "text": "Select"
+              },
+              "search": {
+                "enabled": false,
+                "matching": "start"
+              },
+              "style": {
+                "classes": "Text/Add_InfoText_With_Border"
+              }
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginLeft": 5,
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

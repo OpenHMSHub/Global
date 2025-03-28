@@ -1,0 +1,40 @@
+{
+  "custom": {},
+  "params": {
+    "participantID": ""
+  },
+  "propConfig": {
+    "params.participantID": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "path": "Winter_Shelter/Activity/Filter/ActivityFilter"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Alternative"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

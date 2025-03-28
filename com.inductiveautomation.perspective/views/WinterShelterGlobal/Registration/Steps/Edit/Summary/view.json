@@ -1,0 +1,821 @@
+{
+  "custom": {
+    "keyFields": {}
+  },
+  "params": {
+    "comments": "hello",
+    "congregation": "",
+    "coordinator": "",
+    "guestsCount": "",
+    "hostMoreFinances": false,
+    "hostMoreMeals": false,
+    "hostMoreOther": false,
+    "hostMoreOtherDetail": "",
+    "hostMoreSpace": false,
+    "hostMoreTransportation": false,
+    "hostMoreVolunteers": false,
+    "location": "",
+    "neededToProceed": "",
+    "phone": "",
+    "proceed": false,
+    "startDate": "",
+    "totalNights": "",
+    "types": ""
+  },
+  "propConfig": {
+    "custom.keyFields": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tfields \u003d currentValue.value\n\tproceed \u003d True\n\tneeded \u003d \u0027\u0027\n\tfor field in fields:\n\t\tif fields[field].value \u003d\u003d False: \n\t\t\tproceed \u003d False\n\t\t\tif needed \u003d\u003d \u0027\u0027:\n\t\t\t\tneeded \u003d field\n\n\tself.params.proceed \u003d proceed\n\tself.params.neededToProceed \u003d needed\n"
+      },
+      "persistent": true
+    },
+    "custom.keyFields.hostMore": {
+      "binding": {
+        "config": {
+          "expression": "if({view.params.hostMoreFinances} || {view.params.hostMoreMeals} || {view.params.hostMoreOther} || {view.params.hostMoreSpace} || {view.params.hostMoreTransportation} || {view.params.hostMoreVolunteers}, True, False)"
+        },
+        "type": "expr"
+      }
+    },
+    "params.comments": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.congregation": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.coordinator": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.guestsCount": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.hostMoreFinances": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreMeals": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreOther": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreOtherDetail": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreSpace": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreTransportation": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.hostMoreVolunteers": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.location": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.neededToProceed": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.phone": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.proceed": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.startDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.totalNights": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.types": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1118
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Our congregation might be able to host more if we had:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "10px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#D80000"
+              },
+              "text": "*"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "borderBottomWidth": "1px",
+                "classes": "Text/Add_HeaderText",
+                "paddingLeft": "0px"
+              },
+              "text": "(check all that apply)"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Potential"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Meals"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.hostMoreMeals"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    },
+                    "path": "material/radio_button_checked"
+                  },
+                  "indeterminateIcon": {
+                    "path": "material/radio_button_checked"
+                  },
+                  "style": {
+                    "paddingRight": "20px"
+                  },
+                  "text": "Help with meals",
+                  "uncheckedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    },
+                    "path": "material/radio_button_unchecked"
+                  }
+                },
+                "type": "ia.input.checkbox"
+              },
+              {
+                "meta": {
+                  "name": "Space"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.hostMoreSpace"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    },
+                    "path": "material/radio_button_checked"
+                  },
+                  "indeterminateIcon": {
+                    "path": "material/radio_button_checked"
+                  },
+                  "style": {
+                    "paddingRight": "20px"
+                  },
+                  "text": "More space",
+                  "uncheckedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    },
+                    "path": "material/radio_button_unchecked"
+                  }
+                },
+                "type": "ia.input.checkbox"
+              },
+              {
+                "meta": {
+                  "name": "Transportation"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.hostMoreTransportation"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    },
+                    "path": "material/radio_button_checked"
+                  },
+                  "indeterminateIcon": {
+                    "path": "material/radio_button_checked"
+                  },
+                  "style": {
+                    "paddingRight": "20px"
+                  },
+                  "text": "Different transportation",
+                  "uncheckedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    },
+                    "path": "material/radio_button_unchecked"
+                  }
+                },
+                "type": "ia.input.checkbox"
+              }
+            ],
+            "meta": {
+              "name": "row1"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Finances"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.hostMoreFinances"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    },
+                    "path": "material/radio_button_checked"
+                  },
+                  "indeterminateIcon": {
+                    "path": "material/radio_button_checked"
+                  },
+                  "style": {
+                    "paddingRight": "20px"
+                  },
+                  "text": "More financial resources",
+                  "uncheckedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    },
+                    "path": "material/radio_button_unchecked"
+                  }
+                },
+                "type": "ia.input.checkbox"
+              },
+              {
+                "meta": {
+                  "name": "Volunteers"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.hostMoreVolunteers"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "#0066FF"
+                    },
+                    "path": "material/radio_button_checked"
+                  },
+                  "indeterminateIcon": {
+                    "path": "material/radio_button_checked"
+                  },
+                  "style": {
+                    "paddingRight": "20px"
+                  },
+                  "text": "More volunteers",
+                  "uncheckedIcon": {
+                    "color": {
+                      "enabled": "#9db8d1"
+                    },
+                    "path": "material/radio_button_unchecked"
+                  }
+                },
+                "type": "ia.input.checkbox"
+              }
+            ],
+            "meta": {
+              "name": "row2"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Other"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.selected": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreOther"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "checkedIcon": {
+                        "color": {
+                          "enabled": "#0066FF"
+                        },
+                        "path": "material/radio_button_checked"
+                      },
+                      "indeterminateIcon": {
+                        "path": "material/radio_button_checked"
+                      },
+                      "style": {
+                        "paddingRight": "20px"
+                      },
+                      "text": "Other",
+                      "uncheckedIcon": {
+                        "color": {
+                          "enabled": "#9db8d1"
+                        },
+                        "path": "material/radio_button_unchecked"
+                      }
+                    },
+                    "type": "ia.input.checkbox"
+                  },
+                  {
+                    "meta": {
+                      "name": "OtherTextField"
+                    },
+                    "position": {
+                      "basis": "190px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "../Other.props.selected"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.enabled": {
+                        "binding": {
+                          "config": {
+                            "path": "../Other.props.selected"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.hostMoreOtherDetail"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "deferUpdates": false,
+                      "style": {
+                        "classes": "Text/Add_TextFieldWhite",
+                        "margin": "0px"
+                      }
+                    },
+                    "type": "ia.input.text-field"
+                  },
+                  {
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "300px"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Other"
+                },
+                "position": {
+                  "basis": "400px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "row3"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Support"
+        },
+        "position": {
+          "basis": "150px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "Text/Add_HeaderText",
+            "marginLeft": "-5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "#9db8d1",
+                "fontFamily": "Proxima NovaC Medium",
+                "fontSize": "17px"
+              },
+              "text": "Summary"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginTop": "40px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Congregation Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.congregation"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Congregation:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Location Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.location"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Location:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Coordinator Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.coordinator"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Coordinator:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Phone Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.phone"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Phone:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Guest Count Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.guestsCount"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Guest Count:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Types Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.types"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Types:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Start Date Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.startDate"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Start Date:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Total Nights Summary"
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "props.params.Answer": {
+            "binding": {
+              "config": {
+                "path": "view.params.totalNights"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Label": "Total Nights:"
+          },
+          "path": "WinterShelterGlobal/Registration/Cards/TextwAnswer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#9db8d1",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Background/Default",
+        "paddingLeft": "50px",
+        "paddingRight": "50px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": false,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "RITIOps",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "8658f793a4af253fef907701e4db8f7ba5e43df9f7873091bad4240f7ab3d41a",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2025-03-20T06:54:34Z"
+    },
+    "parameters": [
+      {
+        "type": "QueryString",
+        "identifier": "locationName",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "city",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "zipCode",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "minGuests",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "maxGuests",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "accessible",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "families",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "shortNotice",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "stairs",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "smoking",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "reminderCall",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "monday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "tuesday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "wednesday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "thursday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "friday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "saturday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "sunday",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "search",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "showers",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "clothing",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "laundry",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "sackLunches",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "breakfast",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "dinner",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "haircuts",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "hygieneItems",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "gender",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "season",
+        "sqlType": 2
+      }
+    ]
+  }
+}

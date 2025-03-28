@@ -1,0 +1,10 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "color": "#0C4E8B",
+      "fontFamily": "Proxima NovaC Medium",
+      "fontSize": "14px"
+    }
+  }
+}

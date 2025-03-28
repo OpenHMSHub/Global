@@ -1,0 +1,207 @@
+{
+  "custom": {},
+  "params": {
+    "CanceledSchedule": [],
+    "PrevHostDays": [],
+    "RemoveSelection": false,
+    "addition": false,
+    "blocked": true,
+    "date": {
+      "$": [
+        "ts",
+        192,
+        1717405330359
+      ],
+      "$ts": 1698814800000
+    },
+    "dayOfYear": 0,
+    "enabled": false,
+    "holidays": false,
+    "important": false,
+    "label": 0,
+    "limitDate": false,
+    "selected": false
+  },
+  "propConfig": {
+    "params.CanceledSchedule": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.PrevHostDays": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.RemoveSelection": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.addition": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.blocked": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t#if blocked remove from schedule\n\tif origin \u003d\u003d \u0027Script\u0027:\n\t\tadd \u003d False\n\t\tdayOfYear \u003d self.params.dayOfYear\n\t\tpayload \u003d {\u0027add\u0027:add,\u0027dayOfYear\u0027:dayOfYear}\n\t\tmessageType \u003d \u0027hostDay\u0027\n\t\tsystem.perspective.sendMessage(messageType, payload, scope \u003d \u0027page\u0027)"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.date": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dayOfYear": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.enabled": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.holidays": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.important": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.limitDate": {
+      "binding": {
+        "config": {
+          "expression": "//dateFormat(\"2022-01-01\", \"yyyy-MM-dd\")\r\n//now()\r\n//\"01/11/2022\"\r\n{[default]RITI/Winter Shelter/CurrentDate.value}\r\n"
+        },
+        "transforms": [
+          {
+            "code": "\tfrom datetime import datetime, date\n\tyearVal \u003d system.date.getYear(system.date.now())\n\tday_of_year_limit \u003d date(yearVal, 10, 31).timetuple().tm_yday\n#\tday_of_year \u003d date(2022, 11, 30).timetuple().tm_yday\n\tday_of_year \u003d datetime.now().timetuple().tm_yday\n\tvalue \u003d system.date.format(value,\u0027yyyy/MM/dd\u0027)\n\tTodayDate_year \u003d int(value.split(\u0027/\u0027)[0])\n\tTodayDate_month \u003d int(value.split(\u0027/\u0027)[1])\n\tTodayDate_date \u003d int(value.split(\u0027/\u0027)[2])\n\tday_of_year \u003d date(TodayDate_year,TodayDate_month,TodayDate_date).timetuple().tm_yday\n\tif day_of_year \u003e day_of_year_limit:\n\t\tcondition \u003d True\n\telse:\n\t\tcondition \u003d False\n\treturn condition",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selected": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tif origin \u003d\u003d \u0027Script\u0027 and not self.params.blocked:\n\t\tadd \u003d currentValue.value\n\t\tdayOfYear \u003d self.params.dayOfYear\n\t\tpayload \u003d {\u0027add\u0027:add,\u0027dayOfYear\u0027:dayOfYear}\n\t\tmessageType \u003d \u0027hostDay\u0027\n\t\tsystem.perspective.sendMessage(messageType, payload, scope \u003d \u0027page\u0027)"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 50
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.label} !\u003d \u0027\u0027 \u0026\u0026 !isNull({view.params.label})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.blocked},\"#DDDDDD\",\r\n//\tif({view.params.selected}, \"#0066FF\",\r\n//\tif({view.params.selected} \u0026\u0026 {view.params.dayOfYear}\u003e304, \"#3ec3d9\",\r\n//\tif({view.params.selected} \u0026\u0026 {view.params.dayOfYear}\u003c304, \"#0066FF\",\r\n\tif({view.params.addition}\u0026\u0026{view.params.RemoveSelection}\u003dFalse, \"#3ec3d9\",\r\n\tif({view.params.selected}, \"#3ec3d9\",\r\n\tif({view.params.selected}, \"#0066FF\",\r\n\t\t\"#FFFFFF00\"))))"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d \"#3ec3d9\":\n\t\tif (self.view.params.dayOfYear) in self.view.params.PrevHostDays and (self.view.params.addition)\u003d\u003dFalse:\n\t\t\tcolor \u003d \"#0066FF\"\n\t\telif (self.view.params.selected) \u003d\u003d True and self.view.params.limitDate \u003d\u003d False:\n\t\t\tcolor \u003d \"#0066FF\"\n\t\telif (self.view.params.addition) \u003d\u003d True and self.view.params.limitDate \u003d\u003d False:\n\t\t\tcolor \u003d \"#0066FF\"\n\t\telif (self.view.params.addition) \u003d\u003d True and self.view.params.RemoveSelection \u003d\u003d False:\n\t\t\tcolor \u003d \"#3ec3d9\"\n\t\t\t\n\t\telif (self.view.params.addition) \u003d\u003d True and self.view.params.RemoveSelection \u003d\u003d True:\n\t\t\tcolor \u003d \"#FFFFFF00\"\n\t\t\n\t\t\t\n\t\telse:\n\t\t\tcolor \u003d \"#3ec3d9\"\n\telse:\n\t\tcolor \u003d value\n\treturn color",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.style.borderColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.blocked} \u0026\u0026 {view.params.selected}, \"#0066FF\",\r\n//if(({view.params.RemoveSelection} \u0026\u0026 {view.params.dayOfYear}\u003c304), \"#fc0000\",\r\nif(({view.params.RemoveSelection}), \"#fc0000\",\r\nif({view.params.holidays}, \"#bc13fe\",\r\n\"#00FF66\")))"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.borderStyle": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.important} || {view.params.holidays} || ({view.params.blocked} \u0026\u0026 {view.params.selected})\r\n//|| ({view.params.RemoveSelection} \u0026\u0026 {view.params.dayOfYear}\u003c304)\r\n|| ({view.params.RemoveSelection} \u0026\u0026 {view.params.limitDate})\r\n, \u0027solid\u0027, \u0027none\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.params.blocked} || {view.params.selected} || {view.params.addition})\u0026\u0026{view.params.RemoveSelection}\u003dFalse,\"#FFFFFF\",\r\n \u0027#9db8d1\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.label"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": "50px",
+            "borderBottomRightRadius": "50px",
+            "borderTopLeftRadius": "50px",
+            "borderTopRightRadius": "50px",
+            "borderWidth": "2px",
+            "marginLeft": "10px",
+            "marginRight": 10,
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tuser_list \u003d [x.get(\u0027username\u0027) for x in system.user.getUsers(\"congregation\")]\n\tcurrent_user \u003d self.session.props.auth.user.userName\n\tcurrent_date \u003d system.tag.readBlocking(\"[default]RITI/Winter Shelter/CurrentDate\")[0].value\n\tcurrent_month \u003d system.date.format(current_date, \"MM\")\n\tcurrent_day \u003d system.date.format(current_date, \"dd\")\n\tlock_registration \u003d False\n\tif current_user in user_list and current_month\u003d\u003d\u002710\u0027 and current_day\u003d\u003d\u002731\u0027:\n\t\tsystem.perspective.print(\"congregation from portal\")\n\t\tlock_registration \u003d True\n\tif self.view.params.date \u003c system.date.setTime(system.date.now(), 00, 00, 00):\n\t\tsystem.perspective.print(\"past date\")\n\t\tlock_registration \u003d True\n\t\t\n\tif lock_registration \u003d\u003d False:\n\t\tif self.view.params.enabled:\n\t\t\tif self.view.params.selected\u003d\u003dFalse:\n\t\t\t\tself.view.params.selected \u003d True\n\t\t\t\tself.view.params.RemoveSelection \u003d False\n\t#\t\t\tself.view.custom.RemoveSelection \u003d False\n\t\t\telif self.view.params.selected\u003d\u003dTrue:\n\t\t\t\tself.view.params.selected \u003d False\n\t#\t\t\tself.view.custom.RemoveSelection \u003d True\n\t\t\t\tif ((self.view.params.dayOfYear) in (self.view.params.PrevHostDays)) or ((self.view.params.dayOfYear) in (self.view.params.CanceledSchedule)):\n\t\t\t\t\tself.view.params.RemoveSelection \u003d True\n\t\t\telif not self.view.params.blocked:\n\t\t\t\tself.view.params.selected \u003d True\n\t\t"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "center",
+      "direction": "column",
+      "justify": "center"
+    },
+    "type": "ia.container.flex"
+  }
+}

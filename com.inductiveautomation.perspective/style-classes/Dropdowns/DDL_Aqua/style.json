@@ -1,0 +1,12 @@
+{
+  "base": {
+    "style": {
+      "borderTopLeftRadius": "4px",
+      "borderTopRightRadius": "4px",
+      "borderBottomLeftRadius": "4px",
+      "borderBottomRightRadius": "4px",
+      "color": "#1CBFBB",
+      "fontFamily": "Gibson"
+    }
+  }
+}

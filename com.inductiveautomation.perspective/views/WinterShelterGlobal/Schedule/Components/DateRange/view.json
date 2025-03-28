@@ -1,0 +1,155 @@
+{
+  "custom": {
+    "currentSeasonId": 11,
+    "noOfBedsThreshold": "75"
+  },
+  "params": {
+    "dateRange": {
+      "endDate": {
+        "$": [
+          "ts",
+          0,
+          1685595738881
+        ],
+        "$ts": 1643659200000
+      },
+      "startDate": {
+        "$": [
+          "ts",
+          0,
+          1685595727359
+        ],
+        "$ts": 1641067200000
+      }
+    },
+    "instanceCount": 37
+  },
+  "propConfig": {
+    "custom.currentSeasonId": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "selectedDate": "{view.params.dateRange.startDate}"
+          },
+          "queryPath": "WinterShelterGlobal/getSeasonFromDate"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.getValueAt(0,\u0027id\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.noOfBedsThreshold": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "settingName": "\u0027minimin_beds_threshold\u0027"
+          },
+          "queryPath": "WinterShelterGlobal/Settings/GetOneSettingValue"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "params.dateRange": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.endDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.instanceCount": {
+      "binding": {
+        "config": {
+          "path": "/root/FlexRepeater.props.instances"
+        },
+        "transforms": [
+          {
+            "code": "\treturn len(value)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.startDate": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 350,
+      "width": 1000
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "currentSeasonId": "{view.custom.currentSeasonId}",
+                  "dateRange": "{view.params.dateRange}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\timport copy\n\tdateRange \u003d value[\"dateRange\"]\n\tstartDate \u003d dateRange[\"startDate\"]\n\tendDate \u003d dateRange[\"endDate\"]\n\tdaysBetween \u003d system.date.daysBetween(startDate, endDate) + 1\n\t\n\tinstances \u003d []\n\tinstanceStruct \u003d {\n\t  \"instanceStyle\": {\n\t    \"classes\": \"\"\n\t  },\n\t  \"instancePosition\": {},\n\t  \"date\": \"\",\n\t  \"NoOfBeds\":\u0027\u0027,\n\t  \"NoOfCongregation\":\u0027\u0027,\n\t  \"threshold\":self.view.custom.noOfBedsThreshold\n\t}\n\t\n\tflexInstanceIndex \u003d 0 ## will be used to determine if right border is needed\n\ttotalInstances \u003d 0 ## will be used to determine if bottom border is needed\n\t## if month does not start on Sunday, we need to append empty instances to the flex repeater e.g. 01-Jun-2022 starts on Wednesday so append 3 empty instances for Sun, Mon, tue in the week\n\tmonthStartDayOfWeek \u003d system.date.getDayOfWeek(startDate)\n\tif monthStartDayOfWeek \u003e 1:\n\t\tfor i in range(1,monthStartDayOfWeek):\n\t\t\tthisStruct \u003d copy.deepcopy(instanceStruct)\n\t\t\tthisStruct[\"date\"] \u003d None\n\t\t\tinstanceStyle \u003d {}\n\t\t\tinstanceStyle[\"classes\"] \u003d \"\"\n\t\t\tinstanceStyle[\"borderRightColor\"] \u003d \"#D5D5D5\"\n\t\t\tinstanceStyle[\"borderRightStyle\"] \u003d \"solid\"\n\t\t\tinstanceStyle[\"borderRightWidth\"] \u003d \"0.3px\"\n\t\t\tinstanceStyle[\"borderTopColor\"] \u003d \"#D5D5D5\"\n\t\t\tinstanceStyle[\"borderTopStyle\"] \u003d \"solid\"\n\t\t\tinstanceStyle[\"borderTopWidth\"] \u003d \"0.3px\"\n\t\t\tif i \u003d\u003d 1:\n\t\t\t\tinstanceStyle[\"borderLeftColor\"] \u003d \"#D5D5D5\"\n\t\t\t\tinstanceStyle[\"borderLeftStyle\"] \u003d \"solid\"\n\t\t\t\tinstanceStyle[\"borderLeftWidth\"] \u003d \"0.3px\"\n\t\t\tthisStruct[\"instanceStyle\"] \u003d instanceStyle\n\t\t\tinstances.append(thisStruct)\n\t\t\tflexInstanceIndex \u003d flexInstanceIndex + 1\n\t\t\ttotalInstances \u003d totalInstances + 1\n\t\n\t## get the total no of congregations and total no of beds data from database\n\trangeStartDayOfYear \u003d system.date.getDayOfYear(startDate)\n\trangeEndDayOfYear \u003d system.date.getDayOfYear(endDate)\n\t\n\tmonthData \u003d system.db.runNamedQuery(\"WinterShelterGlobal/Schedule/GetServeCalendarMonthDetails\",{\"rangeStartDayOfYear\":rangeStartDayOfYear,\"rangeEndDayOfYear\":rangeEndDayOfYear, \"seasonId\":value[\"currentSeasonId\"]})\n\t\n\tif monthData is not None and monthData.getRowCount() \u003e 0:\n\t\ttotalInstances \u003d totalInstances + monthData.getRowCount()\n\t\tfor row in range(daysBetween):\n\t\t\tthisDay \u003d system.date.addDays(startDate, row)\n\t\t\tthisStruct \u003d copy.deepcopy(instanceStruct)\n\t\t\tinstanceStyle \u003d {}\n\t\t\tinstanceStyle[\"classes\"] \u003d \"\"\n\t\t\tinstanceStyle[\"borderRightColor\"] \u003d \"#D5D5D5\"\n\t\t\tinstanceStyle[\"borderRightStyle\"] \u003d \"solid\"\n\t\t\tinstanceStyle[\"borderRightWidth\"] \u003d \"0.3px\"\n\t\t\t\n\t\t\tinstanceStyle[\"borderTopColor\"] \u003d \"#D5D5D5\"\n\t\t\tinstanceStyle[\"borderTopStyle\"] \u003d \"solid\"\n\t\t\tinstanceStyle[\"borderTopWidth\"] \u003d \"0.3px\"\n\t\t\t\n\t\t\tif (flexInstanceIndex in (0,7,14,21,28,35)) :\n\t\t\t\tinstanceStyle[\"borderLeftColor\"] \u003d \"#D5D5D5\"\n\t\t\t\tinstanceStyle[\"borderLeftStyle\"] \u003d \"solid\"\n\t\t\t\tinstanceStyle[\"borderLeftWidth\"] \u003d \"0.3px\"\n\t\t\t\n\t\t\tif (totalInstances - flexInstanceIndex) \u003c\u003d 7:\n\t\t\t\tinstanceStyle[\"borderBottomColor\"] \u003d \"#D5D5D5\"\n\t\t\t\tinstanceStyle[\"borderBottomStyle\"] \u003d \"solid\"\n\t\t\t\tinstanceStyle[\"borderBottomWidth\"] \u003d \"0.3px\"\n\t\t\t\n\t\t\tthisStruct[\"instanceStyle\"] \u003d instanceStyle\n\t\t\tthisStruct[\"date\"] \u003d thisDay\n\t\t\tif monthData.getValueAt(row,\u0027totalBeds\u0027) !\u003d None:\n\t\t\t\tthisStruct[\"NoOfBeds\"] \u003d monthData.getValueAt(row,\u0027totalBeds\u0027)\n\t\t\tif monthData.getValueAt(row,\u0027noOfCongregations\u0027) !\u003d None:\t\t\t\n\t\t\t\tthisStruct[\"NoOfCongregation\"] \u003d monthData.getValueAt(row,\u0027noOfCongregations\u0027)\n\t\t\tinstances.append(thisStruct)\n\t\t\tflexInstanceIndex \u003d flexInstanceIndex + 1\n\treturn instances",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "alignItems": "flex-start",
+          "path": "WinterShelterGlobal/Schedule/Components/Day",
+          "wrap": "wrap"
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "alignItems": "flex-start",
+      "direction": "column"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "newCongregationAdded",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.getChild(\"FlexRepeater\").refreshBinding(\"props.instances\")",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

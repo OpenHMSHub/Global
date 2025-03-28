@@ -1,0 +1,259 @@
+{
+  "custom": {
+    "dayOfMonth": null,
+    "isToday": false
+  },
+  "params": {
+    "NoOfBeds": 106,
+    "NoOfCongregation": 10,
+    "date": null,
+    "threshold": 75
+  },
+  "propConfig": {
+    "custom.dayOfMonth": {
+      "binding": {
+        "config": {
+          "path": "view.params.date"
+        },
+        "transforms": [
+          {
+            "code": "\tif value is not None and value !\u003d \"None\" and value !\u003d \"\":\n\t\treturn system.date.getDayOfMonth(value)\n\telse:\n\t\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.isToday": {
+      "binding": {
+        "config": {
+          "expression": "if({view.params.date} !\u003d None \u0026\u0026 {view.params.date} !\u003d \"None\" \u0026\u0026 {view.params.date} !\u003d \"\",\r\nif(\tgetDayOfMonth({view.params.date}) \u003d getDayOfMonth(now(60000))\r\n\t\t\u0026\u0026 getMonth({view.params.date}) \u003d getMonth(now(60000))\r\n\t\t\u0026\u0026 getYear({view.params.date}) \u003d getYear(now(60000)),\r\n\tTrue,\r\n\tFalse \r\n), False)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.NoOfBeds": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.NoOfCongregation": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.date": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dayOfMonth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.dayOfWeek": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fghg": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.threshold": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 55,
+      "width": 140
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Filler1"
+            },
+            "position": {
+              "basis": "25px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "dayOfMonth"
+            },
+            "position": {
+              "basis": "55px"
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "expression": "if( {session.custom.selectedServeDate} \u003d {view.params.date} \u0026\u0026 {view.params.date} !\u003d \"\" \u0026\u0026 {view.params.date} !\u003d None,\u0027CustomCalendar/SelectedDate\u0027,\r\nif({view.custom.isToday} \u003d true,\u0027CustomCalendar/CurrentDate\u0027,\r\n\u0027CustomCalendar/DayOfMonth\u0027))"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.cursor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.NoOfCongregation} \u003e 0, \"pointer\",\"auto\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.date} !\u003d None, {view.custom.dayOfMonth}, \u0027\u0027)"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": 24
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Filler2"
+            },
+            "position": {
+              "basis": "50px",
+              "display": false
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Day_Container"
+        },
+        "position": {
+          "basis": "200px"
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-around",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "NoOfCongregation"
+            },
+            "position": {
+              "basis": "55px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.NoOfCongregation"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignVertical": "top",
+              "style": {
+                "classes": "ActivityCards/Card_TextDark"
+              },
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "NoOfBeds"
+            },
+            "position": {
+              "basis": "55px"
+            },
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.NoOfBeds} \u003c {view.params.threshold}, \u0027#ff7a59\u0027,\u0027#0c4e8b\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.NoOfBeds"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "classes": "ActivityCards/Card_TextDark"
+              },
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Info_Container"
+        },
+        "position": {
+          "basis": "100px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tself.session.custom.selectedServeDate \u003d self.view.params.date\n\tsystem.perspective.sendMessage(\"ServeDateSelected\", payload \u003d {\"selectedDate\":self.view.params.date}, scope\u003d\"page\")\n\t\n\t"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "borderColor": "#D5D5D5",
+        "borderStyle": "none",
+        "borderWidth": "0.3px",
+        "opacity": "1"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "custom": {
+    "key": "value"
+  },
+  "params": {
+    "filterData": [
+      {
+        "label": "Male",
+        "value": "Male"
+      },
+      {
+        "label": "Female",
+        "value": "Female"
+      },
+      {
+        "label": "Other",
+        "value": "Other"
+      }
+    ],
+    "filterName": "Gender",
+    "selectedValues": null
+  },
+  "propConfig": {
+    "custom.key": {
+      "persistent": true
+    },
+    "params.filterData": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filterData[0]": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filterName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectedValues": {
+      "binding": {
+        "config": {
+          "path": "/Filter/filter.props.value"
+        },
+        "transforms": [
+          {
+            "code": "\tif value\u003d\u003d-1 :\n\t\treturn null\n\telse :\t\n\t\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 25,
+      "width": 150
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "selecting": true
+        },
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tmessageType \u003d \u0027selecting\u0027\n\tpayload \u003d {\u0027current\u0027: self.props.placeholder.text}\n\tsystem.perspective.sendMessage(messageType,payload)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "filter"
+        },
+        "position": {
+          "basis": "100%"
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "path": "view.params.filterData"
+              },
+              "type": "property"
+            }
+          },
+          "props.placeholder.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.filterName"
+              },
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "session.custom.isClearFilter"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003d\u003d True:\n\t\treturn None\n\telse:\n\t\treturn None\n\t\t",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            },
+            "onChange": {
+              "enabled": null,
+              "script": "\t\n\tsystem.perspective.sendMessage(\u0027applyFilter\u0027,[self.props.placeholder.text,self.props.value])\n\t"
+            }
+          }
+        },
+        "props": {
+          "dropdownOptionStyle": {
+            "classes": "Table/Filter_Text"
+          },
+          "multiSelect": true,
+          "placeholder": {},
+          "search": {
+            "enabled": false
+          },
+          "style": {
+            "classes": "Table/Filter_Text"
+          },
+          "wrapMultiSelectValues": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "selecting",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tif payload[\u0027current\u0027] \u003d\u003d self.props.placeholder.text:\n\t\tself.custom.selecting \u003d True\n\telse:\n\t\tself.custom.selecting \u003d False",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "clearText",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tself.props.value \u003d None",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.input.dropdown"
+      }
+    ],
+    "meta": {
+      "name": "Filter"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Table/Filter_Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 75,
+      "width": 250
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Icon": "description",
+            "NavigateTo": "",
+            "Text": "Note"
+          },
+          "path": "Participants/Detail/Cards/Personal/Action",
+          "style": {
+            "marginLeft": "auto"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Icon": "room_service",
+            "NavigateTo": "",
+            "Text": "Service"
+          },
+          "path": "Participants/Detail/Cards/Personal/Action",
+          "style": {
+            "marginLeft": "10px",
+            "marginRight": "10px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "Icon": "check",
+            "NavigateTo": "",
+            "Text": "Check-in"
+          },
+          "path": "Participants/Detail/Cards/Personal/Action",
+          "style": {
+            "marginRight": "auto"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "Text/Personal_Header"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

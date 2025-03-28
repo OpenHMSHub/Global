@@ -1,0 +1,2 @@
+SELECT id, referenceRelationshipTypeName
+FROM humans.ReferenceRelationType;
