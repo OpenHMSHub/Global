@@ -2,7 +2,7 @@
   "scope": "DG",
   "version": 2,
   "restricted": false,
-  "overridable": false,
+  "overridable": true,
   "files": [
     "query.sql"
   ],
@@ -12,13 +12,13 @@
     "fallbackValue": "",
     "maxReturnSize": 100,
     "cacheUnit": "SEC",
-    "type": "UpdateQuery",
+    "type": "Query",
     "enabled": true,
     "cacheAmount": 1,
     "cacheEnabled": false,
     "database": "",
     "fallbackEnabled": false,
-    "lastModificationSignature": "0d973d4462d1cf32ad24a37bcb98e593f6f8aebecdf1dec7c95318061890da9f",
+    "lastModificationSignature": "73636eec1422c8041f7e187b5118cd0fdfd0d61ccba8ea211d2fe56617169257",
     "permissions": [
       {
         "zone": "",
@@ -27,13 +27,13 @@
     ],
     "lastModification": {
       "actor": "admin",
-      "timestamp": "2025-04-03T11:58:32Z"
+      "timestamp": "2025-04-03T12:15:17Z"
     },
     "parameters": [
       {
         "type": "Parameter",
-        "identifier": "humanId",
-        "sqlType": 2
+        "identifier": "locationName",
+        "sqlType": 7
       }
     ]
   }

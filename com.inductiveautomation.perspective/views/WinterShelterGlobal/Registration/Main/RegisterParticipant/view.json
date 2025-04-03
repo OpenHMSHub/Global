@@ -3,14 +3,7 @@
     "RegistrationData": {
       "communication_type_id": -1,
       "disability_id": -1,
-      "dob": {
-        "$": [
-          "ts",
-          201,
-          1652453167721
-        ],
-        "$ts": 1591286400000
-      },
+      "dob": null,
       "dob_quality_id": -1,
       "email": "",
       "emergency_contact_type_id": -1,

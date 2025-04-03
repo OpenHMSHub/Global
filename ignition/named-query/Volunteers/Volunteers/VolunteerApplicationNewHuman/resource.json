@@ -18,7 +18,7 @@
     "cacheEnabled": false,
     "database": "RITIOps",
     "fallbackEnabled": false,
-    "lastModificationSignature": "b6d6416279724351f9843e2895d7dfec14e707718efbf6d105552f046b5eeafc",
+    "lastModificationSignature": "015cc75acc91fc45a24229b926c7ebdccbd9855ee5000dac7a13a89f7d972be8",
     "permissions": [
       {
         "zone": "",
@@ -27,7 +27,7 @@
     ],
     "lastModification": {
       "actor": "admin",
-      "timestamp": "2025-03-28T07:42:05Z"
+      "timestamp": "2025-04-03T08:11:27Z"
     },
     "parameters": [
       {
@@ -183,7 +183,7 @@
       {
         "type": "Parameter",
         "identifier": "congregationId",
-        "sqlType": 7
+        "sqlType": 2
       }
     ]
   }

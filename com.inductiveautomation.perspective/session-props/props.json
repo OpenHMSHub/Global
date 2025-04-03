@@ -818,10 +818,10 @@
     }
   },
   "props": {
-    "address": "127.0.0.1",
+    "address": "[0:0:0:0:0:0:0:1]",
     "device": {},
     "geolocation": {},
-    "locale": "uk-UA",
+    "locale": "en-US",
     "theme": "RITI",
     "timeZoneId": "Europe/Kiev"
   }
