@@ -1,16 +1,45 @@
 {
   "scope": "DG",
-  "version": 1,
+  "version": 2,
   "restricted": false,
   "overridable": false,
   "files": [
-    "data.bin"
+    "query.sql"
   ],
   "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "a1644e67a66b6e57875553e4cd78b74c670c04d6d8e140933e0b14822a5d87df",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
     "lastModification": {
-      "actor": "yogini",
-      "timestamp": "2024-08-21T08:53:31Z"
+      "actor": "admin",
+      "timestamp": "2025-04-01T07:11:11Z"
     },
-    "lastModificationSignature": "69708ef61d57a3c07cfd5329ea3a03b68d2e8db82d47a4ef5720c1096ef845b6"
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "volunteerId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "eventId",
+        "sqlType": 2
+      }
+    ]
   }
 }

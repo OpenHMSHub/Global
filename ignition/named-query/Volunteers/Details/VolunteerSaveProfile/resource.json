@@ -1,16 +1,55 @@
 {
   "scope": "DG",
-  "version": 1,
+  "version": 2,
   "restricted": false,
   "overridable": false,
   "files": [
-    "data.bin"
+    "query.sql"
   ],
   "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "89e923e727872d6a1737402a14c7f7c2335e3d600b8ad8e3a773665f7712f4ef",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
     "lastModification": {
-      "actor": "yogini",
-      "timestamp": "2024-08-21T08:53:03Z"
+      "actor": "admin",
+      "timestamp": "2025-04-01T07:11:11Z"
     },
-    "lastModificationSignature": "2c77644dbf44fdbac1769940bb944e45231c3d43d567e1b34e3c7fcb5cbbcdab"
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "volunteerId",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "profile",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "status",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "volunteerGroupId",
+        "sqlType": 2
+      }
+    ]
   }
 }

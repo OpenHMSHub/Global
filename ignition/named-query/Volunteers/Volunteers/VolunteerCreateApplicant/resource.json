@@ -18,7 +18,7 @@
     "cacheEnabled": false,
     "database": "",
     "fallbackEnabled": false,
-    "lastModificationSignature": "c40493a5a1ac7b15f0c6e4d82de6370f6c9b5d5d53be5bc602a5601ca122b1d1",
+    "lastModificationSignature": "2dfb92427571bd12a56f462965615ac42bf692e0a84217eeeac23f81f3122cd9",
     "permissions": [
       {
         "zone": "",
@@ -27,18 +27,13 @@
     ],
     "lastModification": {
       "actor": "admin",
-      "timestamp": "2025-03-28T07:31:40Z"
+      "timestamp": "2025-04-01T07:00:09Z"
     },
     "parameters": [
       {
         "type": "Parameter",
         "identifier": "humanId",
         "sqlType": 2
-      },
-      {
-        "type": "Parameter",
-        "identifier": "application",
-        "sqlType": 7
       }
     ]
   }
