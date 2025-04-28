@@ -13,7 +13,7 @@ This project contains reusable UI components, named queries, scripts, stylesheet
 It helps standardize functionality and ensures a consistent user experience throughout all OpenHMSHub-based projects.
 
 ## Requirements
-`Ignition 8.1.45 or later`
+`Ignition 8.1.47 or later`
 
 ## Installation
 
