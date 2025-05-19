@@ -1,5 +1,5 @@
 import traceback
-project = "RITI"
+project = "HMS"
 TODAY = system.date.now()
 THISYEAR = system.date.getYear(TODAY)
 

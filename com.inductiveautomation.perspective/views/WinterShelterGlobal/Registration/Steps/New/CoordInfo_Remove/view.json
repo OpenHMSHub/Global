@@ -250,7 +250,7 @@
             "classes": "Text/Add_HeaderText",
             "paddingLeft": "0px"
           },
-          "text": "The main contact for your congregation\u0027s Room In The Inn program"
+          "text": "The main contact for your congregation\u0027s Homeless Management System program"
         },
         "type": "ia.display.label"
       },

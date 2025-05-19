@@ -274,7 +274,7 @@
                 },
                 "onChange": {
                   "enabled": null,
-                  "script": "\tlastYear \u003d str(self.parent.custom.lastSeason)\n\tstartCount \u003d self.view.params.startGuestCount\n\tif currentValue.value \u003c startCount:\n\t\tmessage \u003d \"Will you please consider \" + lastYear + \" guests this season? What will you need from Room In The Inn to make this possible?\"\n\t\tsystem.perspective.openPopup(\u0027popupMessage\u0027, \u0027WinterShelter/Registration/Cards/PopupMessage\u0027,params \u003d {\u0027message\u0027:message})"
+                  "script": "\tlastYear \u003d str(self.parent.custom.lastSeason)\n\tstartCount \u003d self.view.params.startGuestCount\n\tif currentValue.value \u003c startCount:\n\t\tmessage \u003d \"Will you please consider \" + lastYear + \" guests this season? What will you need from Homeless Management System to make this possible?\"\n\t\tsystem.perspective.openPopup(\u0027popupMessage\u0027, \u0027WinterShelter/Registration/Cards/PopupMessage\u0027,params \u003d {\u0027message\u0027:message})"
                 }
               }
             },
@@ -1790,7 +1790,7 @@
             "classes": "Text/Add_HeaderText",
             "marginLeft": "-5px"
           },
-          "text": "Please list any other organization that work with your group to host Room in the Inn. This could include other congregations, scout troops, student groups or service organizations."
+          "text": "Please list any other organization that work with your group to host Homeless Management System. This could include other congregations, scout troops, student groups or service organizations."
         },
         "type": "ia.display.label"
       },

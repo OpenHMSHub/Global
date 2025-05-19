@@ -2,7 +2,7 @@
   "custom": {},
   "params": {
     "header": "Registration Complete",
-    "message": "We have recorded your registration. Thank you for being a part of Room in the Inn!",
+    "message": "We have recorded your registration. Thank you for being a part of Homeless Management System!",
     "proceed": true
   },
   "propConfig": {

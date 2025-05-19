@@ -268,7 +268,7 @@
                   "dom": {
                     "onClick": {
                       "config": {
-                        "script": "\tif self.props.params.currentSelection \u003d\u003d self.view.custom.CursorStartAt:\n\t\tself.view.custom.CursorMoved \u003d False\n\t\tself.props.params.message \u003d \u0027\u0027\n\telse:\n\t\tself.props.params.message \u003d \"Will you please consider 12 Guests this season? What will you need from Room In The Inn to make this possible?\""
+                        "script": "\tif self.props.params.currentSelection \u003d\u003d self.view.custom.CursorStartAt:\n\t\tself.view.custom.CursorMoved \u003d False\n\t\tself.props.params.message \u003d \u0027\u0027\n\telse:\n\t\tself.props.params.message \u003d \"Will you please consider 12 Guests this season? What will you need from Homeless Management System to make this possible?\""
                       },
                       "scope": "G",
                       "type": "script"
@@ -1934,7 +1934,7 @@
                     "classes": "Text/Add_HeaderText",
                     "marginLeft": "-5px"
                   },
-                  "text": "Please list any other organization that work with your group to host Room in the Inn. This could include other congregations, scout troops, student groups or service organizations."
+                  "text": "Please list any other organization that work with your group to host Homeless Management System. This could include other congregations, scout troops, student groups or service organizations."
                 },
                 "type": "ia.display.label"
               },

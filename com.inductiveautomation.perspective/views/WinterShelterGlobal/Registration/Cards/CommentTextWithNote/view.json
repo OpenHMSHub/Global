@@ -128,7 +128,7 @@
               "style": {
                 "classes": "Text/Add_InfoText"
               },
-              "text": "If your Coordinator has not registered with Room In The Inn, please put their name, email and phone number in the comments.",
+              "text": "If your Coordinator has not registered with Homeless Management System, please put their name, email and phone number in the comments.",
               "textStyle": {
                 "color": "#E71D36",
                 "overflowWrap": "normal"
