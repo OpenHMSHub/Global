@@ -16,9 +16,9 @@
     "enabled": true,
     "cacheAmount": 1,
     "cacheEnabled": false,
-    "database": "RITIOps",
+    "database": "",
     "fallbackEnabled": false,
-    "lastModificationSignature": "8658f793a4af253fef907701e4db8f7ba5e43df9f7873091bad4240f7ab3d41a",
+    "lastModificationSignature": "6bd72898885d8f1e6a24d45a776746f69e910970b49c0dbf64499da3b7efd78e",
     "permissions": [
       {
         "zone": "",
@@ -26,8 +26,8 @@
       }
     ],
     "lastModification": {
-      "actor": "external",
-      "timestamp": "2025-03-20T06:54:34Z"
+      "actor": "admin",
+      "timestamp": "2025-06-11T11:28:46Z"
     },
     "parameters": [
       {

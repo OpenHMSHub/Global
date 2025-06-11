@@ -519,7 +519,7 @@
                 "binding": {
                   "config": {
                     "bidirectional": true,
-                    "path": "view.params.Row_Data.RITINotes"
+                    "path": "view.params.Row_Data.HMSNotes"
                   },
                   "type": "property"
                 }
@@ -536,7 +536,7 @@
           },
           {
             "meta": {
-              "name": "RITINotes"
+              "name": "HMSNotes"
             },
             "position": {
               "basis": "50%"

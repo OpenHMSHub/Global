@@ -1,5 +1,5 @@
 import traceback
-project = "RITI"
+project = "HMS"
 TODAY = system.date.now()
 THISYEAR = system.date.getYear(TODAY)
 
@@ -94,7 +94,7 @@ def getCurrentSeasonId():
 ## returns the date from dayOfYear and SeasonID
 def getDateForSeasonForDayOfYear(dayOfYear, seasonId):
 	returnDate = None
-	seasonString = system.db.runScalarPrepQuery("SELECT seasons FROM Shelter.seasons where id = ?", [seasonId], database='RITIOps')
+	seasonString = system.db.runScalarPrepQuery("SELECT seasons FROM Shelter.seasons where id = ?", [seasonId], database='HMSOps')
 	if seasonString != None and seasonString != "":
 		seasonStartYear = int(seasonString.split("-")[0])
 		seasonEndYear = int(seasonString.split("-")[1])

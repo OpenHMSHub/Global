@@ -81,7 +81,7 @@
           "custom.progress": {
             "binding": {
               "config": {
-                "expression": "{[default]RITI/Volunteers/Breeze/progressCount} + \u0027 of \u0027 + {[default]RITI/Volunteers/Breeze/progressTotal}"
+                "expression": "{[default]HMS/Volunteers/Breeze/progressCount} + \u0027 of \u0027 + {[default]HMS/Volunteers/Breeze/progressTotal}"
               },
               "type": "expr"
             }
@@ -89,7 +89,7 @@
           "position.display": {
             "binding": {
               "config": {
-                "expression": "False //{[default]RITI/Volunteers/Breeze/progressCount} \u003d {[default]RITI/Volunteers/Breeze/progressTotal}"
+                "expression": "False //{[default]HMS/Volunteers/Breeze/progressCount} \u003d {[default]HMS/Volunteers/Breeze/progressTotal}"
               },
               "type": "expr"
             }
@@ -118,7 +118,7 @@
           "custom.progress": {
             "binding": {
               "config": {
-                "expression": "{[default]RITI/Volunteers/Breeze/progressCount} + \u0027 of \u0027 + {[default]RITI/Volunteers/Breeze/progressTotal}"
+                "expression": "{[default]HMS/Volunteers/Breeze/progressCount} + \u0027 of \u0027 + {[default]HMS/Volunteers/Breeze/progressTotal}"
               },
               "type": "expr"
             }
@@ -126,7 +126,7 @@
           "position.display": {
             "binding": {
               "config": {
-                "expression": "{[default]RITI/Volunteers/Breeze/progressCount} \u003d {[default]RITI/Volunteers/Breeze/progressTotal}"
+                "expression": "{[default]HMS/Volunteers/Breeze/progressCount} \u003d {[default]HMS/Volunteers/Breeze/progressTotal}"
               },
               "transforms": [
                 {
@@ -140,7 +140,7 @@
           "props.text": {
             "binding": {
               "config": {
-                "expression": "if({[default]RITI/Volunteers/Breeze/progressType} \u003c 2,\r\n\u0027Syncing Volunteer \u0027 + {this.custom.progress},\r\n\u0027Syncing Congregation \u0027 + {this.custom.progress})"
+                "expression": "if({[default]HMS/Volunteers/Breeze/progressType} \u003c 2,\r\n\u0027Syncing Volunteer \u0027 + {this.custom.progress},\r\n\u0027Syncing Congregation \u0027 + {this.custom.progress})"
               },
               "type": "expr"
             }

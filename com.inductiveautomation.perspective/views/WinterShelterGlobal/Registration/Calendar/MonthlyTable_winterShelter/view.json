@@ -1,42 +1,42 @@
 {
   "custom": {
-    "EndYear": "2025",
-    "StartYear": "2024",
+    "EndYear": "2026",
+    "StartYear": "2025",
     "end_old": {
       "$": [
         "ts",
         192,
-        1721862360262
+        1749640691542
       ],
-      "$ts": 1748667600000
+      "$ts": 1780174800000
     },
     "month": 11,
-    "nights": 13,
+    "nights": 52,
     "start": {
       "$": [
         "ts",
         192,
-        1724334290195
+        1749643193992
       ],
-      "$ts": 1733076000000
+      "$ts": 1764583200000
     },
     "startSeasonDate": {
       "$": [
         "ts",
         192,
-        1724334277191
+        1749643193992
       ],
-      "$ts": 1730480400000
+      "$ts": 1761991200000
     },
     "start_old": {
       "$": [
         "ts",
         192,
-        1721862360262
+        1749640691541
       ],
-      "$ts": 1717218000000
+      "$ts": 1748725200000
     },
-    "year": 2024
+    "year": 2025
   },
   "events": {
     "system": {
@@ -76,25 +76,25 @@
       "$": [
         "ts",
         192,
-        1724334227988
+        1749643193992
       ],
-      "$ts": 1743440400000
+      "$ts": 1774947600000
     },
     "holidaysDates": [],
     "importantDays": [],
     "month": 12,
-    "nights": 13,
+    "nights": 52,
     "refresh": false,
-    "selectedSeasonId": 14,
+    "selectedSeasonId": 4,
     "startDate": {
       "$": [
         "ts",
         192,
-        1724334290195
+        1749643193992
       ],
-      "$ts": 1733076000000
+      "$ts": 1764583200000
     },
-    "startYear": 2024
+    "startYear": 2025
   },
   "propConfig": {
     "custom.EndYear": {
@@ -121,7 +121,7 @@
     "custom.end": {
       "binding": {
         "config": {
-          "expression": "//dateArithmetic(toDate(\u00275/31/22, 12:00:00 AM\u0027), -1, \"year\")\r\n// 5/31/22, 12:00:00 AM\r\ntoDate(dateFormat(\"03/31/\"+ {view.custom.EndYear} +\" 12:00:00 AM\", \"yyyy-MM-dd hh:mm:ss\"))"
+          "expression": "//dateArithmetic(toDate(\u00275/31/22, 12:00:00 AM\u0027), -1, \"year\")\r\n// 5/31/22, 12:00:00 AM\r\ntoDate(dateFormat(\"03/31/\"+ {view.custom.EndYear} +\" 12:00:00\", \"yyyy-MM-dd hh:mm:ss\"))"
         },
         "type": "expr"
       }
@@ -132,7 +132,7 @@
           "bidirectional": true,
           "fallbackDelay": 2.5,
           "mode": "direct",
-          "tagPath": "[default]RITI/Winter Shelter/Season End"
+          "tagPath": "[default]HMS/Winter Shelter/Season End"
         },
         "type": "tag"
       },
@@ -169,7 +169,7 @@
     "custom.start": {
       "binding": {
         "config": {
-          "expression": "toDate(dateFormat({view.params.month}+\"/01/\"+ if({view.params.month}\u003e10,{view.custom.StartYear},{view.custom.EndYear}) +\" 12:00:00 AM\", \"yyyy-MM-dd hh:mm:ss\"))"
+          "expression": "toDate(dateFormat({view.params.month}+\"/01/\"+ if({view.params.month}\u003e10,{view.custom.StartYear},{view.custom.EndYear}) +\" 12:00:00\", \"yyyy-MM-dd hh:mm:ss\"))"
         },
         "type": "expr"
       },
@@ -182,7 +182,7 @@
     "custom.startSeasonDate": {
       "binding": {
         "config": {
-          "expression": "toDate(dateFormat(11+\"/01/\"+ if(11\u003e10,{view.custom.StartYear},{view.custom.EndYear}) +\" 12:00:00 AM\", \"yyyy-MM-dd hh:mm:ss\"))"
+          "expression": "toDate(dateFormat(11+\"/01/\"+ if(11\u003e10,{view.custom.StartYear},{view.custom.EndYear}) +\" 12:00:00\", \"yyyy-MM-dd hh:mm:ss\"))"
         },
         "type": "expr"
       },
@@ -193,7 +193,7 @@
         "config": {
           "fallbackDelay": 2.5,
           "mode": "direct",
-          "tagPath": "[default]RITI/Winter Shelter/Season Start"
+          "tagPath": "[default]HMS/Winter Shelter/Season Start"
         },
         "type": "tag"
       },

@@ -1,16 +1,41 @@
 {
   "scope": "DG",
-  "version": 1,
+  "version": 2,
   "restricted": false,
   "overridable": false,
   "files": [
-    "data.bin"
+    "query.sql"
   ],
   "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "4124ec2da8f38e107c71dd154ecaaf935d9e9c8c2f815871dab8e4b741bdfd50",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
     "lastModification": {
-      "actor": "yogini",
-      "timestamp": "2024-08-21T09:15:59Z"
+      "actor": "admin",
+      "timestamp": "2025-06-11T11:28:02Z"
     },
-    "lastModificationSignature": "e09a7751b6140f7368a38383820f290f1fca264d5ad5aa02a6d64583be184ada"
+    "syntaxProvider": "class com.adbs.syntax.MSSQLSyntaxProvider",
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "CongregationID",
+        "sqlType": 3
+      }
+    ]
   }
 }

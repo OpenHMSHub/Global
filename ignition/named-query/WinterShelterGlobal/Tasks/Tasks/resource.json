@@ -16,9 +16,9 @@
     "enabled": true,
     "cacheAmount": 1,
     "cacheEnabled": false,
-    "database": "RITIOps",
+    "database": "",
     "fallbackEnabled": false,
-    "lastModificationSignature": "3d0a0c4f114834ec406ae99f14e8fc418aee3b5cde41328dcd3347a79dd0dc8d",
+    "lastModificationSignature": "16a315b22b84f00e4ab46768a70cfa460997e990d7ee2af983979e6ddd9b2d08",
     "permissions": [
       {
         "zone": "",
@@ -26,8 +26,8 @@
       }
     ],
     "lastModification": {
-      "actor": "yogini",
-      "timestamp": "2024-08-21T08:55:15Z"
+      "actor": "admin",
+      "timestamp": "2025-06-11T11:22:54Z"
     },
     "syntaxProvider": "class com.adbs.syntax.MSSQLSyntaxProvider",
     "parameters": [

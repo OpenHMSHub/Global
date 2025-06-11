@@ -72,7 +72,7 @@ def updateSchedule():
 	lastScheduleUpdate = system.date.now()
 	seasonStartDate = calendar.getSeasonStart()
 	seasonEndDate = system.date.addDays(seasonStartDate,364)
-	tagPaths = ['[default]RITI/Winter Shelter/Season Start','[default]RITI/Winter Shelter/Season End','[default]RITI/Winter Shelter/lastScheduleUpdate']
+	tagPaths = ['[default]HMS/Winter Shelter/Season Start','[default]HMS/Winter Shelter/Season End','[default]HMS/Winter Shelter/lastScheduleUpdate']
 	tagValues = [seasonStartDate,seasonEndDate,lastScheduleUpdate]
 	system.tag.writeAsync(tagPaths,tagValues)
 	return

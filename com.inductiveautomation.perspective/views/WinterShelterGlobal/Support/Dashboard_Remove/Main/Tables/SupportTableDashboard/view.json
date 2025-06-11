@@ -91,7 +91,7 @@
             "",
             ""
           ],
-          "name": "RITINotes",
+          "name": "HMSNotes",
           "type": "String"
         },
         {
@@ -462,7 +462,7 @@
               },
               "transforms": [
                 {
-                  "code": "\ttable_data \u003d []\n\t#Iterate over the results of the query\n\tfor row in range(value.getRowCount()):\n\t\trow_data \u003d {}\n\t\tstyle \u003d {}\n\t\tstyle[\u0027classes\u0027] \u003d \"Table/Cell_Dashboard\"\n\t\t#Map query results into correct attributes\n\t\trow_data[\u0027id\u0027] \u003d value.getValueAt(row, \"id\")\n\t\trow_data[\u0027ticketHash\u0027] \u003d \"#\" + str(value.getValueAt(row, \"id\"))\n\t\trow_data[\u0027dueDate\u0027] \u003d value.getValueAt(row, \"dueDate\")\n\t\trow_data[\u0027locationId\u0027] \u003d value.getValueAt(row, \"locationId\")\n\t\trow_data[\u0027congregationNotes\u0027] \u003d value.getValueAt(row, \"congregationNotes\")\n\t\trow_data[\u0027RITINotes\u0027] \u003d value.getValueAt(row, \"RITINotes\")\n\t\trow_data[\u0027staffId\u0027] \u003d value.getValueAt(row, \"staffId\")\n\t\trow_data[\u0027statusId\u0027] \u003d value.getValueAt(row, \"statusId\")\n\t\trow_data[\u0027ticketTypeId\u0027] \u003d value.getValueAt(row, \"ticketTypeId\")\n\t\trow_data[\u0027timeCreated\u0027] \u003d system.date.format(value.getValueAt(row, \"timeCreated\"),\"MM/dd/YYYY\")\n\t\tif value.getValueAt(row, \"Completed\") is None:\n\t\t\trow_data[\u0027completed\u0027] \u003d \u0027\u0027\n\t\telse:\n\t\t\trow_data[\u0027completed\u0027] \u003d value.getValueAt(row, \"Completed\")\n\t\trow_data[\u0027title\u0027] \u003d value.getValueAt(row, \"title\")\n\t\trow_data[\u0027contact\u0027] \u003d value.getValueAt(row, \"contact\")\n\t\trow_data[\u0027locationName\u0027] \u003d value.getValueAt(row, \"locationName\")\n\t\trow_data[\u0027type\u0027] \u003d value.getValueAt(row, \"type\")\n\t\trow_data[\u0027Status\u0027] \u003d value.getValueAt(row, \"Status\")\n\t\trow_data[\u0027ticketPriority\u0027] \u003d value.getValueAt(row, \"ticketPriority\")\n\t\trow_data[\u0027priorityId\u0027] \u003d value.getValueAt(row, \"priorityId\")\n\t\trow_data[\u0027staffName\u0027] \u003d value.getValueAt(row, \"staffName\")\n\t\t#Append the individual row date to the table data object\n\t\ttable_data.append(row_data)\n\t\t\n\treturn table_data\n#\treturn value",
+                  "code": "\ttable_data \u003d []\n\t#Iterate over the results of the query\n\tfor row in range(value.getRowCount()):\n\t\trow_data \u003d {}\n\t\tstyle \u003d {}\n\t\tstyle[\u0027classes\u0027] \u003d \"Table/Cell_Dashboard\"\n\t\t#Map query results into correct attributes\n\t\trow_data[\u0027id\u0027] \u003d value.getValueAt(row, \"id\")\n\t\trow_data[\u0027ticketHash\u0027] \u003d \"#\" + str(value.getValueAt(row, \"id\"))\n\t\trow_data[\u0027dueDate\u0027] \u003d value.getValueAt(row, \"dueDate\")\n\t\trow_data[\u0027locationId\u0027] \u003d value.getValueAt(row, \"locationId\")\n\t\trow_data[\u0027congregationNotes\u0027] \u003d value.getValueAt(row, \"congregationNotes\")\n\t\trow_data[\u0027HMSNotes\u0027] \u003d value.getValueAt(row, \"HMSNotes\")\n\t\trow_data[\u0027staffId\u0027] \u003d value.getValueAt(row, \"staffId\")\n\t\trow_data[\u0027statusId\u0027] \u003d value.getValueAt(row, \"statusId\")\n\t\trow_data[\u0027ticketTypeId\u0027] \u003d value.getValueAt(row, \"ticketTypeId\")\n\t\trow_data[\u0027timeCreated\u0027] \u003d system.date.format(value.getValueAt(row, \"timeCreated\"),\"MM/dd/YYYY\")\n\t\tif value.getValueAt(row, \"Completed\") is None:\n\t\t\trow_data[\u0027completed\u0027] \u003d \u0027\u0027\n\t\telse:\n\t\t\trow_data[\u0027completed\u0027] \u003d value.getValueAt(row, \"Completed\")\n\t\trow_data[\u0027title\u0027] \u003d value.getValueAt(row, \"title\")\n\t\trow_data[\u0027contact\u0027] \u003d value.getValueAt(row, \"contact\")\n\t\trow_data[\u0027locationName\u0027] \u003d value.getValueAt(row, \"locationName\")\n\t\trow_data[\u0027type\u0027] \u003d value.getValueAt(row, \"type\")\n\t\trow_data[\u0027Status\u0027] \u003d value.getValueAt(row, \"Status\")\n\t\trow_data[\u0027ticketPriority\u0027] \u003d value.getValueAt(row, \"ticketPriority\")\n\t\trow_data[\u0027priorityId\u0027] \u003d value.getValueAt(row, \"priorityId\")\n\t\trow_data[\u0027staffName\u0027] \u003d value.getValueAt(row, \"staffName\")\n\t\t#Append the individual row date to the table data object\n\t\ttable_data.append(row_data)\n\t\t\n\treturn table_data\n#\treturn value",
                   "type": "script"
                 }
               ],
@@ -1514,7 +1514,7 @@
               "boolean": "checkbox",
               "dateFormat": "MM/DD/YYYY",
               "editable": false,
-              "field": "RITINotes",
+              "field": "HMSNotes",
               "footer": {
                 "align": "center",
                 "justify": "left",

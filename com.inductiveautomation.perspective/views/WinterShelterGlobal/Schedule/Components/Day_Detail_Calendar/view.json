@@ -43,7 +43,7 @@
     "params.limitDate": {
       "binding": {
         "config": {
-          "expression": "//dateFormat(\"2022-01-01\", \"yyyy-MM-dd\")\r\n//now()\r\n//\"01/11/2022\"\r\n{[default]RITI/Winter Shelter/CurrentDate.value}"
+          "expression": "//dateFormat(\"2022-01-01\", \"yyyy-MM-dd\")\r\n//now()\r\n//\"01/11/2022\"\r\n{[default]HMS/Winter Shelter/CurrentDate.value}"
         },
         "transforms": [
           {

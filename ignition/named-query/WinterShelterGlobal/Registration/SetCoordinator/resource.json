@@ -1,5 +1,6 @@
 {
   "scope": "DG",
+  "documentation": "Assign a human as a coordinator for a congregation.",
   "version": 2,
   "restricted": false,
   "overridable": false,
@@ -17,9 +18,9 @@
     "enabled": true,
     "cacheAmount": 1,
     "cacheEnabled": false,
-    "database": "RITIOps",
+    "database": "",
     "fallbackEnabled": false,
-    "lastModificationSignature": "687ffc1b592d75edee2a2db813bfedb97553fb6abc023d346dc007012603b54d",
+    "lastModificationSignature": "0bf80aa694f5e08f14d94f64d9a3d02f62a9e8f76c630f0ccbad650c054c35cc",
     "permissions": [
       {
         "zone": "",
@@ -27,8 +28,8 @@
       }
     ],
     "lastModification": {
-      "actor": "external",
-      "timestamp": "2025-03-20T06:54:34Z"
+      "actor": "admin",
+      "timestamp": "2025-06-11T11:26:06Z"
     },
     "parameters": [
       {

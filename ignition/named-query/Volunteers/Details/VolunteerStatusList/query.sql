@@ -1,0 +1,1 @@
+SELECT Distinct status FROM staff.Volunteer where status is not null

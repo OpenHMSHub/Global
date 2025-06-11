@@ -1,4 +1,4 @@
-SELECT shelter.Support.id, shelter.Support.dueDate, shelter.Support.locationId,shelter.Support.congregationNotes, shelter.Support.RITINotes,
+SELECT shelter.Support.id, shelter.Support.dueDate, shelter.Support.locationId,shelter.Support.congregationNotes, shelter.Support.HMSNotes,
 	shelter.Support.staffId,shelter.Support.statusId, shelter.Support.ticketTypeId, shelter.Support.timeCreated,
 	shelter.Support.completedDate as completed, shelter.Support.title, COALESCE(shelter.Support.Contact,'') as contact, 
   	shelter.Location.locationName,

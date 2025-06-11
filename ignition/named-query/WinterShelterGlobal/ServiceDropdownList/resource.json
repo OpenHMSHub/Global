@@ -1,16 +1,41 @@
 {
   "scope": "DG",
-  "version": 1,
+  "documentation": "Select a list of providers",
+  "version": 2,
   "restricted": false,
   "overridable": false,
   "files": [
-    "data.bin"
+    "query.sql"
   ],
   "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "-1",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": true,
+    "lastModificationSignature": "8eaef1f734eb975d0685529203d5633f6b377bb1542fd83f8c933ae07ddd700a",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
     "lastModification": {
-      "actor": "yogini",
-      "timestamp": "2024-08-21T08:54:28Z"
+      "actor": "admin",
+      "timestamp": "2025-06-11T11:22:54Z"
     },
-    "lastModificationSignature": "d9ad94f37d9cbd2dc086deb7b148e7e11af2b2b4ef0605a4f60934636fb6cd39"
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "program_id",
+        "sqlType": 2
+      }
+    ]
   }
 }

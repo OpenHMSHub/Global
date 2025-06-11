@@ -761,8 +761,8 @@
       "binding": {
         "config": {
           "struct": {
-            "seasonEnd": "{[default]RITI/Winter Shelter/Season End}",
-            "seasonStart": "{[default]RITI/Winter Shelter/Season Start}",
+            "seasonEnd": "{[default]HMS/Winter Shelter/Season End}",
+            "seasonStart": "{[default]HMS/Winter Shelter/Season Start}",
             "weekdays": "{view.custom.weekdays}"
           },
           "waitOnAll": false

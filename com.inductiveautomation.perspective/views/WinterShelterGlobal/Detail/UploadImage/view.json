@@ -23,7 +23,7 @@
             "onFileReceived": [
               {
                 "config": {
-                  "script": "\tfrom javax.imageio import ImageIO\n\tfrom java.io import ByteArrayInputStream\n\tinput_stream \u003d ByteArrayInputStream(event.file.getBytes())\n\tbuf \u003d ImageIO.read(input_stream)\n\tpayload \u003d {\n\t\t\"congregationId\":self.view.params.congregationId,\n\t\t\"bytes\":event.file.getBytes(),\n\t\t\"height\":buf.height,\n\t\t\"width\":buf.width\n\t}\n\tsystem.perspective.print(buf.height)\n\tsystem.util.sendRequest(project\u003d\"RITI\", messageHandler\u003d\"uploadCongregationImage\",payload\u003dpayload)\n\tsystem.perspective.sendMessage(\"imageUpdated\", scope \u003d \"page\")"
+                  "script": "\tfrom javax.imageio import ImageIO\n\tfrom java.io import ByteArrayInputStream\n\tinput_stream \u003d ByteArrayInputStream(event.file.getBytes())\n\tbuf \u003d ImageIO.read(input_stream)\n\tpayload \u003d {\n\t\t\"congregationId\":self.view.params.congregationId,\n\t\t\"bytes\":event.file.getBytes(),\n\t\t\"height\":buf.height,\n\t\t\"width\":buf.width\n\t}\n\tsystem.perspective.print(buf.height)\n\tsystem.util.sendRequest(project\u003d\"HMS\", messageHandler\u003d\"uploadCongregationImage\",payload\u003dpayload)\n\tsystem.perspective.sendMessage(\"imageUpdated\", scope \u003d \"page\")"
                 },
                 "scope": "G",
                 "type": "script"

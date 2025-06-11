@@ -1,5 +1,6 @@
 {
   "scope": "DG",
+  "documentation": "Insert a new Congregation into the shelter.Congregation table",
   "version": 2,
   "restricted": false,
   "overridable": false,
@@ -17,9 +18,9 @@
     "enabled": true,
     "cacheAmount": 1,
     "cacheEnabled": false,
-    "database": "RITIOps",
+    "database": "",
     "fallbackEnabled": false,
-    "lastModificationSignature": "fd3b8a4f0a806fd9648dd47852639ee1b798460ad7d9057693a6819ce4ac03e1",
+    "lastModificationSignature": "34efff1f864da9cbcbbdb42233de5527d5f84a01c09685ed2df3ca73c85cab5e",
     "permissions": [
       {
         "zone": "",
@@ -27,8 +28,8 @@
       }
     ],
     "lastModification": {
-      "actor": "external",
-      "timestamp": "2025-03-20T06:54:34Z"
+      "actor": "admin",
+      "timestamp": "2025-06-11T11:26:06Z"
     },
     "parameters": [
       {

@@ -1,4 +1,4 @@
 SELECT id
       ,Status
 
-  FROM RITIOps.shelter.Status
+  FROM HMSOps.shelter.Status

@@ -432,7 +432,7 @@
                   "props.params.enabled": {
                     "binding": {
                       "config": {
-                        "expression": "if((toint(dateFormat({[default]RITI/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isWSManager}\u003dtrue || {session.custom.isAdministrator}\u003dtrue,true,false)"
+                        "expression": "if((toint(dateFormat({[default]HMS/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isWSManager}\u003dtrue || {session.custom.isAdministrator}\u003dtrue,true,false)"
                       },
                       "type": "expr"
                     }
@@ -515,7 +515,7 @@
                       "props.enabled": {
                         "binding": {
                           "config": {
-                            "expression": "if((toint(dateFormat({[default]RITI/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
+                            "expression": "if((toint(dateFormat({[default]HMS/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
                           },
                           "type": "expr"
                         }
@@ -570,7 +570,7 @@
                       "props.enabled": {
                         "binding": {
                           "config": {
-                            "expression": "if((toint(dateFormat({[default]RITI/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
+                            "expression": "if((toint(dateFormat({[default]HMS/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
                           },
                           "type": "expr"
                         }
@@ -625,7 +625,7 @@
                       "props.enabled": {
                         "binding": {
                           "config": {
-                            "expression": "if((toint(dateFormat({[default]RITI/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.custom.IsEdit}\u003dtrue \u0026\u0026 {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
+                            "expression": "if((toint(dateFormat({[default]HMS/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.custom.IsEdit}\u003dtrue \u0026\u0026 {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
                           },
                           "type": "expr"
                         }
@@ -680,7 +680,7 @@
                       "props.enabled": {
                         "binding": {
                           "config": {
-                            "expression": "if((toint(dateFormat({[default]RITI/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
+                            "expression": "if((toint(dateFormat({[default]HMS/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
                           },
                           "type": "expr"
                         }
@@ -766,7 +766,7 @@
                   "props.enabled": {
                     "binding": {
                       "config": {
-                        "expression": "if((toint(dateFormat({[default]RITI/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
+                        "expression": "if((toint(dateFormat({[default]HMS/Winter Shelter/CurrentDate.value}, \"yyyyMMdd\")) \u003c toint(dateFormat(\"2022-11-01\", \"yyyyMMdd\"))) || {view.params.IsNewRegistration}\u003dtrue || {session.custom.isAdministrator}\u003dtrue || {session.custom.isWSManager}\u003dtrue,true,false)"
                       },
                       "type": "expr"
                     }

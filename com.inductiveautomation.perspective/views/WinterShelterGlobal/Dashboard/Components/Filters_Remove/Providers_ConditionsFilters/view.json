@@ -255,7 +255,7 @@
             {
               "name": "setOptions",
               "params": [],
-              "script": "\tquery \u003d \"\"\"\nSELECT [id]\n\t,[providerTypeName]\nFROM [RITIOps].[organization].[ProviderType]\nWHERE [providerTypeName] in (\u0027Community Partner\u0027, \u0027Medical Facility\u0027, \u0027Law Enforcement\u0027)\nORDER BY [providerTypeName]\n\t\"\"\"\n\t\n\tresult \u003d system.db.runPrepQuery(query,[],\u0027RITIOps\u0027)\n\t\n\t# Version 1 set options as list of dictionaries\n\tself.props.params.options \u003d [ dict(value \u003d x[0],label \u003d x[1]) for x in result]\n\t\n\t# Version 2 set options as dataset\n\t#self.props.params.options \u003d result\n\t\n\t"
+              "script": "\tquery \u003d \"\"\"\nSELECT [id]\n\t,[providerTypeName]\nFROM [HMSOps].[organization].[ProviderType]\nWHERE [providerTypeName] in (\u0027Community Partner\u0027, \u0027Medical Facility\u0027, \u0027Law Enforcement\u0027)\nORDER BY [providerTypeName]\n\t\"\"\"\n\t\n\tresult \u003d system.db.runPrepQuery(query,[],\u0027HMSOps\u0027)\n\t\n\t# Version 1 set options as list of dictionaries\n\tself.props.params.options \u003d [ dict(value \u003d x[0],label \u003d x[1]) for x in result]\n\t\n\t# Version 2 set options as dataset\n\t#self.props.params.options \u003d result\n\t\n\t"
             }
           ],
           "extensionFunctions": null,

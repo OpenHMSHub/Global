@@ -82,7 +82,7 @@
           "bidirectional": true,
           "fallbackDelay": 2.5,
           "mode": "direct",
-          "tagPath": "[default]RITI/Winter Shelter/Season End"
+          "tagPath": "[default]HMS/Winter Shelter/Season End"
         },
         "type": "tag"
       },
@@ -130,7 +130,7 @@
         "config": {
           "fallbackDelay": 2.5,
           "mode": "direct",
-          "tagPath": "[default]RITI/Winter Shelter/Season Start"
+          "tagPath": "[default]HMS/Winter Shelter/Season Start"
         },
         "type": "tag"
       },
