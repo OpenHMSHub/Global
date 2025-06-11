@@ -1,23 +1,23 @@
 # Global project
-The Global project is a core Ignition Perspective module that provides shared components, styles, and scripts used across multiple related applications in the OpenHMSHub ecosystem.
+The Global project is a core Ignition Perspective module that provides shared components, styles, and scripts used across multiple related applications in the OpenHMShub ecosystem.
 
 ## Purpose
 This project contains reusable UI components, named queries, scripts, stylesheets, and resources that are imported by other modules such as:
 
-* RITI
+* HMS
 
-* Discovery
+* MobileHMS
 
 * WinterShelterPortal
 
-It helps standardize functionality and ensures a consistent user experience throughout all OpenHMSHub-based projects.
+It helps standardize functionality and ensures a consistent user experience throughout all OpenHMShub-based projects.
 
 ## Requirements
-`Ignition 8.1.45 or later`
+`Ignition 8.1.47 or later`
 
 ## Installation
 
-[Installation Guide](https://github.com/OpenHMSHub/Documentation/wiki/Instalation-Guide)
+[Installation Guide](https://github.com/OpenHMShub/Documentation/wiki/Instalation-Guide)
 
 **Important:** The Global project should be cloned first as it is the parent project for other modules.
 
@@ -28,12 +28,12 @@ Linux: `/usr/local/bin/ignition/data/projects`
 Windows: `C:\Program Files\Inductive Automation\Ignition\data\projects`
 
 ```bash
-git clone https://github.com/OpenHMSHub/Global.git
+git clone https://github.com/OpenHMShub/Global.git
 ```
 
 Restart your Ignition Gateway.
 
-Ensure that the Global project is present and correctly set as a parent project in the RITI project settings.
+Ensure that the Global project is present and correctly set as a parent project in the HMS project settings.
 In the Ignition Gateway `(http://localhost:8088)`, go to `Config` > `System` > `Projects`, and verify that Global is listed as a parent (`Inheritable` - True) project.
 
 ## How to Use
@@ -50,8 +50,8 @@ Restart the Ignition Gateway if needed to detect the new project.
 Other Perspective projects should reference this project in their project settings under Project Library Inheritance.
 
 ## Related Projects
-[RITI](https://github.com/OpenHMSHub/RITI)
+[HMS](https://github.com/OpenHMShub/HMS)
 
-[WinterShelterPortal](https://github.com/OpenHMSHub/WinterShelterPortal)
+[WinterShelterPortal](https://github.com/OpenHMShub/WinterShelterPortal)
 
-[Discovery](https://github.com/OpenHMSHub/Discovery)
+[MobileHMS](https://github.com/OpenHMShub/MobileHMS)
