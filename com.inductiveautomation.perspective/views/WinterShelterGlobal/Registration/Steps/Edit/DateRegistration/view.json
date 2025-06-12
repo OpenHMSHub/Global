@@ -1,12 +1,12 @@
 {
   "custom": {
-    "calendarFiller": null,
+    "calendarFiller": "",
     "currentSeasonId": null,
     "info": {
       "$": [
         "ds",
         192,
-        1724330130018
+        1749729121564
       ],
       "$columns": [
         {
@@ -540,7 +540,7 @@
       "$": [
         "ds",
         192,
-        1724330130060
+        1749729121560
       ],
       "$columns": [
         {
@@ -1074,7 +1074,7 @@
     "locationID": -1,
     "neededToProceed": "",
     "newCapacity": "",
-    "nights": 13,
+    "nights": 60,
     "schedule": [
       311,
       318,
@@ -1088,30 +1088,15 @@
       71,
       29,
       324,
-      350
+      350,
+      317,
+      316
     ],
     "schedulePrev": [],
-    "selectedSeasonId": 14
+    "selectedSeasonId": 4
   },
   "propConfig": {
     "custom.calendarFiller": {
-      "binding": {
-        "config": {
-          "struct": {
-            "seasonEnd": "{/root/FlexContainer_0/leftPane/Calendar/Table.props.params.endDate}",
-            "seasonStart": "{/root/FlexContainer_0/leftPane/Calendar/Table.props.params.startDate}",
-            "weekdays": "{view.custom.weekdays}"
-          },
-          "waitOnAll": false
-        },
-        "transforms": [
-          {
-            "code": "\t#Returns the next date that is that weekday\n\t#date: the datetime to start from\n\t#weekday: the weekday as a number\n\tdef nextDayOfWeek(date, weekday):\n\t\tdayOfWeek \u003d system.date.getDayOfWeek(date)\n\t\tdaysApart \u003d weekday - dayOfWeek\n\t\tif daysApart \u003c 0: daysApart \u003d 7 + daysApart\n\t\treturn system.date.addDays(date, daysApart)\n\t\n\t\n\tschedule \u003d self.params.schedule\n\tseasonStart \u003d value[\u0027seasonStart\u0027]\n\tstartDayOfWeek \u003d system.date.getDayOfWeek(seasonStart)\n\tseasonEnd \u003d value[\u0027seasonEnd\u0027]\n\tif system.date.isBefore(seasonEnd, seasonStart): return \u0027ERROR: Season End before Start!!!\u0027\n\t#Pattern Key: 1 \u003d Every, 2 \u003d Every Other, 3 \u003d Every 1st ...7 \u003d Every 5th\n\tpattern \u003d self.custom.pattern\n\t#Weekdays Key: 1 \u003d Sunday ... 7 \u003d Saturday\n\tweekdays \u003d value[\u0027weekdays\u0027]\n\tweekdays_db \u003d self.params.dateSelectionPattern_db\n\tdates \u003d []\n\tsystem.perspective.print(\u0027CF binding: \u0027+str(weekdays))\n\tsystem.perspective.print(\u0027CF binding: \u0027+str(weekdays_db))\n\t\n\t#Every\n\tif pattern \u003d\u003d 1:\n\t\tfor weekday in weekdays:\n\t\t\tif weekday not in weekdays_db:\n\t\t\t\tschedDay \u003d nextDayOfWeek(seasonStart,weekday)\n\t\t\t\twhile system.date.isBefore(schedDay, seasonEnd):\n\t\t\t\t\tdates.append(schedDay)\n\t\t\t\t\tschedDay \u003d system.date.addDays(schedDay, 7)\n\tif pattern \u003d\u003d 2:\n\t\tfor weekday in weekdays:\n\t\t\tif weekday not in weekdays_db:\n\t\t\t\tschedDay \u003d nextDayOfWeek(seasonStart,weekday)\n\t\t\t\twhile system.date.isBefore(schedDay, seasonEnd):\n\t\t\t\t\tdates.append(schedDay)\n\t\t\t\t\tschedDay \u003d system.date.addDays(schedDay, 14)\n\tif pattern \u003e 2 and pattern \u003c 8:\n\t\tfor weekday in weekdays:\n\t\t\tif weekday not in weekdays_db:\n\t\t\t\tmonthStart \u003d system.date.getDate(system.date.getYear(seasonStart), system.date.getMonth(seasonStart), 1)\n\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\t\t\t\twhile system.date.isBefore(dayOfWeek, seasonEnd):\n\t\t\t\t\tif system.date.isAfter(dayOfWeek, seasonStart) and system.date.getMonth(dayOfWeek)\u003d\u003dsystem.date.getMonth(monthStart):\n\t\t\t\t\t\tdates.append(dayOfWeek)\n\t\t\t\t\tmonthStart \u003d system.date.addMonths(monthStart,1)\n\t\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\tif pattern \u003e 7:\n\t\tif pattern \u003d\u003d 8:\n\t\t\tinclude_patterns \u003d [3,5]\n\t\tif pattern \u003d\u003d 9:\n\t\t\tinclude_patterns \u003d [4,6]\n\t\tfor pattern in include_patterns:\n\t\t\tfor weekday in weekdays:\n\t\t\t\tif weekday not in weekdays_db:\n\t\t\t\t\tmonthStart \u003d system.date.getDate(system.date.getYear(seasonStart), system.date.getMonth(seasonStart), 1)\n\t\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\n\t\t\t\t\twhile system.date.isBefore(dayOfWeek, seasonEnd):\n\t\t\t\t\t\tif system.date.isAfter(dayOfWeek, seasonStart) and system.date.getMonth(dayOfWeek)\u003d\u003dsystem.date.getMonth(monthStart):\n\t\t\t\t\t\t\tdates.append(dayOfWeek)\n\t\t\t\t\t\tmonthStart \u003d system.date.addMonths(monthStart,1)\n\t\t\t\t\t\tdayOfWeek \u003d nextDayOfWeek(monthStart, weekday)\n\t\t\t\t\t\tdayOfWeek \u003d system.date.addDays(dayOfWeek, ((pattern-3)*7))\t\n\t\t\t\n\tsystem.perspective.print(\u0027schedule: \u0027+str(self.params.schedule))\n\tfor date in dates:\n\t\tday \u003d system.date.getDayOfYear(date)\n\t\tif day not in schedule: schedule.append(day)\n\tsystem.perspective.print(\u0027schedule1: \u0027+str(self.params.schedule))\t\n#\tif len(dates) \u003d\u003d 0:\n#\t\tfor one_schedule in self.params.schedule:\n#\t\t\tdates.append(one_schedule)\n\treturn dates",
-            "type": "script"
-          }
-        ],
-        "type": "expr-struct"
-      },
       "onChange": {
         "enabled": false,
         "script": "\tsystem.perspective.print(\u0027calendarFiller: \u0027+str(self.params.schedule))\n\tif not currentValue.getValue():\n\t\tselectedWeekDays \u003d []\n\t\tfor i in range(len(previousValue.getValue())):\n\t\t\tcanceledDate \u003d previousValue.getValue()[i].value\n\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\tselectedWeekDays.append(DayOfYear)\n\t\t\t\n\t\tschedule \u003d self.params.schedule\n\t\tprevSchedule \u003d self.params.schedulePrev\n\t\tif schedule !\u003d None:\n\t\t\tfor j in range(len(schedule)):\n\t\t\t\tvalueFromSchedule \u003d schedule[j]\n\t\t\t\tif valueFromSchedule not in selectedWeekDays:\n\t\t\t\t\tsystem.perspective.print(\"valueFromSchedule: \"+str(valueFromSchedule))\n\t\t\t\telif (valueFromSchedule in selectedWeekDays) and (valueFromSchedule not in prevSchedule):\n\t\t\t\t\t(self.params.schedule).remove(valueFromSchedule)\n\telse:\n\t\t#pass\n\t\tselectedWeekDays \u003d []\n\t\tif previousValue.getValue() !\u003d None:\n\t\t\tfor i in range(len(previousValue.getValue())):\n\t\t\t\tcanceledDate \u003d previousValue.getValue()[i].value\n\t\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\t\tselectedWeekDays.append(DayOfYear)\n\t\t\tcurrentSelectedWeekDays \u003d []\n\t\t\tfor i in range(len(currentValue.getValue())):\n\t\t\t\tcanceledDate \u003d currentValue.getValue()[i].value\n\t\t\t\tDayOfYear \u003d system.date.getDayOfYear(canceledDate)\n\t\t\t\tcurrentSelectedWeekDays.append(DayOfYear)\n\t\t\t\t\n\t\t\tschedule \u003d self.params.schedule\n\t\t\tprevSchedule \u003d self.params.schedulePrev\n\t\t\tif schedule !\u003d None:\n\t\t\t\tfor j in range(len(schedule)):\n\t\t\t\t\tvalueFromSchedule \u003d schedule[j]\n\t\t\t\t\tif valueFromSchedule not in selectedWeekDays:\n\t\t\t\t\t\tsystem.perspective.print(\"valueFromSchedule: \"+str(valueFromSchedule))\n\t\t\t\t\telif (valueFromSchedule in selectedWeekDays) and (valueFromSchedule not in currentSelectedWeekDays):\n\t\t\t\t\t\t(self.params.schedule).remove(valueFromSchedule)\n\tsystem.perspective.print(\u0027calendarFiller1: \u0027+str(self.params.schedule))"
@@ -1513,7 +1498,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\n\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1530,7 +1515,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1562,20 +1547,20 @@
                           "$": [
                             "ts",
                             192,
-                            1724330152381
+                            1749729361284
                           ],
-                          "$ts": 1743440400000
+                          "$ts": 1774947600000
                         },
                         "month": 11,
                         "startDate": {
                           "$": [
                             "ts",
                             192,
-                            1724330152381
+                            1749731807954
                           ],
-                          "$ts": 1730480400000
+                          "$ts": 1761991200000
                         },
-                        "startYear": 2024
+                        "startYear": 2025
                       },
                       "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
                     },
@@ -1646,7 +1631,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1663,7 +1648,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1695,20 +1680,20 @@
                           "$": [
                             "ts",
                             192,
-                            1724330152373
+                            1749729361284
                           ],
-                          "$ts": 1743440400000
+                          "$ts": 1774947600000
                         },
                         "month": 12,
                         "startDate": {
                           "$": [
                             "ts",
                             192,
-                            1724330152373
+                            1749731807954
                           ],
-                          "$ts": 1733076000000
+                          "$ts": 1764583200000
                         },
-                        "startYear": 2024
+                        "startYear": 2025
                       },
                       "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
                     },
@@ -1779,7 +1764,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1796,7 +1781,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1828,20 +1813,20 @@
                           "$": [
                             "ts",
                             192,
-                            1724330152388
+                            1749729080532
                           ],
-                          "$ts": 1743440400000
+                          "$ts": 1774947600000
                         },
                         "month": 1,
                         "startDate": {
                           "$": [
                             "ts",
                             192,
-                            1724330152388
+                            1749729361284
                           ],
-                          "$ts": 1735754400000
+                          "$ts": 1767261600000
                         },
-                        "startYear": 2025
+                        "startYear": 2026
                       },
                       "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
                     },
@@ -1914,7 +1899,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1931,7 +1916,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -1963,20 +1948,20 @@
                           "$": [
                             "ts",
                             192,
-                            1724330152356
+                            1749729080532
                           ],
-                          "$ts": 1743440400000
+                          "$ts": 1774947600000
                         },
                         "month": 2,
                         "startDate": {
                           "$": [
                             "ts",
                             192,
-                            1724330152357
+                            1749729361283
                           ],
-                          "$ts": 1738432800000
+                          "$ts": 1769940000000
                         },
-                        "startYear": 2025
+                        "startYear": 2026
                       },
                       "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
                     },
@@ -2047,7 +2032,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -2064,7 +2049,7 @@
                           },
                           "transforms": [
                             {
-                              "code": "\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
+                              "code": "\tif value is None:\n\t\treturn[]\t\t\n\tsplited_text \u003d value.split(\",\")\n\tlist \u003d []\n\tstartYear \u003d self.props.params.startYear\n\tdateStartingLimit \u003d system.date.getDate(startYear, 5, 1)\n\tdateEndingLimit \u003d system.date.getDate(startYear+1, 4, 1)\n\tfor text in splited_text:\n\t\tif text!\u003dNone and text!\u003d\u0027\u0027:\n\t\t\tdate \u003d system.date.parse(text,\u0027dd-MM-yyyy\u0027)\n\t\t\tif system.date.isBetween(date, dateStartingLimit, dateEndingLimit):\n\t\t\t\tdayOfYear \u003d system.date.getDayOfYear(date)\n\t\t\t\tlist.append(int(dayOfYear))\n\treturn list",
                               "type": "script"
                             }
                           ],
@@ -2096,20 +2081,20 @@
                           "$": [
                             "ts",
                             192,
-                            1724330152356
+                            1749729080532
                           ],
-                          "$ts": 1743440400000
+                          "$ts": 1774947600000
                         },
                         "month": 3,
                         "startDate": {
                           "$": [
                             "ts",
                             192,
-                            1724330152356
+                            1749729361283
                           ],
-                          "$ts": 1740852000000
+                          "$ts": 1772359200000
                         },
-                        "startYear": 2025
+                        "startYear": 2026
                       },
                       "path": "WinterShelterGlobal/Registration/Calendar/MonthlyTable_winterShelter"
                     },

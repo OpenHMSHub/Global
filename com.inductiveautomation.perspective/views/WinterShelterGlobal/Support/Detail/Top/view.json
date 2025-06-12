@@ -15,7 +15,7 @@
     "congregation_search": false,
     "locationId": 160,
     "row_data": {
-      "RITINotes": "",
+      "HMSNotes": "",
       "Status": "",
       "completed": "None",
       "congregationNotes": "",
@@ -30,7 +30,7 @@
       "statusId": -1,
       "ticketPriority": "",
       "ticketTypeId": -1,
-      "timeCreated": "",
+      "timeCreated": "06/12/2025",
       "title": "",
       "type": ""
     },

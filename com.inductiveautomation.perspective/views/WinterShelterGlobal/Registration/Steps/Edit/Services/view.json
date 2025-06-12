@@ -1,8 +1,8 @@
 {
   "custom": {
     "CursorMoved": false,
-    "CursorStartAt": 12,
-    "IsEdit": false,
+    "CursorStartAt": null,
+    "IsEdit": null,
     "keyFields": {}
   },
   "events": {

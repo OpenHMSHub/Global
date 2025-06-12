@@ -4,6 +4,7 @@
     "Year2": "2025"
   },
   "params": {
+    "data": "",
     "locationID": -1
   },
   "propConfig": {
@@ -35,6 +36,10 @@
         ],
         "type": "query"
       },
+      "persistent": true
+    },
+    "params.data": {
+      "paramDirection": "input",
       "persistent": true
     },
     "params.locationID": {
@@ -1506,6 +1511,8 @@
     ],
     "custom": {
       "HostDates": "value",
+      "InformationOld": "",
+      "bedsThisYear": "",
       "lastHost": [],
       "nextHost": []
     },
@@ -1521,29 +1528,6 @@
               "seasonId": "{this.custom.seasonId}"
             },
             "queryPath": "WinterShelterGlobal/Registration/PreviewRegistration"
-          },
-          "type": "query"
-        }
-      },
-      "custom.InformationOld": {
-        "binding": {
-          "config": {
-            "parameters": {
-              "ID": "{view.params.CongregationID}"
-            },
-            "queryPath": "WinterShelter/Details/Congregation_ID"
-          },
-          "type": "query"
-        }
-      },
-      "custom.bedsThisYear": {
-        "binding": {
-          "config": {
-            "parameters": {
-              "CongregationID": "{view.params.CongregationID}",
-              "SelectedYear": "dateExtract(now(0), \"year\")"
-            },
-            "queryPath": "WinterShelter/Details/TotalBedsbyYear"
           },
           "type": "query"
         }

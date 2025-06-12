@@ -917,7 +917,7 @@
             ],
             "custom": {
               "humanId": 15124,
-              "newPrimaryCoordinator": false,
+              "newPrimaryCoordinator": true,
               "volunteerId": 1224
             },
             "meta": {
